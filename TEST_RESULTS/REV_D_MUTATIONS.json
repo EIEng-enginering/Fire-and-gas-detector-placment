@@ -1,0 +1,17 @@
+[
+  {
+    "mutation": "physical-offset-double-scaled",
+    "detected_by_assertion": true,
+    "exit_code": 1
+  },
+  {
+    "mutation": "indeterminate-rays-declared-clear",
+    "detected_by_assertion": true,
+    "exit_code": 1
+  },
+  {
+    "mutation": "engineering-gate-bypassed",
+    "detected_by_assertion": true,
+    "exit_code": 1
+  }
+]

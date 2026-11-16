@@ -1,0 +1,63 @@
+{
+  "data_class": "SYNTHETIC",
+  "method": "SYNTHETIC_FIELD_PATH/1",
+  "inputs": {
+    "field": {
+      "contract": "fg-synthetic-field/1",
+      "data_class": "SYNTHETIC",
+      "axes_units": "m",
+      "concentration_units": "ppm",
+      "time_units": "s",
+      "layout": "t,z,y,x",
+      "x": [
+        0,
+        2
+      ],
+      "y": [
+        0,
+        2
+      ],
+      "z": [
+        0,
+        2
+      ],
+      "times_s": [
+        0,
+        4
+      ],
+      "ppm": [
+        10,
+        14,
+        16,
+        20,
+        18,
+        22,
+        24,
+        28,
+        30,
+        34,
+        36,
+        40,
+        38,
+        42,
+        44,
+        48
+      ],
+      "source_sha256": "1ab57cda6048882a90c9aee713dfd0f13e007c47d10a4afbedf48604b718c176",
+      "revision": "SYN-A",
+      "evidence_locator": "Generated analytic C=10+2x+3y+4z+5t ppm, axes metres and t seconds"
+    },
+    "start": [
+      0,
+      0,
+      0
+    ],
+    "end": [
+      2,
+      2,
+      2
+    ],
+    "time_s": 2,
+    "subdivisions": 8
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "scope": "Explicit path/type allowlist, recursive supplied ZIP CRC/secret scan, synthetic SQLite evidence classes, file-size budgets",
+  "files_scanned": 879,
+  "client_data": "No client input used; only supplied provenance archives and generated synthetic files",
+  "qualification": "Not engineering qualification",
+  "git_actions": "NONE"
+}

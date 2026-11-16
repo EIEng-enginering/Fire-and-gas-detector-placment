@@ -1,0 +1,3 @@
+data_class,action,kind,id,evidence_id,detector_type,x,y,z,azimuth,elevation,roll,manufacturer,model,sensitivity,equipment_type,geometry_component_id
+SYNTHETIC,CREATE,DETECTOR,SYN-D02,SYN-GEOM-01,POINT_GAS,6,2,2,0,0,0,NOT SUPPLIED,NOT SUPPLIED,NOT SUPPLIED,,
+SYNTHETIC,CREATE,EQUIPMENT,SYN-EQ02,SYN-GEOM-01,,7,4,2,,,,,,,Synthetic vessel record,V102

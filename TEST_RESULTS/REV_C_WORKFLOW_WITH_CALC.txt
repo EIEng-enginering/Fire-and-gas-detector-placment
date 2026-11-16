@@ -1,0 +1,151 @@
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+This plugin does not support propagateSizeHints()
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Error calling Python override of QAbstractTableModel::headerData(): Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: name 'index' is not defined. Did you mean: 'self.index'?
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/tools/rev_c_workflow.py", line 26, in fill
+    buttons=dialog.findChild(QDialogButtonBox);QTest.mouseClick(buttons.button(button),Qt.LeftButton)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_c/src/fgmapping/ui/register_model.py", line 25, in headerData
+    if role==Qt.BackgroundRole and (index.row(),index.column()) in self.copied:return QColor('#233a57' if self.theme=='dark' else '#dce9fd')
+                                    ^^^^^
+NameError: Error calling Python override of QAbstractTableModel::headerData(): name 'index' is not defined. Did you mean: 'self.index'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/tools/rev_c_workflow.py", line 27, in fill
+    except Exception as exc:errors.append(str(exc));app.activeModalWidget().reject()
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'reject'
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/tools/rev_c_workflow.py", line 43, in <module>
+    assert not errors,errors;assert workspace.row(s,'detectors','SYN-GUI-01')['x']==10
+           ^^^^^^^^^^
+AssertionError: ["Error calling Python override of QAbstractTableModel::headerData(): name 'index' is not defined"]

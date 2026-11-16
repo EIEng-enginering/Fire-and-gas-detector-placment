@@ -1,0 +1,1 @@
+﻿Candidate ZIP FG_MAPPING_RETURN_REV_F_CANDIDATE.zip joined on Windows from 7 transfer parts: sha256 8fdf6a6a8dffde97d94ddf72682ba249d70dc32609e6513e1190529199f3d338 MATCH; extracted to C:\Users\Admin\fg_dev\revF_fresh; SHA256SUMS OK=858 BAD=0

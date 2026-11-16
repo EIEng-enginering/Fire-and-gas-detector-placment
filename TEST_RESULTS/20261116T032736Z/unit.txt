@@ -1,0 +1,18 @@
+COMMAND: /opt/pyvenv/bin/python -B -m unittest discover -s /mnt/data/FG_Mapping_Rev_A_Development/tests/unit -v
+test_bad_inputs_rejected (test_geometry.GeometryPrototypes.test_bad_inputs_rejected) ... ok
+test_center_ray_occluded (test_geometry.GeometryPrototypes.test_center_ray_occluded) ... ok
+test_clear_ray (test_geometry.GeometryPrototypes.test_clear_ray) ... ok
+test_cone_reference (test_geometry.GeometryPrototypes.test_cone_reference) ... ok
+test_grazing_is_blocked (test_geometry.GeometryPrototypes.test_grazing_is_blocked) ... ok
+test_inside_start_is_blocked (test_geometry.GeometryPrototypes.test_inside_start_is_blocked) ... ok
+test_one_and_two_out_of_two (test_geometry.GeometryPrototypes.test_one_and_two_out_of_two) ... ok
+test_parallel_miss (test_geometry.GeometryPrototypes.test_parallel_miss) ... ok
+test_weighted_fraction (test_geometry.GeometryPrototypes.test_weighted_fraction) ... ok
+test_colour_contrast (test_theme.ThemeContract.test_colour_contrast) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK
+
+EXIT: 0

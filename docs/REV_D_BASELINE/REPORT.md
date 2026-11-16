@@ -1,0 +1,14 @@
+# Development report — Rev D
+16 November 2026. v0.4.0a1. DEVELOPMENT BUILD / UNVERIFIED.
+
+Rev D implements the six approved development directions in source. It does not complete or qualify WP02–WP12. Rev C was preserved, its 407 file hashes checked and 123 unchanged tests run before edits. Final suite: 168/168 (83 unit, 78 integration, 7 acceptance), with a fresh-copy rerun and exact evidence in TEST_RESULTS/REV_D_FINAL_SUMMARY.json. Only the inherited exact software-version assertion changed (0.3.0a1→0.4.0a1); no acceptance criteria were weakened. Original WP01, original manifest and migrations1/2 are unchanged.
+
+Named additions: domain/mounting.py, study_basis.py, performance.py; engine/inspection.py; services/mounts.py, basis.py, study_schema.py, performance.py, geometry_inspection.py, process_inspection.py, recovery.py, comparison.py; ui/study_dialogs.py; migration0003; new independent tests, workflow/benchmark/mutation tools. Existing case, workspace, reporting and UI paths were extended. SOURCE_FILES.json records exact changes/hashes.
+
+Verified: actual Qt mount/basis/link dialogs; draft reviews with subject hashes; independent coordinate and half-area examples; uncertainty-preserving geometric worker and 64-sample overlay; snapshot comparison; all-format output and complete long-field QA; cancellable restore worker/new-case audit; foreign-key corruption refusal; mocked Win32 process states; current-source fingerprints. Three deliberate faults (offset scale, unknown-ray clearing, engineering-gate bypass) were detected. The final Word16-page and PDF12-page reports were visually checked; after PDF font substitution was found, embedded fonts were implemented and regression-checked, then exports regenerated.
+
+Preserved intermediate evidence includes a workflow helper missing import corrected during development, explicit-existing-output refusal during a rerun, and pre-embedded-font exports. Those are not final accepted outputs. TEST_RESULTS/REV_D_UI_FINAL.txt and OUTPUT_SAMPLES/REV_D_STUDY are the final integrated demonstration. Geometric fraction0.875 is only selected-ray visibility in a synthetic target, never detector coverage. Source lookup returns supplied rows only, never inferred response.
+
+Executed Linux Python3.12.14/PySide6 6.12.0 offscreen, not Windows. Native Win32 DLL calls, Windows locks/fsync/restore hard-link install, crash recovery, installer/EXE, multi-host/OneDrive semantics, DPI/clipboard and native Office acceptance remain pending. No new dependency was added for Rev D; reportlab's bundled fonts are embedded in the PDF.
+
+Q1–Q10/F01–F10 remain proposed. No repository actions, real/client data, paid/live AI, live integrations, publication, engineering sign-offs or release. Every physical method remains DEVELOPMENT/UNVERIFIED and engineering calculation remains BLOCKED. No detector curves, actual standard clauses, study criteria, leak frequencies or approvals were invented.

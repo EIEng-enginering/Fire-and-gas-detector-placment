@@ -1,0 +1,42 @@
+unit PASS code 0
+test_bad_inputs_rejected (test_geometry.GeometryPrototypes.test_bad_inputs_rejected) ... ok
+test_center_ray_occluded (test_geometry.GeometryPrototypes.test_center_ray_occluded) ... ok
+test_clear_ray (test_geometry.GeometryPrototypes.test_clear_ray) ... ok
+test_cone_reference (test_geometry.GeometryPrototypes.test_cone_reference) ... ok
+test_grazing_is_blocked (test_geometry.GeometryPrototypes.test_grazing_is_blocked) ... ok
+test_inside_start_is_blocked (test_geometry.GeometryPrototypes.test_inside_start_is_blocked) ... ok
+test_one_and_two_out_of_two (test_geometry.GeometryPrototypes.test_one_and_two_out_of_two) ... ok
+test_parallel_miss (test_geometry.GeometryPrototypes.test_parallel_miss) ... ok
+test_weighted_fraction (test_geometry.GeometryPrototypes.test_weighted_fraction) ... ok
+test_colour_contrast (test_theme.ThemeContract.test_colour_contrast) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK
+
+integration PASS code 0
+test_crash_recovery_explicit (test_case_lifecycle.CaseIntegration.test_crash_recovery_explicit) ... ok
+test_create_edit_save_reopen (test_case_lifecycle.CaseIntegration.test_create_edit_save_reopen) ... ok
+test_evidence_mandatory_and_synthetic (test_case_lifecycle.CaseIntegration.test_evidence_mandatory_and_synthetic) ... ok
+test_existing_case_not_overwritten (test_case_lifecycle.CaseIntegration.test_existing_case_not_overwritten) ... ok
+test_lock_refuses_second_writer (test_case_lifecycle.CaseIntegration.test_lock_refuses_second_writer) ... ok
+test_save_conflict_refuses_silent_overwrite (test_case_lifecycle.CaseIntegration.test_save_conflict_refuses_silent_overwrite) ... ok
+test_undo_is_compensating_event (test_case_lifecycle.CaseIntegration.test_undo_is_compensating_event) ... ok
+test_unsupported_schema_refused (test_case_lifecycle.CaseIntegration.test_unsupported_schema_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.176s
+
+OK
+
+acceptance PASS code 0
+test_end_to_end_no_real_data (test_synthetic_workflow.SyntheticAcceptance.test_end_to_end_no_real_data) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.026s
+
+OK
+
+EVIDENCE_DIR: /tmp/tmp.SyMBX4ynNg/TEST_RESULTS/20261116T032820Z
+Fresh-folder test: PASS (Linux Python 3.13 only, not Windows UI)

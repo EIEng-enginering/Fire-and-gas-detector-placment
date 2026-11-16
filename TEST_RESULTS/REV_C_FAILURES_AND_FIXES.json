@@ -1,0 +1,25 @@
+{
+  "status": "All known introduced test failures corrected; final audit must pass",
+  "failures": [
+    {
+      "failure": "Paste undo compared integer patch with SQLite REAL",
+      "resolution": "Normalize numeric command values before ledger storage; atomic paste/undo tests pass"
+    },
+    {
+      "failure": "Import attachment inserted before new evidence FK",
+      "resolution": "Evidence/scene/attachment/audit commit in one transaction; import tests pass"
+    },
+    {
+      "failure": "Import undo deleted evidence still required by retained source",
+      "resolution": "Source evidence retained and audited separately; reversible scene command only"
+    },
+    {
+      "failure": "NameError in headerData after highlighting patch",
+      "evidence": [
+        "REV_C_WORKFLOW_FINAL.txt",
+        "REV_C_WORKFLOW_WITH_CALC.txt"
+      ],
+      "resolution": "Correct header implementation and add child-process header/cell-role/numeric-sort/copy/follow regression; final workflow clean"
+    }
+  ]
+}

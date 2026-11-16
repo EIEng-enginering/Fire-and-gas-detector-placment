@@ -1,0 +1,22 @@
+{
+  "12_STUDY_DATA.json": {
+    "size": 45812,
+    "sha256": "1f4f3fec3612bab6e8fd1c284c27136c17d5dfdf65bdff3bdee4825f9551e4ed"
+  },
+  "QA.json": {
+    "size": 261,
+    "sha256": "b03a2a7dea7d9d678475413b2c9a84f8f0ee743d8a7f18edf22fb583ac489228"
+  },
+  "Registers.xlsx": {
+    "size": 11181,
+    "sha256": "bfd107b017a8107ed8e39161e8f91bb539fa82b5dbda43b4efbcc6213a987ed2"
+  },
+  "Study.docx": {
+    "size": 40877,
+    "sha256": "e14b50c4f8d60dbc29a357fcd432b1c7cea7daa944e47315649a1e173e01d959"
+  },
+  "Study.pdf": {
+    "size": 8930,
+    "sha256": "0c0f99b2652b38dd485b108e1a53edf345988b2b28515c9a69460728304be70e"
+  }
+}

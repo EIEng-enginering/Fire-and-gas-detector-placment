@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "json": "exact snapshot",
+  "xlsx": "all row IDs and values",
+  "docx": "all field names, IDs and values exact",
+  "pdf": "all field names, IDs and values modulo whitespace",
+  "record_rows": 22,
+  "finding_rows": 2,
+  "change_rows": 13,
+  "all_export_rows": 37,
+  "visual_QA": "SEPARATE REQUIRED STEP"
+}

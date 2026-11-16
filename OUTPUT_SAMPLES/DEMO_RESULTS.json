@@ -1,0 +1,46 @@
+{
+  "snapshot_sha256": "9a94150e7efeec420672288974b9c6e8c567fbfeae67757961c933050220fc68",
+  "record_rows": 21,
+  "files": [
+    "Study.zip",
+    "Study.pdf",
+    "12_STUDY_DATA.json",
+    "Registers.xlsx",
+    "Study.docx",
+    "MANIFEST.json",
+    "QA.json"
+  ],
+  "status": "DEVELOPMENT EXPORT / PARSER QA PASSED; visual QA separate",
+  "gas_demo_ppm_m": 200.0,
+  "scenario_demo": {
+    "metric": "SYNTHETIC scenario detection aggregation",
+    "qualification": "UNVERIFIED",
+    "frequency_units": "1/year",
+    "unweighted_mean_detection_probability": "0.5",
+    "frequency_weighted_detection_fraction": "0.25",
+    "timely_frequency_weighted_detection_fraction": "NOT SUPPLIED",
+    "total_frequency_per_year": "0.4",
+    "risk_reduction": "NOT CALCULATED",
+    "availability": "NOT CALCULATED"
+  },
+  "layout_demo": {
+    "status": "CANDIDATE SYNTHETIC PROPOSALS",
+    "qualification": "UNVERIFIED",
+    "enumerated": 2,
+    "pareto": [
+      {
+        "mount_ids": [
+          "SYN-A"
+        ],
+        "fraction": "1",
+        "cost": "1"
+      },
+      {
+        "mount_ids": [],
+        "fraction": "0",
+        "cost": "0"
+      }
+    ]
+  },
+  "engineering_refusal": "CANNOT CALCULATE engineering flame coverage: authorised manufacturer performance dataset, reviewed extended-fire target and study basis, independently reviewed flame response method and owner qualification"
+}

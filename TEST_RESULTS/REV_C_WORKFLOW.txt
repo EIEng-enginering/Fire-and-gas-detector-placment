@@ -1,0 +1,27 @@
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+{
+  "status": "PASS",
+  "Qt_platform": "offscreen",
+  "Windows": "NOT RUN",
+  "checks": [
+    "actual detector create/edit forms",
+    "generic undo/redo",
+    "filtered virtual detector grid",
+    "Ctrl+C",
+    "paste preview/apply",
+    "atomic linked-marker bulk move",
+    "equipment form",
+    "fire zone form and overlay",
+    "save/reopen",
+    "per-case viewport state",
+    "three theme captures",
+    "asynchronous five-format report export"
+  ],
+  "output": "/workspace/scratch/1969b32c6646/rev_c/OUTPUT_SAMPLES/REV_C_WORKFLOW_STUDY"
+}

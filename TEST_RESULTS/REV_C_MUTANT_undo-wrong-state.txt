@@ -1,0 +1,115 @@
+COMMAND ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-B', '-m', 'unittest', 'discover', '-s', '/workspace/scratch/1969b32c6646/rev_c/tests/integration', '-p', 'test_workspace.py', '-v']
+test_add_evidence_detector_geometry_atomic_undo_redo (test_workspace.Workspace.test_add_evidence_detector_geometry_atomic_undo_redo) ... ERROR
+test_duplicate_does_not_leave_orphan_evidence (test_workspace.Workspace.test_duplicate_does_not_leave_orphan_evidence) ... ok
+test_edit_marker_moves_and_undo_restores (test_workspace.Workspace.test_edit_marker_moves_and_undo_restores) ... ERROR
+test_foreign_edit_conflict_no_overwrite (test_workspace.Workspace.test_foreign_edit_conflict_no_overwrite) ... ok
+test_missing_actor_rolls_back_every_entity (test_workspace.Workspace.test_missing_actor_rolls_back_every_entity) ... ok
+test_multirow_paste_is_atomic (test_workspace.Workspace.test_multirow_paste_is_atomic) ... ERROR
+test_record_edit_remove_undo (test_workspace.Workspace.test_record_edit_remove_undo) ... ERROR
+test_record_invalid_bounds_no_change (test_workspace.Workspace.test_record_invalid_bounds_no_change) ... ok
+test_redo_invalidated_by_new_edit (test_workspace.Workspace.test_redo_invalidated_by_new_edit) ... ERROR
+test_second_marker_and_bulk_move_undo (test_workspace.Workspace.test_second_marker_and_bulk_move_undo) ... ERROR
+test_undo_persists_across_reopen (test_workspace.Workspace.test_undo_persists_across_reopen) ... ERROR
+
+======================================================================
+ERROR: test_add_evidence_detector_geometry_atomic_undo_redo (test_workspace.Workspace.test_add_evidence_detector_geometry_atomic_undo_redo)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/tests/integration/test_workspace.py", line 15, in test_add_evidence_detector_geometry_atomic_undo_redo
+    history(self.s,'TEST_ENGINE');self.assertEqual(self.s.detectors(),[]);self.assertIsNone(row(self.s,'evidence','SYN-E'));self.assertIsNone(get_scene(self.s))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/tmpaljoht9z/src/fgmapping/services/workspace.py", line 65, in history
+    _apply(session,changes)
+  File "/tmp/tmpaljoht9z/src/fgmapping/services/workspace.py", line 44, in _apply
+    if canonical(row(session,c['table'],c['key']))!=canonical(c['before']):raise CaseError('EDIT_CONFLICT','Record changed since this command was prepared')
+                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+fgmapping.errors.CaseError: EDIT_CONFLICT: Record changed since this command was prepared
+
+======================================================================
+ERROR: test_edit_marker_moves_and_undo_restores (test_workspace.Workspace.test_edit_marker_moves_and_undo_restores)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/tests/integration/test_workspace.py", line 43, in test_edit_marker_moves_and_undo_restores
+    self.assertEqual(get_scene(self.s).components[0].mesh.vertices[0],(8,2,3));history(self.s,'TEST_ENGINE');self.assertEqual(get_scene(self.s),before)
+                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/tmpaljoht9z/src/fgmapping/services/workspace.py", line 65, in history
+    _apply(session,changes)
+  File "/tmp/tmpaljoht9z/src/fgmapping/services/workspace.py", line 44, in _apply
+    if canonical(row(session,c['table'],c['key']))!=canonical(c['before']):raise CaseError('EDIT_CONFLICT','Record changed since this command was prepared')
+                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+fgmapping.errors.CaseError: EDIT_CONFLICT: Record changed since this command was prepared
+
+======================================================================
+ERROR: test_multirow_paste_is_atomic (test_workspace.Workspace.test_multirow_paste_is_atomic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/tests/integration/test_workspace.py", line 48, in test_multirow_paste_is_atomic
+    paste_detectors(self.s,[{'id':'SYN-D','x':7},{'id':'SYN-B','x':9}],'TEST_ENGINE');history(self.s,'TEST_ENGINE');self.assertEqual(row(self.s,'detectors','SYN-D')['x'],1)
+                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/tmpaljoht9z/src/fgmapping/services/workspace.py", line 65, in history
+    _apply(session,changes)
+  File "/tmp/tmpaljoht9z/src/fgmapping/services/workspace.py", line 44, in _apply
+    if canonical(row(session,c['table'],c['key']))!=canonical(c['before']):raise CaseError('EDIT_CONFLICT','Record changed since this command was prepared')
+                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+fgmapping.errors.CaseError: EDIT_CONFLICT: Record changed since this command was prepared
+
+======================================================================
+ERROR: test_record_edit_remove_undo (test_workspace.Workspace.test_record_edit_remove_undo)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/tests/integration/test_workspace.py", line 26, in test_record_edit_remove_undo
+    remove_record(self.s,'ZONE','TEST_ENGINE');self.assertIsNone(row(self.s,'engineering_record','ZONE'));history(self.s,'TEST_ENGINE');self.assertIsNotNone(row(self.s,'engineering_record','ZONE'))
+                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/tmpaljoht9z/src/fgmapping/services/workspace.py", line 65, in history
+    _apply(session,changes)
+  File "/tmp/tmpaljoht9z/src/fgmapping/services/workspace.py", line 44, in _apply
+    if canonical(row(session,c['table'],c['key']))!=canonical(c['before']):raise CaseError('EDIT_CONFLICT','Record changed since this command was prepared')
+                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+fgmapping.errors.CaseError: EDIT_CONFLICT: Record changed since this command was prepared
+
+======================================================================
+ERROR: test_redo_invalidated_by_new_edit (test_workspace.Workspace.test_redo_invalidated_by_new_edit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/tests/integration/test_workspace.py", line 34, in test_redo_invalidated_by_new_edit
+    self.add();history(self.s,'TEST_ENGINE');self.add()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/tmpaljoht9z/src/fgmapping/services/workspace.py", line 65, in history
+    _apply(session,changes)
+  File "/tmp/tmpaljoht9z/src/fgmapping/services/workspace.py", line 44, in _apply
+    if canonical(row(session,c['table'],c['key']))!=canonical(c['before']):raise CaseError('EDIT_CONFLICT','Record changed since this command was prepared')
+                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+fgmapping.errors.CaseError: EDIT_CONFLICT: Record changed since this command was prepared
+
+======================================================================
+ERROR: test_second_marker_and_bulk_move_undo (test_workspace.Workspace.test_second_marker_and_bulk_move_undo)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/tests/integration/test_workspace.py", line 55, in test_second_marker_and_bulk_move_undo
+    history(self.s,'TEST_ENGINE');self.assertEqual(get_scene(self.s),old)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/tmpaljoht9z/src/fgmapping/services/workspace.py", line 65, in history
+    _apply(session,changes)
+  File "/tmp/tmpaljoht9z/src/fgmapping/services/workspace.py", line 44, in _apply
+    if canonical(row(session,c['table'],c['key']))!=canonical(c['before']):raise CaseError('EDIT_CONFLICT','Record changed since this command was prepared')
+                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+fgmapping.errors.CaseError: EDIT_CONFLICT: Record changed since this command was prepared
+
+======================================================================
+ERROR: test_undo_persists_across_reopen (test_workspace.Workspace.test_undo_persists_across_reopen)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/tests/integration/test_workspace.py", line 32, in test_undo_persists_across_reopen
+    self.add();self.s.save();self.s.close();self.s=CaseSession(self.path,self.root/'runtime');history(self.s,'TEST_ENGINE');self.assertEqual(self.s.detectors(),[])
+                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/tmpaljoht9z/src/fgmapping/services/workspace.py", line 65, in history
+    _apply(session,changes)
+  File "/tmp/tmpaljoht9z/src/fgmapping/services/workspace.py", line 44, in _apply
+    if canonical(row(session,c['table'],c['key']))!=canonical(c['before']):raise CaseError('EDIT_CONFLICT','Record changed since this command was prepared')
+                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+fgmapping.errors.CaseError: EDIT_CONFLICT: Record changed since this command was prepared
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.072s
+
+FAILED (errors=7)

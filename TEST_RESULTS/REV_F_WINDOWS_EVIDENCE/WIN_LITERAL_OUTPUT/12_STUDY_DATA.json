@@ -1,0 +1,2033 @@
+{
+  "calculation_artifacts": [],
+  "case": {
+    "case_uuid": "1b7058e3-e7d2-468c-ade6-74af83b5df03",
+    "name": "SYNTHETIC LITERAL EQUALS REPORT",
+    "schema_version": 3,
+    "status": "DEVELOPMENT BUILD"
+  },
+  "data_class": "SYNTHETIC",
+  "datasets": {
+    "calculation_runs": [],
+    "components": [
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "DECK",
+        "label": "Deck",
+        "mesh_sha256": "f69a423d1b4e8fa3b026c5a523b8b9946de486abcd7185a67e6ca3294c58c55f",
+        "qualification": "UNVERIFIED",
+        "semantic": "DECK",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "V101",
+        "label": "Vessel 101 envelope",
+        "mesh_sha256": "5ad2961c6065ac1481ad8e49130131e8f66d0255b235048fc8f624c53e57e069",
+        "qualification": "UNVERIFIED",
+        "semantic": "EQUIPMENT",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "V102",
+        "label": "Vessel 102 envelope",
+        "mesh_sha256": "360cab8c33d8b62702fdfb7a852a414dc192291f0351c0c51639fbd33b5fdf77",
+        "qualification": "UNVERIFIED",
+        "semantic": "EQUIPMENT",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "WALL",
+        "label": "Module wall",
+        "mesh_sha256": "5a4841d8f8d9cfc53bcaea9ac31a5abfcb6c12d3ab61bb5cd506ecf9114dfc81",
+        "qualification": "UNVERIFIED",
+        "semantic": "WALL",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "PIPE",
+        "label": "Pipe envelope",
+        "mesh_sha256": "16384a0bae7f5c94b30184bccdad0cfa21fa538df58686b9d951fde57b410185",
+        "qualification": "UNVERIFIED",
+        "semantic": "PIPE",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "FD101",
+        "label": "Detector position 101",
+        "mesh_sha256": "687a1aa0f1dbe9180a58cf82c689c5263904b0ee1449a23841d09330465da017",
+        "qualification": "UNVERIFIED",
+        "semantic": "DETECTOR",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "FD102",
+        "label": "Detector position 102",
+        "mesh_sha256": "df3ac549de7d7058099ba14ef2e04ce266521f2cfe77fc7ce8d25e30f20a3d47",
+        "qualification": "UNVERIFIED",
+        "semantic": "DETECTOR",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE0",
+        "label": "Grating strip 0",
+        "mesh_sha256": "7fe6ac307c40733b3e1938d85fcf6bd1c0f87f880bacbdf9149ab8b8d436fc57",
+        "qualification": "UNVERIFIED",
+        "semantic": "GRATING",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE1",
+        "label": "Grating strip 1",
+        "mesh_sha256": "1fa7494034413c5898c67e4b621a33b71a29d498cf994299123f6fa26a7cec00",
+        "qualification": "UNVERIFIED",
+        "semantic": "GRATING",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE2",
+        "label": "Grating strip 2",
+        "mesh_sha256": "2e27d7ec4bedacd1f7290d2545f957b82f87d9ac36ec9114c0c95fdd602b294e",
+        "qualification": "UNVERIFIED",
+        "semantic": "GRATING",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE3",
+        "label": "Grating strip 3",
+        "mesh_sha256": "07f6956d5a697f3a55e0c279f20c52468a1fad78096c7102a0f41e7abf8f94f4",
+        "qualification": "UNVERIFIED",
+        "semantic": "GRATING",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE4",
+        "label": "Grating strip 4",
+        "mesh_sha256": "53548b8bb46dd3add19cbb216e9175c1b6e4cb44c163670b84248777c2fb81b1",
+        "qualification": "UNVERIFIED",
+        "semantic": "GRATING",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE5",
+        "label": "Grating strip 5",
+        "mesh_sha256": "4cae28af3a2626f576f97338ce4988356f5a6eafc644e2d0c5a722b498e882c1",
+        "qualification": "UNVERIFIED",
+        "semantic": "GRATING",
+        "source_units": "m"
+      }
+    ],
+    "detectors": [
+      {
+        "azimuth_deg": 0.0,
+        "detector_type": "FLAME",
+        "elevation_deg": 0.0,
+        "evidence_id": "SYN-GEOM-01",
+        "id": "SYN-LIT-D0",
+        "manufacturer": "=1+1",
+        "model": "=1+1",
+        "review_status": "CANDIDATE",
+        "roll_deg": 0.0,
+        "sensitivity": "TEST",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      {
+        "azimuth_deg": 0.0,
+        "detector_type": "FLAME",
+        "elevation_deg": 0.0,
+        "evidence_id": "SYN-GEOM-01",
+        "id": "SYN-LIT-D1",
+        "manufacturer": "=HYPERLINK(\"http://example.invalid\",\"SYNTHETIC\")",
+        "model": "=HYPERLINK(\"http://example.invalid\",\"SYNTHETIC\")",
+        "review_status": "CANDIDATE",
+        "roll_deg": 0.0,
+        "sensitivity": "TEST",
+        "x": 1.0,
+        "y": 0.0,
+        "z": 3.0
+      }
+    ],
+    "evidence": [
+      {
+        "data_class": "SYNTHETIC",
+        "description": "=1+1 synthetic literal evidence text",
+        "document_revision": "A",
+        "id": "SYN-GEOM-01",
+        "kind": "SYNTHETIC",
+        "location_ref": "generated"
+      }
+    ],
+    "findings": [
+      {
+        "id": "GEO-UNVERIFIED",
+        "message": "Self-intersections, CAD fidelity and engineering obstruction roles remain unverified",
+        "object_id": "STUDY",
+        "qualification": "UNVERIFIED",
+        "severity": "REVIEW",
+        "status": "OPEN"
+      },
+      {
+        "id": "PERFORMANCE-SYN-LIT-D0",
+        "message": "No implemented authorised manufacturer response dataset; engineering coverage unavailable",
+        "object_id": "SYN-LIT-D0",
+        "qualification": "UNVERIFIED",
+        "severity": "BLOCKING",
+        "status": "OPEN"
+      },
+      {
+        "id": "PLACEMENT-SYN-LIT-D0",
+        "message": "No explicit shared-ID detector geometry marker; stored register coordinates remain available",
+        "object_id": "SYN-LIT-D0",
+        "qualification": "UNVERIFIED",
+        "severity": "REVIEW",
+        "status": "OPEN"
+      },
+      {
+        "id": "PERFORMANCE-SYN-LIT-D1",
+        "message": "No implemented authorised manufacturer response dataset; engineering coverage unavailable",
+        "object_id": "SYN-LIT-D1",
+        "qualification": "UNVERIFIED",
+        "severity": "BLOCKING",
+        "status": "OPEN"
+      },
+      {
+        "id": "PLACEMENT-SYN-LIT-D1",
+        "message": "No explicit shared-ID detector geometry marker; stored register coordinates remain available",
+        "object_id": "SYN-LIT-D1",
+        "qualification": "UNVERIFIED",
+        "severity": "REVIEW",
+        "status": "OPEN"
+      },
+      {
+        "id": "READINESS-MISSING-0",
+        "message": "Missing input: PERFORMANCE_DATASET:SYN-LIT-D0",
+        "object_id": "STUDY",
+        "qualification": "UNVERIFIED",
+        "severity": "BLOCKING",
+        "status": "OPEN"
+      },
+      {
+        "id": "READINESS-MISSING-1",
+        "message": "Missing input: PERFORMANCE_DATASET:SYN-LIT-D1",
+        "object_id": "STUDY",
+        "qualification": "UNVERIFIED",
+        "severity": "BLOCKING",
+        "status": "OPEN"
+      },
+      {
+        "id": "READINESS-MISSING-2",
+        "message": "Missing input: STUDY_BASIS",
+        "object_id": "STUDY",
+        "qualification": "UNVERIFIED",
+        "severity": "BLOCKING",
+        "status": "OPEN"
+      }
+    ],
+    "geometry_sources": [],
+    "mounts": [],
+    "performance_links": [],
+    "performance_preparation": [
+      {
+        "conditions": {
+          "environment_reference": "Synthetic test only",
+          "fuel_or_gas": "SYNTHETIC",
+          "method_scope": "PREPARATION ONLY / NO ENGINEERING RESPONSE",
+          "target_description": "Synthetic software fixture; no physical fire-response model"
+        },
+        "id": "SYN-LIT-PERF-0",
+        "import_sha256": "fd981abe3098fcdef5944ec989bfb7268e1beda1e54b7da1ff0f76fc3910431c",
+        "manufacturer": "=1+1",
+        "model": "=1+1",
+        "qualification": "UNVERIFIED",
+        "revision": "=1+1",
+        "samples": [
+          {
+            "azimuth_deg": 0,
+            "elevation_deg": 0,
+            "range_m": 1,
+            "response_time_s": 1,
+            "source_locator": "Synthetic row 1"
+          }
+        ],
+        "sensitivity": "TEST",
+        "source": {
+          "licence_basis": "SYNTHETIC GENERATED",
+          "locator": "Synthetic row set",
+          "revision": "A",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "title": "Generated schema fixture, not vendor data"
+        },
+        "status": "CANDIDATE",
+        "units": {
+          "angle": "deg",
+          "distance": "m",
+          "response_time": "s"
+        }
+      },
+      {
+        "conditions": {
+          "environment_reference": "Synthetic test only",
+          "fuel_or_gas": "SYNTHETIC",
+          "method_scope": "PREPARATION ONLY / NO ENGINEERING RESPONSE",
+          "target_description": "Synthetic software fixture; no physical fire-response model"
+        },
+        "id": "SYN-LIT-PERF-1",
+        "import_sha256": "10a8a254979c0bab982a5c04d2cfd6c18693e900f6fd3ea2410ff346fa8a3822",
+        "manufacturer": "=HYPERLINK(\"http://example.invalid\",\"SYNTHETIC\")",
+        "model": "=HYPERLINK(\"http://example.invalid\",\"SYNTHETIC\")",
+        "qualification": "UNVERIFIED",
+        "revision": "=HYPERLINK(\"http://example.invalid\",\"SYNTHETIC\")",
+        "samples": [
+          {
+            "azimuth_deg": 0,
+            "elevation_deg": 0,
+            "range_m": 1,
+            "response_time_s": 1,
+            "source_locator": "Synthetic row 1"
+          }
+        ],
+        "sensitivity": "TEST",
+        "source": {
+          "licence_basis": "SYNTHETIC GENERATED",
+          "locator": "Synthetic row set",
+          "revision": "A",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "title": "Generated schema fixture, not vendor data"
+        },
+        "status": "CANDIDATE",
+        "units": {
+          "angle": "deg",
+          "distance": "m",
+          "response_time": "s"
+        }
+      }
+    ],
+    "preparation_reviews": [],
+    "records": [],
+    "study_basis": [],
+    "unresolved_inputs": [
+      {
+        "axis": "missing",
+        "id": "MISSING-1",
+        "message": "PERFORMANCE_DATASET:SYN-LIT-D0",
+        "qualification": "UNVERIFIED",
+        "status": "OPEN"
+      },
+      {
+        "axis": "missing",
+        "id": "MISSING-2",
+        "message": "PERFORMANCE_DATASET:SYN-LIT-D1",
+        "qualification": "UNVERIFIED",
+        "status": "OPEN"
+      },
+      {
+        "axis": "missing",
+        "id": "MISSING-3",
+        "message": "STUDY_BASIS",
+        "qualification": "UNVERIFIED",
+        "status": "OPEN"
+      },
+      {
+        "axis": "engineering_blockers",
+        "id": "ENGINEERING_BLOCKERS-1",
+        "message": "No qualified manufacturer response engine",
+        "qualification": "UNVERIFIED",
+        "status": "OPEN"
+      },
+      {
+        "axis": "engineering_blockers",
+        "id": "ENGINEERING_BLOCKERS-2",
+        "message": "No authorised real vendor performance basis",
+        "qualification": "UNVERIFIED",
+        "status": "OPEN"
+      },
+      {
+        "axis": "engineering_blockers",
+        "id": "ENGINEERING_BLOCKERS-3",
+        "message": "Independent engineering review and owner promotion required",
+        "qualification": "UNVERIFIED",
+        "status": "OPEN"
+      }
+    ]
+  },
+  "ledger": [
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "ENABLE_GEOMETRY",
+      "event_id": 1,
+      "forward_json": "{\"schema\": 2}",
+      "inverse_json": "{\"rollback\": \"restore pre-upgrade backup; no destructive downgrade\"}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T07:52:38.495016+00:00"
+    },
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "ADD_EVIDENCE",
+      "event_id": 2,
+      "forward_json": "{\"data_class\": \"SYNTHETIC\", \"id\": \"SYN-GEOM-01\", \"kind\": \"SYNTHETIC\", \"location\": \"generated\", \"source\": \"A\"}",
+      "inverse_json": "{\"delete_id\": \"SYN-GEOM-01\"}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T07:52:38.509180+00:00"
+    },
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "SET_SCENE",
+      "event_id": 3,
+      "forward_json": "{\"scene\": {\"components\": [{\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"DECK\", \"label\": \"Deck\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[-1.0, -1.0, -0.4], [21.0, -1.0, -0.4], [21.0, 13.0, -0.4], [-1.0, 13.0, -0.4], [-1.0, -1.0, 0.0], [21.0, -1.0, 0.0], [21.0, 13.0, 0.0], [-1.0, 13.0, 0.0]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"DECK\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"V101\", \"label\": \"Vessel 101 envelope\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[3.0, 3.0, 0.0], [6.0, 3.0, 0.0], [6.0, 6.0, 0.0], [3.0, 6.0, 0.0], [3.0, 3.0, 5.0], [6.0, 3.0, 5.0], [6.0, 6.0, 5.0], [3.0, 6.0, 5.0]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"EQUIPMENT\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"V102\", \"label\": \"Vessel 102 envelope\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[12.0, 6.0, 0.0], [16.0, 6.0, 0.0], [16.0, 10.0, 0.0], [12.0, 10.0, 0.0], [12.0, 6.0, 4.0], [16.0, 6.0, 4.0], [16.0, 10.0, 4.0], [12.0, 10.0, 4.0]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"EQUIPMENT\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"WALL\", \"label\": \"Module wall\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[9.0, 0.0, 0.0], [9.3, 0.0, 0.0], [9.3, 8.0, 0.0], [9.0, 8.0, 0.0], [9.0, 0.0, 6.0], [9.3, 0.0, 6.0], [9.3, 8.0, 6.0], [9.0, 8.0, 6.0]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"WALL\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"PIPE\", \"label\": \"Pipe envelope\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[1.0, 10.0, 2.0], [19.0, 10.0, 2.0], [19.0, 10.4, 2.0], [1.0, 10.4, 2.0], [1.0, 10.0, 2.4], [19.0, 10.0, 2.4], [19.0, 10.4, 2.4], [1.0, 10.4, 2.4]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"PIPE\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"FD101\", \"label\": \"Detector position 101\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[0.0, 0.0, 3.0], [0.4, 0.0, 3.0], [0.4, 0.4, 3.0], [0.0, 0.4, 3.0], [0.0, 0.0, 3.4], [0.4, 0.0, 3.4], [0.4, 0.4, 3.4], [0.0, 0.4, 3.4]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"DETECTOR\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"FD102\", \"label\": \"Detector position 102\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[19.0, 11.0, 4.0], [19.4, 11.0, 4.0], [19.4, 11.4, 4.0], [19.0, 11.4, 4.0], [19.0, 11.0, 4.4], [19.4, 11.0, 4.4], [19.4, 11.4, 4.4], [19.0, 11.4, 4.4]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"DETECTOR\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"GRATE0\", \"label\": \"Grating strip 0\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[0.0, 11.0, 0.1], [0.2, 11.0, 0.1], [0.2, 12.0, 0.1], [0.0, 12.0, 0.1], [0.0, 11.0, 0.2], [0.2, 11.0, 0.2], [0.2, 12.0, 0.2], [0.0, 12.0, 0.2]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"GRATING\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"GRATE1\", \"label\": \"Grating strip 1\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[1.2, 11.0, 0.1], [1.4, 11.0, 0.1], [1.4, 12.0, 0.1], [1.2, 12.0, 0.1], [1.2, 11.0, 0.2], [1.4, 11.0, 0.2], [1.4, 12.0, 0.2], [1.2, 12.0, 0.2]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"GRATING\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"GRATE2\", \"label\": \"Grating strip 2\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[2.4, 11.0, 0.1], [2.6, 11.0, 0.1], [2.6, 12.0, 0.1], [2.4, 12.0, 0.1], [2.4, 11.0, 0.2], [2.6, 11.0, 0.2], [2.6, 12.0, 0.2], [2.4, 12.0, 0.2]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"GRATING\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"GRATE3\", \"label\": \"Grating strip 3\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[3.5999999999999996, 11.0, 0.1], [3.8, 11.0, 0.1], [3.8, 12.0, 0.1], [3.5999999999999996, 12.0, 0.1], [3.5999999999999996, 11.0, 0.2], [3.8, 11.0, 0.2], [3.8, 12.0, 0.2], [3.5999999999999996, 12.0, 0.2]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"GRATING\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"GRATE4\", \"label\": \"Grating strip 4\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[4.8, 11.0, 0.1], [5.0, 11.0, 0.1], [5.0, 12.0, 0.1], [4.8, 12.0, 0.1], [4.8, 11.0, 0.2], [5.0, 11.0, 0.2], [5.0, 12.0, 0.2], [4.8, 12.0, 0.2]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"GRATING\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"GRATE5\", \"label\": \"Grating strip 5\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[6.0, 11.0, 0.1], [6.2, 11.0, 0.1], [6.2, 12.0, 0.1], [6.0, 12.0, 0.1], [6.0, 11.0, 0.2], [6.2, 11.0, 0.2], [6.2, 12.0, 0.2], [6.0, 12.0, 0.2]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"GRATING\"}], \"data_class\": \"SYNTHETIC\", \"frames\": [{\"datum\": \"SYNTHETIC local origin; X east, Y north, Z up\", \"handedness\": \"RIGHT\", \"id\": \"LOCAL\", \"matrix\": [[1.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], [0.0, 0.0, 0.0, 1.0]], \"units\": \"m\"}], \"source_revision\": \"SYN-A\", \"source_sha256\": \"34369efea48750a18e2e5494438d9e6753c3dbf3c5b1a7adde2060e839a19198\"}}",
+      "inverse_json": "{\"scene\": null}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T07:52:38.540970+00:00"
+    },
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "ENABLE_STUDY3",
+      "event_id": 4,
+      "forward_json": "{\"schema\": 3}",
+      "inverse_json": "{\"restore_backup\": \"13dfc7b5c2b04cb6c5f0306a_pre_study3_6e5edcbd097741eab14ba458e21d0c90.fgcase\"}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T07:52:38.572863+00:00"
+    },
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "WORKSPACE_EDIT",
+      "event_id": 5,
+      "forward_json": "{\"changes\": [{\"after\": {\"detector_type\": \"FLAME\", \"evidence_id\": \"SYN-GEOM-01\", \"id\": \"SYN-LIT-D0\", \"review_status\": \"CANDIDATE\", \"x\": 0.0, \"y\": 0.0, \"z\": 3.0}, \"before\": null, \"key\": \"SYN-LIT-D0\", \"table\": \"detectors\"}, {\"after\": {\"azimuth\": 0.0, \"detector_id\": \"SYN-LIT-D0\", \"elevation\": 0.0, \"manufacturer\": \"=1+1\", \"model\": \"=1+1\", \"roll\": 0.0, \"sensitivity\": \"TEST\"}, \"before\": null, \"key\": \"SYN-LIT-D0\", \"table\": \"detector_details\"}], \"description\": \"Add detector SYN-LIT-D0\"}",
+      "inverse_json": "{\"changes\": [{\"after\": null, \"before\": {\"azimuth\": 0.0, \"detector_id\": \"SYN-LIT-D0\", \"elevation\": 0.0, \"manufacturer\": \"=1+1\", \"model\": \"=1+1\", \"roll\": 0.0, \"sensitivity\": \"TEST\"}, \"key\": \"SYN-LIT-D0\", \"table\": \"detector_details\"}, {\"after\": null, \"before\": {\"detector_type\": \"FLAME\", \"evidence_id\": \"SYN-GEOM-01\", \"id\": \"SYN-LIT-D0\", \"review_status\": \"CANDIDATE\", \"x\": 0.0, \"y\": 0.0, \"z\": 3.0}, \"key\": \"SYN-LIT-D0\", \"table\": \"detectors\"}]}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T07:52:38.590753+00:00"
+    },
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "WORKSPACE_EDIT",
+      "event_id": 6,
+      "forward_json": "{\"changes\": [{\"after\": {\"detector_type\": \"FLAME\", \"evidence_id\": \"SYN-GEOM-01\", \"id\": \"SYN-LIT-D1\", \"review_status\": \"CANDIDATE\", \"x\": 1.0, \"y\": 0.0, \"z\": 3.0}, \"before\": null, \"key\": \"SYN-LIT-D1\", \"table\": \"detectors\"}, {\"after\": {\"azimuth\": 0.0, \"detector_id\": \"SYN-LIT-D1\", \"elevation\": 0.0, \"manufacturer\": \"=HYPERLINK(\\\"http://example.invalid\\\",\\\"SYNTHETIC\\\")\", \"model\": \"=HYPERLINK(\\\"http://example.invalid\\\",\\\"SYNTHETIC\\\")\", \"roll\": 0.0, \"sensitivity\": \"TEST\"}, \"before\": null, \"key\": \"SYN-LIT-D1\", \"table\": \"detector_details\"}], \"description\": \"Add detector SYN-LIT-D1\"}",
+      "inverse_json": "{\"changes\": [{\"after\": null, \"before\": {\"azimuth\": 0.0, \"detector_id\": \"SYN-LIT-D1\", \"elevation\": 0.0, \"manufacturer\": \"=HYPERLINK(\\\"http://example.invalid\\\",\\\"SYNTHETIC\\\")\", \"model\": \"=HYPERLINK(\\\"http://example.invalid\\\",\\\"SYNTHETIC\\\")\", \"roll\": 0.0, \"sensitivity\": \"TEST\"}, \"key\": \"SYN-LIT-D1\", \"table\": \"detector_details\"}, {\"after\": null, \"before\": {\"detector_type\": \"FLAME\", \"evidence_id\": \"SYN-GEOM-01\", \"id\": \"SYN-LIT-D1\", \"review_status\": \"CANDIDATE\", \"x\": 1.0, \"y\": 0.0, \"z\": 3.0}, \"key\": \"SYN-LIT-D1\", \"table\": \"detectors\"}]}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T07:52:38.608812+00:00"
+    },
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "WORKSPACE_EDIT",
+      "event_id": 7,
+      "forward_json": "{\"changes\": [{\"after\": {\"id\": \"SYN-LIT-PERF-0\", \"import_sha256\": \"fd981abe3098fcdef5944ec989bfb7268e1beda1e54b7da1ff0f76fc3910431c\", \"payload_json\": \"{\\\"conditions\\\":{\\\"environment_reference\\\":\\\"Synthetic test only\\\",\\\"fuel_or_gas\\\":\\\"SYNTHETIC\\\",\\\"method_scope\\\":\\\"PREPARATION ONLY / NO ENGINEERING RESPONSE\\\",\\\"target_description\\\":\\\"Synthetic software fixture; no physical fire-response model\\\"},\\\"contract\\\":\\\"fg-performance-preparation/1\\\",\\\"data_class\\\":\\\"SYNTHETIC\\\",\\\"manufacturer\\\":\\\"=1+1\\\",\\\"model\\\":\\\"=1+1\\\",\\\"revision\\\":\\\"=1+1\\\",\\\"samples\\\":[{\\\"azimuth_deg\\\":0,\\\"elevation_deg\\\":0,\\\"range_m\\\":1,\\\"response_time_s\\\":1,\\\"source_locator\\\":\\\"Synthetic row 1\\\"}],\\\"sensitivity\\\":\\\"TEST\\\",\\\"source\\\":{\\\"licence_basis\\\":\\\"SYNTHETIC GENERATED\\\",\\\"locator\\\":\\\"Synthetic row set\\\",\\\"revision\\\":\\\"A\\\",\\\"sha256\\\":\\\"0000000000000000000000000000000000000000000000000000000000000000\\\",\\\"title\\\":\\\"Generated schema fixture, not vendor data\\\"},\\\"units\\\":{\\\"angle\\\":\\\"deg\\\",\\\"distance\\\":\\\"m\\\",\\\"response_time\\\":\\\"s\\\"}}\", \"raw_text\": \"{\\\"contract\\\": \\\"fg-performance-preparation/1\\\", \\\"data_class\\\": \\\"SYNTHETIC\\\", \\\"manufacturer\\\": \\\"=1+1\\\", \\\"model\\\": \\\"=1+1\\\", \\\"revision\\\": \\\"=1+1\\\", \\\"sensitivity\\\": \\\"TEST\\\", \\\"source\\\": {\\\"title\\\": \\\"Generated schema fixture, not vendor data\\\", \\\"revision\\\": \\\"A\\\", \\\"locator\\\": \\\"Synthetic row set\\\", \\\"sha256\\\": \\\"0000000000000000000000000000000000000000000000000000000000000000\\\", \\\"licence_basis\\\": \\\"SYNTHETIC GENERATED\\\"}, \\\"conditions\\\": {\\\"fuel_or_gas\\\": \\\"SYNTHETIC\\\", \\\"target_description\\\": \\\"Synthetic software fixture; no physical fire-response model\\\", \\\"environment_reference\\\": \\\"Synthetic test only\\\", \\\"method_scope\\\": \\\"PREPARATION ONLY / NO ENGINEERING RESPONSE\\\"}, \\\"units\\\": {\\\"distance\\\": \\\"m\\\", \\\"angle\\\": \\\"deg\\\", \\\"response_time\\\": \\\"s\\\"}, \\\"samples\\\": [{\\\"azimuth_deg\\\": 0, \\\"elevation_deg\\\": 0, \\\"range_m\\\": 1, \\\"response_time_s\\\": 1, \\\"source_locator\\\": \\\"Synthetic row 1\\\"}]}\", \"status\": \"CANDIDATE\"}, \"before\": null, \"key\": \"SYN-LIT-PERF-0\", \"table\": \"performance_dataset\"}], \"description\": \"Import SYNTHETIC performance preparation SYN-LIT-PERF-0\"}",
+      "inverse_json": "{\"changes\": [{\"after\": null, \"before\": {\"id\": \"SYN-LIT-PERF-0\", \"import_sha256\": \"fd981abe3098fcdef5944ec989bfb7268e1beda1e54b7da1ff0f76fc3910431c\", \"payload_json\": \"{\\\"conditions\\\":{\\\"environment_reference\\\":\\\"Synthetic test only\\\",\\\"fuel_or_gas\\\":\\\"SYNTHETIC\\\",\\\"method_scope\\\":\\\"PREPARATION ONLY / NO ENGINEERING RESPONSE\\\",\\\"target_description\\\":\\\"Synthetic software fixture; no physical fire-response model\\\"},\\\"contract\\\":\\\"fg-performance-preparation/1\\\",\\\"data_class\\\":\\\"SYNTHETIC\\\",\\\"manufacturer\\\":\\\"=1+1\\\",\\\"model\\\":\\\"=1+1\\\",\\\"revision\\\":\\\"=1+1\\\",\\\"samples\\\":[{\\\"azimuth_deg\\\":0,\\\"elevation_deg\\\":0,\\\"range_m\\\":1,\\\"response_time_s\\\":1,\\\"source_locator\\\":\\\"Synthetic row 1\\\"}],\\\"sensitivity\\\":\\\"TEST\\\",\\\"source\\\":{\\\"licence_basis\\\":\\\"SYNTHETIC GENERATED\\\",\\\"locator\\\":\\\"Synthetic row set\\\",\\\"revision\\\":\\\"A\\\",\\\"sha256\\\":\\\"0000000000000000000000000000000000000000000000000000000000000000\\\",\\\"title\\\":\\\"Generated schema fixture, not vendor data\\\"},\\\"units\\\":{\\\"angle\\\":\\\"deg\\\",\\\"distance\\\":\\\"m\\\",\\\"response_time\\\":\\\"s\\\"}}\", \"raw_text\": \"{\\\"contract\\\": \\\"fg-performance-preparation/1\\\", \\\"data_class\\\": \\\"SYNTHETIC\\\", \\\"manufacturer\\\": \\\"=1+1\\\", \\\"model\\\": \\\"=1+1\\\", \\\"revision\\\": \\\"=1+1\\\", \\\"sensitivity\\\": \\\"TEST\\\", \\\"source\\\": {\\\"title\\\": \\\"Generated schema fixture, not vendor data\\\", \\\"revision\\\": \\\"A\\\", \\\"locator\\\": \\\"Synthetic row set\\\", \\\"sha256\\\": \\\"0000000000000000000000000000000000000000000000000000000000000000\\\", \\\"licence_basis\\\": \\\"SYNTHETIC GENERATED\\\"}, \\\"conditions\\\": {\\\"fuel_or_gas\\\": \\\"SYNTHETIC\\\", \\\"target_description\\\": \\\"Synthetic software fixture; no physical fire-response model\\\", \\\"environment_reference\\\": \\\"Synthetic test only\\\", \\\"method_scope\\\": \\\"PREPARATION ONLY / NO ENGINEERING RESPONSE\\\"}, \\\"units\\\": {\\\"distance\\\": \\\"m\\\", \\\"angle\\\": \\\"deg\\\", \\\"response_time\\\": \\\"s\\\"}, \\\"samples\\\": [{\\\"azimuth_deg\\\": 0, \\\"elevation_deg\\\": 0, \\\"range_m\\\": 1, \\\"response_time_s\\\": 1, \\\"source_locator\\\": \\\"Synthetic row 1\\\"}]}\", \"status\": \"CANDIDATE\"}, \"key\": \"SYN-LIT-PERF-0\", \"table\": \"performance_dataset\"}]}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T07:52:38.622407+00:00"
+    },
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "WORKSPACE_EDIT",
+      "event_id": 8,
+      "forward_json": "{\"changes\": [{\"after\": {\"id\": \"SYN-LIT-PERF-1\", \"import_sha256\": \"10a8a254979c0bab982a5c04d2cfd6c18693e900f6fd3ea2410ff346fa8a3822\", \"payload_json\": \"{\\\"conditions\\\":{\\\"environment_reference\\\":\\\"Synthetic test only\\\",\\\"fuel_or_gas\\\":\\\"SYNTHETIC\\\",\\\"method_scope\\\":\\\"PREPARATION ONLY / NO ENGINEERING RESPONSE\\\",\\\"target_description\\\":\\\"Synthetic software fixture; no physical fire-response model\\\"},\\\"contract\\\":\\\"fg-performance-preparation/1\\\",\\\"data_class\\\":\\\"SYNTHETIC\\\",\\\"manufacturer\\\":\\\"=HYPERLINK(\\\\\\\"http://example.invalid\\\\\\\",\\\\\\\"SYNTHETIC\\\\\\\")\\\",\\\"model\\\":\\\"=HYPERLINK(\\\\\\\"http://example.invalid\\\\\\\",\\\\\\\"SYNTHETIC\\\\\\\")\\\",\\\"revision\\\":\\\"=HYPERLINK(\\\\\\\"http://example.invalid\\\\\\\",\\\\\\\"SYNTHETIC\\\\\\\")\\\",\\\"samples\\\":[{\\\"azimuth_deg\\\":0,\\\"elevation_deg\\\":0,\\\"range_m\\\":1,\\\"response_time_s\\\":1,\\\"source_locator\\\":\\\"Synthetic row 1\\\"}],\\\"sensitivity\\\":\\\"TEST\\\",\\\"source\\\":{\\\"licence_basis\\\":\\\"SYNTHETIC GENERATED\\\",\\\"locator\\\":\\\"Synthetic row set\\\",\\\"revision\\\":\\\"A\\\",\\\"sha256\\\":\\\"0000000000000000000000000000000000000000000000000000000000000000\\\",\\\"title\\\":\\\"Generated schema fixture, not vendor data\\\"},\\\"units\\\":{\\\"angle\\\":\\\"deg\\\",\\\"distance\\\":\\\"m\\\",\\\"response_time\\\":\\\"s\\\"}}\", \"raw_text\": \"{\\\"contract\\\": \\\"fg-performance-preparation/1\\\", \\\"data_class\\\": \\\"SYNTHETIC\\\", \\\"manufacturer\\\": \\\"=HYPERLINK(\\\\\\\"http://example.invalid\\\\\\\",\\\\\\\"SYNTHETIC\\\\\\\")\\\", \\\"model\\\": \\\"=HYPERLINK(\\\\\\\"http://example.invalid\\\\\\\",\\\\\\\"SYNTHETIC\\\\\\\")\\\", \\\"revision\\\": \\\"=HYPERLINK(\\\\\\\"http://example.invalid\\\\\\\",\\\\\\\"SYNTHETIC\\\\\\\")\\\", \\\"sensitivity\\\": \\\"TEST\\\", \\\"source\\\": {\\\"title\\\": \\\"Generated schema fixture, not vendor data\\\", \\\"revision\\\": \\\"A\\\", \\\"locator\\\": \\\"Synthetic row set\\\", \\\"sha256\\\": \\\"0000000000000000000000000000000000000000000000000000000000000000\\\", \\\"licence_basis\\\": \\\"SYNTHETIC GENERATED\\\"}, \\\"conditions\\\": {\\\"fuel_or_gas\\\": \\\"SYNTHETIC\\\", \\\"target_description\\\": \\\"Synthetic software fixture; no physical fire-response model\\\", \\\"environment_reference\\\": \\\"Synthetic test only\\\", \\\"method_scope\\\": \\\"PREPARATION ONLY / NO ENGINEERING RESPONSE\\\"}, \\\"units\\\": {\\\"distance\\\": \\\"m\\\", \\\"angle\\\": \\\"deg\\\", \\\"response_time\\\": \\\"s\\\"}, \\\"samples\\\": [{\\\"azimuth_deg\\\": 0, \\\"elevation_deg\\\": 0, \\\"range_m\\\": 1, \\\"response_time_s\\\": 1, \\\"source_locator\\\": \\\"Synthetic row 1\\\"}]}\", \"status\": \"CANDIDATE\"}, \"before\": null, \"key\": \"SYN-LIT-PERF-1\", \"table\": \"performance_dataset\"}], \"description\": \"Import SYNTHETIC performance preparation SYN-LIT-PERF-1\"}",
+      "inverse_json": "{\"changes\": [{\"after\": null, \"before\": {\"id\": \"SYN-LIT-PERF-1\", \"import_sha256\": \"10a8a254979c0bab982a5c04d2cfd6c18693e900f6fd3ea2410ff346fa8a3822\", \"payload_json\": \"{\\\"conditions\\\":{\\\"environment_reference\\\":\\\"Synthetic test only\\\",\\\"fuel_or_gas\\\":\\\"SYNTHETIC\\\",\\\"method_scope\\\":\\\"PREPARATION ONLY / NO ENGINEERING RESPONSE\\\",\\\"target_description\\\":\\\"Synthetic software fixture; no physical fire-response model\\\"},\\\"contract\\\":\\\"fg-performance-preparation/1\\\",\\\"data_class\\\":\\\"SYNTHETIC\\\",\\\"manufacturer\\\":\\\"=HYPERLINK(\\\\\\\"http://example.invalid\\\\\\\",\\\\\\\"SYNTHETIC\\\\\\\")\\\",\\\"model\\\":\\\"=HYPERLINK(\\\\\\\"http://example.invalid\\\\\\\",\\\\\\\"SYNTHETIC\\\\\\\")\\\",\\\"revision\\\":\\\"=HYPERLINK(\\\\\\\"http://example.invalid\\\\\\\",\\\\\\\"SYNTHETIC\\\\\\\")\\\",\\\"samples\\\":[{\\\"azimuth_deg\\\":0,\\\"elevation_deg\\\":0,\\\"range_m\\\":1,\\\"response_time_s\\\":1,\\\"source_locator\\\":\\\"Synthetic row 1\\\"}],\\\"sensitivity\\\":\\\"TEST\\\",\\\"source\\\":{\\\"licence_basis\\\":\\\"SYNTHETIC GENERATED\\\",\\\"locator\\\":\\\"Synthetic row set\\\",\\\"revision\\\":\\\"A\\\",\\\"sha256\\\":\\\"0000000000000000000000000000000000000000000000000000000000000000\\\",\\\"title\\\":\\\"Generated schema fixture, not vendor data\\\"},\\\"units\\\":{\\\"angle\\\":\\\"deg\\\",\\\"distance\\\":\\\"m\\\",\\\"response_time\\\":\\\"s\\\"}}\", \"raw_text\": \"{\\\"contract\\\": \\\"fg-performance-preparation/1\\\", \\\"data_class\\\": \\\"SYNTHETIC\\\", \\\"manufacturer\\\": \\\"=HYPERLINK(\\\\\\\"http://example.invalid\\\\\\\",\\\\\\\"SYNTHETIC\\\\\\\")\\\", \\\"model\\\": \\\"=HYPERLINK(\\\\\\\"http://example.invalid\\\\\\\",\\\\\\\"SYNTHETIC\\\\\\\")\\\", \\\"revision\\\": \\\"=HYPERLINK(\\\\\\\"http://example.invalid\\\\\\\",\\\\\\\"SYNTHETIC\\\\\\\")\\\", \\\"sensitivity\\\": \\\"TEST\\\", \\\"source\\\": {\\\"title\\\": \\\"Generated schema fixture, not vendor data\\\", \\\"revision\\\": \\\"A\\\", \\\"locator\\\": \\\"Synthetic row set\\\", \\\"sha256\\\": \\\"0000000000000000000000000000000000000000000000000000000000000000\\\", \\\"licence_basis\\\": \\\"SYNTHETIC GENERATED\\\"}, \\\"conditions\\\": {\\\"fuel_or_gas\\\": \\\"SYNTHETIC\\\", \\\"target_description\\\": \\\"Synthetic software fixture; no physical fire-response model\\\", \\\"environment_reference\\\": \\\"Synthetic test only\\\", \\\"method_scope\\\": \\\"PREPARATION ONLY / NO ENGINEERING RESPONSE\\\"}, \\\"units\\\": {\\\"distance\\\": \\\"m\\\", \\\"angle\\\": \\\"deg\\\", \\\"response_time\\\": \\\"s\\\"}, \\\"samples\\\": [{\\\"azimuth_deg\\\": 0, \\\"elevation_deg\\\": 0, \\\"range_m\\\": 1, \\\"response_time_s\\\": 1, \\\"source_locator\\\": \\\"Synthetic row 1\\\"}]}\", \"status\": \"CANDIDATE\"}, \"key\": \"SYN-LIT-PERF-1\", \"table\": \"performance_dataset\"}]}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T07:52:38.634983+00:00"
+    }
+  ],
+  "limitations": [
+    "No engineering detector coverage results",
+    "No independent engineering qualification",
+    "Windows acceptance pending",
+    "Snapshot geometry is synthetic envelope data"
+  ],
+  "performance_source_assets": [
+    {
+      "id": "SYN-LIT-PERF-0",
+      "import_sha256": "fd981abe3098fcdef5944ec989bfb7268e1beda1e54b7da1ff0f76fc3910431c",
+      "raw_text": "{\"contract\": \"fg-performance-preparation/1\", \"data_class\": \"SYNTHETIC\", \"manufacturer\": \"=1+1\", \"model\": \"=1+1\", \"revision\": \"=1+1\", \"sensitivity\": \"TEST\", \"source\": {\"title\": \"Generated schema fixture, not vendor data\", \"revision\": \"A\", \"locator\": \"Synthetic row set\", \"sha256\": \"0000000000000000000000000000000000000000000000000000000000000000\", \"licence_basis\": \"SYNTHETIC GENERATED\"}, \"conditions\": {\"fuel_or_gas\": \"SYNTHETIC\", \"target_description\": \"Synthetic software fixture; no physical fire-response model\", \"environment_reference\": \"Synthetic test only\", \"method_scope\": \"PREPARATION ONLY / NO ENGINEERING RESPONSE\"}, \"units\": {\"distance\": \"m\", \"angle\": \"deg\", \"response_time\": \"s\"}, \"samples\": [{\"azimuth_deg\": 0, \"elevation_deg\": 0, \"range_m\": 1, \"response_time_s\": 1, \"source_locator\": \"Synthetic row 1\"}]}"
+    },
+    {
+      "id": "SYN-LIT-PERF-1",
+      "import_sha256": "10a8a254979c0bab982a5c04d2cfd6c18693e900f6fd3ea2410ff346fa8a3822",
+      "raw_text": "{\"contract\": \"fg-performance-preparation/1\", \"data_class\": \"SYNTHETIC\", \"manufacturer\": \"=HYPERLINK(\\\"http://example.invalid\\\",\\\"SYNTHETIC\\\")\", \"model\": \"=HYPERLINK(\\\"http://example.invalid\\\",\\\"SYNTHETIC\\\")\", \"revision\": \"=HYPERLINK(\\\"http://example.invalid\\\",\\\"SYNTHETIC\\\")\", \"sensitivity\": \"TEST\", \"source\": {\"title\": \"Generated schema fixture, not vendor data\", \"revision\": \"A\", \"locator\": \"Synthetic row set\", \"sha256\": \"0000000000000000000000000000000000000000000000000000000000000000\", \"licence_basis\": \"SYNTHETIC GENERATED\"}, \"conditions\": {\"fuel_or_gas\": \"SYNTHETIC\", \"target_description\": \"Synthetic software fixture; no physical fire-response model\", \"environment_reference\": \"Synthetic test only\", \"method_scope\": \"PREPARATION ONLY / NO ENGINEERING RESPONSE\"}, \"units\": {\"distance\": \"m\", \"angle\": \"deg\", \"response_time\": \"s\"}, \"samples\": [{\"azimuth_deg\": 0, \"elevation_deg\": 0, \"range_m\": 1, \"response_time_s\": 1, \"source_locator\": \"Synthetic row 1\"}]}"
+    }
+  ],
+  "qualification_status": "UNVERIFIED",
+  "readiness": {
+    "blocking": [],
+    "engineering_blockers": [
+      "No qualified manufacturer response engine",
+      "No authorised real vendor performance basis",
+      "Independent engineering review and owner promotion required"
+    ],
+    "engineering_calculation_status": "BLOCKED",
+    "input_status": "MISSING",
+    "missing": [
+      "PERFORMANCE_DATASET:SYN-LIT-D0",
+      "PERFORMANCE_DATASET:SYN-LIT-D1",
+      "STUDY_BASIS"
+    ],
+    "qualification": "UNVERIFIED",
+    "review": [
+      "GEOMETRY_AND_MOUNT_FEASIBILITY_NOT_QUALIFIED"
+    ],
+    "review_status": "CANDIDATE"
+  },
+  "review_status": "CANDIDATE",
+  "scene": {
+    "components": [
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "DECK",
+        "label": "Deck",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              -1.0,
+              -1.0,
+              -0.4
+            ],
+            [
+              21.0,
+              -1.0,
+              -0.4
+            ],
+            [
+              21.0,
+              13.0,
+              -0.4
+            ],
+            [
+              -1.0,
+              13.0,
+              -0.4
+            ],
+            [
+              -1.0,
+              -1.0,
+              0.0
+            ],
+            [
+              21.0,
+              -1.0,
+              0.0
+            ],
+            [
+              21.0,
+              13.0,
+              0.0
+            ],
+            [
+              -1.0,
+              13.0,
+              0.0
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "DECK"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "V101",
+        "label": "Vessel 101 envelope",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              3.0,
+              3.0,
+              0.0
+            ],
+            [
+              6.0,
+              3.0,
+              0.0
+            ],
+            [
+              6.0,
+              6.0,
+              0.0
+            ],
+            [
+              3.0,
+              6.0,
+              0.0
+            ],
+            [
+              3.0,
+              3.0,
+              5.0
+            ],
+            [
+              6.0,
+              3.0,
+              5.0
+            ],
+            [
+              6.0,
+              6.0,
+              5.0
+            ],
+            [
+              3.0,
+              6.0,
+              5.0
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "EQUIPMENT"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "V102",
+        "label": "Vessel 102 envelope",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              12.0,
+              6.0,
+              0.0
+            ],
+            [
+              16.0,
+              6.0,
+              0.0
+            ],
+            [
+              16.0,
+              10.0,
+              0.0
+            ],
+            [
+              12.0,
+              10.0,
+              0.0
+            ],
+            [
+              12.0,
+              6.0,
+              4.0
+            ],
+            [
+              16.0,
+              6.0,
+              4.0
+            ],
+            [
+              16.0,
+              10.0,
+              4.0
+            ],
+            [
+              12.0,
+              10.0,
+              4.0
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "EQUIPMENT"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "WALL",
+        "label": "Module wall",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              9.0,
+              0.0,
+              0.0
+            ],
+            [
+              9.3,
+              0.0,
+              0.0
+            ],
+            [
+              9.3,
+              8.0,
+              0.0
+            ],
+            [
+              9.0,
+              8.0,
+              0.0
+            ],
+            [
+              9.0,
+              0.0,
+              6.0
+            ],
+            [
+              9.3,
+              0.0,
+              6.0
+            ],
+            [
+              9.3,
+              8.0,
+              6.0
+            ],
+            [
+              9.0,
+              8.0,
+              6.0
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "WALL"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "PIPE",
+        "label": "Pipe envelope",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              1.0,
+              10.0,
+              2.0
+            ],
+            [
+              19.0,
+              10.0,
+              2.0
+            ],
+            [
+              19.0,
+              10.4,
+              2.0
+            ],
+            [
+              1.0,
+              10.4,
+              2.0
+            ],
+            [
+              1.0,
+              10.0,
+              2.4
+            ],
+            [
+              19.0,
+              10.0,
+              2.4
+            ],
+            [
+              19.0,
+              10.4,
+              2.4
+            ],
+            [
+              1.0,
+              10.4,
+              2.4
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "PIPE"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "FD101",
+        "label": "Detector position 101",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              0.0,
+              0.0,
+              3.0
+            ],
+            [
+              0.4,
+              0.0,
+              3.0
+            ],
+            [
+              0.4,
+              0.4,
+              3.0
+            ],
+            [
+              0.0,
+              0.4,
+              3.0
+            ],
+            [
+              0.0,
+              0.0,
+              3.4
+            ],
+            [
+              0.4,
+              0.0,
+              3.4
+            ],
+            [
+              0.4,
+              0.4,
+              3.4
+            ],
+            [
+              0.0,
+              0.4,
+              3.4
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "DETECTOR"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "FD102",
+        "label": "Detector position 102",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              19.0,
+              11.0,
+              4.0
+            ],
+            [
+              19.4,
+              11.0,
+              4.0
+            ],
+            [
+              19.4,
+              11.4,
+              4.0
+            ],
+            [
+              19.0,
+              11.4,
+              4.0
+            ],
+            [
+              19.0,
+              11.0,
+              4.4
+            ],
+            [
+              19.4,
+              11.0,
+              4.4
+            ],
+            [
+              19.4,
+              11.4,
+              4.4
+            ],
+            [
+              19.0,
+              11.4,
+              4.4
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "DETECTOR"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE0",
+        "label": "Grating strip 0",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              0.0,
+              11.0,
+              0.1
+            ],
+            [
+              0.2,
+              11.0,
+              0.1
+            ],
+            [
+              0.2,
+              12.0,
+              0.1
+            ],
+            [
+              0.0,
+              12.0,
+              0.1
+            ],
+            [
+              0.0,
+              11.0,
+              0.2
+            ],
+            [
+              0.2,
+              11.0,
+              0.2
+            ],
+            [
+              0.2,
+              12.0,
+              0.2
+            ],
+            [
+              0.0,
+              12.0,
+              0.2
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "GRATING"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE1",
+        "label": "Grating strip 1",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              1.2,
+              11.0,
+              0.1
+            ],
+            [
+              1.4,
+              11.0,
+              0.1
+            ],
+            [
+              1.4,
+              12.0,
+              0.1
+            ],
+            [
+              1.2,
+              12.0,
+              0.1
+            ],
+            [
+              1.2,
+              11.0,
+              0.2
+            ],
+            [
+              1.4,
+              11.0,
+              0.2
+            ],
+            [
+              1.4,
+              12.0,
+              0.2
+            ],
+            [
+              1.2,
+              12.0,
+              0.2
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "GRATING"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE2",
+        "label": "Grating strip 2",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              2.4,
+              11.0,
+              0.1
+            ],
+            [
+              2.6,
+              11.0,
+              0.1
+            ],
+            [
+              2.6,
+              12.0,
+              0.1
+            ],
+            [
+              2.4,
+              12.0,
+              0.1
+            ],
+            [
+              2.4,
+              11.0,
+              0.2
+            ],
+            [
+              2.6,
+              11.0,
+              0.2
+            ],
+            [
+              2.6,
+              12.0,
+              0.2
+            ],
+            [
+              2.4,
+              12.0,
+              0.2
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "GRATING"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE3",
+        "label": "Grating strip 3",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              3.5999999999999996,
+              11.0,
+              0.1
+            ],
+            [
+              3.8,
+              11.0,
+              0.1
+            ],
+            [
+              3.8,
+              12.0,
+              0.1
+            ],
+            [
+              3.5999999999999996,
+              12.0,
+              0.1
+            ],
+            [
+              3.5999999999999996,
+              11.0,
+              0.2
+            ],
+            [
+              3.8,
+              11.0,
+              0.2
+            ],
+            [
+              3.8,
+              12.0,
+              0.2
+            ],
+            [
+              3.5999999999999996,
+              12.0,
+              0.2
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "GRATING"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE4",
+        "label": "Grating strip 4",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              4.8,
+              11.0,
+              0.1
+            ],
+            [
+              5.0,
+              11.0,
+              0.1
+            ],
+            [
+              5.0,
+              12.0,
+              0.1
+            ],
+            [
+              4.8,
+              12.0,
+              0.1
+            ],
+            [
+              4.8,
+              11.0,
+              0.2
+            ],
+            [
+              5.0,
+              11.0,
+              0.2
+            ],
+            [
+              5.0,
+              12.0,
+              0.2
+            ],
+            [
+              4.8,
+              12.0,
+              0.2
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "GRATING"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE5",
+        "label": "Grating strip 5",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              6.0,
+              11.0,
+              0.1
+            ],
+            [
+              6.2,
+              11.0,
+              0.1
+            ],
+            [
+              6.2,
+              12.0,
+              0.1
+            ],
+            [
+              6.0,
+              12.0,
+              0.1
+            ],
+            [
+              6.0,
+              11.0,
+              0.2
+            ],
+            [
+              6.2,
+              11.0,
+              0.2
+            ],
+            [
+              6.2,
+              12.0,
+              0.2
+            ],
+            [
+              6.0,
+              12.0,
+              0.2
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "GRATING"
+      }
+    ],
+    "data_class": "SYNTHETIC",
+    "frames": [
+      {
+        "datum": "SYNTHETIC local origin; X east, Y north, Z up",
+        "handedness": "RIGHT",
+        "id": "LOCAL",
+        "matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "units": "m"
+      }
+    ],
+    "source_revision": "SYN-A",
+    "source_sha256": "34369efea48750a18e2e5494438d9e6753c3dbf3c5b1a7adde2060e839a19198"
+  },
+  "scene_hash": "d5e177acf23780af720c9f0156ac4e2989013c8b634ff7299d932179d0c1fbdb",
+  "snapshot_version": "fg-report/2",
+  "software_version": "0.6.0a1",
+  "status": "DEVELOPMENT BUILD"
+}

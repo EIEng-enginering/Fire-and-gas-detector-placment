@@ -1,0 +1,40 @@
+COMMAND ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-B', '-m', 'unittest', 'discover', '-s', '/workspace/scratch/1969b32c6646/rev_d/tests/unit', '-p', 'test_target_inspection.py', '-v']
+test_bad_axes_and_sampling (test_target_inspection.TargetInspection.test_bad_axes_and_sampling) ... ok
+test_clear_field_and_total_area_conservation (test_target_inspection.TargetInspection.test_clear_field_and_total_area_conservation) ... ok
+test_coplanar_uncertainty_not_removed_from_denominator (test_target_inspection.TargetInspection.test_coplanar_uncertainty_not_removed_from_denominator) ... FAIL
+test_half_square_independent_area_oracle (test_target_inspection.TargetInspection.test_half_square_independent_area_oracle) ... ok
+test_inside_closed_box_never_declared_clear (test_target_inspection.TargetInspection.test_inside_closed_box_never_declared_clear) ... FAIL
+test_no_obstacles_does_not_bypass_tolerance_validation (test_target_inspection.TargetInspection.test_no_obstacles_does_not_bypass_tolerance_validation) ... ok
+test_zero_length_rays_remain_indeterminate (test_target_inspection.TargetInspection.test_zero_length_rays_remain_indeterminate) ... FAIL
+
+======================================================================
+FAIL: test_coplanar_uncertainty_not_removed_from_denominator (test_target_inspection.TargetInspection.test_coplanar_uncertainty_not_removed_from_denominator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_d/tests/unit/test_target_inspection.py", line 16, in test_coplanar_uncertainty_not_removed_from_denominator
+    r=inspect_target(s,(0,0,0),['W'],t,1e-9);self.assertIsNone(r['visibility_fraction']);self.assertEqual(r['visibility_lower_bound'],0);self.assertEqual(r['visibility_upper_bound'],1)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1.0 is not None
+
+======================================================================
+FAIL: test_inside_closed_box_never_declared_clear (test_target_inspection.TargetInspection.test_inside_closed_box_never_declared_clear)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_d/tests/unit/test_target_inspection.py", line 18, in test_inside_closed_box_never_declared_clear
+    s=self.scene(box_mesh((-5,-5,-5),(5,5,5)));r=inspect_target(s,(0,0,0),['W'],self.target(),1e-9);self.assertEqual(r['clear_area_m2'],0);self.assertEqual(r['indeterminate_area_m2'],4)
+                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 4.0 != 0
+
+======================================================================
+FAIL: test_zero_length_rays_remain_indeterminate (test_target_inspection.TargetInspection.test_zero_length_rays_remain_indeterminate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_d/tests/unit/test_target_inspection.py", line 27, in test_zero_length_rays_remain_indeterminate
+    r=inspect_target(s,(4,0,0),[],t,1e-8);self.assertIsNone(r['visibility_fraction']);self.assertEqual(r['indeterminate_area_m2'],4)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1.0 is not None
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.034s
+
+FAILED (failures=3)

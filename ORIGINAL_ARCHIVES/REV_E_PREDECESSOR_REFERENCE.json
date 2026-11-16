@@ -1,0 +1,8 @@
+{
+  "predecessor": "FG_MAPPING_RETURN_REV_E_20261116.zip",
+  "sha256": "7d56b4b28b48f017aae79141567aec01fbc648e8acc2d7f026004c59cdf732e8",
+  "bytes": 118501868,
+  "embedded_here": false,
+  "reason": "118.5 MB exceeds the pack's per-file bound (50 MB) and the existing SHA-pinned Rev D exception (64 MB), and its nested content exceeds the 100 MB nested-ZIP expansion budget. Bounds were NOT raised. The exact ZIP is preserved unchanged beside this return in the owner's project folder and in the owner's Downloads folder; verify by SHA256.",
+  "verified": "753/753 SHA256SUMS entries verified on Linux box and Windows before Rev F edits"
+}

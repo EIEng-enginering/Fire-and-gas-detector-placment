@@ -1,0 +1,53 @@
+unit PASS code 0
+ield_and_total_area_conservation (test_target_inspection.TargetInspection.test_clear_field_and_total_area_conservation) ... ok
+test_coplanar_uncertainty_not_removed_from_denominator (test_target_inspection.TargetInspection.test_coplanar_uncertainty_not_removed_from_denominator) ... ok
+test_half_square_independent_area_oracle (test_target_inspection.TargetInspection.test_half_square_independent_area_oracle) ... ok
+test_inside_closed_box_never_declared_clear (test_target_inspection.TargetInspection.test_inside_closed_box_never_declared_clear) ... ok
+test_no_obstacles_does_not_bypass_tolerance_validation (test_target_inspection.TargetInspection.test_no_obstacles_does_not_bypass_tolerance_validation) ... ok
+test_zero_length_rays_remain_indeterminate (test_target_inspection.TargetInspection.test_zero_length_rays_remain_indeterminate) ... ok
+test_colour_contrast (test_theme.ThemeContract.test_colour_contrast) ... ok
+test_scale_rotation_translation_preserves_constructive_hits (test_transform_visibility.TransformedVisibility.test_scale_rotation_translation_preserves_constructive_hits) ... ok
+
+----------------------------------------------------------------------
+Ran 87 tests in 0.439s
+
+OK
+
+integration FAIL code 1
+... ok
+test_second_marker_and_bulk_move_undo (test_workspace.Workspace.test_second_marker_and_bulk_move_undo) ... ok
+test_undo_persists_across_reopen (test_workspace.Workspace.test_undo_persists_across_reopen) ... ok
+
+======================================================================
+ERROR: test_symlink_alias_fenced (test_case_hardening.CaseHardening.test_symlink_alias_fenced)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\fg_dev\revF_work\tests\integration\test_case_hardening.py", line 15, in test_symlink_alias_fenced
+    p=self.root/'alias.fgcase';p.symlink_to(self.path)
+                               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1386, in symlink_to
+    os.symlink(target, self, target_is_directory)
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpi8uc6nb0\\s.fgcase' -> 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpi8uc6nb0\\alias.fgcase'
+
+----------------------------------------------------------------------
+Ran 105 tests in 34.957s
+
+FAILED (errors=1)
+
+acceptance PASS code 0
+ndent_oracle) ... ok
+test_long_source_field_all_formats_no_loss (test_long_evidence_report.LongEvidenceReport.test_long_source_field_all_formats_no_loss) ... ok
+test_import_history_and_raw_source_all_formats_and_undo (test_preparation_reports_rev_e.PreparationReports.test_import_history_and_raw_source_all_formats_and_undo) ... ok
+test_connected_study_save_reopen_report_worker (test_rev_c_workflow_service.RevCStudy.test_connected_study_save_reopen_report_worker) ... ok
+test_report_cancel_reaps_child (test_rev_c_workflow_service.RevCStudy.test_report_cancel_reaps_child) ... ok
+test_basis_mount_and_readiness_all_formats (test_schema3_reports.Schema3Reports.test_basis_mount_and_readiness_all_formats) ... ok
+test_large_audit_field_is_chunked_without_losing_values (test_schema3_reports.Schema3Reports.test_large_audit_field_is_chunked_without_losing_values) ... ok
+test_all_formats_and_corruption_refusal (test_synthetic_reports.Reports.test_all_formats_and_corruption_refusal) ... ok
+test_end_to_end_no_real_data (test_synthetic_workflow.SyntheticAcceptance.test_end_to_end_no_real_data) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 13.668s
+
+OK
+
+EVIDENCE_DIR: C:\Users\Admin\fg_dev\revF_work\TEST_RESULTS\20261116T073919Z

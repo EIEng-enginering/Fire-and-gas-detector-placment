@@ -1,0 +1,47 @@
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+{
+  "status": "PASS",
+  "Qt_platform": "offscreen",
+  "Windows": "NOT RUN",
+  "checks": [
+    "explicit mount dialog",
+    "basis dialog with explicit voting",
+    "performance preparation exact-match link dialog",
+    "draft review without approval",
+    "input readiness separate from engineering gate",
+    "cancellable geometry worker and 64 traces",
+    "diagnostic overlay",
+    "revision comparison",
+    "all-format report and QA",
+    "three-theme screenshots",
+    "schema3 save/reopen",
+    "restore-as-new worker"
+  ],
+  "readiness": {
+    "input_status": "INPUTS_PRESENT",
+    "missing": [],
+    "blocking": [],
+    "review": [
+      "GEOMETRY_AND_MOUNT_FEASIBILITY_NOT_QUALIFIED",
+      "SYNTHETIC_PERFORMANCE_ONLY:SYN-D01"
+    ],
+    "engineering_calculation_status": "BLOCKED",
+    "engineering_blockers": [
+      "No qualified manufacturer response engine",
+      "No authorised real vendor performance basis",
+      "Independent engineering review and owner promotion required"
+    ],
+    "qualification": "UNVERIFIED",
+    "review_status": "CANDIDATE"
+  },
+  "geometry_bounds": [
+    0.875,
+    0.875
+  ],
+  "output": "/workspace/scratch/1969b32c6646/rev_d/OUTPUT_SAMPLES/REV_D_STUDY",
+  "saved_case": "/workspace/scratch/1969b32c6646/rev_d/examples/SYNTHETIC_REV_D_STUDY.fgcase"
+}

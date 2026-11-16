@@ -1,0 +1,45 @@
+test_candidates_match_independent_slab_oracle (test_scene_broadphase.SceneBroadphase.test_candidates_match_independent_slab_oracle) ... ok
+test_coplanar_and_endpoint_ambiguity_preserved (test_scene_broadphase.SceneBroadphase.test_coplanar_and_endpoint_ambiguity_preserved) ... ERROR
+test_rotated_target_two_obstacles_constructive_union_oracle (test_scene_broadphase.SceneBroadphase.test_rotated_target_two_obstacles_constructive_union_oracle) ... ERROR
+test_sparse_scene_reduces_mesh_queries_without_result_change (test_scene_broadphase.SceneBroadphase.test_sparse_scene_reduces_mesh_queries_without_result_change) ... ERROR
+
+======================================================================
+ERROR: test_coplanar_and_endpoint_ambiguity_preserved (test_scene_broadphase.SceneBroadphase.test_coplanar_and_endpoint_ambiguity_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/unit/test_scene_broadphase.py", line 46, in test_coplanar_and_endpoint_ambiguity_preserved
+    scene=Scene((Frame('F','m','SYNTHETIC'),),(Component('B','B','WALL','F',box_mesh((-2,-2,-2),(2,2,2)),'E'),),'SYNTHETIC','SYNTHETIC');target={'center_m':[0,0,0],'u':[0,1,0],'v':[0,0,1],'width_m':1,'height_m':1,'nx':2,'ny':2}
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 8, in __init__
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/domain/scene.py", line 124, in __post_init__
+    raise ValueError('Source revision and SHA256 required')
+ValueError: Source revision and SHA256 required
+
+======================================================================
+ERROR: test_rotated_target_two_obstacles_constructive_union_oracle (test_scene_broadphase.SceneBroadphase.test_rotated_target_two_obstacles_constructive_union_oracle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/unit/test_scene_broadphase.py", line 33, in test_rotated_target_two_obstacles_constructive_union_oracle
+    scene=Scene((Frame('F','m','SYNTHETIC'),),tuple(components),'SYNTHETIC','SYNTHETIC')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 8, in __init__
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/domain/scene.py", line 124, in __post_init__
+    raise ValueError('Source revision and SHA256 required')
+ValueError: Source revision and SHA256 required
+
+======================================================================
+ERROR: test_sparse_scene_reduces_mesh_queries_without_result_change (test_scene_broadphase.SceneBroadphase.test_sparse_scene_reduces_mesh_queries_without_result_change)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/unit/test_scene_broadphase.py", line 40, in test_sparse_scene_reduces_mesh_queries_without_result_change
+    comps=tuple(Component(str(i),str(i),'EQUIPMENT','F',box_mesh((2,20+i*2,0),(3,21+i*2,1)),'E') for i in range(64));scene=Scene((Frame('F','m','SYNTHETIC'),),comps,'SYNTHETIC','SYNTHETIC');target={'center_m':[4,0,0],'u':[0,1,0],'v':[0,0,1],'width_m':2,'height_m':2,'nx':8,'ny':8};calls=[];original=MeshIndex.blocked
+                                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 8, in __init__
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/domain/scene.py", line 124, in __post_init__
+    raise ValueError('Source revision and SHA256 required')
+ValueError: Source revision and SHA256 required
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.084s
+
+FAILED (errors=3)

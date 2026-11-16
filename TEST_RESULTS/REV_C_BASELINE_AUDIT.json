@@ -1,0 +1,23 @@
+{
+  "Rev_B_archive_sha256": "f1043278c3d5ecbee44ab66fc131dcfa1508d1aa93ff628eb032f91ca32aa17a",
+  "baseline_files_verified": 272,
+  "baseline_tests_before_edits": 85,
+  "baseline_run": "20261116T052005Z",
+  "all_previous_test_files_byte_identical": [
+    "tests/acceptance/test_synthetic_reports.py",
+    "tests/acceptance/test_synthetic_workflow.py",
+    "tests/integration/test_geometry_store.py",
+    "tests/integration/test_registers_calculations.py",
+    "tests/integration/test_linked_detector_history.py",
+    "tests/integration/test_case_lifecycle.py",
+    "tests/unit/test_mesh_visibility.py",
+    "tests/unit/test_theme.py",
+    "tests/unit/test_optional_boundaries.py",
+    "tests/unit/test_scene.py",
+    "tests/unit/test_detection_scenarios.py",
+    "tests/unit/test_geometry.py",
+    "tests/unit/test_transform_visibility.py"
+  ],
+  "original_migrations_unchanged": true,
+  "owner_standard_unchanged": true
+}

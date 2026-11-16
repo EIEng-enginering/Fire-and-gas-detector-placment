@@ -1,0 +1,1899 @@
+{
+  "case": {
+    "case_uuid": "d1922d5c-84e2-4841-bd79-67b3ff294b05",
+    "name": "SYNTHETIC Offshore Module WP02",
+    "schema_version": 2,
+    "status": "DEVELOPMENT BUILD"
+  },
+  "data_class": "SYNTHETIC",
+  "datasets": {
+    "calculation_runs": [
+      {
+        "calculation_status": "COMPUTED_SYNTHETIC",
+        "id": "SYN-PATH-01",
+        "input_hash": "7a22bcd1839317fa71c4f383e1f89e0d054da6f1771de158bc6c4a275a72a4f5",
+        "input_json": "{\"inputs\":{\"basis\":\"SYNTHETIC uniform cloud\",\"end\":[5,1,1],\"high\":[2,3,4],\"low\":[0,0,0],\"ppm\":100,\"start\":[-5,1,1]},\"method\":\"SYNTHETIC_UNIFORM_PATH/1\",\"scene_hash\":\"d5e177acf23780af720c9f0156ac4e2989013c8b634ff7299d932179d0c1fbdb\"}",
+        "method": "SYNTHETIC_UNIFORM_PATH/1",
+        "qualification_status": "UNVERIFIED",
+        "result_json": "{\"metric\":\"SYNTHETIC uniform cloud integral / not gas coverage\",\"ppm_m\":200.0,\"qualification\":\"UNVERIFIED\"}",
+        "review_status": "CANDIDATE"
+      }
+    ],
+    "components": [
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "DECK",
+        "label": "Deck",
+        "mesh_sha256": "f69a423d1b4e8fa3b026c5a523b8b9946de486abcd7185a67e6ca3294c58c55f",
+        "qualification": "UNVERIFIED",
+        "semantic": "DECK",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "V101",
+        "label": "Vessel 101 envelope",
+        "mesh_sha256": "5ad2961c6065ac1481ad8e49130131e8f66d0255b235048fc8f624c53e57e069",
+        "qualification": "UNVERIFIED",
+        "semantic": "EQUIPMENT",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "V102",
+        "label": "Vessel 102 envelope",
+        "mesh_sha256": "360cab8c33d8b62702fdfb7a852a414dc192291f0351c0c51639fbd33b5fdf77",
+        "qualification": "UNVERIFIED",
+        "semantic": "EQUIPMENT",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "WALL",
+        "label": "Module wall",
+        "mesh_sha256": "5a4841d8f8d9cfc53bcaea9ac31a5abfcb6c12d3ab61bb5cd506ecf9114dfc81",
+        "qualification": "UNVERIFIED",
+        "semantic": "WALL",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "PIPE",
+        "label": "Pipe envelope",
+        "mesh_sha256": "16384a0bae7f5c94b30184bccdad0cfa21fa538df58686b9d951fde57b410185",
+        "qualification": "UNVERIFIED",
+        "semantic": "PIPE",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "FD101",
+        "label": "Detector position 101",
+        "mesh_sha256": "687a1aa0f1dbe9180a58cf82c689c5263904b0ee1449a23841d09330465da017",
+        "qualification": "UNVERIFIED",
+        "semantic": "DETECTOR",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "FD102",
+        "label": "Detector position 102",
+        "mesh_sha256": "df3ac549de7d7058099ba14ef2e04ce266521f2cfe77fc7ce8d25e30f20a3d47",
+        "qualification": "UNVERIFIED",
+        "semantic": "DETECTOR",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE0",
+        "label": "Grating strip 0",
+        "mesh_sha256": "7fe6ac307c40733b3e1938d85fcf6bd1c0f87f880bacbdf9149ab8b8d436fc57",
+        "qualification": "UNVERIFIED",
+        "semantic": "GRATING",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE1",
+        "label": "Grating strip 1",
+        "mesh_sha256": "1fa7494034413c5898c67e4b621a33b71a29d498cf994299123f6fa26a7cec00",
+        "qualification": "UNVERIFIED",
+        "semantic": "GRATING",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE2",
+        "label": "Grating strip 2",
+        "mesh_sha256": "2e27d7ec4bedacd1f7290d2545f957b82f87d9ac36ec9114c0c95fdd602b294e",
+        "qualification": "UNVERIFIED",
+        "semantic": "GRATING",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE3",
+        "label": "Grating strip 3",
+        "mesh_sha256": "07f6956d5a697f3a55e0c279f20c52468a1fad78096c7102a0f41e7abf8f94f4",
+        "qualification": "UNVERIFIED",
+        "semantic": "GRATING",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE4",
+        "label": "Grating strip 4",
+        "mesh_sha256": "53548b8bb46dd3add19cbb216e9175c1b6e4cb44c163670b84248777c2fb81b1",
+        "qualification": "UNVERIFIED",
+        "semantic": "GRATING",
+        "source_units": "m"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE5",
+        "label": "Grating strip 5",
+        "mesh_sha256": "4cae28af3a2626f576f97338ce4988356f5a6eafc644e2d0c5a722b498e882c1",
+        "qualification": "UNVERIFIED",
+        "semantic": "GRATING",
+        "source_units": "m"
+      }
+    ],
+    "detectors": [
+      {
+        "azimuth_deg": null,
+        "detector_type": "FLAME",
+        "elevation_deg": null,
+        "evidence_id": "SYN-GEOM-01",
+        "id": "FD101",
+        "manufacturer": "NOT SUPPLIED",
+        "model": "NOT SUPPLIED",
+        "review_status": "CANDIDATE",
+        "roll_deg": null,
+        "sensitivity": "NOT SUPPLIED",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      {
+        "azimuth_deg": null,
+        "detector_type": "FLAME",
+        "elevation_deg": null,
+        "evidence_id": "SYN-GEOM-01",
+        "id": "FD102",
+        "manufacturer": "NOT SUPPLIED",
+        "model": "NOT SUPPLIED",
+        "review_status": "CANDIDATE",
+        "roll_deg": null,
+        "sensitivity": "NOT SUPPLIED",
+        "x": 19.0,
+        "y": 11.0,
+        "z": 4.0
+      }
+    ],
+    "evidence": [
+      {
+        "data_class": "SYNTHETIC",
+        "description": "Generated example envelopes",
+        "document_revision": "SYN-A",
+        "id": "SYN-GEOM-01",
+        "kind": "SYNTHETIC",
+        "location_ref": "domain.scene.synthetic_scene"
+      }
+    ],
+    "geometry_sources": [],
+    "records": [
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "id": "SYN-FZ1",
+        "kind": "FIRE_ZONE",
+        "payload": {
+          "criteria": "NOT SUPPLIED",
+          "high": [
+            20,
+            12,
+            6
+          ],
+          "low": [
+            0,
+            0,
+            0
+          ],
+          "units": "m"
+        },
+        "review_status": "CANDIDATE"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "id": "SYN-GZ1",
+        "kind": "GAS_ZONE",
+        "payload": {
+          "criteria": "NOT SUPPLIED",
+          "high": [
+            20,
+            12,
+            6
+          ],
+          "low": [
+            0,
+            0,
+            0
+          ],
+          "units": "m"
+        },
+        "review_status": "CANDIDATE"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "id": "V101",
+        "kind": "EQUIPMENT",
+        "payload": {
+          "class": "VESSEL ENVELOPE",
+          "geometry_component_id": "V101"
+        },
+        "review_status": "CANDIDATE"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "id": "V102",
+        "kind": "EQUIPMENT",
+        "payload": {
+          "class": "VESSEL ENVELOPE",
+          "geometry_component_id": "V102"
+        },
+        "review_status": "CANDIDATE"
+      }
+    ]
+  },
+  "ledger": [
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "ENABLE_GEOMETRY",
+      "event_id": 1,
+      "forward_json": "{\"schema\": 2}",
+      "inverse_json": "{\"rollback\": \"restore pre-upgrade backup; no destructive downgrade\"}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T04:44:43.340698+00:00"
+    },
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "ADD_EVIDENCE",
+      "event_id": 2,
+      "forward_json": "{\"data_class\": \"SYNTHETIC\", \"id\": \"SYN-GEOM-01\", \"kind\": \"SYNTHETIC\", \"location\": \"domain.scene.synthetic_scene\", \"source\": \"SYN-A\"}",
+      "inverse_json": "{\"delete_id\": \"SYN-GEOM-01\"}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T04:44:43.340856+00:00"
+    },
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "ADD_DETECTOR",
+      "event_id": 3,
+      "forward_json": "{\"id\": \"FD101\", \"source\": \"SYN-GEOM-01\", \"type\": \"FLAME\", \"x\": 0, \"y\": 0, \"z\": 3}",
+      "inverse_json": "{\"delete_id\": \"FD101\"}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T04:44:43.340992+00:00"
+    },
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "ADD_DETECTOR",
+      "event_id": 4,
+      "forward_json": "{\"id\": \"FD102\", \"source\": \"SYN-GEOM-01\", \"type\": \"FLAME\", \"x\": 19, \"y\": 11, \"z\": 4}",
+      "inverse_json": "{\"delete_id\": \"FD102\"}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T04:44:43.341118+00:00"
+    },
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "SET_SCENE",
+      "event_id": 5,
+      "forward_json": "{\"scene\": {\"components\": [{\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"DECK\", \"label\": \"Deck\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[-1.0, -1.0, -0.4], [21.0, -1.0, -0.4], [21.0, 13.0, -0.4], [-1.0, 13.0, -0.4], [-1.0, -1.0, 0.0], [21.0, -1.0, 0.0], [21.0, 13.0, 0.0], [-1.0, 13.0, 0.0]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"DECK\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"V101\", \"label\": \"Vessel 101 envelope\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[3.0, 3.0, 0.0], [6.0, 3.0, 0.0], [6.0, 6.0, 0.0], [3.0, 6.0, 0.0], [3.0, 3.0, 5.0], [6.0, 3.0, 5.0], [6.0, 6.0, 5.0], [3.0, 6.0, 5.0]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"EQUIPMENT\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"V102\", \"label\": \"Vessel 102 envelope\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[12.0, 6.0, 0.0], [16.0, 6.0, 0.0], [16.0, 10.0, 0.0], [12.0, 10.0, 0.0], [12.0, 6.0, 4.0], [16.0, 6.0, 4.0], [16.0, 10.0, 4.0], [12.0, 10.0, 4.0]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"EQUIPMENT\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"WALL\", \"label\": \"Module wall\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[9.0, 0.0, 0.0], [9.3, 0.0, 0.0], [9.3, 8.0, 0.0], [9.0, 8.0, 0.0], [9.0, 0.0, 6.0], [9.3, 0.0, 6.0], [9.3, 8.0, 6.0], [9.0, 8.0, 6.0]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"WALL\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"PIPE\", \"label\": \"Pipe envelope\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[1.0, 10.0, 2.0], [19.0, 10.0, 2.0], [19.0, 10.4, 2.0], [1.0, 10.4, 2.0], [1.0, 10.0, 2.4], [19.0, 10.0, 2.4], [19.0, 10.4, 2.4], [1.0, 10.4, 2.4]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"PIPE\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"FD101\", \"label\": \"Detector position 101\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[0.0, 0.0, 3.0], [0.4, 0.0, 3.0], [0.4, 0.4, 3.0], [0.0, 0.4, 3.0], [0.0, 0.0, 3.4], [0.4, 0.0, 3.4], [0.4, 0.4, 3.4], [0.0, 0.4, 3.4]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"DETECTOR\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"FD102\", \"label\": \"Detector position 102\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[19.0, 11.0, 4.0], [19.4, 11.0, 4.0], [19.4, 11.4, 4.0], [19.0, 11.4, 4.0], [19.0, 11.0, 4.4], [19.4, 11.0, 4.4], [19.4, 11.4, 4.4], [19.0, 11.4, 4.4]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"DETECTOR\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"GRATE0\", \"label\": \"Grating strip 0\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[0.0, 11.0, 0.1], [0.2, 11.0, 0.1], [0.2, 12.0, 0.1], [0.0, 12.0, 0.1], [0.0, 11.0, 0.2], [0.2, 11.0, 0.2], [0.2, 12.0, 0.2], [0.0, 12.0, 0.2]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"GRATING\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"GRATE1\", \"label\": \"Grating strip 1\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[1.2, 11.0, 0.1], [1.4, 11.0, 0.1], [1.4, 12.0, 0.1], [1.2, 12.0, 0.1], [1.2, 11.0, 0.2], [1.4, 11.0, 0.2], [1.4, 12.0, 0.2], [1.2, 12.0, 0.2]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"GRATING\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"GRATE2\", \"label\": \"Grating strip 2\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[2.4, 11.0, 0.1], [2.6, 11.0, 0.1], [2.6, 12.0, 0.1], [2.4, 12.0, 0.1], [2.4, 11.0, 0.2], [2.6, 11.0, 0.2], [2.6, 12.0, 0.2], [2.4, 12.0, 0.2]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"GRATING\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"GRATE3\", \"label\": \"Grating strip 3\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[3.5999999999999996, 11.0, 0.1], [3.8, 11.0, 0.1], [3.8, 12.0, 0.1], [3.5999999999999996, 12.0, 0.1], [3.5999999999999996, 11.0, 0.2], [3.8, 11.0, 0.2], [3.8, 12.0, 0.2], [3.5999999999999996, 12.0, 0.2]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"GRATING\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"GRATE4\", \"label\": \"Grating strip 4\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[4.8, 11.0, 0.1], [5.0, 11.0, 0.1], [5.0, 12.0, 0.1], [4.8, 12.0, 0.1], [4.8, 11.0, 0.2], [5.0, 11.0, 0.2], [5.0, 12.0, 0.2], [4.8, 12.0, 0.2]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"GRATING\"}, {\"evidence_id\": \"SYN-GEOM-01\", \"frame_id\": \"LOCAL\", \"id\": \"GRATE5\", \"label\": \"Grating strip 5\", \"mesh\": {\"faces\": [[0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7], [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7]], \"vertices\": [[6.0, 11.0, 0.1], [6.2, 11.0, 0.1], [6.2, 12.0, 0.1], [6.0, 12.0, 0.1], [6.0, 11.0, 0.2], [6.2, 11.0, 0.2], [6.2, 12.0, 0.2], [6.0, 12.0, 0.2]]}, \"occlusion_role\": \"NOT SUPPLIED\", \"parent_id\": null, \"semantic\": \"GRATING\"}], \"data_class\": \"SYNTHETIC\", \"frames\": [{\"datum\": \"SYNTHETIC local origin; X east, Y north, Z up\", \"handedness\": \"RIGHT\", \"id\": \"LOCAL\", \"matrix\": [[1.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], [0.0, 0.0, 0.0, 1.0]], \"units\": \"m\"}], \"source_revision\": \"SYN-A\", \"source_sha256\": \"34369efea48750a18e2e5494438d9e6753c3dbf3c5b1a7adde2060e839a19198\"}}",
+      "inverse_json": "{\"scene\": null}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T04:44:43.349424+00:00"
+    },
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "ADD_RECORD",
+      "event_id": 6,
+      "forward_json": "{\"evidence_id\": \"SYN-GEOM-01\", \"id\": \"V101\", \"kind\": \"EQUIPMENT\", \"payload\": {\"class\": \"VESSEL ENVELOPE\", \"geometry_component_id\": \"V101\"}}",
+      "inverse_json": "{\"delete_id\": \"V101\"}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T04:44:43.349949+00:00"
+    },
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "ADD_RECORD",
+      "event_id": 7,
+      "forward_json": "{\"evidence_id\": \"SYN-GEOM-01\", \"id\": \"V102\", \"kind\": \"EQUIPMENT\", \"payload\": {\"class\": \"VESSEL ENVELOPE\", \"geometry_component_id\": \"V102\"}}",
+      "inverse_json": "{\"delete_id\": \"V102\"}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T04:44:43.350073+00:00"
+    },
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "ADD_RECORD",
+      "event_id": 8,
+      "forward_json": "{\"evidence_id\": \"SYN-GEOM-01\", \"id\": \"SYN-FZ1\", \"kind\": \"FIRE_ZONE\", \"payload\": {\"criteria\": \"NOT SUPPLIED\", \"high\": [20, 12, 6], \"low\": [0, 0, 0], \"units\": \"m\"}}",
+      "inverse_json": "{\"delete_id\": \"SYN-FZ1\"}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T04:44:43.350169+00:00"
+    },
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "ADD_RECORD",
+      "event_id": 9,
+      "forward_json": "{\"evidence_id\": \"SYN-GEOM-01\", \"id\": \"SYN-GZ1\", \"kind\": \"GAS_ZONE\", \"payload\": {\"criteria\": \"NOT SUPPLIED\", \"high\": [20, 12, 6], \"low\": [0, 0, 0], \"units\": \"m\"}}",
+      "inverse_json": "{\"delete_id\": \"SYN-GZ1\"}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T04:44:43.350806+00:00"
+    },
+    {
+      "actor": "AUTOMATION_ENGINE",
+      "command": "RUN_SYNTHETIC",
+      "event_id": 10,
+      "forward_json": "{\"id\": \"SYN-PATH-01\", \"input_hash\": \"7a22bcd1839317fa71c4f383e1f89e0d054da6f1771de158bc6c4a275a72a4f5\", \"method\": \"SYNTHETIC_UNIFORM_PATH/1\"}",
+      "inverse_json": "{\"retain\": \"Run history retained; edits mark stale\"}",
+      "is_compensation": 0,
+      "utc": "2026-11-16T04:44:43.353557+00:00"
+    }
+  ],
+  "limitations": [
+    "No engineering detector coverage results",
+    "No independent engineering qualification",
+    "Windows acceptance pending",
+    "Snapshot geometry is synthetic envelope data"
+  ],
+  "qualification_status": "UNVERIFIED",
+  "review_status": "CANDIDATE",
+  "scene": {
+    "components": [
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "DECK",
+        "label": "Deck",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              -1.0,
+              -1.0,
+              -0.4
+            ],
+            [
+              21.0,
+              -1.0,
+              -0.4
+            ],
+            [
+              21.0,
+              13.0,
+              -0.4
+            ],
+            [
+              -1.0,
+              13.0,
+              -0.4
+            ],
+            [
+              -1.0,
+              -1.0,
+              0.0
+            ],
+            [
+              21.0,
+              -1.0,
+              0.0
+            ],
+            [
+              21.0,
+              13.0,
+              0.0
+            ],
+            [
+              -1.0,
+              13.0,
+              0.0
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "DECK"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "V101",
+        "label": "Vessel 101 envelope",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              3.0,
+              3.0,
+              0.0
+            ],
+            [
+              6.0,
+              3.0,
+              0.0
+            ],
+            [
+              6.0,
+              6.0,
+              0.0
+            ],
+            [
+              3.0,
+              6.0,
+              0.0
+            ],
+            [
+              3.0,
+              3.0,
+              5.0
+            ],
+            [
+              6.0,
+              3.0,
+              5.0
+            ],
+            [
+              6.0,
+              6.0,
+              5.0
+            ],
+            [
+              3.0,
+              6.0,
+              5.0
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "EQUIPMENT"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "V102",
+        "label": "Vessel 102 envelope",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              12.0,
+              6.0,
+              0.0
+            ],
+            [
+              16.0,
+              6.0,
+              0.0
+            ],
+            [
+              16.0,
+              10.0,
+              0.0
+            ],
+            [
+              12.0,
+              10.0,
+              0.0
+            ],
+            [
+              12.0,
+              6.0,
+              4.0
+            ],
+            [
+              16.0,
+              6.0,
+              4.0
+            ],
+            [
+              16.0,
+              10.0,
+              4.0
+            ],
+            [
+              12.0,
+              10.0,
+              4.0
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "EQUIPMENT"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "WALL",
+        "label": "Module wall",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              9.0,
+              0.0,
+              0.0
+            ],
+            [
+              9.3,
+              0.0,
+              0.0
+            ],
+            [
+              9.3,
+              8.0,
+              0.0
+            ],
+            [
+              9.0,
+              8.0,
+              0.0
+            ],
+            [
+              9.0,
+              0.0,
+              6.0
+            ],
+            [
+              9.3,
+              0.0,
+              6.0
+            ],
+            [
+              9.3,
+              8.0,
+              6.0
+            ],
+            [
+              9.0,
+              8.0,
+              6.0
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "WALL"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "PIPE",
+        "label": "Pipe envelope",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              1.0,
+              10.0,
+              2.0
+            ],
+            [
+              19.0,
+              10.0,
+              2.0
+            ],
+            [
+              19.0,
+              10.4,
+              2.0
+            ],
+            [
+              1.0,
+              10.4,
+              2.0
+            ],
+            [
+              1.0,
+              10.0,
+              2.4
+            ],
+            [
+              19.0,
+              10.0,
+              2.4
+            ],
+            [
+              19.0,
+              10.4,
+              2.4
+            ],
+            [
+              1.0,
+              10.4,
+              2.4
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "PIPE"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "FD101",
+        "label": "Detector position 101",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              0.0,
+              0.0,
+              3.0
+            ],
+            [
+              0.4,
+              0.0,
+              3.0
+            ],
+            [
+              0.4,
+              0.4,
+              3.0
+            ],
+            [
+              0.0,
+              0.4,
+              3.0
+            ],
+            [
+              0.0,
+              0.0,
+              3.4
+            ],
+            [
+              0.4,
+              0.0,
+              3.4
+            ],
+            [
+              0.4,
+              0.4,
+              3.4
+            ],
+            [
+              0.0,
+              0.4,
+              3.4
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "DETECTOR"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "FD102",
+        "label": "Detector position 102",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              19.0,
+              11.0,
+              4.0
+            ],
+            [
+              19.4,
+              11.0,
+              4.0
+            ],
+            [
+              19.4,
+              11.4,
+              4.0
+            ],
+            [
+              19.0,
+              11.4,
+              4.0
+            ],
+            [
+              19.0,
+              11.0,
+              4.4
+            ],
+            [
+              19.4,
+              11.0,
+              4.4
+            ],
+            [
+              19.4,
+              11.4,
+              4.4
+            ],
+            [
+              19.0,
+              11.4,
+              4.4
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "DETECTOR"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE0",
+        "label": "Grating strip 0",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              0.0,
+              11.0,
+              0.1
+            ],
+            [
+              0.2,
+              11.0,
+              0.1
+            ],
+            [
+              0.2,
+              12.0,
+              0.1
+            ],
+            [
+              0.0,
+              12.0,
+              0.1
+            ],
+            [
+              0.0,
+              11.0,
+              0.2
+            ],
+            [
+              0.2,
+              11.0,
+              0.2
+            ],
+            [
+              0.2,
+              12.0,
+              0.2
+            ],
+            [
+              0.0,
+              12.0,
+              0.2
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "GRATING"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE1",
+        "label": "Grating strip 1",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              1.2,
+              11.0,
+              0.1
+            ],
+            [
+              1.4,
+              11.0,
+              0.1
+            ],
+            [
+              1.4,
+              12.0,
+              0.1
+            ],
+            [
+              1.2,
+              12.0,
+              0.1
+            ],
+            [
+              1.2,
+              11.0,
+              0.2
+            ],
+            [
+              1.4,
+              11.0,
+              0.2
+            ],
+            [
+              1.4,
+              12.0,
+              0.2
+            ],
+            [
+              1.2,
+              12.0,
+              0.2
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "GRATING"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE2",
+        "label": "Grating strip 2",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              2.4,
+              11.0,
+              0.1
+            ],
+            [
+              2.6,
+              11.0,
+              0.1
+            ],
+            [
+              2.6,
+              12.0,
+              0.1
+            ],
+            [
+              2.4,
+              12.0,
+              0.1
+            ],
+            [
+              2.4,
+              11.0,
+              0.2
+            ],
+            [
+              2.6,
+              11.0,
+              0.2
+            ],
+            [
+              2.6,
+              12.0,
+              0.2
+            ],
+            [
+              2.4,
+              12.0,
+              0.2
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "GRATING"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE3",
+        "label": "Grating strip 3",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              3.5999999999999996,
+              11.0,
+              0.1
+            ],
+            [
+              3.8,
+              11.0,
+              0.1
+            ],
+            [
+              3.8,
+              12.0,
+              0.1
+            ],
+            [
+              3.5999999999999996,
+              12.0,
+              0.1
+            ],
+            [
+              3.5999999999999996,
+              11.0,
+              0.2
+            ],
+            [
+              3.8,
+              11.0,
+              0.2
+            ],
+            [
+              3.8,
+              12.0,
+              0.2
+            ],
+            [
+              3.5999999999999996,
+              12.0,
+              0.2
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "GRATING"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE4",
+        "label": "Grating strip 4",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              4.8,
+              11.0,
+              0.1
+            ],
+            [
+              5.0,
+              11.0,
+              0.1
+            ],
+            [
+              5.0,
+              12.0,
+              0.1
+            ],
+            [
+              4.8,
+              12.0,
+              0.1
+            ],
+            [
+              4.8,
+              11.0,
+              0.2
+            ],
+            [
+              5.0,
+              11.0,
+              0.2
+            ],
+            [
+              5.0,
+              12.0,
+              0.2
+            ],
+            [
+              4.8,
+              12.0,
+              0.2
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "GRATING"
+      },
+      {
+        "evidence_id": "SYN-GEOM-01",
+        "frame_id": "LOCAL",
+        "id": "GRATE5",
+        "label": "Grating strip 5",
+        "mesh": {
+          "faces": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              3,
+              0,
+              4
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              6.0,
+              11.0,
+              0.1
+            ],
+            [
+              6.2,
+              11.0,
+              0.1
+            ],
+            [
+              6.2,
+              12.0,
+              0.1
+            ],
+            [
+              6.0,
+              12.0,
+              0.1
+            ],
+            [
+              6.0,
+              11.0,
+              0.2
+            ],
+            [
+              6.2,
+              11.0,
+              0.2
+            ],
+            [
+              6.2,
+              12.0,
+              0.2
+            ],
+            [
+              6.0,
+              12.0,
+              0.2
+            ]
+          ]
+        },
+        "occlusion_role": "NOT SUPPLIED",
+        "parent_id": null,
+        "semantic": "GRATING"
+      }
+    ],
+    "data_class": "SYNTHETIC",
+    "frames": [
+      {
+        "datum": "SYNTHETIC local origin; X east, Y north, Z up",
+        "handedness": "RIGHT",
+        "id": "LOCAL",
+        "matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "units": "m"
+      }
+    ],
+    "source_revision": "SYN-A",
+    "source_sha256": "34369efea48750a18e2e5494438d9e6753c3dbf3c5b1a7adde2060e839a19198"
+  },
+  "scene_hash": "d5e177acf23780af720c9f0156ac4e2989013c8b634ff7299d932179d0c1fbdb",
+  "snapshot_version": "fg-report/1",
+  "status": "DEVELOPMENT BUILD"
+}

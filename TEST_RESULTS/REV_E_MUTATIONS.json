@@ -1,0 +1,17 @@
+[
+  {
+    "mutation": "scene-candidates-dropped",
+    "caught_by_assertion": true,
+    "exit_code": 1
+  },
+  {
+    "mutation": "follow-mount-not-recomputed",
+    "caught_by_assertion": true,
+    "exit_code": 1
+  },
+  {
+    "mutation": "missing-mount-decisions-accepted",
+    "caught_by_assertion": true,
+    "exit_code": 1
+  }
+]

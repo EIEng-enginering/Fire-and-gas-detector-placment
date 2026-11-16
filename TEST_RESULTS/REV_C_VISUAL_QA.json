@@ -1,0 +1,7 @@
+{
+  "Qt": "Actual grey/dark/light workflow screenshots inspected; Linux offscreen only",
+  "Word": "10 rendered pages inspected; no clipping/overlap; repeated field-table headers and unsplit rows",
+  "PDF": "7 rendered pages inspected; illustrative figure and all record/finding fields readable",
+  "XLSX": "Reopened and compared primary records/findings/typed XYZ; native Office visual checks pending",
+  "qualification": "UNVERIFIED"
+}

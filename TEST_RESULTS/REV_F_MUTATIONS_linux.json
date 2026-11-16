@@ -1,0 +1,29 @@
+[
+  {
+    "mutation": "fsync-read-only-descriptor",
+    "platform": "linux",
+    "caught_by_assertion": true,
+    "assertion_failures": 3,
+    "collateral_errors": 0,
+    "accepted": true,
+    "exit_code": 1
+  },
+  {
+    "mutation": "inspect-backup-connection-leak",
+    "platform": "linux",
+    "caught_by_assertion": true,
+    "assertion_failures": 3,
+    "collateral_errors": 0,
+    "accepted": true,
+    "exit_code": 1
+  },
+  {
+    "mutation": "geometry-backup-connection-leak",
+    "platform": "linux",
+    "caught_by_assertion": true,
+    "assertion_failures": 1,
+    "collateral_errors": 0,
+    "accepted": true,
+    "exit_code": 1
+  }
+]

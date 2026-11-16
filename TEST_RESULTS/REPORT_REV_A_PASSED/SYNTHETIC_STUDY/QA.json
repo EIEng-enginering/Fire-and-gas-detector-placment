@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "json": "exact snapshot",
+  "xlsx": "all row IDs and values",
+  "docx": "all canonical rows exact",
+  "pdf": "all canonical rows modulo whitespace",
+  "record_rows": 20,
+  "visual_QA": "SEPARATE REQUIRED STEP"
+}

@@ -1,0 +1,29 @@
+{
+  "failures_retained": [
+    {
+      "check": "UI viewport state tuple/list",
+      "evidence": "UI_LINUX_OFFSCREEN.txt",
+      "resolution": "Normalized JSON vector lists; UI_FINAL_THEME.txt passes"
+    },
+    {
+      "check": "Gas integral exact known answer",
+      "evidence": "20261116T044053Z/unit.txt",
+      "resolution": "Rational clipping; exact assertion kept"
+    },
+    {
+      "check": "Report snapshot tuple/list",
+      "evidence": "REPORT_FIRST_FAILURE/",
+      "resolution": "Canonical JSON normalized producer; REPORT_DELIVERY_QA.txt passes"
+    },
+    {
+      "check": "Migration backup selected arbitrary directory entry",
+      "evidence": "20261116T044548Z/integration.txt",
+      "resolution": "Identify both backup roles explicitly; added unsaved-edit backup check"
+    },
+    {
+      "check": "Original mutation evidence path",
+      "error": "NotADirectoryError: TEST_RESULTS/VISIBILITY_CONVERGENCE.json/MUTATION_PROBE.txt",
+      "resolution": "Filter dated evidence directories; ORIGINAL_MUTATION_RETEST.txt passes"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "contract": "fg-performance-preparation/1",
+  "data_class": "SYNTHETIC",
+  "manufacturer": "SYNTHETIC_VENDOR",
+  "model": "SYNTHETIC_MODEL",
+  "revision": "SYN-A",
+  "sensitivity": "TEST",
+  "source": {
+    "title": "Generated schema fixture, not vendor data",
+    "revision": "A",
+    "locator": "Synthetic row set",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "licence_basis": "SYNTHETIC GENERATED"
+  },
+  "conditions": {
+    "fuel_or_gas": "SYNTHETIC",
+    "target_description": "Synthetic software fixture; no physical fire-response model",
+    "environment_reference": "Synthetic test only",
+    "method_scope": "PREPARATION ONLY / NO ENGINEERING RESPONSE"
+  },
+  "units": {
+    "distance": "m",
+    "angle": "deg",
+    "response_time": "s"
+  },
+  "samples": [
+    {
+      "azimuth_deg": 0,
+      "elevation_deg": 0,
+      "range_m": 1,
+      "response_time_s": 1,
+      "source_locator": "Synthetic row 1"
+    }
+  ]
+}

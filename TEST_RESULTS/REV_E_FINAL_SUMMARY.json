@@ -1,0 +1,41 @@
+{
+  "version": "0.5.0a1",
+  "status": "WORKING DEVELOPMENT CHECKPOINT / UNVERIFIED",
+  "baseline": {
+    "hashes": 600,
+    "tests": 168,
+    "driver": "TEST_RESULTS/REV_E_BASELINE_DRIVER.txt"
+  },
+  "final": {
+    "tests": 190,
+    "unit": 87,
+    "integration": 95,
+    "acceptance": 8,
+    "failures": 0,
+    "skips": 0,
+    "evidence": "TEST_RESULTS/REV_E_FRESH_EXTRACTION/20261116T070348Z",
+    "source_test_contract_tool_bytes": "IDENTICAL TO FINAL SOURCE",
+    "note": "Fresh extracted staged archive run includes final PDF caption/layout and literal-cell changes; final pack adds evidence records only"
+  },
+  "previous_full_run": "TEST_RESULTS/20261116T065630Z",
+  "syntax_AST": "PASS",
+  "fresh_archive_CRC_all_hashes": "PASS",
+  "case_integrity_FKs_calculation_implementation_fingerprints": "PASS",
+  "actual_Qt_workflow": "TEST_RESULTS/REV_E_UI_RETEST.txt",
+  "actual_review_dialog_screenshots": [
+    "screenshots/REV_E_BULK_PREVIEW.png",
+    "screenshots/REV_E_REVISION_PREVIEW.png"
+  ],
+  "reports": "OUTPUT_SAMPLES/REV_E_STUDY",
+  "all_format_parser_QA": "PASS",
+  "visual_QA": "TEST_RESULTS/REV_E_VISUAL_QA.json",
+  "benchmark": "TEST_RESULTS/REV_E_BENCHMARKS.json",
+  "deliberate_mutants_caught": 3,
+  "mutation_evidence": "TEST_RESULTS/REV_E_MUTATIONS.json",
+  "Windows_native_Office": "NOT RUN",
+  "new_migrations_dependencies": "NONE",
+  "qualification": "UNVERIFIED",
+  "engineering_calculation": "BLOCKED",
+  "owner_decisions": "Q1-Q10/F01-F10 still PROPOSED",
+  "git_live_AI_paid_API_client_data": "NONE"
+}

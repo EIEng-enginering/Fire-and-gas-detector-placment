@@ -1,0 +1,27 @@
+COMMAND ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-B', '-m', 'unittest', 'discover', '-s', '/workspace/scratch/1969b32c6646/rev_d/tests/unit', '-p', 'test_mounting_pose.py', '-v']
+test_direction_known_90_degree_local_mount (test_mounting_pose.MountPose.test_direction_known_90_degree_local_mount) ... ok
+test_full_roll_and_gimbal_rotation_roundtrip (test_mounting_pose.MountPose.test_full_roll_and_gimbal_rotation_roundtrip) ... ok
+test_known_scaled_anchor_and_unscaled_metre_offset (test_mounting_pose.MountPose.test_known_scaled_anchor_and_unscaled_metre_offset) ... FAIL
+test_source_change_changes_fingerprint (test_mounting_pose.MountPose.test_source_change_changes_fingerprint) ... ok
+test_unknown_component_and_bad_angles (test_mounting_pose.MountPose.test_unknown_component_and_bad_angles) ... ok
+
+======================================================================
+FAIL: test_known_scaled_anchor_and_unscaled_metre_offset (test_mounting_pose.MountPose.test_known_scaled_anchor_and_unscaled_metre_offset)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_d/tests/unit/test_mounting_pose.py", line 12, in test_known_scaled_anchor_and_unscaled_metre_offset
+    self.assertEqual(r['anchor_world'],(6,23,42));self.assertEqual(r['position'],(4,24,45))
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (2.0, 26.0, 54.0) != (4, 24, 45)
+
+First differing element 0:
+2.0
+4
+
+- (2.0, 26.0, 54.0)
++ (4, 24, 45)
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.006s
+
+FAILED (failures=1)

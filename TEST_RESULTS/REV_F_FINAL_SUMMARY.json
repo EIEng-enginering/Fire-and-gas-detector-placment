@@ -1,0 +1,65 @@
+{
+  "version": "0.6.0a1",
+  "status": "WORKING DEVELOPMENT CHECKPOINT / UNVERIFIED",
+  "baseline_before_edits": {
+    "rev_e_zip_sha256": "7d56b4b28b48f017aae79141567aec01fbc648e8acc2d7f026004c59cdf732e8",
+    "hashes_box": "753/753 OK",
+    "hashes_windows": "753/753 OK",
+    "tests_box": "190/190 PASS (87/95/8)",
+    "tests_windows": "92 PASS / 98 ERROR of 190 (unit 87/87; integration 3/95; acceptance 2/8)",
+    "evidence_box": "TEST_RESULTS/REV_F_BASELINE_BOX",
+    "evidence_windows": "TEST_RESULTS/REV_F_WINDOWS_EVIDENCE/01_REV_E_UNTOUCHED_BASELINE_20261116T072757Z"
+  },
+  "final": {
+    "tests": 201,
+    "unit": 87,
+    "integration": 105,
+    "acceptance": 9,
+    "box": "201/201 PASS",
+    "box_evidence": "TEST_RESULTS/20261116T075829Z",
+    "windows": "200/201 (1 ERROR test_symlink_alias_fenced WinError 1314: no Developer Mode / symlink privilege)",
+    "windows_evidence": "TEST_RESULTS/REV_F_WINDOWS_EVIDENCE/05_WINDOWS_ACCEPTANCE_SCRIPT_SUITES_20261116T073919Z"
+  },
+  "fresh_extraction": {
+    "candidate_zip_sha256": "8fdf6a6a8dffde97d94ddf72682ba249d70dc32609e6513e1190529199f3d338",
+    "box": "858/858 hashes; 201/201 PASS; TEST_RESULTS/REV_F_FRESH_EXTRACTION_BOX",
+    "windows": "858/858 hashes; 200/201 (symlink privilege); windows_acceptance.ps1 stopped after suites by design; windows_smoke.py run directly PASS; TEST_RESULTS/REV_F_FRESH_EXTRACTION_WINDOWS",
+    "source_match": "TEST_RESULTS/REV_F_FINAL_SOURCE_MATCH.json",
+    "note": "Final pack adds evidence/records only; executable source identical to the fresh-extracted candidate"
+  },
+  "mutants": {
+    "linux": "3/3 caught by assertion, 0 collateral errors",
+    "windows": "3/3 caught by assertion with collateral native errors recorded",
+    "evidence": [
+      "TEST_RESULTS/REV_F_MUTATIONS_linux.json",
+      "TEST_RESULTS/REV_F_WINDOWS_EVIDENCE/REV_F_MUTATIONS_win32.json"
+    ]
+  },
+  "dense_benchmark": [
+    "TEST_RESULTS/REV_F_DENSE_BENCHMARK_linux.json",
+    "TEST_RESULTS/REV_F_WINDOWS_EVIDENCE/REV_F_DENSE_BENCHMARK_win32.json"
+  ],
+  "windows_real_qt": {
+    "smoke": "PASS",
+    "integrated_workflow": "PASS (automated driver, real windows platform)",
+    "evidence": [
+      "TEST_RESULTS/REV_F_WINDOWS_EVIDENCE/REV_F_WINDOWS_QT_SMOKE.txt",
+      "TEST_RESULTS/REV_F_WINDOWS_EVIDENCE/06_REAL_QT_WORKFLOW"
+    ]
+  },
+  "windows_office": {
+    "excel": "PASS automated read-back: literal = text preserved, 0 formulas",
+    "word": "NOT COMPLETED (COM hung, killed)",
+    "human_visual_review": "NOT PERFORMED"
+  },
+  "windows_manual_checklist": "NOT RUN (keyboard, DPI/multi-monitor, human visual Office/PDF, human cancellation/file-lock)",
+  "failures_and_fixes": "TEST_RESULTS/REV_F_FAILURES_AND_FIXES.json",
+  "checks_weakened": "NONE",
+  "new_migrations_dependencies": "NONE",
+  "engine_changes": "NONE",
+  "qualification": "UNVERIFIED",
+  "engineering_calculation": "BLOCKED",
+  "owner_decisions": "Q1-Q10/F01-F10 still PROPOSED",
+  "live_AI_paid_API_client_data": "NONE",
+  "git": "Owner authorised commit/push of Rev F; outcome recorded outside this pack"
+}

@@ -1,0 +1,130 @@
+﻿{
+    "tool":  "rev_f_office_check.ps1",
+    "report_dir":  "C:\\Users\\Admin\\fg_dev\\revF_qt\\WIN_QT_OUTPUT",
+    "utc":  "2026-11-16T07:48:48.8755894Z",
+    "qualification":  "UNVERIFIED AUTOMATED OFFICE READ-BACK",
+    "human_visual_review":  "NOT PERFORMED BY THIS SCRIPT",
+    "excel_version":  "16.0",
+    "excel":  {
+                  "opened":  "PASS",
+                  "sheets":  [
+                                 {
+                                     "name":  "Study",
+                                     "rows":  6,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "calculation_runs",
+                                     "rows":  2,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "components",
+                                     "rows":  15,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "detectors",
+                                     "rows":  3,
+                                     "columns":  5
+                                 },
+                                 {
+                                     "name":  "evidence",
+                                     "rows":  2,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "findings",
+                                     "rows":  6,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "geometry_sources",
+                                     "rows":  1,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "mount_revision_decisions",
+                                     "rows":  2,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "mounts",
+                                     "rows":  2,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "performance_links",
+                                     "rows":  2,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "performance_preparation",
+                                     "rows":  2,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "preparation_reviews",
+                                     "rows":  2,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "records",
+                                     "rows":  2,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "revision_changes",
+                                     "rows":  24,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "source_preparation_history",
+                                     "rows":  3,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "study_basis",
+                                     "rows":  2,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "unresolved_inputs",
+                                     "rows":  5,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "Detector schedule",
+                                     "rows":  3,
+                                     "columns":  6
+                                 },
+                                 {
+                                     "name":  "Readiness summary",
+                                     "rows":  8,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "Mount schedule",
+                                     "rows":  2,
+                                     "columns":  6
+                                 },
+                                 {
+                                     "name":  "Performance catalogue",
+                                     "rows":  2,
+                                     "columns":  6
+                                 }
+                             ],
+                  "cells_scanned":  229,
+                  "formula_cells":  0,
+                  "literal_equals_text_cells":  0,
+                  "literal_equals_samples":  [
+
+                                             ],
+                  "status":  "PASS"
+              },
+    "pdf":  {
+                "file":  "Study.pdf",
+                "bytes":  128146,
+                "header":  "%PDF-1.4"
+            }
+}

@@ -1,0 +1,87 @@
+COMMAND: C:\Users\Admin\fg_dev\venv312\Scripts\python.exe -B -m unittest discover -s C:\Users\Admin\fg_dev\revE_baseline\tests\acceptance -v
+test_long_source_field_all_formats_no_loss (test_long_evidence_report.LongEvidenceReport.test_long_source_field_all_formats_no_loss) ... ERROR
+test_import_history_and_raw_source_all_formats_and_undo (test_preparation_reports_rev_e.PreparationReports.test_import_history_and_raw_source_all_formats_and_undo) ... ERROR
+test_connected_study_save_reopen_report_worker (test_rev_c_workflow_service.RevCStudy.test_connected_study_save_reopen_report_worker) ... ERROR
+test_report_cancel_reaps_child (test_rev_c_workflow_service.RevCStudy.test_report_cancel_reaps_child) ... ok
+test_basis_mount_and_readiness_all_formats (test_schema3_reports.Schema3Reports.test_basis_mount_and_readiness_all_formats) ... ERROR
+test_large_audit_field_is_chunked_without_losing_values (test_schema3_reports.Schema3Reports.test_large_audit_field_is_chunked_without_losing_values) ... ok
+test_all_formats_and_corruption_refusal (test_synthetic_reports.Reports.test_all_formats_and_corruption_refusal) ... ERROR
+test_end_to_end_no_real_data (test_synthetic_workflow.SyntheticAcceptance.test_end_to_end_no_real_data) ... ERROR
+
+======================================================================
+ERROR: test_long_source_field_all_formats_no_loss (test_long_evidence_report.LongEvidenceReport.test_long_source_field_all_formats_no_loss)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\fg_dev\revE_baseline\tests\acceptance\test_long_evidence_report.py", line 9, in test_long_source_field_all_formats_no_loss
+    root=Path(tmp);p=create_case(root/'s.fgcase','SYNTHETIC LONG EVIDENCE')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\fg_dev\revE_baseline\src\fgmapping\services\case.py", line 67, in create_case
+    with open(tmp,'rb') as f: os.fsync(f.fileno())
+                              ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 9] Bad file descriptor
+
+======================================================================
+ERROR: test_import_history_and_raw_source_all_formats_and_undo (test_preparation_reports_rev_e.PreparationReports.test_import_history_and_raw_source_all_formats_and_undo)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\fg_dev\revE_baseline\tests\acceptance\test_preparation_reports_rev_e.py", line 11, in test_import_history_and_raw_source_all_formats_and_undo
+    root=Path(tmp);p=create_case(root/'s.fgcase','SYNTHETIC REV E REPORT')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\fg_dev\revE_baseline\src\fgmapping\services\case.py", line 67, in create_case
+    with open(tmp,'rb') as f: os.fsync(f.fileno())
+                              ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 9] Bad file descriptor
+
+======================================================================
+ERROR: test_connected_study_save_reopen_report_worker (test_rev_c_workflow_service.RevCStudy.test_connected_study_save_reopen_report_worker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\fg_dev\revE_baseline\tests\acceptance\test_rev_c_workflow_service.py", line 12, in test_connected_study_save_reopen_report_worker
+    root=Path(tmp);p=create_case(root/'s.fgcase','SYNTHETIC CONNECTED STUDY')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\fg_dev\revE_baseline\src\fgmapping\services\case.py", line 67, in create_case
+    with open(tmp,'rb') as f: os.fsync(f.fileno())
+                              ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 9] Bad file descriptor
+
+======================================================================
+ERROR: test_basis_mount_and_readiness_all_formats (test_schema3_reports.Schema3Reports.test_basis_mount_and_readiness_all_formats)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\fg_dev\revE_baseline\tests\acceptance\test_schema3_reports.py", line 14, in test_basis_mount_and_readiness_all_formats
+    root=Path(tmp);p=create_case(root/'s.fgcase','SYNTHETIC')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\fg_dev\revE_baseline\src\fgmapping\services\case.py", line 67, in create_case
+    with open(tmp,'rb') as f: os.fsync(f.fileno())
+                              ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 9] Bad file descriptor
+
+======================================================================
+ERROR: test_all_formats_and_corruption_refusal (test_synthetic_reports.Reports.test_all_formats_and_corruption_refusal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\fg_dev\revE_baseline\tests\acceptance\test_synthetic_reports.py", line 10, in test_all_formats_and_corruption_refusal
+    root=Path(temp);path=create_case(root/'syn.fgcase','SYNTHETIC')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\fg_dev\revE_baseline\src\fgmapping\services\case.py", line 67, in create_case
+    with open(tmp,'rb') as f: os.fsync(f.fileno())
+                              ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 9] Bad file descriptor
+
+======================================================================
+ERROR: test_end_to_end_no_real_data (test_synthetic_workflow.SyntheticAcceptance.test_end_to_end_no_real_data)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\fg_dev\revE_baseline\tests\acceptance\test_synthetic_workflow.py", line 11, in test_end_to_end_no_real_data
+    create_case(p,'SYNTHETIC TEST FACILITY')
+  File "C:\Users\Admin\fg_dev\revE_baseline\src\fgmapping\services\case.py", line 67, in create_case
+    with open(tmp,'rb') as f: os.fsync(f.fileno())
+                              ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 9] Bad file descriptor
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.022s
+
+FAILED (errors=6)
+
+EXIT: 1

@@ -1,0 +1,29 @@
+[
+  {
+    "mutation": "fsync-read-only-descriptor",
+    "platform": "win32",
+    "caught_by_assertion": true,
+    "assertion_failures": 3,
+    "collateral_errors": 6,
+    "accepted": true,
+    "exit_code": 1
+  },
+  {
+    "mutation": "inspect-backup-connection-leak",
+    "platform": "win32",
+    "caught_by_assertion": true,
+    "assertion_failures": 3,
+    "collateral_errors": 3,
+    "accepted": true,
+    "exit_code": 1
+  },
+  {
+    "mutation": "geometry-backup-connection-leak",
+    "platform": "win32",
+    "caught_by_assertion": true,
+    "assertion_failures": 1,
+    "collateral_errors": 2,
+    "accepted": true,
+    "exit_code": 1
+  }
+]

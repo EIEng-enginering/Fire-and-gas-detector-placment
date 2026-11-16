@@ -1,0 +1,114 @@
+﻿{
+    "tool":  "rev_f_office_check.ps1",
+    "report_dir":  "C:\\Users\\Admin\\fg_dev\\revF_qt\\WIN_LITERAL_OUTPUT",
+    "utc":  "2026-11-16T07:52:44.2123926Z",
+    "qualification":  "UNVERIFIED AUTOMATED OFFICE READ-BACK",
+    "human_visual_review":  "NOT PERFORMED BY THIS SCRIPT",
+    "excel_version":  "16.0",
+    "excel":  {
+                  "opened":  "PASS",
+                  "sheets":  [
+                                 {
+                                     "name":  "Study",
+                                     "rows":  6,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "calculation_runs",
+                                     "rows":  1,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "components",
+                                     "rows":  14,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "detectors",
+                                     "rows":  3,
+                                     "columns":  5
+                                 },
+                                 {
+                                     "name":  "evidence",
+                                     "rows":  2,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "findings",
+                                     "rows":  9,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "geometry_sources",
+                                     "rows":  1,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "mounts",
+                                     "rows":  1,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "performance_links",
+                                     "rows":  1,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "performance_preparation",
+                                     "rows":  3,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "preparation_reviews",
+                                     "rows":  1,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "records",
+                                     "rows":  1,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "study_basis",
+                                     "rows":  1,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "unresolved_inputs",
+                                     "rows":  7,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "Detector schedule",
+                                     "rows":  3,
+                                     "columns":  6
+                                 },
+                                 {
+                                     "name":  "Readiness summary",
+                                     "rows":  10,
+                                     "columns":  2
+                                 },
+                                 {
+                                     "name":  "Performance catalogue",
+                                     "rows":  3,
+                                     "columns":  6
+                                 }
+                             ],
+                  "cells_scanned":  167,
+                  "formula_cells":  0,
+                  "literal_equals_text_cells":  6,
+                  "literal_equals_samples":  [
+                                                 "Performance catalogue!B2 =1+1",
+                                                 "Performance catalogue!C2 =1+1",
+                                                 "Performance catalogue!D2 =1+1",
+                                                 "Performance catalogue!B3 =HYPERLINK(\"http://example.invalid\",\"SYNTHETIC\")",
+                                                 "Performance catalogue!C3 =HYPERLINK(\"http://example.invalid\",\"SYNTHETIC\")"
+                                             ],
+                  "status":  "PASS"
+              },
+    "pdf":  {
+                "file":  "Study.pdf",
+                "bytes":  53467,
+                "header":  "%PDF-1.4"
+            }
+}

@@ -1,0 +1,11 @@
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tools/rev_e_workflow.py", line 71, in <module>
+    target_scene=get_scene(s).to_dict();target_scene['components']=[c for c in target_scene['components'] if c['semantic']!='DETECTOR'];target_scene['frames'][0]['matrix'][0][3]+=2;target_scene['source_revision']='SYNTHETIC FACILITY REVISION B'
+                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'tuple' object does not support item assignment

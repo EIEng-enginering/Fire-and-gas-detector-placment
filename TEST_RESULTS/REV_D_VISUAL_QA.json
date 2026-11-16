@@ -1,0 +1,15 @@
+{
+  "status": "PASS FOR SYNTHETIC DEVELOPMENT REPORT",
+  "Word_pages": 16,
+  "PDF_pages": 12,
+  "inspection": "All pages inspected through contact sheets; PDF detector page spot-inspected full size; three actual Qt themes inspected",
+  "finding_and_correction": "Initial standard-font substitution rendered uneven PDF spacing; embedded bundled Vera fonts, regenerated exports and verified font embedding in acceptance test",
+  "limits": [
+    "Native Windows and Office NOT RUN",
+    "Large production studies and engineering interpretation not accepted"
+  ],
+  "hashes": {
+    "OUTPUT_SAMPLES/REV_D_STUDY/Study.docx": "5a25517cc6164548a81c53fb0c05bad8bc716bb7af0d999833c0ef8fbb6c33ef",
+    "OUTPUT_SAMPLES/REV_D_STUDY/Study.pdf": "2f16f0b04c72a334ca1960aad6410d97be84d842e6af0b7bc03649f6a7dcfd41"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "method": "MV-1 SYNTHETIC geometry only",
+  "qualification": "UNVERIFIED",
+  "benchmark": "Opaque planar wall covers positive-Y half of square target at x=4; rays cross plane x=2",
+  "tolerance_m": 1e-09,
+  "results": [
+    {
+      "n_per_axis": 4,
+      "samples": 16,
+      "visible_fraction": 0.5,
+      "constructive_exact_area_fraction": 0.5,
+      "absolute_error": 0.0,
+      "seconds": 0.003828046999956314
+    },
+    {
+      "n_per_axis": 8,
+      "samples": 64,
+      "visible_fraction": 0.5,
+      "constructive_exact_area_fraction": 0.5,
+      "absolute_error": 0.0,
+      "seconds": 0.008821818000001258
+    },
+    {
+      "n_per_axis": 16,
+      "samples": 256,
+      "visible_fraction": 0.5,
+      "constructive_exact_area_fraction": 0.5,
+      "absolute_error": 0.0,
+      "seconds": 0.016832949999979974
+    },
+    {
+      "n_per_axis": 32,
+      "samples": 1024,
+      "visible_fraction": 0.5,
+      "constructive_exact_area_fraction": 0.5,
+      "absolute_error": 0.0,
+      "seconds": 0.04280297500008601
+    }
+  ]
+}

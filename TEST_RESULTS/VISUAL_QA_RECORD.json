@@ -1,0 +1,9 @@
+{
+  "status": "DEVELOPMENT VISUAL REVIEW",
+  "UI": "Actual Qt6.12 Linux offscreen grey/dark/light viewed; UI_DELIVERY.txt also exercises linked detector move/undo",
+  "DOCX": "8 pages rendered using bundled render_docx.py; all pages inspected; field tables, repeated headers and unbroken rows",
+  "PDF": "6 pages rendered with pdftoppm; all pages inspected; final section/record keep-together fix checked on pages4/5",
+  "XLSX": "Reopened and all row fields plus typed XYZ compared. Native Office and spreadsheet visual QA pending",
+  "Windows": "NOT RUN",
+  "engineering_qualification": "UNVERIFIED"
+}

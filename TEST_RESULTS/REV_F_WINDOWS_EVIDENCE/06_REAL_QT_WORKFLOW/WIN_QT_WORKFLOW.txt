@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "Qt_platform": "windows",
+  "Windows": "NOT RUN",
+  "checks": [
+    "snapshot-worker bulk register preview and atomic apply",
+    "facility revision preview and explicit follow decision",
+    "revision undo/redo",
+    "explicit mount dialog",
+    "basis dialog with explicit voting",
+    "performance preparation exact-match link dialog",
+    "draft review without approval",
+    "input readiness separate from engineering gate",
+    "cancellable geometry worker and 64 traces",
+    "diagnostic overlay",
+    "revision comparison",
+    "all-format report and QA",
+    "three-theme screenshots",
+    "schema3 save/reopen",
+    "restore-as-new worker"
+  ],
+  "readiness": {
+    "input_status": "MISSING",
+    "missing": [
+      "PERFORMANCE_DATASET:SYN-D02"
+    ],
+    "blocking": [],
+    "review": [
+      "GEOMETRY_AND_MOUNT_FEASIBILITY_NOT_QUALIFIED",
+      "SYNTHETIC_PERFORMANCE_ONLY:SYN-D01"
+    ],
+    "engineering_calculation_status": "BLOCKED",
+    "engineering_blockers": [
+      "No qualified manufacturer response engine",
+      "No authorised real vendor performance basis",
+      "Independent engineering review and owner promotion required"
+    ],
+    "qualification": "UNVERIFIED",
+    "review_status": "CANDIDATE"
+  },
+  "geometry_bounds": [
+    0.5,
+    0.5
+  ],
+  "output": "C:\\Users\\Admin\\fg_dev\\revF_qt\\WIN_QT_OUTPUT",
+  "saved_case": "C:\\Users\\Admin\\fg_dev\\revF_qt\\WIN_QT_CASE.fgcase"
+}

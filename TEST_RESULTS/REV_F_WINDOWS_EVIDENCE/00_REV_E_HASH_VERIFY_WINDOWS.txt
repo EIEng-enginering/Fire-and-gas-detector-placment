@@ -1,0 +1,1 @@
+﻿Rev E SHA256SUMS on Windows (C:\Users\Admin\fg_dev\revE_baseline, extracted from Downloads ZIP 7d56b4b2...): OK=753 BAD=0

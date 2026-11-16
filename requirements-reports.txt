@@ -1,0 +1,5 @@
+# Optional offline report exporters / readers. Core and viewer work without these.
+openpyxl==3.1.5
+python-docx==1.2.0
+reportlab==4.4.9
+pypdf==6.21.4

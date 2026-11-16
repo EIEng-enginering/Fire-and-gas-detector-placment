@@ -1,0 +1,12 @@
+COMMAND: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python -B -m unittest discover -s /workspace/scratch/1969b32c6646/rev_d/tests/acceptance -v
+test_connected_study_save_reopen_report_worker (test_rev_c_workflow_service.RevCStudy.test_connected_study_save_reopen_report_worker) ... ok
+test_report_cancel_reaps_child (test_rev_c_workflow_service.RevCStudy.test_report_cancel_reaps_child) ... ok
+test_all_formats_and_corruption_refusal (test_synthetic_reports.Reports.test_all_formats_and_corruption_refusal) ... ok
+test_end_to_end_no_real_data (test_synthetic_workflow.SyntheticAcceptance.test_end_to_end_no_real_data) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.812s
+
+OK
+
+EXIT: 0

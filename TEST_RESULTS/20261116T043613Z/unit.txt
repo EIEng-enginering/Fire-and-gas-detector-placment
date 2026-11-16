@@ -1,0 +1,33 @@
+COMMAND: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python -B -m unittest discover -s /workspace/scratch/1969b32c6646/candidate/tests/unit -v
+test_bad_inputs_rejected (test_geometry.GeometryPrototypes.test_bad_inputs_rejected) ... ok
+test_center_ray_occluded (test_geometry.GeometryPrototypes.test_center_ray_occluded) ... ok
+test_clear_ray (test_geometry.GeometryPrototypes.test_clear_ray) ... ok
+test_cone_reference (test_geometry.GeometryPrototypes.test_cone_reference) ... ok
+test_grazing_is_blocked (test_geometry.GeometryPrototypes.test_grazing_is_blocked) ... ok
+test_inside_start_is_blocked (test_geometry.GeometryPrototypes.test_inside_start_is_blocked) ... ok
+test_one_and_two_out_of_two (test_geometry.GeometryPrototypes.test_one_and_two_out_of_two) ... ok
+test_parallel_miss (test_geometry.GeometryPrototypes.test_parallel_miss) ... ok
+test_weighted_fraction (test_geometry.GeometryPrototypes.test_weighted_fraction) ... ok
+test_bad_coordinates (test_scene.SceneTests.test_bad_coordinates) ... ok
+test_bad_frame (test_scene.SceneTests.test_bad_frame) ... ok
+test_bad_mesh (test_scene.SceneTests.test_bad_mesh) ... ok
+test_bad_transforms (test_scene.SceneTests.test_bad_transforms) ... ok
+test_closed_mesh (test_scene.SceneTests.test_closed_mesh) ... ok
+test_cycle (test_scene.SceneTests.test_cycle) ... ok
+test_duplicate_and_missing_source (test_scene.SceneTests.test_duplicate_and_missing_source) ... ok
+test_exact_json_roundtrip (test_scene.SceneTests.test_exact_json_roundtrip) ... ok
+test_hostile (test_scene.SceneTests.test_hostile) ... ok
+test_obj_units_and_hash (test_scene.SceneTests.test_obj_units_and_hash) ... ok
+test_open_duplicate (test_scene.SceneTests.test_open_duplicate) ... ok
+test_rotated_scaled_translated_exact (test_scene.SceneTests.test_rotated_scaled_translated_exact) ... ok
+test_roundtrip_angles (test_scene.SceneTests.test_roundtrip_angles) ... ok
+test_stl (test_scene.SceneTests.test_stl) ... ok
+test_units (test_scene.SceneTests.test_units) ... ok
+test_colour_contrast (test_theme.ThemeContract.test_colour_contrast) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.049s
+
+OK
+
+EXIT: 0

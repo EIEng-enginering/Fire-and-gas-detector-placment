@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "scope": "Every src/contracts/tests/tools file byte-identical to fresh-tested archive",
+  "fresh_test_total": 85,
+  "only_later_changes": "Report/state/audit metadata, not source or tests"
+}

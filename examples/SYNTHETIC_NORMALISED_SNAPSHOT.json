@@ -1,0 +1,69 @@
+{
+  "snapshot_version": "0.1.0a1",
+  "status": "DEVELOPMENT BUILD",
+  "case": {
+    "case_uuid": "fa23a2ce-6322-4c5f-b4c0-77596741c8dd",
+    "name": "SYNTHETIC Offshore Process Module",
+    "status": "DEVELOPMENT BUILD",
+    "schema_version": 1
+  },
+  "evidence": [
+    {
+      "id": "SYN-DR-001",
+      "kind": "SYNTHETIC_LAYOUT",
+      "description": "Fictitious module layout, not a real installation",
+      "document_revision": "A",
+      "location_ref": "SYNTHETIC IMAGE 1",
+      "data_class": "SYNTHETIC"
+    }
+  ],
+  "detectors": [
+    {
+      "id": "SYN-FD-101",
+      "detector_type": "FLAME",
+      "x": 1.0,
+      "y": 2.0,
+      "z": 3.0,
+      "evidence_id": "SYN-DR-001",
+      "review_status": "CANDIDATE"
+    },
+    {
+      "id": "SYN-FD-102",
+      "detector_type": "FLAME",
+      "x": 8.0,
+      "y": 4.0,
+      "z": 3.0,
+      "evidence_id": "SYN-DR-001",
+      "review_status": "CANDIDATE"
+    }
+  ],
+  "ledger": [
+    {
+      "event_id": 1,
+      "utc": "2026-11-16T03:27:39.851276+00:00",
+      "actor": "SYNTHETIC_ENGINEER",
+      "command": "ADD_EVIDENCE",
+      "forward_json": "{\"data_class\": \"SYNTHETIC\", \"id\": \"SYN-DR-001\", \"kind\": \"SYNTHETIC_LAYOUT\", \"location\": \"SYNTHETIC IMAGE 1\", \"source\": \"A\"}",
+      "inverse_json": "{\"delete_id\": \"SYN-DR-001\"}",
+      "is_compensation": 0
+    },
+    {
+      "event_id": 2,
+      "utc": "2026-11-16T03:27:39.852716+00:00",
+      "actor": "SYNTHETIC_ENGINEER",
+      "command": "ADD_DETECTOR",
+      "forward_json": "{\"id\": \"SYN-FD-101\", \"source\": \"SYN-DR-001\", \"type\": \"FLAME\", \"x\": 1.0, \"y\": 2.0, \"z\": 3.0}",
+      "inverse_json": "{\"delete_id\": \"SYN-FD-101\"}",
+      "is_compensation": 0
+    },
+    {
+      "event_id": 3,
+      "utc": "2026-11-16T03:27:39.853731+00:00",
+      "actor": "SYNTHETIC_ENGINEER",
+      "command": "ADD_DETECTOR",
+      "forward_json": "{\"id\": \"SYN-FD-102\", \"source\": \"SYN-DR-001\", \"type\": \"FLAME\", \"x\": 8.0, \"y\": 4.0, \"z\": 3.0}",
+      "inverse_json": "{\"delete_id\": \"SYN-FD-102\"}",
+      "is_compensation": 0
+    }
+  ]
+}

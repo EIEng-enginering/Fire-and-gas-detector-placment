@@ -1,0 +1,1 @@
+Candidate ZIP sha256 8fdf6a6a8dffde97d94ddf72682ba249d70dc32609e6513e1190529199f3d338 extracted fresh on Linux box; sha256sum -c SHA256SUMS.txt: 858 OK

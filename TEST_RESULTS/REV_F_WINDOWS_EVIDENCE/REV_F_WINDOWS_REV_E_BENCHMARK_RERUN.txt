@@ -1,0 +1,29 @@
+﻿{
+  "qualification": "UNVERIFIED SOFTWARE BENCHMARK ONLY",
+  "platform": "Linux; Windows NOT RUN",
+  "sparse_scene": {
+    "obstacles": 256,
+    "rays": 256,
+    "outputs_identical": true,
+    "independent_geometric_expected_clear_fraction": 1.0,
+    "runs": [
+      {
+        "indexed": false,
+        "seconds_including_index_build": 1.9300634000101127,
+        "mesh_queries": 65536
+      },
+      {
+        "indexed": true,
+        "seconds_including_index_build": 0.21938659995794296,
+        "mesh_queries": 0
+      }
+    ]
+  },
+  "bulk_import": {
+    "rows": 2000,
+    "bytes": 125930,
+    "preview_seconds": 1.8482723999768496,
+    "case_unchanged": true
+  },
+  "limits": "One synthetic sparse scene; timings are observations, not general speed or Windows performance guarantees"
+}

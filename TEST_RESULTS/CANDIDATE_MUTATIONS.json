@@ -1,0 +1,17 @@
+[
+  {
+    "mutation": "missing-physics-gate",
+    "exit_code": 1,
+    "detected_by_assertion": true
+  },
+  {
+    "mutation": "triangle-edge-sense",
+    "exit_code": 1,
+    "detected_by_assertion": true
+  },
+  {
+    "mutation": "coordinate-unit-conversion",
+    "exit_code": 1,
+    "detected_by_assertion": true
+  }
+]

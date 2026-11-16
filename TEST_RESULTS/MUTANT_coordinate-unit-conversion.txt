@@ -1,0 +1,77 @@
+COMMAND ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-B', '-m', 'unittest', 'discover', '-s', '/workspace/scratch/1969b32c6646/candidate/tests/unit', '-p', 'test_scene.py', '-v']
+test_bad_coordinates (test_scene.SceneTests.test_bad_coordinates) ... ok
+test_bad_frame (test_scene.SceneTests.test_bad_frame) ... ok
+test_bad_mesh (test_scene.SceneTests.test_bad_mesh) ... ok
+test_bad_transforms (test_scene.SceneTests.test_bad_transforms) ... ok
+test_closed_mesh (test_scene.SceneTests.test_closed_mesh) ... ok
+test_cycle (test_scene.SceneTests.test_cycle) ... ok
+test_duplicate_and_missing_source (test_scene.SceneTests.test_duplicate_and_missing_source) ... ok
+test_exact_json_roundtrip (test_scene.SceneTests.test_exact_json_roundtrip) ... ok
+test_hostile (test_scene.SceneTests.test_hostile) ... ok
+test_obj_units_and_hash (test_scene.SceneTests.test_obj_units_and_hash) ... FAIL
+test_open_duplicate (test_scene.SceneTests.test_open_duplicate) ... ok
+test_rotated_scaled_translated_exact (test_scene.SceneTests.test_rotated_scaled_translated_exact) ... FAIL
+test_roundtrip_angles (test_scene.SceneTests.test_roundtrip_angles) ... FAIL
+test_stl (test_scene.SceneTests.test_stl) ... ok
+test_units (test_scene.SceneTests.test_units) ... FAIL
+
+======================================================================
+FAIL: test_obj_units_and_hash (test_scene.SceneTests.test_obj_units_and_hash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/candidate/tests/unit/test_scene.py", line 49, in test_obj_units_and_hash
+    r=parse_mesh(raw,'.obj',f);self.assertEqual(r['mesh']['vertices'][1],(1,0,0));self.assertEqual(r,parse_mesh(raw,'.obj',f))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1000.0, 0.0, 0.0) != (1, 0, 0)
+
+First differing element 0:
+1000.0
+1
+
+- (1000.0, 0.0, 0.0)
++ (1, 0, 0)
+
+======================================================================
+FAIL: test_rotated_scaled_translated_exact (test_scene.SceneTests.test_rotated_scaled_translated_exact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/candidate/tests/unit/test_scene.py", line 11, in test_rotated_scaled_translated_exact
+    self.assertEqual(f.world((1000,2000,3000)),(6,23,42));self.assertEqual(f.local((6,23,42)),(1000,2000,3000))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (-3990.0, 3020.0, 12030.0) != (6, 23, 42)
+
+First differing element 0:
+-3990.0
+6
+
+- (-3990.0, 3020.0, 12030.0)
++ (6, 23, 42)
+
+======================================================================
+FAIL: test_roundtrip_angles (test_scene.SceneTests.test_roundtrip_angles)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/candidate/tests/unit/test_scene.py", line 17, in test_roundtrip_angles
+    for x,y in zip(f.local(f.world(p)),p):self.assertAlmostEqual(x,y,places=10)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 100.0 != 1 within 10 places (99.0 difference)
+
+======================================================================
+FAIL: test_units (test_scene.SceneTests.test_units)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/candidate/tests/unit/test_scene.py", line 7, in test_units
+    self.assertEqual(Frame('F','mm','SYN').world((1000,2000,3000)),(1,2,3))
+AssertionError: Tuples differ: (1000.0, 2000.0, 3000.0) != (1, 2, 3)
+
+First differing element 0:
+1000.0
+1
+
+- (1000.0, 2000.0, 3000.0)
++ (1, 2, 3)
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.048s
+
+FAILED (failures=4)

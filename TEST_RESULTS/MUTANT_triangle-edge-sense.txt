@@ -1,0 +1,54 @@
+COMMAND ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-B', '-m', 'unittest', 'discover', '-s', '/workspace/scratch/1969b32c6646/candidate/tests/unit', '-p', 'test_mesh_visibility.py', '-v']
+test_bad_tolerance (test_mesh_visibility.Visibility.test_bad_tolerance) ... ok
+test_boundary_tolerances (test_mesh_visibility.Visibility.test_boundary_tolerances) ... FAIL
+test_bvh_vs_box_constructive (test_mesh_visibility.Visibility.test_bvh_vs_box_constructive) ... FAIL
+test_coplanar_refused (test_mesh_visibility.Visibility.test_coplanar_refused) ... ok
+test_edge_endpoint (test_mesh_visibility.Visibility.test_edge_endpoint) ... FAIL
+test_exact_rational_oracle_250 (test_mesh_visibility.Visibility.test_exact_rational_oracle_250) ... FAIL
+test_partial_finite_target (test_mesh_visibility.Visibility.test_partial_finite_target) ... FAIL
+
+======================================================================
+FAIL: test_boundary_tolerances (test_mesh_visibility.Visibility.test_boundary_tolerances)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/candidate/tests/unit/test_mesh_visibility.py", line 19, in test_boundary_tolerances
+    self.assertTrue(segment_triangle((0,0,0),(4,0,0),self.tri,eps))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_bvh_vs_box_constructive (test_mesh_visibility.Visibility.test_bvh_vs_box_constructive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/candidate/tests/unit/test_mesh_visibility.py", line 23, in test_bvh_vs_box_constructive
+    self.assertTrue(index.blocked((0,0,0),(5,0,0)));self.assertFalse(index.blocked((0,0,0),(5,5,0)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_edge_endpoint (test_mesh_visibility.Visibility.test_edge_endpoint)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/candidate/tests/unit/test_mesh_visibility.py", line 14, in test_edge_endpoint
+    self.assertTrue(segment_triangle((0,0,0),p,self.tri,1e-10))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_exact_rational_oracle_250 (test_mesh_visibility.Visibility.test_exact_rational_oracle_250)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/candidate/tests/unit/test_mesh_visibility.py", line 11, in test_exact_rational_oracle_250
+    self.assertEqual(segment_triangle((0,0,0),p,self.tri,1e-10),exact_segment_triangle((0,0,0),p,self.tri),p)
+AssertionError: False != True : (4, 0.75, -1.5)
+
+======================================================================
+FAIL: test_partial_finite_target (test_mesh_visibility.Visibility.test_partial_finite_target)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/candidate/tests/unit/test_mesh_visibility.py", line 26, in test_partial_finite_target
+    self.assertEqual(finite_target_visible_fraction((0,0,0),[((5,0,0),3),((5,5,0),1)],[index]),.25)
+AssertionError: 1.0 != 0.25
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.009s
+
+FAILED (failures=5)

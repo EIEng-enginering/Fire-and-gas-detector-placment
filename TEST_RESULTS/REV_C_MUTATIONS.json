@@ -1,0 +1,12 @@
+[
+  {
+    "mutation": "writer-fence-bypass",
+    "detected": true,
+    "exit": 1
+  },
+  {
+    "mutation": "undo-wrong-state",
+    "detected": true,
+    "exit": 1
+  }
+]

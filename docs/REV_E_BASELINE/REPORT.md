@@ -1,0 +1,16 @@
+# Development report — Rev E
+16 November2026. v0.5.0a1. DEVELOPMENT BUILD / UNVERIFIED.
+
+Done and verified in this Linux environment: all six candidate development directions, including actual Qt import/revision review/apply, source retention, atomic edits/undo/redo, independent rotated-target/multiple-obstacle/slab checks, index-vs-linear equality, report source histories/mount decisions/unresolved inputs, literal spreadsheet text handling, and recovery fault injection. Baseline168/168 before edits; final190/190 (87 unit/95 integration/8 acceptance), no failures/skips. Fresh staged-extraction rerun uses identical executable source; exact logs in TEST_RESULTS/REV_E_FINAL_SUMMARY.json. Three deliberate faults were caught.
+
+Named additions: services/preparation.py, bulk_import.py, reconciliation.py, preparation_job.py; engine/spatial.py; ui/preparation_dialogs.py; focused tests and tools/rev_e_workflow.py, rev_e_benchmarks.py, rev_e_mutations.py. Existing inspection, geometry-run source fingerprints, main UI and reports extended. No new dependency/migration. Only the inherited exact-version assertion changed; other inherited tests and all migrations remain byte-identical.
+
+Measured synthetic sparse benchmark:256 obstacles/256 rays; unfiltered1.025854s and65,536 mesh queries, indexed0.121741s and0 mesh queries, including index construction; complete outputs identical and independently expected clear fraction1. A separate2000-row source preview took0.498673s and left the case unchanged. These are single-run Linux observations, not Windows/general speed guarantees. See REV_E_BENCHMARKS.json.
+
+Done but not verified on target platform: Windows launch/Qt/native process/locking/restore/NTFS/Office/DPI checks. Detailed checklist retained. Not done: qualified detector response/coverage, industrial CAD/solid qualification, complete production study workflows, complete WP02–WP12 acceptance, installer/EXE, independent engineering qualification or release.
+
+New recovery tests verify duplicate/concurrent targets are preserved, corrupt copied sources refused, failures before installation leave no target, post-install failure leaves an inspectable valid new copy, cancellation does not delete installed/unrelated files, and an interrupted bulk save recovers edits plus exact source records. Linux tests do not establish native Windows crash safety.
+
+Initial new test harness errors (close argument, string fixture angles/hash) were corrected without changing assertions. The first Rev E UI helper failed because it tried to mutate a tuple source frame; it was corrected to work on a JSON copy. Raw intermediate logs are retained; final workflow is REV_E_UI_RETEST.txt. Final exports were regenerated from that exact immutable snapshot after spreadsheet literal hardening. Engineering calculation remains BLOCKED throughout.
+
+No branch/base commit exists; no Git actions, real/client inputs, live/paid AI, live external engineering integration, publication, approval/signature or release. Q1–Q10/F01–F10 remain proposed. Proposed software storage/algorithm choices remain candidate. The pack's sole large-file exception is the exact SHA-pinned preserved Rev D ZIP; ordinary source/file bounds remain unchanged.

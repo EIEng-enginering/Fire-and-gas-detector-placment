@@ -1,0 +1,13 @@
+# Rev D file map
+- src/fgmapping: runnable domain/engines/services/PySide6 UI.
+- contracts: original frozen-by-origin manifest/schema1, candidate schema2 and new explicit candidate schema3; owner freeze not asserted.
+- tests: 83 unit,78 integration,7 acceptance tests; no weakening.
+- tools: test, actual Qt workflow, analytic/mutation benchmarks, report/return pack builders and Windows-gated acceptance tooling.
+- examples: synthetic JSON/geometry/cases including SYNTHETIC_REV_D_STUDY.fgcase and SYNTHETIC_PERFORMANCE_PREPARATION.json.
+- OUTPUT_SAMPLES/REV_D_STUDY: final executed five-format schema3 report/comparison.
+- screenshots/REV_D_WORKFLOW_{grey,dark,light}.png: actual Linux offscreen Qt.
+- TEST_RESULTS: baseline/intermediate/final logs, mutation/analytic results, Word/PDF renders and fresh-copy checks. Earlier results are historical, final evidence indexed by REV_D_FINAL_SUMMARY.json.
+- docs: binding owner standards/specification/risks/decisions, new implementation/traceability/Windows/reference notes and preserved prior root documents.
+- ORIGINAL_ARCHIVES: unchanged WP01/takeover/Rev B/Rev C ZIPs.
+- SOURCE_FILES.json: per-file source/test/contract/tool hash/change from Rev C.
+- PACK_SCAN.json, SHA256SUMS.txt: pack allowlist/recursive archive audit and complete file hash manifest.

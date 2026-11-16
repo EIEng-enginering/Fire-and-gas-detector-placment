@@ -1,0 +1,44 @@
+test_candidates_match_independent_slab_oracle (test_scene_broadphase.SceneBroadphase.test_candidates_match_independent_slab_oracle) ... FAIL
+test_coplanar_and_endpoint_ambiguity_preserved (test_scene_broadphase.SceneBroadphase.test_coplanar_and_endpoint_ambiguity_preserved) ... FAIL
+test_rotated_target_two_obstacles_constructive_union_oracle (test_scene_broadphase.SceneBroadphase.test_rotated_target_two_obstacles_constructive_union_oracle) ... FAIL
+test_sparse_scene_reduces_mesh_queries_without_result_change (test_scene_broadphase.SceneBroadphase.test_sparse_scene_reduces_mesh_queries_without_result_change) ... ok
+
+======================================================================
+FAIL: test_candidates_match_independent_slab_oracle (test_scene_broadphase.SceneBroadphase.test_candidates_match_independent_slab_oracle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmp76qmlir6/tests/unit/test_scene_broadphase.py", line 24, in test_candidates_match_independent_slab_oracle
+    a=tuple(rng.uniform(-30,30) for k in range(3));b=tuple(rng.uniform(-30,30) for k in range(3));self.assertEqual(tree.candidates(a,b),tuple(i for i,(low,high) in enumerate(bounds) if independent_slab(a,b,low,high)))
+                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: () != (33,)
+
+Second tuple contains 1 additional elements.
+First extra element 0:
+33
+
+- ()
++ (33,)
+
+======================================================================
+FAIL: test_coplanar_and_endpoint_ambiguity_preserved (test_scene_broadphase.SceneBroadphase.test_coplanar_and_endpoint_ambiguity_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmp76qmlir6/tests/unit/test_scene_broadphase.py", line 47, in test_coplanar_and_endpoint_ambiguity_preserved
+    a=inspect_target(scene,[0,0,0],['B'],target,1e-8);self.assertEqual(a,inspect_target(scene,[0,0,0],['B'],target,1e-8,broadphase=False));self.assertEqual(a['visibility_lower_bound'],0);self.assertEqual(a['visibility_upper_bound'],1)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'met[322 chars]m2': 1.0, 'blocked_area_m2': 0.0, 'indetermina[850 chars]ed']} != {'met[322 chars]m2': 0.0, 'blocked_area_m2': 0.0, 'indetermina[1035 chars]ed']}
+Diff is 2821 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_rotated_target_two_obstacles_constructive_union_oracle (test_scene_broadphase.SceneBroadphase.test_rotated_target_two_obstacles_constructive_union_oracle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmp76qmlir6/tests/unit/test_scene_broadphase.py", line 35, in test_rotated_target_two_obstacles_constructive_union_oracle
+    actual=inspect_target(scene,[0,0,0],['B','A'],target,1e-8);self.assertAlmostEqual(actual['visibility_fraction'],.25)
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1.0 != 0.25 within 7 places (0.75 difference)
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.149s
+
+FAILED (failures=3)

@@ -1,0 +1,27 @@
+COMMAND ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-B', '-m', 'unittest', 'discover', '-s', '/workspace/scratch/1969b32c6646/candidate/tests/unit', '-p', 'test_detection_scenarios.py', '-v']
+test_bad_gas_inputs (test_detection_scenarios.Detection.test_bad_gas_inputs) ... ok
+test_bad_votes (test_detection_scenarios.Detection.test_bad_votes) ... ok
+test_gas_integral_known_answer (test_detection_scenarios.Detection.test_gas_integral_known_answer) ... ok
+test_gas_point_boundary (test_detection_scenarios.Detection.test_gas_point_boundary) ... ok
+test_missing_physics_always_refused (test_detection_scenarios.Detection.test_missing_physics_always_refused) ... FAIL
+test_thin_and_diagonal_cloud (test_detection_scenarios.Detection.test_thin_and_diagonal_cloud) ... ok
+test_voting_denominators (test_detection_scenarios.Detection.test_voting_denominators) ... ok
+test_exhaustive_known_optimum_and_baseline_immutable (test_detection_scenarios.Optimisation.test_exhaustive_known_optimum_and_baseline_immutable) ... ok
+test_two_votes_unachievable (test_detection_scenarios.Optimisation.test_two_votes_unachievable) ... ok
+test_bad_scenarios (test_detection_scenarios.Scenarios.test_bad_scenarios) ... ok
+test_exact_decimal_vs_independent_fraction (test_detection_scenarios.Scenarios.test_exact_decimal_vs_independent_fraction) ... ok
+test_missing_time_does_not_become_zero (test_detection_scenarios.Scenarios.test_missing_time_does_not_become_zero) ... ok
+
+======================================================================
+FAIL: test_missing_physics_always_refused (test_detection_scenarios.Detection.test_missing_physics_always_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/candidate/tests/unit/test_detection_scenarios.py", line 10, in test_missing_physics_always_refused
+    with self.assertRaises(EngineeringUnavailable):fn(**kw)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EngineeringUnavailable not raised
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.006s
+
+FAILED (failures=1)

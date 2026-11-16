@@ -1,0 +1,10 @@
+﻿python.exe : Traceback (most recent call last):
+At C:\Users\Admin\AppData\Local\Temp\ps-script-501ef98b-0707-4f80-8fea-6e911c1316a8.ps1:625 char:1001
++ ... TECODE='1'; & C:\Users\Admin\fg_dev\venv312\Scripts\python.exe -B too ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Admin\fg_dev\revF_fresh\tools\windows_smoke.py", line 6, in <module>
+    from fgmapping.ui.main import MainWindow
+ModuleNotFoundError: No module named 'fgmapping'

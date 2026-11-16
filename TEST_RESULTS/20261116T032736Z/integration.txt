@@ -1,0 +1,16 @@
+COMMAND: /opt/pyvenv/bin/python -B -m unittest discover -s /mnt/data/FG_Mapping_Rev_A_Development/tests/integration -v
+test_crash_recovery_explicit (test_case_lifecycle.CaseIntegration.test_crash_recovery_explicit) ... ok
+test_create_edit_save_reopen (test_case_lifecycle.CaseIntegration.test_create_edit_save_reopen) ... ok
+test_evidence_mandatory_and_synthetic (test_case_lifecycle.CaseIntegration.test_evidence_mandatory_and_synthetic) ... ok
+test_existing_case_not_overwritten (test_case_lifecycle.CaseIntegration.test_existing_case_not_overwritten) ... ok
+test_lock_refuses_second_writer (test_case_lifecycle.CaseIntegration.test_lock_refuses_second_writer) ... ok
+test_save_conflict_refuses_silent_overwrite (test_case_lifecycle.CaseIntegration.test_save_conflict_refuses_silent_overwrite) ... ok
+test_undo_is_compensating_event (test_case_lifecycle.CaseIntegration.test_undo_is_compensating_event) ... ok
+test_unsupported_schema_refused (test_case_lifecycle.CaseIntegration.test_unsupported_schema_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.143s
+
+OK
+
+EXIT: 0

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_d/tools/rev_d_workflow.py", line 38, in <module>
+    enable_geometry(s,'AUTOMATION_ENGINE');s.add_evidence('SYN-GEOM-01','SYNTHETIC','Generated case layout','A','domain.scene','AUTOMATION_ENGINE');set_scene(s,synthetic_scene(),'AUTOMATION_ENGINE');enable_study(s,'AUTOMATION_ENGINE')
+                                                                                                                                                                ^^^^^^^^^^^^^^^
+NameError: name 'synthetic_scene' is not defined

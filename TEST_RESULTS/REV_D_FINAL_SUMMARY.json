@@ -1,0 +1,48 @@
+{
+  "version": "0.4.0a1",
+  "qualification": "DEVELOPMENT / UNVERIFIED",
+  "baseline": {
+    "hashes_checked": 407,
+    "tests_before_edits": 123,
+    "evidence": "TEST_RESULTS/20261116T055634Z"
+  },
+  "final": {
+    "total": 168,
+    "suites": {
+      "unit": 83,
+      "integration": 78,
+      "acceptance": 7
+    },
+    "failures": 0,
+    "skips": 0,
+    "evidence": "TEST_RESULTS/20261116T063943Z"
+  },
+  "fresh_extraction": {
+    "total": 168,
+    "suites": {
+      "unit": 83,
+      "integration": 78,
+      "acceptance": 7
+    },
+    "failures": 0,
+    "skips": 0,
+    "evidence": "TEST_RESULTS/REV_D_FRESH_EXTRACTION/20261116T064121Z",
+    "source_test_contract_tool_bytes": "IDENTICAL TO FINAL SOURCE",
+    "staged_archive_CRC_and_all_hashes": "PASS",
+    "note": "Final pack adds evidence/document records after this staged extraction; executable source unchanged"
+  },
+  "actual_Qt_workflow": "TEST_RESULTS/REV_D_UI_FINAL.txt",
+  "all_format_QA": "OUTPUT_SAMPLES/REV_D_STUDY/QA.json",
+  "visual_QA": "TEST_RESULTS/REV_D_VISUAL_QA.json",
+  "known_answers": "TEST_RESULTS/REV_D_NUMERICAL_FINAL.txt",
+  "mutation_faults_detected": 3,
+  "mutation_evidence": "TEST_RESULTS/REV_D_MUTATIONS_FINAL.txt",
+  "source_audit": "TEST_RESULTS/REV_D_SOURCE_AUDIT.json",
+  "saved_case_integrity_FK_and_current_implementation_fingerprints": "PASS",
+  "syntax_AST": "ALL SOURCE/TEST/TOOL PYTHON PASS",
+  "Windows_native": "NOT RUN",
+  "owner_decisions": "Q1-Q10/F01-F10 still PROPOSED",
+  "engineering_calculation": "BLOCKED",
+  "git_actions": "NONE",
+  "live_AI_paid_API_client_data": "NONE"
+}

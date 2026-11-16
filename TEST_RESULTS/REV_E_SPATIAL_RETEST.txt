@@ -1,0 +1,9 @@
+test_candidates_match_independent_slab_oracle (test_scene_broadphase.SceneBroadphase.test_candidates_match_independent_slab_oracle) ... ok
+test_coplanar_and_endpoint_ambiguity_preserved (test_scene_broadphase.SceneBroadphase.test_coplanar_and_endpoint_ambiguity_preserved) ... ok
+test_rotated_target_two_obstacles_constructive_union_oracle (test_scene_broadphase.SceneBroadphase.test_rotated_target_two_obstacles_constructive_union_oracle) ... ok
+test_sparse_scene_reduces_mesh_queries_without_result_change (test_scene_broadphase.SceneBroadphase.test_sparse_scene_reduces_mesh_queries_without_result_change) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.196s
+
+OK

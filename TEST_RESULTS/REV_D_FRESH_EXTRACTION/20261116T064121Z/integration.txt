@@ -1,0 +1,86 @@
+COMMAND: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python -B -m unittest discover -s /workspace/scratch/1969b32c6646/rev_d_fresh/tests/integration -v
+test_backup_with_broken_reference_is_not_verified (test_backup_restore.BackupRestore.test_backup_with_broken_reference_is_not_verified) ... ok
+test_broken_reference_case_refused_on_open (test_backup_restore.BackupRestore.test_broken_reference_case_refused_on_open) ... ok
+test_corruption_and_missing_actor_refused (test_backup_restore.BackupRestore.test_corruption_and_missing_actor_refused) ... ok
+test_install_failure_leaves_no_partial_target (test_backup_restore.BackupRestore.test_install_failure_leaves_no_partial_target) ... ok
+test_restore_new_copy_no_overwrite_and_source_intact (test_backup_restore.BackupRestore.test_restore_new_copy_no_overwrite_and_source_intact) ... ok
+test_worker_restore_with_hash_in_path_and_cancel (test_backup_restore.BackupRestore.test_worker_restore_with_hash_in_path_and_cancel) ... ok
+test_failure_after_install_reconciles_metadata (test_case_hardening.CaseHardening.test_failure_after_install_reconciles_metadata) ... ok
+test_failure_before_replace_keeps_original_and_recoverable_work (test_case_hardening.CaseHardening.test_failure_before_replace_keeps_original_and_recoverable_work) ... ok
+test_hardlink_alias_refused (test_case_hardening.CaseHardening.test_hardlink_alias_refused) ... ok
+test_live_legacy_runtime_lock_is_not_quarantined (test_case_hardening.CaseHardening.test_live_legacy_runtime_lock_is_not_quarantined) ... ok
+test_native_lock_released_after_process_kill (test_case_hardening.CaseHardening.test_native_lock_released_after_process_kill) ... ok
+test_symlink_alias_fenced (test_case_hardening.CaseHardening.test_symlink_alias_fenced) ... ok
+test_writer_fence_across_runtimes (test_case_hardening.CaseHardening.test_writer_fence_across_runtimes) ... ok
+test_crash_recovery_explicit (test_case_lifecycle.CaseIntegration.test_crash_recovery_explicit) ... ok
+test_create_edit_save_reopen (test_case_lifecycle.CaseIntegration.test_create_edit_save_reopen) ... ok
+test_evidence_mandatory_and_synthetic (test_case_lifecycle.CaseIntegration.test_evidence_mandatory_and_synthetic) ... ok
+test_existing_case_not_overwritten (test_case_lifecycle.CaseIntegration.test_existing_case_not_overwritten) ... ok
+test_lock_refuses_second_writer (test_case_lifecycle.CaseIntegration.test_lock_refuses_second_writer) ... ok
+test_save_conflict_refuses_silent_overwrite (test_case_lifecycle.CaseIntegration.test_save_conflict_refuses_silent_overwrite) ... ok
+test_undo_is_compensating_event (test_case_lifecycle.CaseIntegration.test_undo_is_compensating_event) ... ok
+test_unsupported_schema_refused (test_case_lifecycle.CaseIntegration.test_unsupported_schema_refused) ... ok
+test_worker_cancel (test_geometry_inspection_worker.InspectionWorker.test_worker_cancel) ... ok
+test_worker_commit_and_stale_refusal (test_geometry_inspection_worker.InspectionWorker.test_worker_commit_and_stale_refusal) ... ok
+test_cancel (test_geometry_store.GeometryStore.test_cancel) ... ok
+test_corrupt_hash (test_geometry_store.GeometryStore.test_corrupt_hash) ... ok
+test_empty_actor_rolls_back (test_geometry_store.GeometryStore.test_empty_actor_rolls_back) ... ok
+test_explicit_backup_original_preserved (test_geometry_store.GeometryStore.test_explicit_backup_original_preserved) ... ok
+test_immutable_ledger (test_geometry_store.GeometryStore.test_immutable_ledger) ... ok
+test_migration_backup_preserves_unsaved_edits (test_geometry_store.GeometryStore.test_migration_backup_preserves_unsaved_edits) ... ok
+test_missing_evidence (test_geometry_store.GeometryStore.test_missing_evidence) ... ok
+test_original_contract_hash (test_geometry_store.GeometryStore.test_original_contract_hash) ... ok
+test_scene_save_reopen (test_geometry_store.GeometryStore.test_scene_save_reopen) ... ok
+test_undo_redo_reopen (test_geometry_store.GeometryStore.test_undo_redo_reopen) ... ok
+test_worker (test_geometry_store.GeometryStore.test_worker) ... ok
+test_append_replace_history_and_source_retention (test_import_review.ImportReview.test_append_replace_history_and_source_retention) ... ok
+test_refuse_modified_raw (test_import_review.ImportReview.test_refuse_modified_raw) ... ok
+test_empty_actor_preserves_geometry_and_detector (test_linked_detector_history.LinkedDetectorHistory.test_empty_actor_preserves_geometry_and_detector) ... ok
+test_move_undo_redo_reopen_and_scene_history_conflict (test_linked_detector_history.LinkedDetectorHistory.test_move_undo_redo_reopen_and_scene_history_conflict) ... ok
+test_adding_detector_stales_existing_run (test_registers_calculations.Registers.test_adding_detector_stales_existing_run) ... ok
+test_bad_zone (test_registers_calculations.Registers.test_bad_zone) ... ok
+test_detector_edit_orientation_and_stale (test_registers_calculations.Registers.test_detector_edit_orientation_and_stale) ... ok
+test_embedded_mesh_source_and_hash (test_registers_calculations.Registers.test_embedded_mesh_source_and_hash) ... ok
+test_geometry_stales_calculation (test_registers_calculations.Registers.test_geometry_stales_calculation) ... ok
+test_large_worker_output_does_not_deadlock (test_registers_calculations.Registers.test_large_worker_output_does_not_deadlock) ... ok
+test_no_qualified_method (test_registers_calculations.Registers.test_no_qualified_method) ... ok
+test_real_evidence_export_refused (test_registers_calculations.Registers.test_real_evidence_export_refused) ... ok
+test_registers_evidence_and_duplicates (test_registers_calculations.Registers.test_registers_evidence_and_duplicates) ... ok
+test_stable_field_diff_and_cross_case_refusal (test_snapshot_revision.SnapshotRevision.test_stable_field_diff_and_cross_case_refusal) ... ok
+test_run_records_exact_implementation_and_input_revision (test_source_fingerprint.Fingerprint.test_run_records_exact_implementation_and_input_revision) ... ok
+test_basis_targets_never_defaulted (test_study_preparation.StudyPreparation.test_basis_targets_never_defaulted) ... ok
+test_corrupt_performance_blocks_readiness (test_study_preparation.StudyPreparation.test_corrupt_performance_blocks_readiness) ... ok
+test_dataset_revision_is_immutable_and_source_preserved (test_study_preparation.StudyPreparation.test_dataset_revision_is_immutable_and_source_preserved) ... ok
+test_input_complete_still_engineering_blocked (test_study_preparation.StudyPreparation.test_input_complete_still_engineering_blocked) ... ok
+test_mismatch_and_project_basis_import_refused (test_study_preparation.StudyPreparation.test_mismatch_and_project_basis_import_refused) ... ok
+test_missing_mount_actor_rolls_back (test_study_preparation.StudyPreparation.test_missing_mount_actor_rolls_back) ... ok
+test_mount_edit_detach_and_undo (test_study_preparation.StudyPreparation.test_mount_edit_detach_and_undo) ... ok
+test_mount_source_missing_or_stale_is_blocked (test_study_preparation.StudyPreparation.test_mount_source_missing_or_stale_is_blocked) ... ok
+test_no_approval_review_state (test_study_preparation.StudyPreparation.test_no_approval_review_state) ... ok
+test_remount_moves_between_components_and_undo_restores (test_study_preparation.StudyPreparation.test_remount_moves_between_components_and_undo_restores) ... ok
+test_source_row_lookup_never_interpolates_or_substitutes_conditions (test_study_preparation.StudyPreparation.test_source_row_lookup_never_interpolates_or_substitutes_conditions) ... ok
+test_stored_status_anomaly_blocks_readiness (test_study_preparation.StudyPreparation.test_stored_status_anomaly_blocks_readiness) ... ok
+test_upgrade_backup_and_reopen (test_study_preparation.StudyPreparation.test_upgrade_backup_and_reopen) ... ok
+test_voting_infeasibility_is_input_blocker (test_study_preparation.StudyPreparation.test_voting_infeasibility_is_input_blocker) ... ok
+test_workspace_cannot_promote_preparation_entity (test_study_preparation.StudyPreparation.test_workspace_cannot_promote_preparation_entity) ... ok
+test_roles_numeric_sort_copy_and_follow (test_virtual_grid.VirtualGrid.test_roles_numeric_sort_copy_and_follow) ... ok
+test_add_evidence_detector_geometry_atomic_undo_redo (test_workspace.Workspace.test_add_evidence_detector_geometry_atomic_undo_redo) ... ok
+test_detector_remove_restores_details_marker_and_keeps_evidence (test_workspace.Workspace.test_detector_remove_restores_details_marker_and_keeps_evidence) ... ok
+test_duplicate_does_not_leave_orphan_evidence (test_workspace.Workspace.test_duplicate_does_not_leave_orphan_evidence) ... ok
+test_edit_marker_moves_and_undo_restores (test_workspace.Workspace.test_edit_marker_moves_and_undo_restores) ... ok
+test_foreign_edit_conflict_no_overwrite (test_workspace.Workspace.test_foreign_edit_conflict_no_overwrite) ... ok
+test_missing_actor_rolls_back_every_entity (test_workspace.Workspace.test_missing_actor_rolls_back_every_entity) ... ok
+test_multirow_paste_is_atomic (test_workspace.Workspace.test_multirow_paste_is_atomic) ... ok
+test_record_edit_remove_undo (test_workspace.Workspace.test_record_edit_remove_undo) ... ok
+test_record_invalid_bounds_no_change (test_workspace.Workspace.test_record_invalid_bounds_no_change) ... ok
+test_redo_invalidated_by_new_edit (test_workspace.Workspace.test_redo_invalidated_by_new_edit) ... ok
+test_referenced_detector_removal_refused (test_workspace.Workspace.test_referenced_detector_removal_refused) ... ok
+test_second_marker_and_bulk_move_undo (test_workspace.Workspace.test_second_marker_and_bulk_move_undo) ... ok
+test_undo_persists_across_reopen (test_workspace.Workspace.test_undo_persists_across_reopen) ... ok
+
+----------------------------------------------------------------------
+Ran 78 tests in 2.833s
+
+OK
+
+EXIT: 0

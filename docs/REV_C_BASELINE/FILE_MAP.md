@@ -1,0 +1,32 @@
+# File map
+- src/fgmapping/domain/scene.py: explicit frames, mesh/component identity and synthetic geometry.
+- src/fgmapping/services/case.py: preserved foundation plus candidate schema support/staleness.
+- src/fgmapping/services/geometry.py: explicit migration, backups, scene storage and compensating history.
+- src/fgmapping/services/mesh_import.py: bounded/cancellable OBJ and ASCII STL child process.
+- src/fgmapping/services/registers.py and calculations.py: evidence-linked candidate registers and reproducible synthetic runs.
+- src/fgmapping/engine/: original illustrative geometry; mesh visibility; detector refusal/synthetic gas/voting; Decimal scenarios; tiny exhaustive optioneering.
+- src/fgmapping/ui/: original Qt application extended with 3D software viewer, tree and extra virtual register tabs.
+- src/fgmapping/services/reporting.py: optional five-format normalized register export and parser QA.
+- src/fgmapping/ai/ and integrations/: offline replay and synthetic proposal contract only.
+- contracts/: unchanged original migration/manifest and opt-in candidate schema2/manifest.
+- tests/: original tests unchanged plus independent new tests.
+- tools/: test runner, independent oracles, benchmark/mutation/UI tools, audited return pack builder.
+- examples/: original fixture plus saved synthetic candidate module.
+- OUTPUT_SAMPLES/: actual current report outputs and synthetic exercise results.
+- screenshots/: actual Qt Linux offscreen captures.
+- TEST_RESULTS/: baseline, failures/retests, final logs, environment, numerical/GUI/report evidence.
+- ORIGINAL_ARCHIVES/: original takeover and original WP01 ZIP, untouched.
+- docs/: original specifications/decisions/owner standard plus implementation, traceability and qualification readiness.
+
+## Rev C additions
+- services/workspace.py: atomic candidate edit/paste/removal/import history.
+- services/file_lock.py and case.py: native writer fence, atomic recovery metadata/save journal.
+- services/import_review.py, findings.py: reviewed geometry proposal and deterministic preparation findings.
+- services/paste.py and ui/worksheet.py: virtual sortable/filterable/copy/paste workflow.
+- services/report_job.py: cancellable snapshot-only report process.
+- domain/pose.py, engine/concentration.py: explicit orientation and synthetic concentration/time numerics.
+- tools/rev_c_workflow.py, virtual_detector_benchmark.py, field_convergence.py, rev_c_mutations.py: actual executable evidence.
+- tools/windows_smoke.py/windows_acceptance.ps1 and docs/REV_C_WINDOWS_CHECKLIST.md: unexecuted real-platform acceptance path.
+- examples/SYNTHETIC_REV_C_CONNECTED.fgcase and SYNTHETIC_FIELD_PATH_EXERCISE.json: final synthetic workflow/example.
+- OUTPUT_SAMPLES/REV_C_WORKFLOW_STUDY: actual current five-format export including figure and findings.
+- TEST_RESULTS/REV_C_FINAL_SUMMARY.json: authoritative Rev C result index.

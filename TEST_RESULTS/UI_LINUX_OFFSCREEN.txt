@@ -1,0 +1,7 @@
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/candidate/tools/capture_ui.py", line 39, in <module>
+    state=window.viewer.state();window.viewer.restore(state);assert window.viewer.state()==state
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

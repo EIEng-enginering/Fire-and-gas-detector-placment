@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "source_contracts_tests_tools": "Byte-identical to the freshly tested archive",
+  "test_total": 123,
+  "later_changes": "Audit/state metadata only"
+}

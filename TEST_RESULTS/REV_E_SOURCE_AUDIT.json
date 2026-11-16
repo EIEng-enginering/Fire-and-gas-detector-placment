@@ -1,0 +1,10 @@
+{
+  "predecessor_sha256": "e85590a6bb32e2366edf45e693112b509e2bdec1e72a7107a9a0375e8e4ff964",
+  "baseline_hashes_checked": 600,
+  "tests_changed": [
+    "tests/integration/test_source_fingerprint.py"
+  ],
+  "change_reason": "Exact software version assertion0.4.0a1 to0.5.0a1; no weakened criteria",
+  "all_contracts_migrations": "BYTE IDENTICAL",
+  "source_manifest_files": 120
+}

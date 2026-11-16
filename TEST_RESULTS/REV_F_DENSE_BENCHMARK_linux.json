@@ -1,0 +1,37 @@
+{
+  "qualification": "UNVERIFIED SOFTWARE BENCHMARK ONLY",
+  "host": {
+    "platform": "linux",
+    "python": "3.12.16",
+    "machine": "x86_64"
+  },
+  "scene": {
+    "obstacles": 216,
+    "rays": 576,
+    "layout": "6x6x6 lattice of 0.4 m closed boxes, x=5..15 m; origin at 0, target plane x=20 m 8x8 m"
+  },
+  "runs": [
+    {
+      "indexed": false,
+      "seconds_including_index_build": 0.6395,
+      "mesh_queries": 124416
+    },
+    {
+      "indexed": true,
+      "seconds_including_index_build": 0.0921,
+      "mesh_queries": 556
+    }
+  ],
+  "checks": {
+    "brute_force_equals_broadphase": true,
+    "oracle_mismatches": 0,
+    "indeterminate_samples": 0,
+    "oracle_blocked": 351,
+    "oracle_clear": 225,
+    "non_trivial_mix": true,
+    "broadphase_reduced_queries": true
+  },
+  "first_mismatches": [],
+  "status": "PASS",
+  "limits": "One synthetic dense lattice; timings are host observations, not a general speed guarantee; geometric intersection only, not detector physics or coverage"
+}

@@ -1,0 +1,11 @@
+test_cancel_removes_only_job_token_and_preserves_installed_copy (test_recovery_faults_rev_e.RecoveryFaults.test_cancel_removes_only_job_token_and_preserves_installed_copy) ... ok
+test_failure_after_install_leaves_identifiable_valid_copy (test_recovery_faults_rev_e.RecoveryFaults.test_failure_after_install_leaves_identifiable_valid_copy) ... ok
+test_fsync_failure_before_install_retains_source_and_no_target (test_recovery_faults_rev_e.RecoveryFaults.test_fsync_failure_before_install_retains_source_and_no_target) ... ok
+test_interrupted_bulk_save_reopens_recoverable_source_records (test_recovery_faults_rev_e.RecoveryFaults.test_interrupted_bulk_save_reopens_recoverable_source_records) ... ok
+test_restore_concurrent_destination_never_overwritten (test_recovery_faults_rev_e.RecoveryFaults.test_restore_concurrent_destination_never_overwritten) ... ok
+test_restore_copy_corruption_refused (test_recovery_faults_rev_e.RecoveryFaults.test_restore_copy_corruption_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.318s
+
+OK

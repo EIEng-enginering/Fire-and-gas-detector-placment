@@ -1,0 +1,3 @@
+COMMAND: sha256sum -c SHA256SUMS.txt (box, /workspace/fg/revE unpacked from FG_MAPPING_RETURN_REV_E_20261116.zip sha256 7d56b4b28b48f017aae79141567aec01fbc648e8acc2d7f026004c59cdf732e8)
+    753 OK
+Unlisted files besides SHA256SUMS.txt itself: none

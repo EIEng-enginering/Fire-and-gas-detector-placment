@@ -1,0 +1,45 @@
+COMMAND ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-B', '-m', 'unittest', 'discover', '-s', '/workspace/scratch/1969b32c6646/rev_d/tests/integration', '-p', 'test_study_preparation.py', '-v']
+test_basis_targets_never_defaulted (test_study_preparation.StudyPreparation.test_basis_targets_never_defaulted) ... ok
+test_corrupt_performance_blocks_readiness (test_study_preparation.StudyPreparation.test_corrupt_performance_blocks_readiness) ... ok
+test_dataset_revision_is_immutable_and_source_preserved (test_study_preparation.StudyPreparation.test_dataset_revision_is_immutable_and_source_preserved) ... ok
+test_input_complete_still_engineering_blocked (test_study_preparation.StudyPreparation.test_input_complete_still_engineering_blocked) ... FAIL
+test_mismatch_and_project_basis_import_refused (test_study_preparation.StudyPreparation.test_mismatch_and_project_basis_import_refused) ... ok
+test_missing_mount_actor_rolls_back (test_study_preparation.StudyPreparation.test_missing_mount_actor_rolls_back) ... ok
+test_mount_edit_detach_and_undo (test_study_preparation.StudyPreparation.test_mount_edit_detach_and_undo) ... ok
+test_mount_source_missing_or_stale_is_blocked (test_study_preparation.StudyPreparation.test_mount_source_missing_or_stale_is_blocked) ... ok
+test_no_approval_review_state (test_study_preparation.StudyPreparation.test_no_approval_review_state) ... FAIL
+test_remount_moves_between_components_and_undo_restores (test_study_preparation.StudyPreparation.test_remount_moves_between_components_and_undo_restores) ... ok
+test_source_row_lookup_never_interpolates_or_substitutes_conditions (test_study_preparation.StudyPreparation.test_source_row_lookup_never_interpolates_or_substitutes_conditions) ... ok
+test_stored_status_anomaly_blocks_readiness (test_study_preparation.StudyPreparation.test_stored_status_anomaly_blocks_readiness) ... ok
+test_upgrade_backup_and_reopen (test_study_preparation.StudyPreparation.test_upgrade_backup_and_reopen) ... ok
+test_voting_infeasibility_is_input_blocker (test_study_preparation.StudyPreparation.test_voting_infeasibility_is_input_blocker) ... ok
+test_workspace_cannot_promote_preparation_entity (test_study_preparation.StudyPreparation.test_workspace_cannot_promote_preparation_entity) ... ok
+
+======================================================================
+FAIL: test_input_complete_still_engineering_blocked (test_study_preparation.StudyPreparation.test_input_complete_still_engineering_blocked)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_d/tests/integration/test_study_preparation.py", line 36, in test_input_complete_still_engineering_blocked
+    r=readiness(self.s);self.assertEqual(r['input_status'],'INPUTS_PRESENT');self.assertEqual(r['engineering_calculation_status'],'BLOCKED')
+                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'READY' != 'BLOCKED'
+- READY
++ BLOCKED
+
+
+======================================================================
+FAIL: test_no_approval_review_state (test_study_preparation.StudyPreparation.test_no_approval_review_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_d/tests/integration/test_study_preparation.py", line 49, in test_no_approval_review_state
+    review_draft(self.s,'R','BASIS','STUDY','NEEDS_INFORMATION','TEST_REVIEWER','No actual engineering basis supplied','SYN-GEOM-01');self.assertEqual(readiness(self.s)['engineering_calculation_status'],'BLOCKED')
+                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'READY' != 'BLOCKED'
+- READY
++ BLOCKED
+
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.568s
+
+FAILED (failures=2)

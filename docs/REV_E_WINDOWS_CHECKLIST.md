@@ -1,0 +1,6 @@
+# Rev E Windows checklist — NOT RUN
+Complete docs/REV_D_WINDOWS_CHECKLIST.md and inherited checklist with real Windows11/Python3.12/PySide6 6.12.0, an authorised synthetic folder and the exact development python.exe. Run tools/windows_acceptance.ps1; preserve failures and required symlink privileges/equivalents. Do not use offscreen or skip tests to claim acceptance.
+
+Additionally exercise both new Case-menu commands: CSV/XLSX literal/template preview, duplicate/formula/invalid row refusal, cancellation, stale preview refusal, named apply, undo/redo/save/reopen; facility JSON revision, affected mount follow/detach decisions, missing references/changed units, marker preservation and source retention after undo. Confirm import workers never share live SQLite connections. Check2000 rows, dense scene processing, DPI/multi-monitor reachability and keyboard use. Inspect final Excel/Word/PDF in actual Office/PDF viewers, including literal '=' text. Execute recovery faults/native file locks, backup hard-link installation and interrupted saves on NTFS. Late cancellation may leave an installed copy; inspect before retry.
+
+Installer/EXE/offline wheelhouse, Job Objects, cloud-sync/multi-host semantics, physical methods and independent engineering qualification remain separate unresolved gates.

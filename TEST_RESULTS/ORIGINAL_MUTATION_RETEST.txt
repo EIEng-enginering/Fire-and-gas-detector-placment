@@ -1,0 +1,6 @@
+Mutation detected: True
+Failing test names:
+FAIL: test_center_ray_occluded (test_geometry.GeometryPrototypes.test_center_ray_occluded)
+FAIL: test_cone_reference (test_geometry.GeometryPrototypes.test_cone_reference)
+FAIL: test_one_and_two_out_of_two (test_geometry.GeometryPrototypes.test_one_and_two_out_of_two)
+FAIL: test_weighted_fraction (test_geometry.GeometryPrototypes.test_weighted_fraction)

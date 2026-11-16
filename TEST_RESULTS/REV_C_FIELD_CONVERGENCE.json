@@ -1,0 +1,43 @@
+{
+  "label": "SYNTHETIC numerical exercise / not gas detector coverage",
+  "exact_ppm_m": 8.71,
+  "source_basis": "Synthetic piecewise C=min(2x,2.6) ppm",
+  "results": [
+    {
+      "subdivisions": 2,
+      "ppm_m": 8.666666666666664,
+      "absolute_error_ppm_m": 0.043333333333336554
+    },
+    {
+      "subdivisions": 4,
+      "ppm_m": 8.733333333333333,
+      "absolute_error_ppm_m": 0.02333333333333165
+    },
+    {
+      "subdivisions": 8,
+      "ppm_m": 8.7,
+      "absolute_error_ppm_m": 0.010000000000001563
+    },
+    {
+      "subdivisions": 16,
+      "ppm_m": 8.716666666666665,
+      "absolute_error_ppm_m": 0.006666666666664156
+    },
+    {
+      "subdivisions": 32,
+      "ppm_m": 8.708333333333332,
+      "absolute_error_ppm_m": 0.0016666666666687036
+    },
+    {
+      "subdivisions": 64,
+      "ppm_m": 8.710416666666667,
+      "absolute_error_ppm_m": 0.0004166666666662877
+    },
+    {
+      "subdivisions": 128,
+      "ppm_m": 8.709895833333333,
+      "absolute_error_ppm_m": 0.00010416666666834828
+    }
+  ],
+  "qualification": "UNVERIFIED"
+}

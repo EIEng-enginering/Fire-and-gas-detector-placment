@@ -1,0 +1,17 @@
+COMMAND: C:\Users\Admin\fg_dev\venv312\Scripts\python.exe -B -m unittest discover -s C:\Users\Admin\fg_dev\revF_work\tests\acceptance -v
+test_dense_lattice_matches_independent_oracle (test_dense_scene_rev_f.DenseScene.test_dense_lattice_matches_independent_oracle) ... ok
+test_long_source_field_all_formats_no_loss (test_long_evidence_report.LongEvidenceReport.test_long_source_field_all_formats_no_loss) ... ok
+test_import_history_and_raw_source_all_formats_and_undo (test_preparation_reports_rev_e.PreparationReports.test_import_history_and_raw_source_all_formats_and_undo) ... ok
+test_connected_study_save_reopen_report_worker (test_rev_c_workflow_service.RevCStudy.test_connected_study_save_reopen_report_worker) ... ok
+test_report_cancel_reaps_child (test_rev_c_workflow_service.RevCStudy.test_report_cancel_reaps_child) ... ok
+test_basis_mount_and_readiness_all_formats (test_schema3_reports.Schema3Reports.test_basis_mount_and_readiness_all_formats) ... ok
+test_large_audit_field_is_chunked_without_losing_values (test_schema3_reports.Schema3Reports.test_large_audit_field_is_chunked_without_losing_values) ... ok
+test_all_formats_and_corruption_refusal (test_synthetic_reports.Reports.test_all_formats_and_corruption_refusal) ... ok
+test_end_to_end_no_real_data (test_synthetic_workflow.SyntheticAcceptance.test_end_to_end_no_real_data) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 16.362s
+
+OK
+
+EXIT: 0

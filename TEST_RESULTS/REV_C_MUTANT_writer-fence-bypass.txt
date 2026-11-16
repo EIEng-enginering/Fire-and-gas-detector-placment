@@ -1,0 +1,36 @@
+COMMAND ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-B', '-m', 'unittest', 'discover', '-s', '/workspace/scratch/1969b32c6646/rev_c/tests/integration', '-p', 'test_case_hardening.py', '-v']
+test_failure_after_install_reconciles_metadata (test_case_hardening.CaseHardening.test_failure_after_install_reconciles_metadata) ... ok
+test_failure_before_replace_keeps_original_and_recoverable_work (test_case_hardening.CaseHardening.test_failure_before_replace_keeps_original_and_recoverable_work) ... ok
+test_hardlink_alias_refused (test_case_hardening.CaseHardening.test_hardlink_alias_refused) ... ok
+test_native_lock_released_after_process_kill (test_case_hardening.CaseHardening.test_native_lock_released_after_process_kill) ... ok
+test_symlink_alias_fenced (test_case_hardening.CaseHardening.test_symlink_alias_fenced) ... /workspace/scratch/1969b32c6646/rev_c/tests/integration/test_case_hardening.py:17: ResourceWarning: unclosed file <_io.BufferedRandom name='/tmp/tmpgt7qgy3l/s.fgcase.writer.lock'>
+  with self.assertRaises(CaseError):CaseSession(p,self.root/'r2')
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+FAIL
+test_writer_fence_across_runtimes (test_case_hardening.CaseHardening.test_writer_fence_across_runtimes) ... /workspace/scratch/1969b32c6646/rev_c/tests/integration/test_case_hardening.py:12: ResourceWarning: unclosed file <_io.BufferedRandom name='/tmp/tmpeylxv7w2/s.fgcase.writer.lock'>
+  with self.assertRaises(CaseError) as c:CaseSession(self.path,self.root/'r2')
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+FAIL
+
+======================================================================
+FAIL: test_symlink_alias_fenced (test_case_hardening.CaseHardening.test_symlink_alias_fenced)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/tests/integration/test_case_hardening.py", line 17, in test_symlink_alias_fenced
+    with self.assertRaises(CaseError):CaseSession(p,self.root/'r2')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CaseError not raised
+
+======================================================================
+FAIL: test_writer_fence_across_runtimes (test_case_hardening.CaseHardening.test_writer_fence_across_runtimes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_c/tests/integration/test_case_hardening.py", line 12, in test_writer_fence_across_runtimes
+    with self.assertRaises(CaseError) as c:CaseSession(self.path,self.root/'r2')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CaseError not raised
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.123s
+
+FAILED (failures=2)

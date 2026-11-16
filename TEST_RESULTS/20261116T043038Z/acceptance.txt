@@ -1,0 +1,9 @@
+COMMAND: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python -B -m unittest discover -s /workspace/scratch/1969b32c6646/handover/07_PROJECT_SOURCE/tests/acceptance -v
+test_end_to_end_no_real_data (test_synthetic_workflow.SyntheticAcceptance.test_end_to_end_no_real_data) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.010s
+
+OK
+
+EXIT: 0

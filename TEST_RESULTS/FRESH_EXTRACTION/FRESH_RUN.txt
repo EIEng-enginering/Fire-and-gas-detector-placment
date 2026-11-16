@@ -1,0 +1,53 @@
+COMMAND ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-B', 'tools/run_tests.py']
+ARCHIVE FG_MAPPING_FRESH_TEST_CANDIDATE_20261116.zip
+unit PASS code 0
+nsforms (test_scene.SceneTests.test_bad_transforms) ... ok
+test_closed_mesh (test_scene.SceneTests.test_closed_mesh) ... ok
+test_cycle (test_scene.SceneTests.test_cycle) ... ok
+test_duplicate_and_missing_source (test_scene.SceneTests.test_duplicate_and_missing_source) ... ok
+test_exact_json_roundtrip (test_scene.SceneTests.test_exact_json_roundtrip) ... ok
+test_hostile (test_scene.SceneTests.test_hostile) ... ok
+test_obj_units_and_hash (test_scene.SceneTests.test_obj_units_and_hash) ... ok
+test_open_duplicate (test_scene.SceneTests.test_open_duplicate) ... ok
+test_rotated_scaled_translated_exact (test_scene.SceneTests.test_rotated_scaled_translated_exact) ... ok
+test_roundtrip_angles (test_scene.SceneTests.test_roundtrip_angles) ... ok
+test_stl (test_scene.SceneTests.test_stl) ... ok
+test_units (test_scene.SceneTests.test_units) ... ok
+test_colour_contrast (test_theme.ThemeContract.test_colour_contrast) ... ok
+test_scale_rotation_translation_preserves_constructive_hits (test_transform_visibility.TransformedVisibility.test_scale_rotation_translation_preserves_constructive_hits) ... ok
+
+----------------------------------------------------------------------
+Ran 53 tests in 0.073s
+
+OK
+
+integration PASS code 0
+
+test_worker (test_geometry_store.GeometryStore.test_worker) ... ok
+test_adding_detector_stales_existing_run (test_registers_calculations.Registers.test_adding_detector_stales_existing_run) ... ok
+test_bad_zone (test_registers_calculations.Registers.test_bad_zone) ... ok
+test_detector_edit_orientation_and_stale (test_registers_calculations.Registers.test_detector_edit_orientation_and_stale) ... ok
+test_embedded_mesh_source_and_hash (test_registers_calculations.Registers.test_embedded_mesh_source_and_hash) ... ok
+test_geometry_stales_calculation (test_registers_calculations.Registers.test_geometry_stales_calculation) ... ok
+test_large_worker_output_does_not_deadlock (test_registers_calculations.Registers.test_large_worker_output_does_not_deadlock) ... ok
+test_no_qualified_method (test_registers_calculations.Registers.test_no_qualified_method) ... ok
+test_real_evidence_export_refused (test_registers_calculations.Registers.test_real_evidence_export_refused) ... ok
+test_registers_evidence_and_duplicates (test_registers_calculations.Registers.test_registers_evidence_and_duplicates) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.717s
+
+OK
+
+acceptance PASS code 0
+test_all_formats_and_corruption_refusal (test_synthetic_reports.Reports.test_all_formats_and_corruption_refusal) ... ok
+test_end_to_end_no_real_data (test_synthetic_workflow.SyntheticAcceptance.test_end_to_end_no_real_data) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.522s
+
+OK
+
+EVIDENCE_DIR: /tmp/fgmapping_fresh_0diduizq/TEST_RESULTS/20261116T045605Z
+
+EXIT 0

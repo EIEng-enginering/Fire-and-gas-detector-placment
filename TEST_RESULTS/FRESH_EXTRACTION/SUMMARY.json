@@ -1,0 +1,14 @@
+{
+  "archive_tested": "FG_MAPPING_FRESH_TEST_CANDIDATE_20261116.zip",
+  "archive_sha256": "cce09a7a5a43ee8e4a05d84d36242ce5e8a1700f86dba40f972568b509373c37",
+  "exit_code": 0,
+  "tests": {
+    "unit": 53,
+    "integration": 28,
+    "acceptance": 2
+  },
+  "total": 83,
+  "hash_check": "PASS",
+  "Windows": "NOT RUN",
+  "source_and_tests_unchanged_after_fresh_run": true
+}

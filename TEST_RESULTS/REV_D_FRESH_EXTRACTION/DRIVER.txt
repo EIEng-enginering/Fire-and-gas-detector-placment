@@ -1,0 +1,48 @@
+unit PASS code 0
+ield_and_total_area_conservation (test_target_inspection.TargetInspection.test_clear_field_and_total_area_conservation) ... ok
+test_coplanar_uncertainty_not_removed_from_denominator (test_target_inspection.TargetInspection.test_coplanar_uncertainty_not_removed_from_denominator) ... ok
+test_half_square_independent_area_oracle (test_target_inspection.TargetInspection.test_half_square_independent_area_oracle) ... ok
+test_inside_closed_box_never_declared_clear (test_target_inspection.TargetInspection.test_inside_closed_box_never_declared_clear) ... ok
+test_no_obstacles_does_not_bypass_tolerance_validation (test_target_inspection.TargetInspection.test_no_obstacles_does_not_bypass_tolerance_validation) ... ok
+test_zero_length_rays_remain_indeterminate (test_target_inspection.TargetInspection.test_zero_length_rays_remain_indeterminate) ... ok
+test_colour_contrast (test_theme.ThemeContract.test_colour_contrast) ... ok
+test_scale_rotation_translation_preserves_constructive_hits (test_transform_visibility.TransformedVisibility.test_scale_rotation_translation_preserves_constructive_hits) ... ok
+
+----------------------------------------------------------------------
+Ran 83 tests in 0.136s
+
+OK
+
+integration PASS code 0
+eave_orphan_evidence) ... ok
+test_edit_marker_moves_and_undo_restores (test_workspace.Workspace.test_edit_marker_moves_and_undo_restores) ... ok
+test_foreign_edit_conflict_no_overwrite (test_workspace.Workspace.test_foreign_edit_conflict_no_overwrite) ... ok
+test_missing_actor_rolls_back_every_entity (test_workspace.Workspace.test_missing_actor_rolls_back_every_entity) ... ok
+test_multirow_paste_is_atomic (test_workspace.Workspace.test_multirow_paste_is_atomic) ... ok
+test_record_edit_remove_undo (test_workspace.Workspace.test_record_edit_remove_undo) ... ok
+test_record_invalid_bounds_no_change (test_workspace.Workspace.test_record_invalid_bounds_no_change) ... ok
+test_redo_invalidated_by_new_edit (test_workspace.Workspace.test_redo_invalidated_by_new_edit) ... ok
+test_referenced_detector_removal_refused (test_workspace.Workspace.test_referenced_detector_removal_refused) ... ok
+test_second_marker_and_bulk_move_undo (test_workspace.Workspace.test_second_marker_and_bulk_move_undo) ... ok
+test_undo_persists_across_reopen (test_workspace.Workspace.test_undo_persists_across_reopen) ... ok
+
+----------------------------------------------------------------------
+Ran 78 tests in 2.833s
+
+OK
+
+acceptance PASS code 0
+test_long_source_field_all_formats_no_loss (test_long_evidence_report.LongEvidenceReport.test_long_source_field_all_formats_no_loss) ... ok
+test_connected_study_save_reopen_report_worker (test_rev_c_workflow_service.RevCStudy.test_connected_study_save_reopen_report_worker) ... ok
+test_report_cancel_reaps_child (test_rev_c_workflow_service.RevCStudy.test_report_cancel_reaps_child) ... ok
+test_basis_mount_and_readiness_all_formats (test_schema3_reports.Schema3Reports.test_basis_mount_and_readiness_all_formats) ... ok
+test_large_audit_field_is_chunked_without_losing_values (test_schema3_reports.Schema3Reports.test_large_audit_field_is_chunked_without_losing_values) ... ok
+test_all_formats_and_corruption_refusal (test_synthetic_reports.Reports.test_all_formats_and_corruption_refusal) ... ok
+test_end_to_end_no_real_data (test_synthetic_workflow.SyntheticAcceptance.test_end_to_end_no_real_data) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 5.388s
+
+OK
+
+EVIDENCE_DIR: /workspace/scratch/1969b32c6646/rev_d_fresh/TEST_RESULTS/20261116T064121Z

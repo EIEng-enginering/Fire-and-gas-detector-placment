@@ -1,0 +1,697 @@
+{
+  "version": "0.6.0a1",
+  "base": "Preserved Rev E ZIP sha256 7d56b4b28b48f017aae79141567aec01fbc648e8acc2d7f026004c59cdf732e8",
+  "files": [
+    {
+      "path": "src/fgmapping/__init__.py",
+      "sha256": "a60475eb1e3e74105f6380bb08d2783c7e6f0cf0c45b00feddaab9a3e5a2a52f",
+      "change_from_Rev_E": "MODIFIED"
+    },
+    {
+      "path": "src/fgmapping/__main__.py",
+      "sha256": "013e442547c6f87ad4972598af38cde8eba092fe8b0ca6b19bae8456327b4036",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/ai/__init__.py",
+      "sha256": "73ec6abb2033be5b9eb75a7c6d447e541ceed7e21fb2b5d61d3e7b1d5715cd41",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/ai/gateway.py",
+      "sha256": "43bd9f5cf75f01e7d35c1d6b9a7b106d2f91353e1d40a66739c7862271736e08",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/domain/__init__.py",
+      "sha256": "324f08c67b28ac6089c0def167dbabfd65275b377efaa402347631b2bbf0c00e",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/domain/mounting.py",
+      "sha256": "4d42fc9bc869b8af35f84b62f4ab727dce7db6d1a6c330acd02964087a25548f",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/domain/performance.py",
+      "sha256": "b7a32624dd23f50558a547ef00cb0cf02768638f7bb15593aedda0db9b70aa8d",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/domain/pose.py",
+      "sha256": "5f07ec1fa3d4d7fc1a277c18515a6a4fdceb0c4f64ccb2c552cca92a8de3ce63",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/domain/scene.py",
+      "sha256": "121611746c1611fc12efb0f87026d194abd433b739eed14f491bcd8eb878f6b2",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/domain/study_basis.py",
+      "sha256": "8800e40fef3f5af3122d8aa5212ed992bd8fb9a596ecde15782b4a3402ccb218",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/engine/__init__.py",
+      "sha256": "c2e790fa579bea75a45bc711aec8c14b66578cf0d57e593b6d7ba3e49e71d5a0",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/engine/concentration.py",
+      "sha256": "0605ef5bbb696163d32d5a3dc628edc037e9610b25ac896d48e082f12df720e1",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/engine/detection.py",
+      "sha256": "c383a8a3d272bc1a77ca48321b1170da6c7bbaf284066bebd05f3067dfa92bfc",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/engine/geometry.py",
+      "sha256": "3f41d131624880e82a05a3866f491bb619a4a091922d4957928d986ddb810b14",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/engine/inspection.py",
+      "sha256": "678e076594372dbc7547e80bf876319eec5e22dbddbc0cf98c545f8519bc11f6",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/engine/mesh_visibility.py",
+      "sha256": "5d9976a8e2a07060f6ca805339eb5c2c94c869da4e9ebb112720ab64e2e7b8a5",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/engine/optimisation.py",
+      "sha256": "ece39f101e301b19e95284a655a266a7039afbb865b094a289d9d15677554c64",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/engine/scenarios.py",
+      "sha256": "93623f9d3822f88ec5c650cf45ef13a1ba14ad9faff8a6b5c658947fcdbde891",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/engine/spatial.py",
+      "sha256": "e47f947dd02032fbbb67356720a809f145fddadb283e49753917a6df62e3ed15",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/errors.py",
+      "sha256": "ee068795eaa98485aeecff8b0af85700051458560929fc0f9edc15da60c2f0ed",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/integrations/__init__.py",
+      "sha256": "591fa122e34e7538c2cb3a3f8ae1b3e500ca635d108d7e1828124d11d96679dc",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/integrations/proposals.py",
+      "sha256": "d02ac281befed5060d019fcfc27f74a77375cc35b56d71db938ae45e622f99fb",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/__init__.py",
+      "sha256": "47016f249fac5bb9bb1f77f7e537df77f0e100359c6329d446c1d6e7b4f20852",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/basis.py",
+      "sha256": "b6afbd12781460deb2b85daf7cb37ba51f447c7a084e3e5ede93b4fa165acc6a",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/bulk_import.py",
+      "sha256": "bee3444ad85f90b9ff4569f3668604dde0061a517d4070906cdfcf2d93df13aa",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/calculations.py",
+      "sha256": "e1e2b6a636462631e304228ce5cbf880c3a80357044eb8616d36811e760d100c",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/case.py",
+      "sha256": "ff5b64127eaa2c7738b7196480bdd49aeea65efd31295d4cfaa1f17b11a55c5c",
+      "change_from_Rev_E": "MODIFIED"
+    },
+    {
+      "path": "src/fgmapping/services/comparison.py",
+      "sha256": "16276f9845d042757692e201ab566015a966d1ba8a06f6707379447c4160085c",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/file_lock.py",
+      "sha256": "4768c558734f1df36e3de529191c3a7c9e4cda3b27077c6e0a9ba9a68a6571e4",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/findings.py",
+      "sha256": "cfc678aec55405bc9ab640999294ec48400fac3d0b28f8b82ee907b158559688",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/geometry.py",
+      "sha256": "9a8ab8b8873e0f177b4f2bfe850946b983e3def12b17335e1cce4304374f3d35",
+      "change_from_Rev_E": "MODIFIED"
+    },
+    {
+      "path": "src/fgmapping/services/geometry_inspection.py",
+      "sha256": "b1c5a5c01a3ada7597d44a5b8adc5507a790ea9b235b69ffa8689a312bc4ba41",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/import_review.py",
+      "sha256": "421dbcd4eab8cb77e60a234ee0fa7d07476545835e29492b7e245cce22953713",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/mesh_import.py",
+      "sha256": "9c2f5e35270f6bd1d0febba64f0bab1a1236134699aaf27a5a38f8e30909614c",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/mounts.py",
+      "sha256": "be1331f4fb0750500d559abeaa586c32f73802e4a58db772ebe75ce988e7d0ee",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/paste.py",
+      "sha256": "6deeea90a90ecfc10144c57fd8d0240ac587d718040d49ef3e5023b51fc4fded",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/performance.py",
+      "sha256": "34e60c287aa221ef27ec6aca60ac2235cc70db062825c626eca776344c9cba06",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/preparation.py",
+      "sha256": "abdf9434ada9550fd1ecdc36f19ee013fe4ea7f14e36dd09c138d5cce696c59f",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/preparation_job.py",
+      "sha256": "646ccf22c6e0f37a2191c562bf73d9a6d58740b7c674e123166eeea8fffd6811",
+      "change_from_Rev_E": "MODIFIED"
+    },
+    {
+      "path": "src/fgmapping/services/process_inspection.py",
+      "sha256": "b8c0eb844960d8d96ec75b6cbe4907f28ddd9e8e1c33118bda1627674eba0ad3",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/reconciliation.py",
+      "sha256": "bb6535398aa4a28401674946cd672585bf25a767db36b9d9d7be18b9a6245613",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/recovery.py",
+      "sha256": "576f1c0b767b9d36c5a059012c156590b5699d74b06464225b175762033b9f37",
+      "change_from_Rev_E": "MODIFIED"
+    },
+    {
+      "path": "src/fgmapping/services/registers.py",
+      "sha256": "1c01bb49e612c41b04d03865b8b3e64cd12a2e3ab043a065e8f0fe6cdaba33fd",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/report_job.py",
+      "sha256": "38ba693c102cb97c94ffe5928c43219ff17e4e5a3f29d30d92ce30289a187eb7",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/reporting.py",
+      "sha256": "1f59b44307bba63e5614a8f095f7297480e191b5f9fb38479eb6c5c5694d6360",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/services/study_schema.py",
+      "sha256": "147019616114fc3ef4342025e5dcb89b7e7ee41183e1d9866700dfad81406f2c",
+      "change_from_Rev_E": "MODIFIED"
+    },
+    {
+      "path": "src/fgmapping/services/workspace.py",
+      "sha256": "9247bd1e5416aae0c12299df210df9d22d783cc006353145f49b918de91833fe",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/theme.py",
+      "sha256": "e7051597199f11750ac1f0b40d4d1ba221cd0565a91be8b36b782a28ca8bb932",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/ui/__init__.py",
+      "sha256": "d39c98877b8f8a60d07166f50f7c3e4fa85826b9a79762186523b6a7b8eddbbe",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/ui/main.py",
+      "sha256": "fdc95a012ec44bdc1d0de717d12f95341b78b96ff0141f9a9f1bf39939ed825a",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/ui/preparation_dialogs.py",
+      "sha256": "115167ad3c6f3b14eebdbf8a4079fe2a1ff13097e8c38e8504b992d77358efbd",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/ui/register_model.py",
+      "sha256": "8e3315125920940c1b870269a5abf9faa0e858ba97a94aeda3d4fcd43d06feaf",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/ui/study_dialogs.py",
+      "sha256": "32435d32a8e49536330279cd67c05a5ce1a6e690bae51e76272ed245b3326e1f",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/ui/viewer.py",
+      "sha256": "f66a2426aa0fb7d0d373e343ce6e5ce57871478032a68c1f4c036fac1929b3d1",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "src/fgmapping/ui/worksheet.py",
+      "sha256": "117619f1a5e963241e19d521dd904a0b5ece6af28fb46522962359fe23d6da9d",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/acceptance/test_dense_scene_rev_f.py",
+      "sha256": "b1525fdd829b47bea3dbe7d19ee4375437376ed89ed1c3c24dd3961e5c0db8f3",
+      "change_from_Rev_E": "ADDED"
+    },
+    {
+      "path": "tests/acceptance/test_long_evidence_report.py",
+      "sha256": "f7fb43a077b46ee429f1a982679a9712697f5f4ec8f15b4e134564eaf34387bf",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/acceptance/test_preparation_reports_rev_e.py",
+      "sha256": "3c5e2a140a701d38be8aa8cf0f603aef3400d83fe190527e0b2223484559e9bb",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/acceptance/test_rev_c_workflow_service.py",
+      "sha256": "ae457293d92f0903d240bb6b4ac38845a687a4fb9031f494443cb504e1fdded3",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/acceptance/test_schema3_reports.py",
+      "sha256": "d2ceb06582c8e6c277a9e271f4c9c80196fd564bb0f997422d08800375f738ba",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/acceptance/test_synthetic_reports.py",
+      "sha256": "e213673113c81a2e567903f61500e3cc77c3dda7cb7c6f80a1418828127b9c35",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/acceptance/test_synthetic_workflow.py",
+      "sha256": "048d99bbf4ba974c95085f1f19df1dd14b2e98eca20279f2ea23d94d2475376a",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/test_backup_restore.py",
+      "sha256": "d2c67845535e9f415963d860c822c5b271345101c4a2f8bfad1c3a06488e0603",
+      "change_from_Rev_E": "MODIFIED"
+    },
+    {
+      "path": "tests/integration/test_case_hardening.py",
+      "sha256": "a148691da3bf002ce3be7601cc17987d5b44a991c16a3efef09484ae72d5b8c2",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/test_case_lifecycle.py",
+      "sha256": "7eb9cce20b1c858e8d94d5c98700bbd9f5d728abb8580f574c89a396e2e6902b",
+      "change_from_Rev_E": "MODIFIED"
+    },
+    {
+      "path": "tests/integration/test_geometry_inspection_worker.py",
+      "sha256": "506f41664c4cc24a80e598b7bc5e772b4d069a2ff78127c6d275568ed365bb54",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/test_geometry_store.py",
+      "sha256": "0186227d428b81ddea01964dd062bbaf48131bbd66bb9e1049bf10ed8b857b48",
+      "change_from_Rev_E": "MODIFIED"
+    },
+    {
+      "path": "tests/integration/test_import_review.py",
+      "sha256": "a85b14187f4dacfee80ceaea14b3106a34ebcec2d84cefbda3dbc26102f3ec59",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/test_linked_detector_history.py",
+      "sha256": "6ebe43fce548d221175bd2168bb79b9e399b8b15f34dfc5132f8af32868dfeb4",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/test_preparation_imports.py",
+      "sha256": "32a0ed7bdfd050dee402c31716188f0d6d364170ff710f30deaf738b8413f3fe",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/test_recovery_faults_rev_e.py",
+      "sha256": "247b4e83ced5db73252213480a08e76a35a983facff919d29f9024cd124497db",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/test_registers_calculations.py",
+      "sha256": "17e98e3748ef771aef01e25b432b47ff80f92f7274b1c8e20f8c74ca8d41163d",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/test_snapshot_revision.py",
+      "sha256": "c7986ff6a7c5bf805a870c11d8ceb70e9646425c8b973335107fd768214afca7",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/test_source_fingerprint.py",
+      "sha256": "eeef9f5f272c5b2ac428a4b55e828c67c7e916754c7f3b6f1fa1793b7f896b6d",
+      "change_from_Rev_E": "MODIFIED"
+    },
+    {
+      "path": "tests/integration/test_study_preparation.py",
+      "sha256": "ded720f61c38244cd497ea47daddf95b5b2440dc76e56b72d0a8e6f0cd27ecf5",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/test_virtual_grid.py",
+      "sha256": "0fd01a36b516c2539ef74d329fa538a9102cb2414e356dceee926bebcb2fc90a",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/test_windows_portability_rev_f.py",
+      "sha256": "e52b57c1789bb67e2dcef713d95c36d3b3f49526bc8ab7322b894437f28fdfdd",
+      "change_from_Rev_E": "ADDED"
+    },
+    {
+      "path": "tests/integration/test_workspace.py",
+      "sha256": "e9e7c05fa766240cfc34b69c61a8090eafa8f972d3d4dcdf88c5092db2b4e5a9",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/test_concentration_field.py",
+      "sha256": "d883550388ce68fcc5b618421256e1112bc9319c835c49eb40f98551879d2751",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/test_detection_scenarios.py",
+      "sha256": "01f0deda82b46dbd6066867f30e6c2960b2a73d9b0fbffbe8a801e118d29ac97",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/test_geometry.py",
+      "sha256": "72fec3eb9790b526d7a01e578492c75dfb39daf30b918cd0042aebd514d8f64f",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/test_mesh_visibility.py",
+      "sha256": "19aa9908e15b97c8236a1785f539eb4d62f3e29f6dfabf2628e243a47aaad4e1",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/test_mounting_pose.py",
+      "sha256": "454bd3025dfb98b1dff6ac1b74c2cb166fc28002e6f8fb9c92d0197038ae524d",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/test_optional_boundaries.py",
+      "sha256": "9f0977b1ca0ae8181d5a2ffdf26acc3a63fed9808a37ec510dd639205061ad70",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/test_paste.py",
+      "sha256": "be21a36584d7cce4d2d0f29f59d332d7b8ce3e5dabbaf748ef446c866d6e791c",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/test_performance_preparation.py",
+      "sha256": "7a90d0bf25d692dd8b81e249457a3ba23b45ced1d51ba1eba215e70e6b3f34ee",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/test_pose.py",
+      "sha256": "4c51c84a5d1fe40d28b663fb0c108d78cb8cff1868b1c58cbba38ff45b94015b",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/test_process_inspection.py",
+      "sha256": "5685880456ceb424d2e3b6a8e5a11b3bdf7d949dbcc3275ce44f72c2f8c3e187",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/test_scene.py",
+      "sha256": "c42d4a2ff564c9689cf3a79338c2dceff84692bde92243aebc254f5dd2f79377",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/test_scene_broadphase.py",
+      "sha256": "6682b043390107ce71fb9a4183164382e224b49af978aecd1067125d533a50a1",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/test_target_inspection.py",
+      "sha256": "78073db601a0366fceac0db3b55285f556a9ec45805b715c8a9b819445f90134",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/test_theme.py",
+      "sha256": "f5d1c39c0bbb4c0a8c37d807222b66a157d112a6a1be83bfae80a6239cceb357",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/test_transform_visibility.py",
+      "sha256": "4ba9d945bd4dbce200d5d675ea0e9a61cee5e2db1f1082157e9728aead7f4a59",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/benchmark_visibility.py",
+      "sha256": "ebe441279b49bd555951799693a3ace6167e7ca9e6d32d8540306d85c4ded13a",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/build_portable_pack.py",
+      "sha256": "e709d02ba730376e686f4d16a4da13031380c4e2048cd5d53cdcf11e89d938f8",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/build_return_pack.py",
+      "sha256": "51c6365131a40412439e1e9c62a64c9f7c68b7ec3d8730404189c8dd00c9095e",
+      "change_from_Rev_E": "MODIFIED"
+    },
+    {
+      "path": "tools/candidate_mutation_probe.py",
+      "sha256": "2c3ab48e1d6d3cbb61df6777ea99985aed9147c25750acd576611f8c027e9b3f",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/capture_ui.py",
+      "sha256": "9d8d60c17132a882ef800edcfc4586a11e175ccfd3d29ff370444e9bffa4d277",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/check_virtual_register.py",
+      "sha256": "e0a24ff66c1648cc45c385c50f5ac9f4eab4c9b6d41fdcfeb46ba3a9b0dfbf5c",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/field_convergence.py",
+      "sha256": "76a062ea3fa798320669f92ac105a64533b8571df6aa5575453f0dd9b57b7912",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/generate_synthetic_example.py",
+      "sha256": "82baf09a897e4c1d444cd82d5937b5e581f8760ef8e84ad0408ac167ad2bbcd6",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/independent_geometry_oracle.py",
+      "sha256": "442ba2b0fefbb144a0ebd298a605656ac1092aca7728bb2edc4f4334f54077fc",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/independent_triangle_oracle.py",
+      "sha256": "a8c37eabae8097cb6b075c6d66eb28322a8d723545fde90df99ba1a35e485c10",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/mutation_probe.py",
+      "sha256": "6aaddf1cc02c1356cf4f52607437e4155a0a4ba8bc62288f35aee0e1a7069495",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/rev_c_mutations.py",
+      "sha256": "73bfea55d9189ef11395aac21f6aed1f0e2275689bd158b3e469ee9baa91870c",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/rev_c_workflow.py",
+      "sha256": "16eaa7fbf933772b59dff18675efb45b185ae4b5e4d3d449e24d3e68bbd887d4",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/rev_d_mutations.py",
+      "sha256": "38d5b5579044b9ccc5707b515a6b9f2e2557b1cb375afcc6b27fd2ac46e32cb3",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/rev_d_numerical_benchmarks.py",
+      "sha256": "c0f5f6bb0802f605dfe3a34a4a83ae21c4fde636738ee28ebef5641d54f48dc6",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/rev_d_workflow.py",
+      "sha256": "099ab1fd975036669b387470dbd0b3930f9b41160397872b78702f6afab89f41",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/rev_e_benchmarks.py",
+      "sha256": "e00aa76a7f1696d535fb55ae41b1ef0f55cd144b869c580b0669af52f5c9edcd",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/rev_e_mutations.py",
+      "sha256": "4af43428caa92590b0ece5a6930997c446b4a7f5466afa29fc12d43ea00f4ba0",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/rev_e_workflow.py",
+      "sha256": "fd5f91de17989b679c8434458d5426c30de1e75f61ec64168d74e5a197a89325",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/rev_f_dense_benchmark.py",
+      "sha256": "79427bcd253c4f6f9314ebc71e84499429ab15a02ac9f98da6a93b51e1c22f28",
+      "change_from_Rev_E": "ADDED"
+    },
+    {
+      "path": "tools/rev_f_literal_report.py",
+      "sha256": "5242073ffc7cfbcc338cca6753383c727701c661890a522511f96a33f46a4663",
+      "change_from_Rev_E": "ADDED"
+    },
+    {
+      "path": "tools/rev_f_mutations.py",
+      "sha256": "97090533ba4818013ca3a8685d6b5a52fc6c01a7a33421b9a1617a65a3f3ec69",
+      "change_from_Rev_E": "ADDED"
+    },
+    {
+      "path": "tools/rev_f_office_check.ps1",
+      "sha256": "8a0db3305af4875bbe195650e3b8b297f08faf934a0b26c11ad39c2c36232e12",
+      "change_from_Rev_E": "ADDED"
+    },
+    {
+      "path": "tools/run_tests.py",
+      "sha256": "a62575a69ae31a65af7191c7f4f0441cdf067c4a8f5604b6d405f448e9fc864a",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/synthetic_programme_demo.py",
+      "sha256": "4d294d3355730dd1e03b398986a6fc3db4985d83546dac8806b2ed88bbb5faaf",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/virtual_detector_benchmark.py",
+      "sha256": "e38bd64490cc8434776f12e839f84c9343d1af9965997138f886d9016360371f",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/windows_acceptance.ps1",
+      "sha256": "0f61e5a3f698d3a83bfe4bf15af5490c39ca846acdc88e492735b5cb6e2d0147",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "tools/windows_smoke.py",
+      "sha256": "5a382abe606e8741d934a8ad02803d27bf4af7b629e69999cdc977507cde5812",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "contracts/candidate_manifest.json",
+      "sha256": "12a76dc05aa218fa2f9efd35d089d3e8fdc3dfa0c738b8ec14ad244a330a6f7e",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "contracts/manifest.json",
+      "sha256": "7bacfa77718a7719d4677bb6b2237525a2a7eab5d1a5cc657df8c41aef13cfe5",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "contracts/migrations/0001_initial.sql",
+      "sha256": "126ce646a67906a570c2dc75268849e785ab3203dd1644b9176cd90c36342129",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "contracts/migrations/0002_candidate_geometry.sql",
+      "sha256": "9645110c0c012fc800264ebf4438b47b14eec195390288a02e2ddfc3cfe0a6ba",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "contracts/migrations/0003_study_preparation.sql",
+      "sha256": "bd5a01658c78d9bf2c66ed45c10383bc69bd1702c9d3bc3caf4306cdfcc078ff",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "examples/SYNTHETIC_BULK_REGISTER.csv",
+      "sha256": "29d3b2a0aa746c6189a698d0a14c8a00c9a26ab4ae692a00d88648c2cc878238",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "examples/SYNTHETIC_BULK_REGISTER.xlsx",
+      "sha256": "82c4d856abe9647f905f534d7d59c1362e5cff33d2d834eaad8851b4dfe2c8d2",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "examples/SYNTHETIC_FIELD_PATH_EXERCISE.json",
+      "sha256": "dafccb0a6a96d5e433be5b146745293a2d009dd26ea6965a660da0739bee6842",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "examples/SYNTHETIC_GEOMETRY_REVISION.json",
+      "sha256": "0995f4ad2f86fe66724f391fd5ee1565c783356192857ba877c9fcf437b7297e",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "examples/SYNTHETIC_MANIFEST.json",
+      "sha256": "b29966039b4234b7143a9dfe413a6a50c91461be31b26507691171ab5d32a676",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "examples/SYNTHETIC_NORMALISED_SNAPSHOT.json",
+      "sha256": "4638387efa7a7276ace842f21219a6e119e1284d249a22fa71a001ba914935ac",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "examples/SYNTHETIC_Offshore_Module.fgcase",
+      "sha256": "cc35410265b13f1d61b3e2c598f15cae429c82da69ccda85b22f34a66ba56cc7",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "examples/SYNTHETIC_PERFORMANCE_PREPARATION.json",
+      "sha256": "9b4d47cd3abb5543e2d9d0e4a6bd503b538034133eebb3a50ab49e1ceb49652f",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "examples/SYNTHETIC_REV_C_CONNECTED.fgcase",
+      "sha256": "295f7f59ea724e93cae2c45e5c66feddf405d87fbed4b165d9e7ceb66c5aaeb9",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "examples/SYNTHETIC_REV_D_STUDY.fgcase",
+      "sha256": "ef48e0c95db004eff9c47dd408c522c903509e87690aa0bb5177a8ce25c268a3",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "examples/SYNTHETIC_REV_E_STUDY.fgcase",
+      "sha256": "8578a0fda23f282443c3d853eee2a399731b5e4c4fbe364795717edc3235a2d1",
+      "change_from_Rev_E": "UNCHANGED"
+    },
+    {
+      "path": "examples/SYNTHETIC_WP02_MODULE.fgcase",
+      "sha256": "5aa7f56d2618ef588fc26a463dbc1d23fcd9447386370056ceafe6c0cf6bc77d",
+      "change_from_Rev_E": "UNCHANGED"
+    }
+  ],
+  "removed_from_Rev_E": []
+}

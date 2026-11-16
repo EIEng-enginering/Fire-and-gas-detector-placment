@@ -1,0 +1,55 @@
+{
+  "version": "0.3.0a1",
+  "baseline": {
+    "unit": 53,
+    "integration": 30,
+    "acceptance": 2,
+    "total": 85,
+    "run": "20261116T052005Z"
+  },
+  "candidate_expected": {
+    "unit": 65,
+    "integration": 54,
+    "acceptance": 4,
+    "total": 123
+  },
+  "last_full_run_before_live_legacy_lock_regression": {
+    "total": 122,
+    "unit": 65,
+    "integration": 53,
+    "acceptance": 4,
+    "run": "20261116T053944Z",
+    "failures": 0,
+    "skips": 0
+  },
+  "new_legacy_lock_regression": "7 targeted case-hardening tests pass; final fresh suite follows",
+  "fresh_extraction": {
+    "archive": "FG_MAPPING_REV_C_FRESH_AUDIT_20261116.zip",
+    "archive_sha256": "8dc885003e52cb6e501e398fb89f223c60eba9b5215b8ad97ab47000c1faccc5",
+    "hashes": "PASS",
+    "counts": {
+      "unit": 65,
+      "integration": 54,
+      "acceptance": 4
+    },
+    "total": 123,
+    "exit_code": 0,
+    "Windows": "NOT RUN",
+    "qualification": "UNVERIFIED"
+  },
+  "actual_Qt_workflow": "REV_C_WORKFLOW_VERIFIED.txt",
+  "virtual_detector_10000": "REV_C_10000_DETECTORS_FINAL.json",
+  "mutations": "REV_C_MUTATIONS.json",
+  "field_convergence": "REV_C_FIELD_CONVERGENCE.json",
+  "Windows": "NOT RUN",
+  "engineering_qualification": "UNVERIFIED",
+  "final": {
+    "unit": 65,
+    "integration": 54,
+    "acceptance": 4,
+    "total": 123,
+    "failures": 0,
+    "skips": 0,
+    "logs": "REV_C_FRESH_EXTRACTION/{unit,integration,acceptance}.txt"
+  }
+}

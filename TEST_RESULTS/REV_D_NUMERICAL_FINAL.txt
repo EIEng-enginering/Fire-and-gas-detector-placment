@@ -1,0 +1,60 @@
+{
+  "label": "GEOMETRIC AND COORDINATE SOFTWARE VERIFICATION ONLY",
+  "qualification": "UNVERIFIED",
+  "target_benchmarks": [
+    {
+      "samples": 16,
+      "area_m2": 4.0,
+      "geometric_fraction": 0.5,
+      "independent_constructive_half_area_fraction": 0.5,
+      "absolute_error": 0,
+      "seconds": 0.0017243459997189348
+    },
+    {
+      "samples": 64,
+      "area_m2": 4.0,
+      "geometric_fraction": 0.5,
+      "independent_constructive_half_area_fraction": 0.5,
+      "absolute_error": 0,
+      "seconds": 0.004430212999977812
+    },
+    {
+      "samples": 256,
+      "area_m2": 4.0,
+      "geometric_fraction": 0.5,
+      "independent_constructive_half_area_fraction": 0.5,
+      "absolute_error": 0,
+      "seconds": 0.01553976299965143
+    },
+    {
+      "samples": 1024,
+      "area_m2": 4.0,
+      "geometric_fraction": 0.5,
+      "independent_constructive_half_area_fraction": 0.5,
+      "absolute_error": 0,
+      "seconds": 0.053963611000654055
+    }
+  ],
+  "mount_known_answer": {
+    "actual_position_m": [
+      4.0,
+      24.0,
+      45.0
+    ],
+    "independent_constructive_expected_m": [
+      4,
+      24,
+      45
+    ],
+    "source_anchor_mm": [
+      1000,
+      2000,
+      3000
+    ],
+    "physical_offset_m": [
+      1,
+      2,
+      3
+    ]
+  }
+}

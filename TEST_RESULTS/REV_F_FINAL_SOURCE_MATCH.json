@@ -1,0 +1,7 @@
+{
+  "candidate_zip_sha256": "8fdf6a6a8dffde97d94ddf72682ba249d70dc32609e6513e1190529199f3d338",
+  "scope": "src/tests/tools/contracts/examples",
+  "differing_files": [],
+  "files_not_in_candidate": [],
+  "result": "IDENTICAL"
+}

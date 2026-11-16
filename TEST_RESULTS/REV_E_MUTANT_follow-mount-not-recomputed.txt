@@ -1,0 +1,25 @@
+test_duplicate_unknown_header_nonfinite_and_scope_refused (test_preparation_imports.PreparationImports.test_duplicate_unknown_header_nonfinite_and_scope_refused) ... ok
+test_last_row_failure_is_atomic (test_preparation_imports.PreparationImports.test_last_row_failure_is_atomic) ... ok
+test_preview_no_mutation_commit_one_history_and_raw_retained (test_preparation_imports.PreparationImports.test_preview_no_mutation_commit_one_history_and_raw_retained) ... ok
+test_revision_follow_recalculates_frame_pose_and_history (test_preparation_imports.PreparationImports.test_revision_follow_recalculates_frame_pose_and_history) ... FAIL
+test_revision_missing_component_explicit_detach (test_preparation_imports.PreparationImports.test_revision_missing_component_explicit_detach) ... ok
+test_revision_missing_decision_or_reference_refused (test_preparation_imports.PreparationImports.test_revision_missing_decision_or_reference_refused) ... ok
+test_revision_unit_change_needs_manual_anchor_redeclaration (test_preparation_imports.PreparationImports.test_revision_unit_change_needs_manual_anchor_redeclaration) ... ok
+test_stale_preview_and_tampering_refused (test_preparation_imports.PreparationImports.test_stale_preview_and_tampering_refused) ... ok
+test_update_marker_and_mounted_edit_guard (test_preparation_imports.PreparationImports.test_update_marker_and_mounted_edit_guard) ... ok
+test_worker_and_cancellation_leave_live_case_unchanged (test_preparation_imports.PreparationImports.test_worker_and_cancellation_leave_live_case_unchanged) ... ok
+test_xlsx_literals_and_formulas (test_preparation_imports.PreparationImports.test_xlsx_literals_and_formulas) ... ok
+
+======================================================================
+FAIL: test_revision_follow_recalculates_frame_pose_and_history (test_preparation_imports.PreparationImports.test_revision_follow_recalculates_frame_pose_and_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmpaybn5mee/tests/integration/test_preparation_imports.py", line 66, in test_revision_follow_recalculates_frame_pose_and_history
+    self.mounted();p=json.loads(self.revision());p['scene']['frames'][0]['matrix'][0][3]+=2;raw=canonical(p).encode();before=get_scene(self.s).sha256;plan=prepare_revision(self.s,raw);self.assertEqual(w.row(self.s,'detectors','D')['x'],1);self.apply(plan);self.assertEqual(w.row(self.s,'detectors','D')['x'],3)
+                                                                                                                                                                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1.0 != 3
+
+----------------------------------------------------------------------
+Ran 11 tests in 1.248s
+
+FAILED (failures=1)

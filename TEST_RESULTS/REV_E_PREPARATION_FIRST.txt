@@ -1,0 +1,217 @@
+test_duplicate_unknown_header_nonfinite_and_scope_refused (test_preparation_imports.PreparationImports.test_duplicate_unknown_header_nonfinite_and_scope_refused) ... ERROR
+test_last_row_failure_is_atomic (test_preparation_imports.PreparationImports.test_last_row_failure_is_atomic) ... ERROR
+test_preview_no_mutation_commit_one_history_and_raw_retained (test_preparation_imports.PreparationImports.test_preview_no_mutation_commit_one_history_and_raw_retained) ... ERROR
+test_revision_follow_recalculates_frame_pose_and_history (test_preparation_imports.PreparationImports.test_revision_follow_recalculates_frame_pose_and_history) ... ERROR
+test_revision_follow_recalculates_frame_pose_and_history (test_preparation_imports.PreparationImports.test_revision_follow_recalculates_frame_pose_and_history) ... ERROR
+test_revision_missing_component_explicit_detach (test_preparation_imports.PreparationImports.test_revision_missing_component_explicit_detach) ... ERROR
+test_revision_missing_component_explicit_detach (test_preparation_imports.PreparationImports.test_revision_missing_component_explicit_detach) ... ERROR
+test_revision_missing_decision_or_reference_refused (test_preparation_imports.PreparationImports.test_revision_missing_decision_or_reference_refused) ... ERROR
+test_revision_missing_decision_or_reference_refused (test_preparation_imports.PreparationImports.test_revision_missing_decision_or_reference_refused) ... ERROR
+test_revision_unit_change_needs_manual_anchor_redeclaration (test_preparation_imports.PreparationImports.test_revision_unit_change_needs_manual_anchor_redeclaration) ... ERROR
+test_revision_unit_change_needs_manual_anchor_redeclaration (test_preparation_imports.PreparationImports.test_revision_unit_change_needs_manual_anchor_redeclaration) ... ERROR
+test_stale_preview_and_tampering_refused (test_preparation_imports.PreparationImports.test_stale_preview_and_tampering_refused) ... ERROR
+test_update_marker_and_mounted_edit_guard (test_preparation_imports.PreparationImports.test_update_marker_and_mounted_edit_guard) ... ERROR
+test_update_marker_and_mounted_edit_guard (test_preparation_imports.PreparationImports.test_update_marker_and_mounted_edit_guard) ... ERROR
+test_worker_and_cancellation_leave_live_case_unchanged (test_preparation_imports.PreparationImports.test_worker_and_cancellation_leave_live_case_unchanged) ... ERROR
+test_xlsx_literals_and_formulas (test_preparation_imports.PreparationImports.test_xlsx_literals_and_formulas) ... ERROR
+
+======================================================================
+ERROR: test_duplicate_unknown_header_nonfinite_and_scope_refused (test_preparation_imports.PreparationImports.test_duplicate_unknown_header_nonfinite_and_scope_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 25, in tearDown
+    def tearDown(self):self.s.close(discard=True);self.tmp.cleanup()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CaseSession.close() got an unexpected keyword argument 'discard'
+
+======================================================================
+ERROR: test_last_row_failure_is_atomic (test_preparation_imports.PreparationImports.test_last_row_failure_is_atomic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 25, in tearDown
+    def tearDown(self):self.s.close(discard=True);self.tmp.cleanup()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CaseSession.close() got an unexpected keyword argument 'discard'
+
+======================================================================
+ERROR: test_preview_no_mutation_commit_one_history_and_raw_retained (test_preparation_imports.PreparationImports.test_preview_no_mutation_commit_one_history_and_raw_retained)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 25, in tearDown
+    def tearDown(self):self.s.close(discard=True);self.tmp.cleanup()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CaseSession.close() got an unexpected keyword argument 'discard'
+
+======================================================================
+ERROR: test_revision_follow_recalculates_frame_pose_and_history (test_preparation_imports.PreparationImports.test_revision_follow_recalculates_frame_pose_and_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 66, in test_revision_follow_recalculates_frame_pose_and_history
+    self.mounted();p=json.loads(self.revision());p['scene']['frames'][0]['matrix'][0][3]+=2;raw=canonical(p).encode();before=get_scene(self.s).sha256;plan=prepare_revision(self.s,raw);self.assertEqual(w.row(self.s,'detectors','D')['x'],1);self.apply(plan);self.assertEqual(w.row(self.s,'detectors','D')['x'],3)
+    ^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 64, in mounted
+    w.detector_command(self.s,{**detector(),'x':1,'y':2,'z':3},None,'TEST_ENGINE',create=True,place_marker=True);set_mount(self.s,'D','V101',[1,2,3],[0,0,0],[0,0,0],'SYN-GEOM-01','TEST_ENGINE')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/services/workspace.py", line 125, in detector_command
+    changes=detector_plan(session,values,evidence,create=create,place_marker=place_marker)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/services/workspace.py", line 89, in detector_plan
+    orientation=vector(tuple(values.get(k,0.) for k in ('azimuth','elevation','roll')))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/domain/scene.py", line 18, in vector
+    raise ValueError('Expected three finite coordinates within development bounds')
+ValueError: Expected three finite coordinates within development bounds
+
+======================================================================
+ERROR: test_revision_follow_recalculates_frame_pose_and_history (test_preparation_imports.PreparationImports.test_revision_follow_recalculates_frame_pose_and_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 25, in tearDown
+    def tearDown(self):self.s.close(discard=True);self.tmp.cleanup()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CaseSession.close() got an unexpected keyword argument 'discard'
+
+======================================================================
+ERROR: test_revision_missing_component_explicit_detach (test_preparation_imports.PreparationImports.test_revision_missing_component_explicit_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 69, in test_revision_missing_component_explicit_detach
+    self.mounted();self.apply(prepare_revision(self.s,self.revision('KEEP_WORLD_DETACH',True)));self.assertIsNone(w.row(self.s,'detector_mount','D'));self.assertEqual(w.row(self.s,'detectors','D')['x'],1)
+    ^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 64, in mounted
+    w.detector_command(self.s,{**detector(),'x':1,'y':2,'z':3},None,'TEST_ENGINE',create=True,place_marker=True);set_mount(self.s,'D','V101',[1,2,3],[0,0,0],[0,0,0],'SYN-GEOM-01','TEST_ENGINE')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/services/workspace.py", line 125, in detector_command
+    changes=detector_plan(session,values,evidence,create=create,place_marker=place_marker)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/services/workspace.py", line 89, in detector_plan
+    orientation=vector(tuple(values.get(k,0.) for k in ('azimuth','elevation','roll')))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/domain/scene.py", line 18, in vector
+    raise ValueError('Expected three finite coordinates within development bounds')
+ValueError: Expected three finite coordinates within development bounds
+
+======================================================================
+ERROR: test_revision_missing_component_explicit_detach (test_preparation_imports.PreparationImports.test_revision_missing_component_explicit_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 25, in tearDown
+    def tearDown(self):self.s.close(discard=True);self.tmp.cleanup()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CaseSession.close() got an unexpected keyword argument 'discard'
+
+======================================================================
+ERROR: test_revision_missing_decision_or_reference_refused (test_preparation_imports.PreparationImports.test_revision_missing_decision_or_reference_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 71, in test_revision_missing_decision_or_reference_refused
+    self.mounted();p=json.loads(self.revision());p['mount_decisions']=[]
+    ^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 64, in mounted
+    w.detector_command(self.s,{**detector(),'x':1,'y':2,'z':3},None,'TEST_ENGINE',create=True,place_marker=True);set_mount(self.s,'D','V101',[1,2,3],[0,0,0],[0,0,0],'SYN-GEOM-01','TEST_ENGINE')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/services/workspace.py", line 125, in detector_command
+    changes=detector_plan(session,values,evidence,create=create,place_marker=place_marker)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/services/workspace.py", line 89, in detector_plan
+    orientation=vector(tuple(values.get(k,0.) for k in ('azimuth','elevation','roll')))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/domain/scene.py", line 18, in vector
+    raise ValueError('Expected three finite coordinates within development bounds')
+ValueError: Expected three finite coordinates within development bounds
+
+======================================================================
+ERROR: test_revision_missing_decision_or_reference_refused (test_preparation_imports.PreparationImports.test_revision_missing_decision_or_reference_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 25, in tearDown
+    def tearDown(self):self.s.close(discard=True);self.tmp.cleanup()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CaseSession.close() got an unexpected keyword argument 'discard'
+
+======================================================================
+ERROR: test_revision_unit_change_needs_manual_anchor_redeclaration (test_preparation_imports.PreparationImports.test_revision_unit_change_needs_manual_anchor_redeclaration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 76, in test_revision_unit_change_needs_manual_anchor_redeclaration
+    self.mounted();p=json.loads(self.revision());p['scene']['frames'][0]['units']='mm'
+    ^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 64, in mounted
+    w.detector_command(self.s,{**detector(),'x':1,'y':2,'z':3},None,'TEST_ENGINE',create=True,place_marker=True);set_mount(self.s,'D','V101',[1,2,3],[0,0,0],[0,0,0],'SYN-GEOM-01','TEST_ENGINE')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/services/workspace.py", line 125, in detector_command
+    changes=detector_plan(session,values,evidence,create=create,place_marker=place_marker)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/services/workspace.py", line 89, in detector_plan
+    orientation=vector(tuple(values.get(k,0.) for k in ('azimuth','elevation','roll')))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/domain/scene.py", line 18, in vector
+    raise ValueError('Expected three finite coordinates within development bounds')
+ValueError: Expected three finite coordinates within development bounds
+
+======================================================================
+ERROR: test_revision_unit_change_needs_manual_anchor_redeclaration (test_preparation_imports.PreparationImports.test_revision_unit_change_needs_manual_anchor_redeclaration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 25, in tearDown
+    def tearDown(self):self.s.close(discard=True);self.tmp.cleanup()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CaseSession.close() got an unexpected keyword argument 'discard'
+
+======================================================================
+ERROR: test_stale_preview_and_tampering_refused (test_preparation_imports.PreparationImports.test_stale_preview_and_tampering_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 25, in tearDown
+    def tearDown(self):self.s.close(discard=True);self.tmp.cleanup()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CaseSession.close() got an unexpected keyword argument 'discard'
+
+======================================================================
+ERROR: test_update_marker_and_mounted_edit_guard (test_preparation_imports.PreparationImports.test_update_marker_and_mounted_edit_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 52, in test_update_marker_and_mounted_edit_guard
+    w.detector_command(self.s,{**detector(),'x':1,'y':2,'z':3},None,'TEST_ENGINE',create=True,place_marker=True);before=get_scene(self.s);self.apply(prepare_bulk(self.s,csv_bytes([detector(action='UPDATE',x='4')]),'CSV'));after=get_scene(self.s);a=next(c for c in before.components if c.id=='D');b=next(c for c in after.components if c.id=='D');self.assertAlmostEqual(b.mesh.vertices[0][0]-a.mesh.vertices[0][0],3)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/services/workspace.py", line 125, in detector_command
+    changes=detector_plan(session,values,evidence,create=create,place_marker=place_marker)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/services/workspace.py", line 89, in detector_plan
+    orientation=vector(tuple(values.get(k,0.) for k in ('azimuth','elevation','roll')))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1969b32c6646/rev_e/src/fgmapping/domain/scene.py", line 18, in vector
+    raise ValueError('Expected three finite coordinates within development bounds')
+ValueError: Expected three finite coordinates within development bounds
+
+======================================================================
+ERROR: test_update_marker_and_mounted_edit_guard (test_preparation_imports.PreparationImports.test_update_marker_and_mounted_edit_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 25, in tearDown
+    def tearDown(self):self.s.close(discard=True);self.tmp.cleanup()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CaseSession.close() got an unexpected keyword argument 'discard'
+
+======================================================================
+ERROR: test_worker_and_cancellation_leave_live_case_unchanged (test_preparation_imports.PreparationImports.test_worker_and_cancellation_leave_live_case_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 25, in tearDown
+    def tearDown(self):self.s.close(discard=True);self.tmp.cleanup()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CaseSession.close() got an unexpected keyword argument 'discard'
+
+======================================================================
+ERROR: test_xlsx_literals_and_formulas (test_preparation_imports.PreparationImports.test_xlsx_literals_and_formulas)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/rev_e/tests/integration/test_preparation_imports.py", line 25, in tearDown
+    def tearDown(self):self.s.close(discard=True);self.tmp.cleanup()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CaseSession.close() got an unexpected keyword argument 'discard'
+
+----------------------------------------------------------------------
+Ran 11 tests in 1.039s
+
+FAILED (errors=16)

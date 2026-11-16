@@ -1,0 +1,11 @@
+{
+  "Rev_C_archive_sha256": "d0ddab2523d16f7c34ec78f7869560f7a5ffc3ff75c8fc2f032851478b623f40",
+  "inherited_test_files": 22,
+  "changed_inherited_test_files": [
+    "tests/integration/test_source_fingerprint.py"
+  ],
+  "reason": "Exact software version assertion updated from0.3.0a1 to0.4.0a1; criteria unchanged",
+  "original_manifest_and_migrations_1_2": "BYTE IDENTICAL",
+  "new_source_files": 27,
+  "modified_source_files": 13
+}

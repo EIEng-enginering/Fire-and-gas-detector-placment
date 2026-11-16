@@ -1,0 +1,40 @@
+{
+  "baseline": {
+    "unit": 10,
+    "integration": 8,
+    "acceptance": 1,
+    "total": 19,
+    "failures": 0,
+    "skips": 0,
+    "logs": "BASELINE_UNTOUCHED/20261116T043038Z"
+  },
+  "candidate": {
+    "unit": 53,
+    "integration": 30,
+    "acceptance": 2,
+    "total": 85,
+    "failures": 0,
+    "skips": 0,
+    "logs": "FRESH_EXTRACTION_FINAL/{unit,integration,acceptance}.txt"
+  },
+  "fresh_extraction": {
+    "archive_tested": "FG_MAPPING_FINAL_SOURCE_AUDIT_20261116.zip",
+    "archive_sha256": "5c698b25f41919dc6e4038e2ff57f9eb01915d4f40f3afe212e0a86884bcfc9d",
+    "exit_code": 0,
+    "tests": {
+      "unit": 53,
+      "integration": 30,
+      "acceptance": 2
+    },
+    "total": 85,
+    "hash_check": "PASS",
+    "Windows": "NOT RUN",
+    "source_and_tests_unchanged_after_fresh_run": true
+  },
+  "Windows": "NOT RUN",
+  "engineering_qualification": "UNVERIFIED",
+  "UI": "UI_DELIVERY.txt; Linux offscreen only",
+  "independent_oracle": "250 Fraction/Cramer comparisons in test_mesh_visibility.py",
+  "mutations": "CANDIDATE_MUTATIONS.json",
+  "convergence": "VISIBILITY_CONVERGENCE.json"
+}

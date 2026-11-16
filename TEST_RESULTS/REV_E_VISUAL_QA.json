@@ -1,0 +1,16 @@
+{
+  "status": "PASS FOR SYNTHETIC DEVELOPMENT REPORT",
+  "Word_pages": 25,
+  "PDF_pages": 18,
+  "scope": "All pages inspected through contact sheets; final grouped PDF figure/caption and new Qt dialogs spot-inspected full size",
+  "final_word_document_XML_identical_to_rendered_copy": true,
+  "note": "Final PDF caption grouped with its figure after an orphan caption was found; final18 pages re-rendered/inspected",
+  "limits": [
+    "Native Windows/Office NOT RUN",
+    "Production layout/engineering qualification pending"
+  ],
+  "files": {
+    "OUTPUT_SAMPLES/REV_E_STUDY/Study.docx": "1291a2c08a296eddf4ff1a0b6b71966d4f7951e19b23b253eac9c305248d4ccf",
+    "OUTPUT_SAMPLES/REV_E_STUDY/Study.pdf": "00e2faf245455699fa5004a87e71b4ae1f1c3d1f84d397f57915e3b1732dd9a0"
+  }
+}

@@ -1,0 +1,49 @@
+Mutant: inverted the obstruction-visibility predicate
+Command: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python -B -m unittest discover -s /workspace/scratch/1969b32c6646/candidate/tests/unit -p test_geometry.py -v
+Exit: 1
+test_bad_inputs_rejected (test_geometry.GeometryPrototypes.test_bad_inputs_rejected) ... ok
+test_center_ray_occluded (test_geometry.GeometryPrototypes.test_center_ray_occluded) ... FAIL
+test_clear_ray (test_geometry.GeometryPrototypes.test_clear_ray) ... ok
+test_cone_reference (test_geometry.GeometryPrototypes.test_cone_reference) ... FAIL
+test_grazing_is_blocked (test_geometry.GeometryPrototypes.test_grazing_is_blocked) ... ok
+test_inside_start_is_blocked (test_geometry.GeometryPrototypes.test_inside_start_is_blocked) ... ok
+test_one_and_two_out_of_two (test_geometry.GeometryPrototypes.test_one_and_two_out_of_two) ... FAIL
+test_parallel_miss (test_geometry.GeometryPrototypes.test_parallel_miss) ... ok
+test_weighted_fraction (test_geometry.GeometryPrototypes.test_weighted_fraction) ... FAIL
+
+======================================================================
+FAIL: test_center_ray_occluded (test_geometry.GeometryPrototypes.test_center_ray_occluded)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/candidate/tests/unit/test_geometry.py", line 14, in test_center_ray_occluded
+    self.assertFalse(illustrative_point_visible(self.detector,target,[self.box]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_cone_reference (test_geometry.GeometryPrototypes.test_cone_reference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/candidate/tests/unit/test_geometry.py", line 34, in test_cone_reference
+    self.assertEqual(illustrative_point_visible(self.detector,p,[]),independent_cone_check(self.detector.position,self.detector.direction,p,10.,45.),str(p))
+AssertionError: False != True : (6.0, 0.0, 0.0)
+
+======================================================================
+FAIL: test_one_and_two_out_of_two (test_geometry.GeometryPrototypes.test_one_and_two_out_of_two)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/candidate/tests/unit/test_geometry.py", line 40, in test_one_and_two_out_of_two
+    self.assertEqual(illustrative_vote_count([a,b],(1.,0.,0.),[]),2)
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_weighted_fraction (test_geometry.GeometryPrototypes.test_weighted_fraction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/1969b32c6646/candidate/tests/unit/test_geometry.py", line 47, in test_weighted_fraction
+    self.assertAlmostEqual(illustrative_coverage([self.detector],samples,[],1),.75)
+AssertionError: 0.0 != 0.75 within 7 places (0.75 difference)
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+FAILED (failures=4)

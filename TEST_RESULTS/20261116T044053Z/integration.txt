@@ -1,0 +1,26 @@
+COMMAND: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python -B -m unittest discover -s /workspace/scratch/1969b32c6646/candidate/tests/integration -v
+test_crash_recovery_explicit (test_case_lifecycle.CaseIntegration.test_crash_recovery_explicit) ... ok
+test_create_edit_save_reopen (test_case_lifecycle.CaseIntegration.test_create_edit_save_reopen) ... ok
+test_evidence_mandatory_and_synthetic (test_case_lifecycle.CaseIntegration.test_evidence_mandatory_and_synthetic) ... ok
+test_existing_case_not_overwritten (test_case_lifecycle.CaseIntegration.test_existing_case_not_overwritten) ... ok
+test_lock_refuses_second_writer (test_case_lifecycle.CaseIntegration.test_lock_refuses_second_writer) ... ok
+test_save_conflict_refuses_silent_overwrite (test_case_lifecycle.CaseIntegration.test_save_conflict_refuses_silent_overwrite) ... ok
+test_undo_is_compensating_event (test_case_lifecycle.CaseIntegration.test_undo_is_compensating_event) ... ok
+test_unsupported_schema_refused (test_case_lifecycle.CaseIntegration.test_unsupported_schema_refused) ... ok
+test_cancel (test_geometry_store.GeometryStore.test_cancel) ... ok
+test_corrupt_hash (test_geometry_store.GeometryStore.test_corrupt_hash) ... ok
+test_empty_actor_rolls_back (test_geometry_store.GeometryStore.test_empty_actor_rolls_back) ... ok
+test_explicit_backup_original_preserved (test_geometry_store.GeometryStore.test_explicit_backup_original_preserved) ... ok
+test_immutable_ledger (test_geometry_store.GeometryStore.test_immutable_ledger) ... ok
+test_missing_evidence (test_geometry_store.GeometryStore.test_missing_evidence) ... ok
+test_original_contract_hash (test_geometry_store.GeometryStore.test_original_contract_hash) ... ok
+test_scene_save_reopen (test_geometry_store.GeometryStore.test_scene_save_reopen) ... ok
+test_undo_redo_reopen (test_geometry_store.GeometryStore.test_undo_redo_reopen) ... ok
+test_worker (test_geometry_store.GeometryStore.test_worker) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.392s
+
+OK
+
+EXIT: 0

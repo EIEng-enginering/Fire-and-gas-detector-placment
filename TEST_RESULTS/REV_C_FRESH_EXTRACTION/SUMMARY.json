@@ -1,0 +1,14 @@
+{
+  "archive": "FG_MAPPING_REV_C_FRESH_AUDIT_20261116.zip",
+  "archive_sha256": "8dc885003e52cb6e501e398fb89f223c60eba9b5215b8ad97ab47000c1faccc5",
+  "hashes": "PASS",
+  "counts": {
+    "unit": 65,
+    "integration": 54,
+    "acceptance": 4
+  },
+  "total": 123,
+  "exit_code": 0,
+  "Windows": "NOT RUN",
+  "qualification": "UNVERIFIED"
+}

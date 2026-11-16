@@ -1,0 +1,55 @@
+COMMAND ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-B', 'tools/run_tests.py']
+ARCHIVE FG_MAPPING_REV_C_FRESH_AUDIT_20261116.zip
+unit PASS code 0
+nsforms (test_scene.SceneTests.test_bad_transforms) ... ok
+test_closed_mesh (test_scene.SceneTests.test_closed_mesh) ... ok
+test_cycle (test_scene.SceneTests.test_cycle) ... ok
+test_duplicate_and_missing_source (test_scene.SceneTests.test_duplicate_and_missing_source) ... ok
+test_exact_json_roundtrip (test_scene.SceneTests.test_exact_json_roundtrip) ... ok
+test_hostile (test_scene.SceneTests.test_hostile) ... ok
+test_obj_units_and_hash (test_scene.SceneTests.test_obj_units_and_hash) ... ok
+test_open_duplicate (test_scene.SceneTests.test_open_duplicate) ... ok
+test_rotated_scaled_translated_exact (test_scene.SceneTests.test_rotated_scaled_translated_exact) ... ok
+test_roundtrip_angles (test_scene.SceneTests.test_roundtrip_angles) ... ok
+test_stl (test_scene.SceneTests.test_stl) ... ok
+test_units (test_scene.SceneTests.test_units) ... ok
+test_colour_contrast (test_theme.ThemeContract.test_colour_contrast) ... ok
+test_scale_rotation_translation_preserves_constructive_hits (test_transform_visibility.TransformedVisibility.test_scale_rotation_translation_preserves_constructive_hits) ... ok
+
+----------------------------------------------------------------------
+Ran 65 tests in 0.110s
+
+OK
+
+integration PASS code 0
+eave_orphan_evidence) ... ok
+test_edit_marker_moves_and_undo_restores (test_workspace.Workspace.test_edit_marker_moves_and_undo_restores) ... ok
+test_foreign_edit_conflict_no_overwrite (test_workspace.Workspace.test_foreign_edit_conflict_no_overwrite) ... ok
+test_missing_actor_rolls_back_every_entity (test_workspace.Workspace.test_missing_actor_rolls_back_every_entity) ... ok
+test_multirow_paste_is_atomic (test_workspace.Workspace.test_multirow_paste_is_atomic) ... ok
+test_record_edit_remove_undo (test_workspace.Workspace.test_record_edit_remove_undo) ... ok
+test_record_invalid_bounds_no_change (test_workspace.Workspace.test_record_invalid_bounds_no_change) ... ok
+test_redo_invalidated_by_new_edit (test_workspace.Workspace.test_redo_invalidated_by_new_edit) ... ok
+test_referenced_detector_removal_refused (test_workspace.Workspace.test_referenced_detector_removal_refused) ... ok
+test_second_marker_and_bulk_move_undo (test_workspace.Workspace.test_second_marker_and_bulk_move_undo) ... ok
+test_undo_persists_across_reopen (test_workspace.Workspace.test_undo_persists_across_reopen) ... ok
+
+----------------------------------------------------------------------
+Ran 54 tests in 1.687s
+
+OK
+
+acceptance PASS code 0
+test_connected_study_save_reopen_report_worker (test_rev_c_workflow_service.RevCStudy.test_connected_study_save_reopen_report_worker) ... ok
+test_report_cancel_reaps_child (test_rev_c_workflow_service.RevCStudy.test_report_cancel_reaps_child) ... ok
+test_all_formats_and_corruption_refusal (test_synthetic_reports.Reports.test_all_formats_and_corruption_refusal) ... ok
+test_end_to_end_no_real_data (test_synthetic_workflow.SyntheticAcceptance.test_end_to_end_no_real_data) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 3.176s
+
+OK
+
+EVIDENCE_DIR: /tmp/fgmapping_rev_c_fresh_d62vfye9/TEST_RESULTS/20261116T054535Z
+
+EXIT 0
