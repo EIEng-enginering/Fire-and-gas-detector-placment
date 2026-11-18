@@ -1,0 +1,114 @@
+{
+ "contract": "fg-wellhead-example-zones/1",
+ "data_class": "SYNTHETIC",
+ "zones": [
+  {
+   "id": "FZ-WELLBAY",
+   "kind": "FIRE_ZONE",
+   "payload": {
+    "description": "Synthetic fire zone: wellbay (8 slots, cellar to upper deck)",
+    "high": [
+     20.5,
+     15.5,
+     9.0
+    ],
+    "low": [
+     7.0,
+     4.0,
+     0.0
+    ],
+    "units": "m"
+   }
+  },
+  {
+   "id": "FZ-MANIFOLD",
+   "kind": "FIRE_ZONE",
+   "payload": {
+    "description": "Synthetic fire zone: production/test manifold",
+    "high": [
+     28.0,
+     16.5,
+     4.5
+    ],
+    "low": [
+     22.8,
+     3.5,
+     0.0
+    ],
+    "units": "m"
+   }
+  },
+  {
+   "id": "FZ-WIRELINE",
+   "kind": "FIRE_ZONE",
+   "payload": {
+    "description": "Synthetic fire zone: wireline / well intervention area",
+    "high": [
+     6.5,
+     13.0,
+     4.0
+    ],
+    "low": [
+     1.0,
+     5.5,
+     0.0
+    ],
+    "units": "m"
+   }
+  },
+  {
+   "id": "GZ-WELLBAY",
+   "kind": "GAS_ZONE",
+   "payload": {
+    "description": "Synthetic gas zone: wellbay",
+    "high": [
+     20.5,
+     15.5,
+     9.0
+    ],
+    "low": [
+     7.0,
+     4.0,
+     0.0
+    ],
+    "units": "m"
+   }
+  },
+  {
+   "id": "GZ-MANIFOLD",
+   "kind": "GAS_ZONE",
+   "payload": {
+    "description": "Synthetic gas zone: manifold",
+    "high": [
+     28.0,
+     16.5,
+     4.5
+    ],
+    "low": [
+     22.8,
+     3.5,
+     0.0
+    ],
+    "units": "m"
+   }
+  },
+  {
+   "id": "GZ-MODULE",
+   "kind": "GAS_ZONE",
+   "payload": {
+    "description": "Synthetic gas zone: whole module volume below upper deck",
+    "high": [
+     30.0,
+     19.7,
+     9.0
+    ],
+    "low": [
+     0.3,
+     0.0,
+     0.0
+    ],
+    "units": "m"
+   }
+  }
+ ]
+}

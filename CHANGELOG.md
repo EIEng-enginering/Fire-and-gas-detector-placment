@@ -13,3 +13,18 @@ Bulk CSV/XLSX preparation, explicit geometry revision reconciliation, scene broa
 
 # Rev F — 0.6.0a1
 First native Windows 11 execution. Untouched Rev E suite: 98/190 errors on Windows. Fixed read-only-descriptor fsync (new fsync_file) and unclosed SQLite connections (contextlib.closing in src, three inherited tests and pack builder). Added Windows-portability regression tests, Rev F mutants, dense-lattice independent benchmark/test and native Excel literal read-back tooling. 201 tests: Linux 201/201, Windows 200/201 (symlink privilege). No migration/dependency/engine change or engineering acceptance.
+
+# Rev F addendum: SYNTHETIC 3D wellhead module example
+Adds a reproducible SYNTHETIC offshore wellhead module example study (WHM-01). It is about 30×20 m with a cellar deck (0.0), a wellhead/mezzanine grating (+4.5) and an upper deck (+9.0). Contents:
+- 8 well slots with wellhead, tree, valve, choke and flowline envelopes
+- production/test manifold and headers
+- wireline/intervention area
+- north and west blast walls
+- escape-route markers
+- 23 candidate detectors: 8 FLAME, 12 POINT_GAS, 3 OPEN_PATH
+- 17 equipment records
+- 3 fire zones and 3 gas zones
+
+It is built only through the app's service paths (`tools/build_wellhead_example.py`). It ships with matplotlib previews and real-app screenshots on Linux offscreen and Windows `windows` Qt. Documentation is in docs/EXAMPLE_WELLHEAD_MODULE.md. A new integration test, tests/integration/test_wellhead_example.py (5 tests), brings the suite to 206.
+
+The first Windows run failed honestly on CRLF text output from the generator. The generator now writes LF bytes, and `.gitattributes` pins the example inputs to `-text`. Readiness input is BLOCKED and engineering calculation stays BLOCKED.

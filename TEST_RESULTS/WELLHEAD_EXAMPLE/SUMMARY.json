@@ -1,0 +1,53 @@
+{
+  "example": "examples/SYNTHETIC_WELLHEAD_MODULE.fgcase",
+  "data_class": "SYNTHETIC",
+  "scene_sha256": "ef65fc6ffff64a48ede8c34f30118a08a66c436c76794e9dda9f2de1c33453c2",
+  "components": 116,
+  "detectors": {
+    "FLAME": 8,
+    "POINT_GAS": 12,
+    "OPEN_PATH": 3
+  },
+  "records": {
+    "EQUIPMENT": 17,
+    "FIRE_ZONE": 3,
+    "GAS_ZONE": 3
+  },
+  "readiness": {
+    "input_status": "BLOCKED",
+    "engineering_calculation_status": "BLOCKED",
+    "qualification": "UNVERIFIED"
+  },
+  "runs": [
+    {
+      "dir": "BOX_SUITE_20261118T002622Z",
+      "host": "Linux Python 3.12.16, Qt offscreen",
+      "result": "206/206 PASS"
+    },
+    {
+      "dir": "WIN_SUITE_1_BEFORE_LF_FIX_20261118T002759Z",
+      "host": "Windows 11 10.0.26200, Python 3.12.10",
+      "result": "204/206: test_shipped_example_matches_regenerated_build FAIL (generator wrote CRLF via write_text on Windows), test_symlink_alias_fenced ERROR (WinError 1314)"
+    },
+    {
+      "dir": "WIN_SUITE_2_AFTER_LF_FIX_20261118T003002Z",
+      "host": "Windows 11 10.0.26200, Python 3.12.10",
+      "result": "205/206: test_symlink_alias_fenced ERROR (WinError 1314, no symlink privilege; test unaltered)"
+    },
+    {
+      "dir": "BOX_SUITE_2_AFTER_LF_FIX_20261118T003148Z",
+      "host": "Linux",
+      "result": "206/206 PASS"
+    }
+  ],
+  "app_screenshots": {
+    "windows_qt_platform": "windows",
+    "files": [
+      "screenshots/WELLHEAD_APP_WINDOWS_light_Isometric.png",
+      "screenshots/WELLHEAD_APP_WINDOWS_light_Isometric_CUTAWAY.png",
+      "screenshots/WELLHEAD_APP_WINDOWS_dark_Isometric_CUTAWAY.png",
+      "screenshots/WELLHEAD_APP_WINDOWS_light_Top_CUTAWAY.png"
+    ]
+  },
+  "note": "Run directory timestamps are UTC from the host clocks (box clock read 18 Nov 2026 AWST at run time)."
+}

@@ -1,0 +1,16 @@
+{
+  "case": "examples/SYNTHETIC_WELLHEAD_MODULE.fgcase",
+  "scene_sha256": "ef65fc6ffff64a48ede8c34f30118a08a66c436c76794e9dda9f2de1c33453c2",
+  "components": 116,
+  "detectors": 23,
+  "records": {
+    "EQUIPMENT": 17,
+    "FIRE_ZONE": 3,
+    "GAS_ZONE": 3
+  },
+  "readiness": {
+    "input_status": "BLOCKED",
+    "engineering_calculation_status": "BLOCKED",
+    "qualification": "UNVERIFIED"
+  }
+}

@@ -15,3 +15,8 @@
 - ORIGINAL_ARCHIVES: exact WP01/takeover and Rev B/C/D ZIPs.
 - PROJECT_STATE.md/NEXT_WORK_PROMPT.txt: exact continuation checkpoint.
 - SOURCE_FILES.json, PACK_SCAN.json, SHA256SUMS.txt: source change list, pack scan and all-file hashes.
+
+- examples/SYNTHETIC_WELLHEAD_MODULE.fgcase plus the examples/wellhead/ inputs (geometry JSON, register CSV/XLSX, zones, basis, build summary): SYNTHETIC 3D wellhead module example. See docs/EXAMPLE_WELLHEAD_MODULE.md.
+- tools/build_wellhead_example.py (generator), tools/render_wellhead_preview.py (matplotlib preview, tool-only), tools/capture_wellhead_app.py (real-app screenshots).
+- screenshots/WELLHEAD_MODULE_*.png are matplotlib previews. screenshots/WELLHEAD_APP_LINUX_OFFSCREEN_*.png and WELLHEAD_APP_WINDOWS_*.png are executed application windows.
+- TEST_RESULTS/WELLHEAD_EXAMPLE/: box and Windows suite evidence for the example, including the preserved first Windows failure.

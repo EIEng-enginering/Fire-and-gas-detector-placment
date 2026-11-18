@@ -1,0 +1,39 @@
+{
+ "contract": "fg-study-basis/1",
+ "coordinate_reference": "WHM_LOCAL synthetic frame (m); X east, Y north, Z up; cellar deck TOS = 0",
+ "criterion_reference": "NOT SUPPLIED",
+ "exclusions": [
+  {
+   "component_id": "ER-SOUTH",
+   "evidence_id": "SYN-WHM-GEOM-01",
+   "reason": "Non-obstructing floor/area marker annotation"
+  },
+  {
+   "component_id": "ER-EAST",
+   "evidence_id": "SYN-WHM-GEOM-01",
+   "reason": "Non-obstructing floor/area marker annotation"
+  },
+  {
+   "component_id": "ER-WELLBAY",
+   "evidence_id": "SYN-WHM-GEOM-01",
+   "reason": "Non-obstructing floor/area marker annotation"
+  },
+  {
+   "component_id": "ER-MZ",
+   "evidence_id": "SYN-WHM-GEOM-01",
+   "reason": "Non-obstructing floor/area marker annotation"
+  },
+  {
+   "component_id": "WL-LAYDOWN",
+   "evidence_id": "SYN-WHM-GEOM-01",
+   "reason": "Non-obstructing floor/area marker annotation"
+  }
+ ],
+ "fuel_or_gas": "NOT SUPPLIED",
+ "revision": "SYN-WHM-A",
+ "study_type": "BOTH",
+ "target_description": "NOT SUPPLIED - illustrative example; no fire/gas scenario or target defined",
+ "target_fraction": "NOT SUPPLIED",
+ "uncertainty_reference": "NOT SUPPLIED",
+ "voting": 2
+}

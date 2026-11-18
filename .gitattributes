@@ -1,0 +1,4 @@
+# The SYNTHETIC wellhead example inputs are byte-compared against a fresh build by
+# tests/integration/test_wellhead_example.py; keep LF bytes on every platform.
+examples/wellhead/*.json -text
+examples/wellhead/*.csv -text

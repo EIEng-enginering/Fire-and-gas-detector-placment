@@ -6,7 +6,23 @@ Rev F is the first native Windows execution and Windows portability revision. St
 
 Fixes: write-capable `fsync_file()` for all durability flushes; `contextlib.closing` for every SQLite connection opened with a context manager in src, three inherited test files and the pack builder. New: 10 Windows-portability regression tests (Windows semantics emulated on POSIX, native on Windows), 3 deliberate mutants (caught on Linux and Windows), dense-lattice broadphase benchmark against the independent oracle (+1 acceptance test), native Excel literal-text read-back tooling. Engine/geometry/calculation code, migrations, owner manifest and tolerances unchanged.
 
-Current suite: 201 tests (87 unit / 105 integration / 9 acceptance). Linux: 201/201 PASS. Windows: 200/201 — `test_symlink_alias_fenced` fails with WinError 1314 because this PC has no Developer Mode/symlink privilege; the test was not altered or skipped. Real-Qt (`windows` platform) smoke and the Rev E integrated Qt workflow passed on Windows; native Excel showed literal `=` text and zero formulas. Word COM read-back hung and was not completed. Manual Windows items (keyboard, DPI/multi-monitor, human visual Office/PDF review, human cancellation/file-lock scenarios) were not performed. See TEST_RESULTS/REV_F_FINAL_SUMMARY.json and docs/REV_F_WINDOWS_CHECKLIST.md.
+Rev F baseline suite (before the wellhead example): 201 tests (87 unit / 105 integration / 9 acceptance). Linux: 201/201 PASS. Windows: 200/201 — `test_symlink_alias_fenced` fails with WinError 1314 because this PC has no Developer Mode/symlink privilege; the test was not altered or skipped. Real-Qt (`windows` platform) smoke and the Rev E integrated Qt workflow passed on Windows; native Excel showed literal `=` text and zero formulas. Word COM read-back hung and was not completed. Manual Windows items (keyboard, DPI/multi-monitor, human visual Office/PDF review, human cancellation/file-lock scenarios) were not performed. See TEST_RESULTS/REV_F_FINAL_SUMMARY.json and docs/REV_F_WINDOWS_CHECKLIST.md.
+
+## Addendum: SYNTHETIC wellhead module example
+`examples/SYNTHETIC_WELLHEAD_MODULE.fgcase` (docs/EXAMPLE_WELLHEAD_MODULE.md) is an illustrative 3D offshore wellhead module. It contains:
+- 116 box components; scene sha256 ef65fc6f…53c2
+- 23 CANDIDATE detectors
+- 17 equipment records
+- 3 fire zones and 3 gas zones
+- a basis that is NOT SUPPLIED throughout
+
+It was built through the services by tools/build_wellhead_example.py. Readiness input is BLOCKED and engineering calculation is BLOCKED. No mounts, performance data or coverage are included.
+
+Suite: 206 tests (87 unit / 110 integration / 9 acceptance).
+- Linux: 206/206 PASS.
+- Windows: the first run had 2 problems. The new byte-compare test failed on CRLF generator output; that run is preserved. The generator was then fixed to write LF.
+- Windows rerun: 205/206. The only failure is the known `test_symlink_alias_fenced` (WinError 1314, no symlink privilege); that test is unaltered.
+- The real Windows Qt app opened the example and screenshots were captured.
 
 ## Logical stopping point
 Windows portability defects found by the first native run are fixed and regression-guarded. Engineering calculation stays BLOCKED. Not WP02–WP12 acceptance, qualification or release.
