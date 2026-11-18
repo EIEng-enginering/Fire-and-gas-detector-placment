@@ -11,7 +11,7 @@ def inspect_backup(path):
  try:
   with closing(sqlite3.connect(path.as_uri()+'?mode=ro',uri=True)) as con:
    version=con.execute('PRAGMA user_version').fetchone()[0]
-   if version not in (1,2,3) or con.execute('PRAGMA integrity_check').fetchone()[0]!='ok' or con.execute('PRAGMA foreign_key_check').fetchone() is not None:raise CaseError('BACKUP','Unsupported or corrupt backup')
+   if version not in (1,2,3,4) or con.execute('PRAGMA integrity_check').fetchone()[0]!='ok' or con.execute('PRAGMA foreign_key_check').fetchone() is not None:raise CaseError('BACKUP','Unsupported or corrupt backup')
    name,uuid=con.execute('SELECT name,case_uuid FROM case_info WHERE id=1').fetchone()
    return {'filename':path.name,'sha256':digest(path),'schema':version,'name':name,'case_uuid':uuid,'size_bytes':path.stat().st_size}
  except sqlite3.Error as exc:raise CaseError('BACKUP','Backup SQLite structure could not be verified') from exc

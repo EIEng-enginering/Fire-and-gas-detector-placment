@@ -18,7 +18,10 @@ TABLES={
 'study_basis':('id','payload_json','evidence_id','status'),
 'performance_dataset':('id','payload_json','import_sha256','raw_text','status'),
 'detector_performance_link':('detector_id','dataset_id','evidence_id','status'),
-'preparation_review':('id','subject_kind','subject_id','subject_hash','decision','reviewer','rationale','evidence_id','utc')}
+'preparation_review':('id','subject_kind','subject_id','subject_hash','decision','reviewer','rationale','evidence_id','utc'),
+'detector_library':('id','payload_json','content_sha256','status'),
+'detector_library_assignment':('detector_id','library_id','receiver_json','evidence_id','status'),
+'coverage_setup':('zone_id','payload_json','evidence_id','status')}
 
 def row(session,table,key):
     cols=TABLES[table];r=session.con.execute('SELECT '+','.join(cols)+' FROM '+table+' WHERE '+cols[0]+'=?',(key,)).fetchone()
@@ -33,7 +36,7 @@ def change(session,table,key,after):
 
 def execute(session,changes,actor,description):
     if not isinstance(actor,str) or not actor.strip():raise CaseError('ACTOR','Named editor or explicit automation actor required')
-    if session.con.execute('PRAGMA user_version').fetchone()[0] not in (2,3):raise CaseError('MIGRATION_REQUIRED','Enable candidate geometry schema first')
+    if session.con.execute('PRAGMA user_version').fetchone()[0] not in (2,3,4):raise CaseError('MIGRATION_REQUIRED','Enable candidate geometry schema first')
     if not changes:return
     if len({(c['table'],c['key']) for c in changes})!=len(changes):raise CaseError('COMMAND','One change per entity per command required')
     with session.con:
@@ -48,13 +51,14 @@ def _apply(session,changes):
         if c['table'] not in TABLES:raise CaseError('COMMAND','Unknown workspace entity')
         if canonical(row(session,c['table'],c['key']))!=canonical(c['before']):raise CaseError('EDIT_CONFLICT','Record changed since this command was prepared')
         if c['after'] is not None and set(c['after'])!=set(TABLES[c['table']]):raise CaseError('COMMAND','Closed row schema required')
-        if c['after'] is not None and c['table'] in ('detector_mount','study_basis','performance_dataset','detector_performance_link') and c['after']['status']!='CANDIDATE':raise CaseError('QUALIFICATION_GATE','Preparation entities cannot be promoted by a workspace command')
+        if c['after'] is not None and c['table'] in ('detector_mount','study_basis','performance_dataset','detector_performance_link','detector_library','detector_library_assignment','coverage_setup') and c['after']['status']!='CANDIDATE':raise CaseError('QUALIFICATION_GATE','Preparation entities cannot be promoted by a workspace command')
     for c in changes:
         cols=TABLES[c['table']];value=c['after']
         if value is None:session.con.execute('DELETE FROM '+c['table']+' WHERE '+cols[0]+'=?',(c['key'],))
         else:
             session.con.execute('INSERT INTO '+c['table']+'('+','.join(cols)+') VALUES('+','.join('?' for _ in cols)+') ON CONFLICT('+cols[0]+') DO UPDATE SET '+','.join(col+'=excluded.'+col for col in cols[1:]),tuple(value[col] for col in cols))
     session.con.execute("UPDATE calculation_run SET calculation_status='STALE'")
+    if session.con.execute('PRAGMA user_version').fetchone()[0]>=4:session.con.execute("UPDATE coverage_run SET status='STALE' WHERE status='CURRENT'")
 
 def history(session,actor,redo=False):
     events=session.con.execute("SELECT event_id,command,forward_json FROM ledger WHERE command IN ('WORKSPACE_EDIT','WORKSPACE_UNDO','WORKSPACE_REDO') ORDER BY event_id").fetchall()
@@ -81,7 +85,7 @@ def detector_rows(session):
 
 def detector_plan(session,values,evidence,*,create=False,place_marker=False,mount_update=False):
     id=values['id'];old=row(session,'detectors',id)
-    if session.con.execute('PRAGMA user_version').fetchone()[0]==3 and row(session,'detector_mount',id) and not mount_update:raise CaseError('MOUNTED_EDIT','Detach or edit the explicit mount before changing this detector')
+    if session.con.execute('PRAGMA user_version').fetchone()[0]>=3 and row(session,'detector_mount',id) and not mount_update:raise CaseError('MOUNTED_EDIT','Detach or edit the explicit mount before changing this detector')
     if not isinstance(id,str) or not id.strip() or any(ord(c)<32 for c in id):raise CaseError('IDENTITY','Detector ID must be nonblank and contain no control characters')
     if create and old is not None or not create and old is None:raise CaseError('IDENTITY','Detector ID already exists or was not found')
     if values['detector_type'] not in ('FLAME','POINT_GAS','OPEN_PATH','ULTRASONIC'):raise CaseError('TYPE','Unknown detector type')
@@ -154,7 +158,7 @@ def paste_detectors(session,patches,actor):
     moved=False
     for patch in patches:
         id=patch['id']
-        if session.con.execute('PRAGMA user_version').fetchone()[0]==3 and row(session,'detector_mount',id):raise CaseError('MOUNTED_EDIT','Edit the explicit mount rather than pasting a mounted detector')
+        if session.con.execute('PRAGMA user_version').fetchone()[0]>=3 and row(session,'detector_mount',id):raise CaseError('MOUNTED_EDIT','Edit the explicit mount rather than pasting a mounted detector')
         if id in ids:raise CaseError('PASTE','Duplicate detector in paste')
         ids.add(id);before=row(session,'detectors',id)
         if before is None:raise CaseError('MISSING','Paste only edits existing detector IDs')
@@ -190,8 +194,8 @@ def remove_detector(session,id,actor):
     old=row(session,'detectors',id)
     if old is None:raise CaseError('MISSING','Detector not found')
     changes=[]
-    if session.con.execute('PRAGMA user_version').fetchone()[0]==3:
-        for table in ('detector_mount','detector_performance_link'):
+    if session.con.execute('PRAGMA user_version').fetchone()[0]>=3:
+        for table in ('detector_mount','detector_performance_link')+(('detector_library_assignment',) if session.con.execute('PRAGMA user_version').fetchone()[0]>=4 else ()):
             if row(session,table,id):changes.append(change(session,table,id,None))
     if row(session,'detector_details',id) is not None:changes.append(change(session,'detector_details',id,None))
     changes.append(change(session,'detectors',id,None))

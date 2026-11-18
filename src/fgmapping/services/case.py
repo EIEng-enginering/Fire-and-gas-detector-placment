@@ -134,8 +134,8 @@ class CaseSession:
                 atomic_json(self.meta,{'original_sha':self._original_sha,'case':str(self.path),'created':utc_now()})
             self._con=sqlite3.connect(self.work)
             self._con.execute('PRAGMA foreign_keys=ON')
-            if self._con.execute('PRAGMA user_version').fetchone()[0] not in (1,2,3):
-                raise CaseError('VERSION','Only schema versions 1 and candidate 2/3 supported; explicit migration required')
+            if self._con.execute('PRAGMA user_version').fetchone()[0] not in (1,2,3,4):
+                raise CaseError('VERSION','Only schema versions 1 and candidate 2/3/4 supported; explicit migration required')
             if self._con.execute('PRAGMA integrity_check').fetchone()[0]!='ok':
                 raise CaseError('INTEGRITY','SQLite integrity check failed')
             if self._con.execute('PRAGMA foreign_key_check').fetchone() is not None:raise CaseError('REFERENTIAL_INTEGRITY','Case contains broken source/data references; restore a verified backup')

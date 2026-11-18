@@ -1,4 +1,4 @@
-"""First Windows Qt user interface, no engineering coverage results shown."""
+"""Fire & Gas Mapping Qt user interface. Rev G adds the Coverage menu (library, setup, runs, heatmaps)."""
 from __future__ import annotations
 import os
 from pathlib import Path
@@ -30,8 +30,9 @@ def local_root() -> Path:
     return Path(os.environ.get('LOCALAPPDATA',str(Path.home()/'.local'/'share')))/'FGMappingEngineering'
 
 from fgmapping.ui.preparation_dialogs import PreparationDialogs
+from fgmapping.ui.coverage_dialogs import CoverageDialogs
 
-class MainWindow(PreparationDialogs,StudyDialogs,QMainWindow):
+class MainWindow(CoverageDialogs,PreparationDialogs,StudyDialogs,QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle('Fire & Gas Mapping Engineering System | DEVELOPMENT BUILD')
@@ -52,6 +53,7 @@ class MainWindow(PreparationDialogs,StudyDialogs,QMainWindow):
         menu.addAction('Review synthetic facility revision',self.revision_import_dialog)
         study=self.menuBar().addMenu('Study preparation')
         for title,callback in [('Mount selected detector',self.mount_dialog),('Detach selected mount',self.detach_mount_dialog),('Edit candidate design basis',self.basis_dialog),('Input readiness and engineering blockers',self.readiness_dialog),('Import synthetic performance preparation',self.import_performance_dialog),('Link selected detector dataset',self.link_performance_dialog),('Record draft preparation review',self.review_preparation_dialog),('Geometric target inspection only',self.geometry_inspection_dialog)]:study.addAction(title,callback)
+        self.coverage_menu(self.menuBar())
         top=QHBoxLayout();base.addLayout(top)
         self.header=QLabel('DEVELOPMENT BUILD | no study loaded')
         top.addWidget(self.header,1)
@@ -180,7 +182,12 @@ class MainWindow(PreparationDialogs,StudyDialogs,QMainWindow):
         if self.session.con.execute('PRAGMA user_version').fetchone()[0]>=2:
             for kind,(view,model) in self.register_views.items():
                 view.set_rows(('ID','Evidence','Review','Inputs'),[(r['id'],r['evidence_id'],r['review_status'],json.dumps(r['payload'])) for r in records(self.session,kind)])
-        self.status.setText(f'{len(rows)} CANDIDATE detectors | NO COVERAGE | UNVERIFIED')
+        if self.session.con.execute('PRAGMA user_version').fetchone()[0]>=4:
+            from fgmapping.services import coverage as cov
+            runs=cov.latest_runs(self.session);assigned=self.session.con.execute('SELECT count(*) FROM detector_library_assignment').fetchone()[0]
+            self.status.setText(f'{len(rows)} detectors | {assigned} library assignments | {len(runs)} zone coverage runs | Engineer-reviewed results - not independently certified')
+            if self.fov_on:self.viewer.fov=self.fov_items()
+        else:self.status.setText(f'{len(rows)} CANDIDATE detectors | NO COVERAGE | UNVERIFIED')
 
     def add_detector(self):
         self.detector_form(True)
@@ -444,7 +451,7 @@ class MainWindow(PreparationDialogs,StudyDialogs,QMainWindow):
         id=self.selected_id();kind=self.active_kind()
         record=workspace.row(self.session,'detectors' if kind=='DETECTOR' else 'engineering_record',id) if id else None
         data={'record':record,'evidence':None if not record else workspace.row(self.session,'evidence',record['evidence_id']),'findings':study_findings(self.session)}
-        if record and kind=='DETECTOR' and self.session.con.execute('PRAGMA user_version').fetchone()[0]==3:
+        if record and kind=='DETECTOR' and self.session.con.execute('PRAGMA user_version').fetchone()[0]>=3:
             data['explicit_mount']=workspace.row(self.session,'detector_mount',id);data['preparation_dataset_link']=workspace.row(self.session,'detector_performance_link',id)
         dialog=QDialog(self);dialog.resize(780,550);dialog.setWindowTitle('Evidence and preparation findings');layout=QVBoxLayout(dialog)
         text=QPlainTextEdit();text.setReadOnly(True);text.setPlainText(json.dumps(data,indent=2));layout.addWidget(text)

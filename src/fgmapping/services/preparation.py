@@ -19,8 +19,8 @@ class PreparationPlan:
 
 def snapshot(s):
  version=s.con.execute('PRAGMA user_version').fetchone()[0]
- if version not in (2,3):raise CaseError('MIGRATION_REQUIRED','Enable candidate geometry schema first')
- tables=['evidence','detectors','detector_details','engineering_record','geometry_scene']+(['detector_mount','study_basis','performance_dataset','detector_performance_link','preparation_review'] if version==3 else [])
+ if version not in (2,3,4):raise CaseError('MIGRATION_REQUIRED','Enable candidate geometry schema first')
+ tables=['evidence','detectors','detector_details','engineering_record','geometry_scene']+(['detector_mount','study_basis','performance_dataset','detector_performance_link','preparation_review'] if version>=3 else [])+(['detector_library','detector_library_assignment','coverage_setup'] if version>=4 else [])
  return {t:{str(row[0]):dict(zip(w.TABLES[t],row)) for row in s.con.execute('SELECT '+','.join(w.TABLES[t])+' FROM '+t+' ORDER BY '+w.TABLES[t][0])} for t in tables}
 
 def state_hash(s):

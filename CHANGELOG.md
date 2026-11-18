@@ -28,3 +28,17 @@ Adds a reproducible SYNTHETIC offshore wellhead module example study (WHM-01). I
 It is built only through the app's service paths (`tools/build_wellhead_example.py`). It ships with matplotlib previews and real-app screenshots on Linux offscreen and Windows `windows` Qt. Documentation is in docs/EXAMPLE_WELLHEAD_MODULE.md. A new integration test, tests/integration/test_wellhead_example.py (5 tests), brings the suite to 206.
 
 The first Windows run failed honestly on CRLF text output from the generator. The generator now writes LF bytes, and `.gitattributes` pins the example inputs to `-text`. Readiness input is BLOCKED and engineering calculation stays BLOCKED.
+
+# Rev G — 0.7.0a1 (owner-approved coverage program, 18 Nov 2026)
+<!-- REV_G_CHANGELOG -->
+- **M1/M2.**
+  - Schema 4 (migration 0004_coverage.sql).
+  - Detector library contract, with CSV/XLSX import, immutable-by-ID entries and an EXAMPLE starter library.
+  - Explicit library assignment per detector, including the open-path receiver.
+  - Per-zone coverage setup contract.
+  - Flame geographic coverage engine: FOV + contour + line of sight against the 3D geometry, extended cylinder target, weighted voting fractions, exclusions, convergence and sensitivity.
+  - Geographic gas engine: sphere/ellipsoid design cloud, point detector and open-path LEL·m.
+  - The readiness gate reports READY when inputs are complete.
+  - Runs are stored with their input hash and staleness is tracked.
+  - New tests: 22 unit (known-answer) and 6 integration.
+<!-- /REV_G_CHANGELOG -->

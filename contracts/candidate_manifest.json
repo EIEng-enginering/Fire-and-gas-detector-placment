@@ -1,9 +1,10 @@
 {
   "status": "CANDIDATE / NOT OWNER FROZEN",
-  "schema_version": 3,
+  "schema_version": 4,
   "migrations_sha256": {
     "0001_initial.sql": "126ce646a67906a570c2dc75268849e785ab3203dd1644b9176cd90c36342129",
     "0002_candidate_geometry.sql": "9645110c0c012fc800264ebf4438b47b14eec195390288a02e2ddfc3cfe0a6ba",
-    "0003_study_preparation.sql": "bd5a01658c78d9bf2c66ed45c10383bc69bd1702c9d3bc3caf4306cdfcc078ff"
+    "0003_study_preparation.sql": "bd5a01658c78d9bf2c66ed45c10383bc69bd1702c9d3bc3caf4306cdfcc078ff",
+    "0004_coverage.sql": "37e54781c40262e296d3e134061092d21c9cc35e6880d7502c83da353752e410"
   }
 }

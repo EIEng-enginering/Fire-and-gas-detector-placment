@@ -1,4 +1,30 @@
-# Project state — Rev F checkpoint
+# Project state — Rev G (coverage) checkpoint
+18 November 2026 (AWST, UTC+8). v0.7.0a1. Engineer-reviewed results - not independently certified.
+
+## Rev G status (owner approval 18 Nov 2026 09:58 AWST: "I as the owner approved evething and build everthing that make the full program")
+Q1–Q10 and F01–F10 are APPROVED (docs/DECISIONS_REV_A.md). The synthetic-only, calculation-blocked and no-Git rules are lifted. Git commit and push to main is authorised; force-push is not.
+
+<!-- REV_G_MILESTONES -->
+- **M1 Detector library: DONE.**
+  - Library entries use contract fg-detector-library/1.
+  - Library import from CSV/XLSX.
+  - Explicit per-detector assignment, as required by F03.
+  - A starter library of EXAMPLE VALUES in examples/library.
+  - UI: Coverage > Import library / Detector library / Assign.
+- **M2 Flame geographic coverage: DONE.** Method FG-FLAME-GEO/1.0, schema 4 (coverage_run).
+  - The readiness gate reports READY or BLOCKED per zone.
+  - Each run is stored with its input hash.
+  - Staleness is tracked and convergence is checked.
+- M3 Viewer and results: IN PROGRESS.
+- M4 Geographic gas: the engine is implemented with M2 (FG-GAS-GEO/1.0).
+- M5 Scenario coverage and optimisation: NOT STARTED.
+- M6 Reports: NOT STARTED.
+<!-- /REV_G_MILESTONES -->
+
+Method: docs/REV_G_COVERAGE_METHOD.md. Deviations: DEVIATIONS.md G1–G5.
+
+---
+# (Previous) Rev F checkpoint
 16 November 2026 (AWST, UTC+8). v0.6.0a1. DEVELOPMENT BUILD / UNVERIFIED.
 
 ## Current implementation

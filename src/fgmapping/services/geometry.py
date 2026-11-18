@@ -14,7 +14,7 @@ def enable_geometry(session,actor):
     """Explicit local candidate upgrade, not implicit on open; backup before changes."""
     if not actor.strip(): raise CaseError('ACTOR','Explicit actor required')
     version=session.con.execute('PRAGMA user_version').fetchone()[0]
-    if version in (2,3):return
+    if version in (2,3,4):return
     if version!=1: raise CaseError('VERSION','Only v1 to v2 candidate upgrade supported')
     manifest=json.loads((MIGRATION.parent.parent/'candidate_manifest.json').read_text())
     for name,sha in manifest['migrations_sha256'].items():
@@ -53,7 +53,7 @@ def _put(session,payload):
     session.con.execute("UPDATE calculation_run SET calculation_status='STALE'")
 
 def set_scene(session,scene,actor):
-    if session.con.execute('PRAGMA user_version').fetchone()[0] not in (2,3): raise CaseError('MIGRATION_REQUIRED','Explicit candidate schema upgrade required')
+    if session.con.execute('PRAGMA user_version').fetchone()[0] not in (2,3,4): raise CaseError('MIGRATION_REQUIRED','Explicit candidate schema upgrade required')
     scene=Scene.from_dict(scene.to_dict())
     for evidence in {c.evidence_id for c in scene.components}:
         if not session.con.execute('SELECT 1 FROM evidence WHERE id=?',(evidence,)).fetchone():raise CaseError('EVIDENCE','Geometry evidence not found')

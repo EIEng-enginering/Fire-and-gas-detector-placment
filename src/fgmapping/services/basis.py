@@ -57,4 +57,23 @@ def readiness(session):
   mount=w.row(session,'detector_mount',d['id'])
   if mount and mount_status(session,mount)!='CURRENT_SOURCE':blocked.append('STALE_OR_MISSING_MOUNT:'+d['id'])
  review.append('GEOMETRY_AND_MOUNT_FEASIBILITY_NOT_QUALIFIED')
+ if session.con.execute('PRAGMA user_version').fetchone()[0]>=4:return _coverage_readiness(session,missing,blocked,review)
  return {'input_status':'BLOCKED' if blocked else 'MISSING' if missing else 'INPUTS_PRESENT','missing':sorted(missing),'blocking':sorted(blocked),'review':sorted(review),'engineering_calculation_status':'BLOCKED','engineering_blockers':['No qualified manufacturer response engine','No authorised real vendor performance basis','Independent engineering review and owner promotion required'],'qualification':'UNVERIFIED','review_status':'CANDIDATE'}
+
+def _coverage_readiness(session,missing,blocked,review):
+ """Schema 4 (Rev G): engineering calculation is gated per zone on complete inputs.
+ Per-zone library assignments/targets replace the schema-3 preparation-dataset and
+ single-basis target items. Engineer-reviewed results - not independently certified."""
+ from fgmapping.services.coverage import coverage_readiness
+ replaced=('PERFORMANCE_DATASET:','TARGET_FRACTION','CRITERION_REFERENCE')
+ missing=[m for m in missing if not m.startswith(replaced)]
+ blocked=[b for b in blocked if b!='MIXED_STUDY_REQUIRES_SEPARATE_METHOD_BASES']
+ review=[r for r in review if not r.startswith('SYNTHETIC_PERFORMANCE_ONLY:')]
+ zones=coverage_readiness(session);eng=[]
+ for z,st in zones.items():
+  eng+=[z+': '+b for b in st['blockers']];review+=st['review']
+ configured=[st for st in zones.values() if st['status']!='NOT CONFIGURED']
+ if not configured:eng.append('No zone has a coverage setup')
+ status='READY' if configured and all(st['status']=='READY' for st in configured) else 'BLOCKED'
+ return {'input_status':'BLOCKED' if blocked else 'MISSING' if missing else 'INPUTS_PRESENT','missing':sorted(missing),'blocking':sorted(blocked),'review':sorted(set(review)),
+  'engineering_calculation_status':status,'engineering_blockers':sorted(eng),'zones':zones,'qualification':'ENGINEER-REVIEWED - NOT INDEPENDENTLY CERTIFIED','review_status':'CANDIDATE'}

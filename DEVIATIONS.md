@@ -1,3 +1,13 @@
+# Rev G deviations and limits (0.7.0a1)
+G1. On 18 Nov 2026 the owner approved Q1–Q10/F01–F10 and lifted the synthetic-only, calculation-blocked and no-Git rules; see docs/DECISIONS_REV_A.md. The engineering coverage engine is implemented. Results are engineer-reviewed and not independently certified.
+G2. Test files were updated only where they asserted the removed behaviour:
+  - test_source_fingerprint now expects version 0.7.0a1.
+  - test_wellhead_example still expects the schema-3 case to be BLOCKED. That remains true, because schema 3 is not coverage-enabled.
+  - The old refusal tests in test_detection_scenarios and test_study_preparation still pass unchanged: calling the engine without complete inputs is still refused.
+G3. Shipped detector library entries are EXAMPLE VALUES (generic, with no manufacturer named). They must be replaced by verified manufacturer data before project use.
+G4. Scene and evidence data_class still accept only SYNTHETIC. A PROJECT data class for real facility geometry is not yet implemented (see NEXT_WORK_PROMPT).
+G5. No standards conformity is claimed. Limits of the method are listed in docs/REV_G_COVERAGE_METHOD.md §5.
+
 # Rev F deviations and limits
 Rev E items below remain in force except where updated here.
 

@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[3]
 def enable_study(session,actor):
  if not actor.strip():raise CaseError('ACTOR','Explicit upgrade actor required')
  version=session.con.execute('PRAGMA user_version').fetchone()[0]
- if version==3:return
+ if version in (3,4):return
  if version!=2:raise CaseError('MIGRATION_REQUIRED','Enable geometry schema2 before study schema3')
  manifest=json.loads((ROOT/'contracts/candidate_manifest.json').read_text())
  for name,expected in manifest['migrations_sha256'].items():
@@ -27,4 +27,4 @@ def enable_study(session,actor):
  session._dirty=True
 
 def require_study(session):
- if session.con.execute('PRAGMA user_version').fetchone()[0]!=3:raise CaseError('MIGRATION_REQUIRED','Explicit candidate study schema3 upgrade required')
+ if session.con.execute('PRAGMA user_version').fetchone()[0] not in (3,4):raise CaseError('MIGRATION_REQUIRED','Explicit candidate study schema3 upgrade required')

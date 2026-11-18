@@ -20,7 +20,7 @@ def study_findings(session):
   if kind in ('FIRE_ZONE','GAS_ZONE') and p.get('criteria','NOT SUPPLIED') in ('','NOT SUPPLIED'):add('BASIS-'+id,id,'BLOCKING','Zone design criterion reference not supplied')
  for id,status in session.con.execute('SELECT id,calculation_status FROM calculation_run ORDER BY id'):
   if status=='STALE':add('STALE-'+id,id,'REVIEW','Calculation inputs changed; retained result is stale')
- if session.con.execute('PRAGMA user_version').fetchone()[0]==3:
+ if session.con.execute('PRAGMA user_version').fetchone()[0]>=3:
   from fgmapping.services.basis import readiness
   r=readiness(session)
   for i,item in enumerate(r['missing']):add('READINESS-MISSING-'+str(i),'STUDY','BLOCKING','Missing input: '+item)

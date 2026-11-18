@@ -1,7 +1,9 @@
-"""WP05/06 numerical exercises and hard engineering refusal boundary.
+"""Engineering coverage entry points (Rev G) and WP05/06 synthetic exercises.
 
-No manufacturer response or qualified fire/gas study engine is implemented.
-All available numerical methods are explicitly SYNTHETIC demonstrations.
+Rev G (owner approval 18 Nov 2026): engineering_flame_coverage / engineering_gas_coverage
+run the geographic coverage engine (engine/coverage.py) and refuse unless the complete
+inputs are supplied. Engineer-reviewed results - not independently certified.
+The synthetic exercise functions below remain demonstrations only.
 """
 from dataclasses import dataclass
 import math
@@ -9,19 +11,58 @@ from fgmapping.domain.scene import vector
 
 class EngineeringUnavailable(ValueError):pass
 
+FLAME_REQUIRED=('zone','setup','detectors','library','scene')
 def engineering_flame_coverage(*,performance=None,basis=None,**kwargs):
-    missing=[]
-    if performance is None:missing.append('authorised manufacturer performance dataset')
-    if basis is None:missing.append('reviewed extended-fire target and study basis')
-    missing.append('independently reviewed flame response method and owner qualification')
-    raise EngineeringUnavailable('CANNOT CALCULATE engineering flame coverage: '+', '.join(missing))
+    """Rev G flame geographic coverage (FG-FLAME-GEO/1.0), gated on complete inputs.
+
+    Refuses (EngineeringUnavailable) unless a zone, a validated FLAME coverage setup
+    (target fire, grid, voting), detectors each with an explicitly assigned library
+    entry carrying a contour table, and facility geometry are all supplied.
+    Engineer-reviewed results - not independently certified.
+    """
+    missing=[k for k in FLAME_REQUIRED if kwargs.get(k) is None]
+    if not missing:missing=_check_inputs(kwargs,'FLAME_GEOGRAPHIC')
+    if missing:
+        missing=['complete coverage inputs: '+', '.join(missing)]
+        raise EngineeringUnavailable('CANNOT CALCULATE engineering flame coverage: '+', '.join(missing))
+    return _run(kwargs)
 
 def engineering_gas_coverage(*,performance=None,field=None,**kwargs):
+    """Rev G geographic gas coverage (FG-GAS-GEO/1.0; design-cloud method, not dispersion)."""
+    missing=[k for k in FLAME_REQUIRED if kwargs.get(k) is None]
+    if not missing:missing=_check_inputs(kwargs,'GAS_GEOGRAPHIC')
+    if missing:raise EngineeringUnavailable('CANNOT CALCULATE engineering gas coverage: complete coverage inputs: '+', '.join(missing))
+    return _run(kwargs)
+
+def _check_inputs(kw,method):
+    from fgmapping.domain.coverage_setup import validate_setup
+    from fgmapping.domain.detector_library import validate_entry
     missing=[]
-    if performance is None:missing.append('authorised gas sensor response data')
-    if field is None:missing.append('reviewed concentration field and units')
-    missing.append('independently reviewed gas method and owner qualification')
-    raise EngineeringUnavailable('CANNOT CALCULATE engineering gas coverage: '+', '.join(missing))
+    try:
+        setup=validate_setup(kw['setup'])
+        if setup['method']!=method:missing.append('setup method '+method)
+    except (ValueError,TypeError,KeyError) as exc:return ['valid coverage setup ('+str(exc)+')']
+    lib=kw['library']
+    if not isinstance(lib,dict):return ['library entries']
+    dets=kw['detectors']
+    if not dets:missing.append('detectors')
+    for d in dets or ():
+        e=lib.get(d.get('library_id')) if isinstance(d,dict) else None
+        if e is None:missing.append('explicit library entry for '+str(d.get('id') if isinstance(d,dict) else d));continue
+        try:validate_entry(e)
+        except (ValueError,TypeError,KeyError):missing.append('valid library entry for '+str(d['id']));continue
+        if e['detector_type']!=d.get('detector_type'):missing.append('matching library type for '+d['id'])
+        if d.get('detector_type')=='OPEN_PATH' and d.get('receiver') is None:missing.append('open-path receiver for '+d['id'])
+    if dets and len(dets)<setup['voting_required']:missing.append('at least voting_required detectors')
+    return missing
+
+def _run(kw):
+    from fgmapping.engine.coverage import Obstructions,zone_coverage
+    from fgmapping.domain.coverage_setup import validate_setup
+    setup=validate_setup(kw['setup'])
+    obs=Obstructions(kw['scene'],kw.get('excluded_component_ids') or (),setup['tolerance_m'])
+    dets=[dict(d,position=tuple(d['position']),receiver=None if d.get('receiver') is None else tuple(d['receiver'])) for d in kw['detectors']]
+    return zone_coverage(kw['zone'],setup,dets,kw['library'],obs,kw.get('cancel'),kw.get('progress'),kw.get('sensitivity',False))
 
 def synthetic_weighted_votes(rows,required_votes):
     """Explicit synthetic Boolean responses; cannot infer detector response."""

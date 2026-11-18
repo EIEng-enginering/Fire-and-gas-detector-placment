@@ -29,7 +29,7 @@ def normalized_snapshot(session):
         data['calculation_runs']=[dict(zip(('id','input_hash','method','result_json','calculation_status','qualification_status','review_status','input_json'),r)) for r in session.con.execute('SELECT * FROM calculation_run ORDER BY id')]
         data['geometry_sources']=[dict(zip(('source_sha256','size_bytes','format','frame_json','manifest_json','evidence_id'),r)) for r in session.con.execute('SELECT source_sha256,length(raw_bytes),format,frame_json,manifest_json,evidence_id FROM geometry_attachment ORDER BY source_sha256')]
     extra={}
-    if session.con.execute('PRAGMA user_version').fetchone()[0]==3:
+    if session.con.execute('PRAGMA user_version').fetchone()[0]>=3:
         from fgmapping.services import workspace as w
         from fgmapping.services.basis import readiness
         from fgmapping.domain.mounting import component_fingerprint

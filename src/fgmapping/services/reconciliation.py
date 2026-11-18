@@ -19,7 +19,7 @@ def revision_impact(s,target):
   state='ADDED' if id not in a else 'REMOVED' if id not in b else 'CHANGED' if component_fingerprint(old,a[id])!=component_fingerprint(target,b[id]) else 'UNCHANGED'
   if state!='UNCHANGED':changes.append({'component_id':id,'change':state})
  changed={x['component_id'] for x in changes if x['change']!='ADDED'};mounts=[]
- if s.con.execute('PRAGMA user_version').fetchone()[0]==3:
+ if s.con.execute('PRAGMA user_version').fetchone()[0]>=3:
   for (id,) in s.con.execute('SELECT detector_id FROM detector_mount ORDER BY detector_id'):
    m=w.row(s,'detector_mount',id)
    if m['component_id'] in changed or m['component_id'] not in a:mounts.append({'detector_id':id,'component_id':m['component_id'],'target_present':m['component_id'] in b})

@@ -45,7 +45,7 @@ def _apply_detector_state(session,state):
 
 def edit_detector(session,id,position,orientation,actor):
     from fgmapping.domain.scene import Scene,Mesh
-    if session.con.execute('PRAGMA user_version').fetchone()[0]==3 and session.con.execute('SELECT 1 FROM detector_mount WHERE detector_id=?',(id,)).fetchone():raise CaseError('MOUNTED_EDIT','Use explicit mount editing or detach first')
+    if session.con.execute('PRAGMA user_version').fetchone()[0]>=3 and session.con.execute('SELECT 1 FROM detector_mount WHERE detector_id=?',(id,)).fetchone():raise CaseError('MOUNTED_EDIT','Use explicit mount editing or detach first')
     position=vector(position);orientation=vector(orientation)
     if not -180<=orientation[0]<=180 or not -90<=orientation[1]<=90 or not -180<=orientation[2]<=180:raise CaseError('ORIENTATION','Azimuth/roll [-180,180], elevation [-90,90] required')
     old=_detector_state(session,id)
