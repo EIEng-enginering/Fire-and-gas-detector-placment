@@ -80,10 +80,48 @@ A run is CURRENT only while the recomputed input envelope still hashes to `input
 
 Ordering is deterministic: detectors are sorted by ID and cells are visited in grid order.
 
+## 4a. Scenario coverage (FG-SCENARIO/1.0, CE-07 partial)
+
+- Contract `fg-coverage-scenarios/1`. Each scenario gives an ID, a zone ID, a location [x,y,z] in metres, a frequency per year as a decimal string and the source of that frequency. A gas scenario may also replace the zone cloud with its own sphere or ellipsoid.
+- Each scenario zone must be READY. The scenario point is tested with the same rule as its zone, using the same library, voting, standoff and exclusions:
+  - flame zones use FOV, contour and line of sight;
+  - gas zones use the point-in-cloud test or the open-path LEL·m test.
+- A scenario counts as detected when the number of responding detectors is at least the zone voting requirement.
+- A scenario point inside a solid is reported, not silently moved, and counts as not detected.
+- Aggregation is exact Decimal arithmetic (engine/scenarios.aggregate), giving:
+  - the frequency-weighted detected fraction, overall and per zone;
+  - the count fraction;
+  - the total frequency.
+- Not calculated: risk reduction, availability, SIL credit and response time.
+
+## 4b. Layout options (FG-OPTIONS/1.0, CE-08)
+
+- Contract `fg-coverage-options/1`. Each candidate gives a position, orientation, an explicit library entry, a cost (decimal string) and explicit `feasible` and `maintainable` flags. Up to 16 candidates are allowed, plus `max_detectors`, `required_votes`, `include_existing` and an optional grid spacing.
+- The candidate library entry has to match the zone fuel, gas and fire size, as it does for assigned detectors.
+- Candidate IDs must not reuse existing detector IDs.
+- The engine:
+  1. computes the set of eligible cells each candidate detects;
+  2. optionally credits the existing layout's votes for each cell;
+  3. enumerates every feasible and maintainable subset up to `max_detectors` (engine/optimisation.enumerate_layouts, with the Rev G `base_votes` extension);
+  4. returns the Pareto set of fraction against cost.
+- Results are PROPOSALS ONLY. The detector tables are fingerprinted before and after each run and must be identical. A proposal is adopted only through normal, reviewed detector edits.
+
+## 4c. Reports (M6)
+
+- Coverage > Export coverage report writes the report to a new folder: `<name>.json`, `.xlsx`, `.docx`, `.pdf`, plan-slice heatmap PNGs and `MANIFEST.json` (SHA-256 of every file). Nothing is overwritten.
+- The report contains:
+  - the label and disclaimer, plus an EXAMPLE-values warning when example data are used;
+  - the method versions;
+  - per-zone results with input hashes, implementation and scene hashes;
+  - zone setups, detectors, the library entries used with their data status and source;
+  - per-detector fractions, findings and scenario/option studies.
+- `content_sha256` excludes the generation time, so two exports of the same case give the same hash.
+
 ## 5. Known limits
 
 - **Geometry and occlusion:** geometry is closed triangle meshes. Gratings currently obstruct like solids unless declared `NON_OBSTRUCTING_ANNOTATION`; no partial transparency is modelled.
 - **Not modelled:** atmospheric attenuation, detector obscuration from contamination, sun or blackbody false-alarm effects, and response time.
 - **Contour:** a single cone-type contour versus off-axis angle, with FOV clipping. Separate horizontal and vertical contour tables are not yet supported.
 - **Computation:** pure Python on one thread. Large zones at fine grids take minutes; see the benchmark in the test results.
+- **Scenarios and options:** a scenario is a single point test with no spatial uncertainty or time-dependent release. Layout options use exhaustive enumeration (no more than 16 candidates); there is no heuristic solver for larger sets.
 - **Standards:** no standards conformity (ISA-TR84.00.07, DNV-RP-A102, ISO 13702) is claimed. Licensed review is required.

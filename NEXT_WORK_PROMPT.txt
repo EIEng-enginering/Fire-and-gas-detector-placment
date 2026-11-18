@@ -1,3 +1,20 @@
+Resume Fire & Gas Mapping Rev G 0.7.0a1 (coverage) from Git main or the Windows folder FG_MAPPING_REV_G_20261118. Results are engineer-reviewed and not independently certified. Owner approval of Q1–Q10/F01–F10 (18 Nov 2026) is recorded in docs/DECISIONS_REV_A.md.
+
+Read PROJECT_STATE (milestones), docs/REV_G_COVERAGE_METHOD.md, docs/REV_G_TRACEABILITY.md and DEVIATIONS G1–G8. Rerun tools/run_tests.py on Linux and Windows before editing. If you change any file listed in services/coverage.IMPLEMENTATION, regenerate examples/wellhead_coverage with tools/build_wellhead_coverage_example.py.
+
+Next work, in priority order:
+1. A PROJECT data class for real facility geometry and evidence (G4). Scenes and evidence are still SYNTHETIC-only.
+2. Replace the EXAMPLE library entries with verified manufacturer datasheet data. Each entry needs its source document, revision and page, and data status 'MANUFACTURER DATA - verified by engineer'.
+3. Separate horizontal and vertical contour tables, and grating transparency.
+4. Performance: a multiprocess or numpy BVH for fine grids on large modules.
+5. Scenario timing and response (CE-06), and risk weighting with uncertainty (CE-07 remainder).
+6. A heuristic optimiser for more than 16 candidates (CE-08).
+7. Manual Windows checks: DPI, multi-monitor, and human review of the Office and PDF output. Word COM read-back. Grant the symlink privilege and rerun.
+8. Relocate the GD-OP-01 and GD-OP-02 beams in the wellhead example. Both are obstructed by stair towers.
+
+Do not claim certification or standards conformity. Do not force-push, and preserve old work folders.
+
+---- Previous (Rev F) prompt ----
 Resume Fire & Gas Mapping Rev F 0.6.0a1. Working development checkpoint, not accepted WP02–WP12 or release. Read README_START_HERE, unchanged OWNER_BUILD_STANDARD/master specification, PROJECT_STATE, OPEN_ISSUES/decisions, docs/REV_F_IMPLEMENTATION.md, REV_F_WINDOWS_CHECKLIST.md and REV_F_TRACEABILITY.md. Preserve original ZIPs (Rev E is referenced by SHA256 in ORIGINAL_ARCHIVES/REV_E_PREDECESSOR_REFERENCE.json). Verify every SHA256SUMS entry and rerun the 201 tests BEFORE edits on Linux and native Windows; record actual results including failures. Expected: Linux 201/201; Windows 200/201 unless symlink privilege is now available. Original manifest/migrations 1/2/3 unchanged. Q1–Q10/F01–F10 still proposed. Authorised reversible SYNTHETIC development only; no paid/live AI, client data, live integrations, publication, qualification or release; Git only with explicit owner permission. Next: clear the Windows symlink prerequisite under policy (do not alter the test), diagnose the Word COM read-back hang, complete manual Windows checklist items, fix real-Qt column truncation, then richer preparation templates/zone import/source metadata, explicit anchor review, report histories and parser hardening. Do not infer surface mounting or physical detector response from geometry. All engineering calculation remains BLOCKED until legitimate method/data/independent review and owner permissions. Update state and return a fresh audited full source ZIP with tests, executed evidence, limitations/environment and hashes. Preserve failures and never weaken checks.
 
 Addendum: the SYNTHETIC wellhead module example (docs/EXAMPLE_WELLHEAD_MODULE.md, examples/SYNTHETIC_WELLHEAD_MODULE.fgcase, tests/integration/test_wellhead_example.py) brings the suite to 206 tests. Expected results: Linux 206/206; Windows 205/206, where the only failure is the symlink-privilege prerequisite. Regenerate the example only with tools/build_wellhead_example.py and keep it SYNTHETIC with engineering BLOCKED.

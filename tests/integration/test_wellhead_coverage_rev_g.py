@@ -5,7 +5,9 @@ import hashlib,json,os,shutil,subprocess,sys,tempfile,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'tools'))
-from build_wellhead_coverage_example import build
+from build_wellhead_coverage_example import build,example_scenarios,example_options
+from fgmapping.services import scenario_coverage as scs
+from fgmapping.errors import CaseError
 from fgmapping.services.case import CaseSession
 from fgmapping.services import coverage as cov
 from fgmapping.services import workspace as w
@@ -69,6 +71,38 @@ class WellheadCoverage(unittest.TestCase):
         self.assertEqual({z:cov.run_currency(s,r) for z,r in runs.items()},{z:'CURRENT' for z in runs})
         summ=json.loads((SHIPPED.parent/'WELLHEAD_COVERAGE_SUMMARY.json').read_text())['zones']
         for z,r in runs.items():self.assertEqual(json.loads(r['result_json'])['fractions']['2ooN'],summ[z]['2ooN'])
+
+class WellheadStudies(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp=tempfile.TemporaryDirectory();cls.root=Path(cls.tmp.name)
+        cls.case,cls.summary,cls.report=build(cls.root/'out',grid=2.0,refine=1,progress=lambda *a:None)
+    @classmethod
+    def tearDownClass(cls):cls.tmp.cleanup()
+    def session(self):
+        s=CaseSession(self.case,self.root/'rt');self.addCleanup(lambda:s.close(discard_unsaved=True));return s
+    def test_study_runs_stored_current_and_layout_unchanged(self):
+        s=self.session();runs=scs.study_runs(s);self.assertEqual([r['method'] for r in runs],['SCENARIO_COVERAGE','LAYOUT_OPTIONS'])
+        self.assertEqual([scs.study_run_currency(s,r) for r in runs],['CURRENT','CURRENT']);self.assertEqual(len(cov.latest_runs(s)),6)
+        self.assertEqual(len(w.detector_rows(s)),23);self.assertFalse([d for d in w.detector_rows(s) if d['id'].startswith('CAND')])
+        sc=json.loads(runs[0]['result_json']);self.assertEqual(sc['scenario_count'],len(example_scenarios()['scenarios']));self.assertEqual(sc['label'],LABEL)
+        op=json.loads(runs[1]['result_json']);self.assertTrue(op['status'].startswith('PROPOSALS ONLY'))
+        fr=[float(a['fraction']) for a in op['pareto']];self.assertEqual(fr,sorted(fr,reverse=True));self.assertEqual(op['pareto'][-1]['mount_ids'],[]);self.assertEqual(op['pareto'][-1]['fraction'],op['existing_layout_fraction'])
+        snap=json.loads((Path(self.report['folder'])/'WELLHEAD_COVERAGE_REPORT.json').read_text());self.assertEqual(len(snap['studies']),2)
+    def test_rerun_reproduces_and_edit_makes_stale(self):
+        s=self.session();runs=scs.study_runs(s)
+        again=scs.run_scenarios(s,example_scenarios(),'R-AGAIN','T');self.assertEqual(again['overall'],json.loads(runs[0]['result_json'])['overall']);self.assertEqual(again['input_hash'],runs[0]['input_hash'])
+        d=w.row(s,'detector_details','FD-105')
+        w.detector_command(s,{**{k:d[k] for k in ('azimuth','elevation','roll')},'id':'FD-105','detector_type':'FLAME','x':10.6,'y':1.4,'z':8.0,'evidence_id':'SYN-WHM-COV-01'},None,'T')
+        self.assertEqual([scs.study_run_currency(s,r) for r in runs],['STALE','STALE'])
+    def test_contract_refusals(self):
+        s=self.session();sc=example_scenarios()
+        for bad in ({**sc['scenarios'][0],'frequency_per_year':0.001},{**sc['scenarios'][0],'frequency_source':'NOT SUPPLIED'},{**sc['scenarios'][0],'zone_id':'NOPE'},{**sc['scenarios'][0],'cloud':{'shape':'CUBE'}}):
+            with self.assertRaises(CaseError):scs.run_scenarios(s,{**sc,'scenarios':[bad]},'R-BAD','T')
+        op=example_options();c0=op['candidates'][0]
+        for cands in ([{**c0,'id':'FD-101'}],[{**c0,'library_id':'MISSING'}],[{**c0,'library_id':'EX-FLAME-IR3-HEPTANE'}],[{**c0,'id':'K%d' % i} for i in range(17)],[{**c0,'cost':1}],[{**c0,'feasible':'yes'}]):
+            with self.assertRaises(CaseError):scs.run_options(s,{**op,'candidates':cands},'R-BAD2','T')
+        self.assertEqual(len(scs.study_runs(s)),2)
 
 class HeatmapKnownAnswer(unittest.TestCase):
     def test_cell_pixels_coloured_by_votes(self):

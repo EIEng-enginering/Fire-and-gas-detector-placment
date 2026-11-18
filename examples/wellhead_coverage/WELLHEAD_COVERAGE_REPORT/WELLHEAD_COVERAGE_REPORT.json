@@ -1,6 +1,6 @@
 {
  "case": "SYNTHETIC Wellhead Module WHM-01 (illustrative example, not a real facility)",
- "content_sha256": "c22962b276a225d274465782b1117ae98d780c7c41911e8d1b498942cc664710",
+ "content_sha256": "b266b34d3f712fee249c96212c5da68df820d90348e1e590c7d2740a71b67b46",
  "detectors": [
   {
    "azimuth": 45.0,
@@ -785,7 +785,7 @@
    "status": "OPEN"
   }
  ],
- "generated_utc": "2026-11-18T02:29:32.422589+00:00",
+ "generated_utc": "2026-11-18T02:46:27.150726+00:00",
  "label": "Engineer-reviewed results - not independently certified",
  "library": [
   {
@@ -895,6 +895,496 @@
  "report": "fg-coverage-report/1",
  "scene_sha256": "ef65fc6ffff64a48ede8c34f30118a08a66c436c76794e9dda9f2de1c33453c2",
  "software_version": "0.7.0a1",
+ "studies": [
+  {
+   "actor": "EXAMPLE_ENGINEER",
+   "input_hash": "849f87d55046350b0183afa412ce7b739d31b33923bb7bfe2daad0d629099bd1",
+   "method": "SCENARIO_COVERAGE",
+   "method_version": "FG-SCENARIO/1.0",
+   "result": {
+    "basis": "Frequencies and their sources are user-supplied; detection is the deterministic geographic test of the scenario zone.",
+    "by_zone": {
+     "FZ-MANIFOLD": {
+      "detected_count_fraction": "1",
+      "frequency_weighted_detected_fraction": "1",
+      "total_frequency_per_year": "0.001"
+     },
+     "FZ-WELLBAY": {
+      "detected_count_fraction": "1",
+      "frequency_weighted_detected_fraction": "1",
+      "total_frequency_per_year": "0.0040"
+     },
+     "FZ-WIRELINE": {
+      "detected_count_fraction": "0",
+      "frequency_weighted_detected_fraction": "0",
+      "total_frequency_per_year": "0.0003"
+     },
+     "GZ-MANIFOLD": {
+      "detected_count_fraction": "1",
+      "frequency_weighted_detected_fraction": "1",
+      "total_frequency_per_year": "0.0002"
+     },
+     "GZ-WELLBAY": {
+      "detected_count_fraction": "0",
+      "frequency_weighted_detected_fraction": "0",
+      "total_frequency_per_year": "0.016"
+     }
+    },
+    "findings": [
+     {
+      "detector": "GD-OP-01",
+      "first_scenario": "SC-GAS-W01",
+      "severity": "BLOCKING",
+      "text": "Open-path beam obstructed by geometry; detector treated inoperative"
+     },
+     {
+      "detector": "GD-OP-02",
+      "first_scenario": "SC-GAS-W01",
+      "severity": "BLOCKING",
+      "text": "Open-path beam obstructed by geometry; detector treated inoperative"
+     }
+    ],
+    "frequency_units": "1/year",
+    "input_hash": "849f87d55046350b0183afa412ce7b739d31b33923bb7bfe2daad0d629099bd1",
+    "label": "Engineer-reviewed results - not independently certified",
+    "method_version": "FG-SCENARIO/1.0",
+    "not_calculated": [
+     "risk reduction",
+     "availability",
+     "SIL credit",
+     "response time"
+    ],
+    "overall": {
+     "detected_count_fraction": "0.5263157894736842105263157894736842",
+     "frequency_weighted_detected_fraction": "0.2418604651162790697674418604651163",
+     "total_frequency_per_year": "0.0215"
+    },
+    "run_id": "WHM-SCN-A",
+    "scenario_count": 19,
+    "scenarios": [
+     {
+      "detected": true,
+      "detectors_responding": [
+       "FD-101",
+       "FD-102",
+       "FD-103",
+       "FD-105",
+       "FD-106"
+      ],
+      "frequency_per_year": "0.0005",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-FIRE-W01",
+      "location": [
+       10.0,
+       7.0,
+       1.0
+      ],
+      "status": "EVALUATED",
+      "votes": 5,
+      "voting_required": 2,
+      "zone_id": "FZ-WELLBAY"
+     },
+     {
+      "detected": false,
+      "detectors_responding": [
+       "GD-OP-03"
+      ],
+      "frequency_per_year": "0.002",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-GAS-W01",
+      "location": [
+       9.0,
+       8.2,
+       1.5
+      ],
+      "status": "EVALUATED",
+      "votes": 1,
+      "voting_required": 2,
+      "zone_id": "GZ-WELLBAY"
+     },
+     {
+      "detected": true,
+      "detectors_responding": [
+       "FD-105",
+       "FD-107",
+       "FD-108"
+      ],
+      "frequency_per_year": "0.0005",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-FIRE-W02",
+      "location": [
+       13.0,
+       7.0,
+       1.0
+      ],
+      "status": "EVALUATED",
+      "votes": 3,
+      "voting_required": 2,
+      "zone_id": "FZ-WELLBAY"
+     },
+     {
+      "detected": false,
+      "detectors_responding": [
+       "GD-OP-03"
+      ],
+      "frequency_per_year": "0.002",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-GAS-W02",
+      "location": [
+       12.0,
+       8.2,
+       1.5
+      ],
+      "status": "EVALUATED",
+      "votes": 1,
+      "voting_required": 2,
+      "zone_id": "GZ-WELLBAY"
+     },
+     {
+      "detected": true,
+      "detectors_responding": [
+       "FD-105",
+       "FD-108"
+      ],
+      "frequency_per_year": "0.0005",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-FIRE-W03",
+      "location": [
+       16.0,
+       7.0,
+       1.0
+      ],
+      "status": "EVALUATED",
+      "votes": 2,
+      "voting_required": 2,
+      "zone_id": "FZ-WELLBAY"
+     },
+     {
+      "detected": false,
+      "detectors_responding": [
+       "GD-OP-03"
+      ],
+      "frequency_per_year": "0.002",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-GAS-W03",
+      "location": [
+       15.0,
+       8.2,
+       1.5
+      ],
+      "status": "EVALUATED",
+      "votes": 1,
+      "voting_required": 2,
+      "zone_id": "GZ-WELLBAY"
+     },
+     {
+      "detected": true,
+      "detectors_responding": [
+       "FD-102",
+       "FD-105",
+       "FD-108"
+      ],
+      "frequency_per_year": "0.0005",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-FIRE-W04",
+      "location": [
+       19.0,
+       7.0,
+       1.0
+      ],
+      "status": "EVALUATED",
+      "votes": 3,
+      "voting_required": 2,
+      "zone_id": "FZ-WELLBAY"
+     },
+     {
+      "detected": false,
+      "detectors_responding": [
+       "GD-OP-03"
+      ],
+      "frequency_per_year": "0.002",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-GAS-W04",
+      "location": [
+       18.0,
+       8.2,
+       1.5
+      ],
+      "status": "EVALUATED",
+      "votes": 1,
+      "voting_required": 2,
+      "zone_id": "GZ-WELLBAY"
+     },
+     {
+      "detected": true,
+      "detectors_responding": [
+       "FD-101",
+       "FD-103",
+       "FD-107"
+      ],
+      "frequency_per_year": "0.0005",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-FIRE-W05",
+      "location": [
+       10.0,
+       12.0,
+       1.0
+      ],
+      "status": "EVALUATED",
+      "votes": 3,
+      "voting_required": 2,
+      "zone_id": "FZ-WELLBAY"
+     },
+     {
+      "detected": false,
+      "detectors_responding": [
+       "GD-104"
+      ],
+      "frequency_per_year": "0.002",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-GAS-W05",
+      "location": [
+       9.0,
+       13.2,
+       1.5
+      ],
+      "status": "EVALUATED",
+      "votes": 1,
+      "voting_required": 2,
+      "zone_id": "GZ-WELLBAY"
+     },
+     {
+      "detected": true,
+      "detectors_responding": [
+       "FD-105",
+       "FD-106"
+      ],
+      "frequency_per_year": "0.0005",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-FIRE-W06",
+      "location": [
+       13.0,
+       12.0,
+       1.0
+      ],
+      "status": "EVALUATED",
+      "votes": 2,
+      "voting_required": 2,
+      "zone_id": "FZ-WELLBAY"
+     },
+     {
+      "detected": false,
+      "detectors_responding": [
+       "GD-105"
+      ],
+      "frequency_per_year": "0.002",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-GAS-W06",
+      "location": [
+       12.0,
+       13.2,
+       1.5
+      ],
+      "status": "EVALUATED",
+      "votes": 1,
+      "voting_required": 2,
+      "zone_id": "GZ-WELLBAY"
+     },
+     {
+      "detected": true,
+      "detectors_responding": [
+       "FD-105",
+       "FD-106"
+      ],
+      "frequency_per_year": "0.0005",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-FIRE-W07",
+      "location": [
+       16.0,
+       12.0,
+       1.0
+      ],
+      "status": "EVALUATED",
+      "votes": 2,
+      "voting_required": 2,
+      "zone_id": "FZ-WELLBAY"
+     },
+     {
+      "detected": false,
+      "detectors_responding": [
+       "GD-105"
+      ],
+      "frequency_per_year": "0.002",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-GAS-W07",
+      "location": [
+       15.0,
+       13.2,
+       1.5
+      ],
+      "status": "EVALUATED",
+      "votes": 1,
+      "voting_required": 2,
+      "zone_id": "GZ-WELLBAY"
+     },
+     {
+      "detected": true,
+      "detectors_responding": [
+       "FD-102",
+       "FD-105",
+       "FD-106",
+       "FD-108"
+      ],
+      "frequency_per_year": "0.0005",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-FIRE-W08",
+      "location": [
+       19.0,
+       12.0,
+       1.0
+      ],
+      "status": "EVALUATED",
+      "votes": 4,
+      "voting_required": 2,
+      "zone_id": "FZ-WELLBAY"
+     },
+     {
+      "detected": false,
+      "detectors_responding": [
+       "GD-106"
+      ],
+      "frequency_per_year": "0.002",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-GAS-W08",
+      "location": [
+       18.0,
+       13.2,
+       1.5
+      ],
+      "status": "EVALUATED",
+      "votes": 1,
+      "voting_required": 2,
+      "zone_id": "GZ-WELLBAY"
+     },
+     {
+      "detected": true,
+      "detectors_responding": [
+       "FD-107",
+       "FD-108"
+      ],
+      "frequency_per_year": "0.001",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-FIRE-MF",
+      "location": [
+       24.0,
+       10.0,
+       1.0
+      ],
+      "status": "EVALUATED",
+      "votes": 2,
+      "voting_required": 2,
+      "zone_id": "FZ-MANIFOLD"
+     },
+     {
+      "detected": true,
+      "detectors_responding": [
+       "GD-107",
+       "GD-109",
+       "GD-OP-03"
+      ],
+      "frequency_per_year": "0.0002",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-GAS-MF-LARGE",
+      "location": [
+       25.5,
+       8.0,
+       1.0
+      ],
+      "status": "EVALUATED",
+      "votes": 3,
+      "voting_required": 2,
+      "zone_id": "GZ-MANIFOLD"
+     },
+     {
+      "detected": false,
+      "detectors_responding": [
+       "FD-108"
+      ],
+      "frequency_per_year": "0.0003",
+      "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+      "id": "SC-FIRE-WL",
+      "location": [
+       3.5,
+       9.5,
+       1.0
+      ],
+      "status": "EVALUATED",
+      "votes": 1,
+      "voting_required": 2,
+      "zone_id": "FZ-WIRELINE"
+     }
+    ]
+   },
+   "run_id": "WHM-SCN-A",
+   "state": "CURRENT",
+   "utc": "2026-11-18T02:46:25.892158+00:00",
+   "zone_id": "FZ-MANIFOLD,FZ-WELLBAY,FZ-WIRELINE,GZ-MANIFOLD,GZ-WELLBAY"
+  },
+  {
+   "actor": "EXAMPLE_ENGINEER",
+   "input_hash": "66589bd13c693da14fe7dafbd59fce30e781f974c2ca22a260cd4cfcf4092bd3",
+   "method": "LAYOUT_OPTIONS",
+   "method_version": "FG-OPTIONS/1.0",
+   "result": {
+    "candidate_visible_samples": {
+     "CAND-MF-1": 252,
+     "CAND-MF-2": 0,
+     "CAND-MF-3": 268,
+     "CAND-MF-4": 268
+    },
+    "eligible_samples": 327,
+    "enumerated": 11,
+    "existing_layout_fraction": "0.7533632286995515886161175389",
+    "findings": [],
+    "grid_spacing_m": 1.0,
+    "include_existing": true,
+    "input_hash": "66589bd13c693da14fe7dafbd59fce30e781f974c2ca22a260cd4cfcf4092bd3",
+    "label": "Engineer-reviewed results - not independently certified",
+    "method_version": "FG-OPTIONS/1.0",
+    "note": "Costs, feasibility and maintainability are user-supplied; exhaustive enumeration limited to 16 candidates.",
+    "pareto": [
+     {
+      "cost": "2",
+      "fraction": "0.9739094985731757334310973742",
+      "mount_ids": [
+       "CAND-MF-1",
+       "CAND-MF-3"
+      ]
+     },
+     {
+      "cost": "1",
+      "fraction": "0.9062372604973502117591394947",
+      "mount_ids": [
+       "CAND-MF-1"
+      ]
+     },
+     {
+      "cost": "0",
+      "fraction": "0.7533632286995515886161175389",
+      "mount_ids": []
+     }
+    ],
+    "required_votes": 2,
+    "run_id": "WHM-OPT-A",
+    "status": "PROPOSALS ONLY - the baseline detector layout is unchanged; adopt a proposal only through normal, reviewed detector edits",
+    "zone_id": "FZ-MANIFOLD"
+   },
+   "run_id": "WHM-OPT-A",
+   "state": "CURRENT",
+   "utc": "2026-11-18T02:46:26.322884+00:00",
+   "zone_id": "FZ-MANIFOLD"
+  }
+ ],
  "zones": [
   {
    "actor": "EXAMPLE_ENGINEER",
@@ -905,8 +1395,8 @@
     "ER-WELLBAY",
     "WL-LAYDOWN"
    ],
-   "implementation_sha256": "13f04624abd54c02da8b368ec88dddd169d032c4f2d94d8018b989ca3a899f2d",
-   "input_hash": "1ccba1f72529b77501da74d582810930bbc446674c45cbc4ee1e79821db1f904",
+   "implementation_sha256": "7717fbb26c8cb99d9f9bc6c81574fc49366a5068b8b386422d8843ef9835abd8",
+   "input_hash": "fa04e03b2e84412c950385b22381485fa872b160bfff383a9c8f8676114e6a98",
    "result": {
     "convergence": {
      "abs_delta": {
@@ -960,7 +1450,7 @@
     },
     "grid_spacing_m": 0.5,
     "indeterminate_rays": 0,
-    "input_hash": "1ccba1f72529b77501da74d582810930bbc446674c45cbc4ee1e79821db1f904",
+    "input_hash": "fa04e03b2e84412c950385b22381485fa872b160bfff383a9c8f8676114e6a98",
     "label": "Engineer-reviewed results - not independently certified",
     "measure_unit": "m3",
     "method": "FLAME_GEOGRAPHIC",
@@ -1039,7 +1529,7 @@
    },
    "software_version": "0.7.0a1",
    "state": "CURRENT",
-   "utc": "2026-11-18T02:27:23.605661+00:00",
+   "utc": "2026-11-18T02:44:17.578863+00:00",
    "zone": {
     "description": "Synthetic fire zone: production/test manifold",
     "high": [
@@ -1066,8 +1556,8 @@
     "ER-WELLBAY",
     "WL-LAYDOWN"
    ],
-   "implementation_sha256": "13f04624abd54c02da8b368ec88dddd169d032c4f2d94d8018b989ca3a899f2d",
-   "input_hash": "522ae5a15940779369a5b88d5c84532ceac308a1ebd67fb76d90a91fc1e2f638",
+   "implementation_sha256": "7717fbb26c8cb99d9f9bc6c81574fc49366a5068b8b386422d8843ef9835abd8",
+   "input_hash": "fefe9b67e4602b571edbd6859e40824640877a2494f6af88057d5edd0b9c2716",
    "result": {
     "convergence": {
      "abs_delta": {
@@ -1121,7 +1611,7 @@
     },
     "grid_spacing_m": 0.5,
     "indeterminate_rays": 0,
-    "input_hash": "522ae5a15940779369a5b88d5c84532ceac308a1ebd67fb76d90a91fc1e2f638",
+    "input_hash": "fefe9b67e4602b571edbd6859e40824640877a2494f6af88057d5edd0b9c2716",
     "label": "Engineer-reviewed results - not independently certified",
     "measure_unit": "m3",
     "method": "FLAME_GEOGRAPHIC",
@@ -1200,7 +1690,7 @@
    },
    "software_version": "0.7.0a1",
    "state": "CURRENT",
-   "utc": "2026-11-18T02:28:55.954357+00:00",
+   "utc": "2026-11-18T02:45:50.193531+00:00",
    "zone": {
     "description": "Synthetic fire zone: wellbay (8 slots, cellar to upper deck)",
     "high": [
@@ -1227,8 +1717,8 @@
     "ER-WELLBAY",
     "WL-LAYDOWN"
    ],
-   "implementation_sha256": "13f04624abd54c02da8b368ec88dddd169d032c4f2d94d8018b989ca3a899f2d",
-   "input_hash": "a7f9e2b3e3a123d7a5bd9d37fa824d6319dad4077b57a1d21f2ad80898b669b7",
+   "implementation_sha256": "7717fbb26c8cb99d9f9bc6c81574fc49366a5068b8b386422d8843ef9835abd8",
+   "input_hash": "085f364adb8fbc170ed54b50ad909011eddd55af5ae824611e819b1888012aba",
    "result": {
     "convergence": {
      "abs_delta": {
@@ -1282,7 +1772,7 @@
     },
     "grid_spacing_m": 0.5,
     "indeterminate_rays": 0,
-    "input_hash": "a7f9e2b3e3a123d7a5bd9d37fa824d6319dad4077b57a1d21f2ad80898b669b7",
+    "input_hash": "085f364adb8fbc170ed54b50ad909011eddd55af5ae824611e819b1888012aba",
     "label": "Engineer-reviewed results - not independently certified",
     "measure_unit": "m3",
     "method": "FLAME_GEOGRAPHIC",
@@ -1361,7 +1851,7 @@
    },
    "software_version": "0.7.0a1",
    "state": "CURRENT",
-   "utc": "2026-11-18T02:29:00.891278+00:00",
+   "utc": "2026-11-18T02:45:55.062248+00:00",
    "zone": {
     "description": "Synthetic fire zone: wireline / well intervention area",
     "high": [
@@ -1388,8 +1878,8 @@
     "ER-WELLBAY",
     "WL-LAYDOWN"
    ],
-   "implementation_sha256": "13f04624abd54c02da8b368ec88dddd169d032c4f2d94d8018b989ca3a899f2d",
-   "input_hash": "fdd134de35433f6cd0a56663ca9fb254e67b3a83a86c194dd70c17599eed2107",
+   "implementation_sha256": "7717fbb26c8cb99d9f9bc6c81574fc49366a5068b8b386422d8843ef9835abd8",
+   "input_hash": "66316ee765f7fb2d4ae7b6ea1a4ab08236da5c7178fdfd8690cfdc2c2a357ead",
    "result": {
     "convergence": {
      "abs_delta": {
@@ -1455,7 +1945,7 @@
     },
     "grid_spacing_m": 0.5,
     "indeterminate_rays": 0,
-    "input_hash": "fdd134de35433f6cd0a56663ca9fb254e67b3a83a86c194dd70c17599eed2107",
+    "input_hash": "66316ee765f7fb2d4ae7b6ea1a4ab08236da5c7178fdfd8690cfdc2c2a357ead",
     "label": "Engineer-reviewed results - not independently certified",
     "measure_unit": "m3",
     "method": "GAS_GEOGRAPHIC",
@@ -1545,7 +2035,7 @@
    },
    "software_version": "0.7.0a1",
    "state": "CURRENT",
-   "utc": "2026-11-18T02:29:02.290044+00:00",
+   "utc": "2026-11-18T02:45:56.424460+00:00",
    "zone": {
     "description": "Synthetic gas zone: manifold",
     "high": [
@@ -1572,8 +2062,8 @@
     "ER-WELLBAY",
     "WL-LAYDOWN"
    ],
-   "implementation_sha256": "13f04624abd54c02da8b368ec88dddd169d032c4f2d94d8018b989ca3a899f2d",
-   "input_hash": "4a37ed9ff6d33b1a0f25ba04132ca34577bc13f5302c7b46dc26fc9b194c858e",
+   "implementation_sha256": "7717fbb26c8cb99d9f9bc6c81574fc49366a5068b8b386422d8843ef9835abd8",
+   "input_hash": "8799664f6493f57502bc8f426d326e94d45d78ad2b945d28db6854d61f62c851",
    "result": {
     "convergence": {
      "abs_delta": {
@@ -1639,7 +2129,7 @@
     },
     "grid_spacing_m": 0.5,
     "indeterminate_rays": 0,
-    "input_hash": "4a37ed9ff6d33b1a0f25ba04132ca34577bc13f5302c7b46dc26fc9b194c858e",
+    "input_hash": "8799664f6493f57502bc8f426d326e94d45d78ad2b945d28db6854d61f62c851",
     "label": "Engineer-reviewed results - not independently certified",
     "measure_unit": "m3",
     "method": "GAS_GEOGRAPHIC",
@@ -1729,7 +2219,7 @@
    },
    "software_version": "0.7.0a1",
    "state": "CURRENT",
-   "utc": "2026-11-18T02:29:25.541117+00:00",
+   "utc": "2026-11-18T02:46:19.603519+00:00",
    "zone": {
     "description": "Synthetic gas zone: whole module volume below upper deck",
     "high": [
@@ -1756,8 +2246,8 @@
     "ER-WELLBAY",
     "WL-LAYDOWN"
    ],
-   "implementation_sha256": "13f04624abd54c02da8b368ec88dddd169d032c4f2d94d8018b989ca3a899f2d",
-   "input_hash": "39b5933d03203fc96ff409e40fc23ab6d6547fee7ac37937bc503c49082597f5",
+   "implementation_sha256": "7717fbb26c8cb99d9f9bc6c81574fc49366a5068b8b386422d8843ef9835abd8",
+   "input_hash": "d8c54887244e96d5ffc3622bdc001bb16e113ea4b0fa6a74cf4fb799e15fbc06",
    "result": {
     "convergence": {
      "abs_delta": {
@@ -1823,7 +2313,7 @@
     },
     "grid_spacing_m": 0.5,
     "indeterminate_rays": 0,
-    "input_hash": "39b5933d03203fc96ff409e40fc23ab6d6547fee7ac37937bc503c49082597f5",
+    "input_hash": "d8c54887244e96d5ffc3622bdc001bb16e113ea4b0fa6a74cf4fb799e15fbc06",
     "label": "Engineer-reviewed results - not independently certified",
     "measure_unit": "m3",
     "method": "GAS_GEOGRAPHIC",
@@ -1913,7 +2403,7 @@
    },
    "software_version": "0.7.0a1",
    "state": "CURRENT",
-   "utc": "2026-11-18T02:29:31.703750+00:00",
+   "utc": "2026-11-18T02:46:25.710391+00:00",
    "zone": {
     "description": "Synthetic gas zone: wellbay",
     "high": [

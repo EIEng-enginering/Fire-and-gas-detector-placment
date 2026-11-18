@@ -1,3 +1,29 @@
+# Rev G user guide: running detector coverage
+
+Results are engineer-reviewed and not independently certified. They depend entirely on the detector data and inputs you enter. The starter library and the wellhead example use EXAMPLE VALUES; replace them with verified manufacturer data before any project use.
+
+1. **Enable the coverage schema.** Open a case, then choose Coverage > Enable coverage schema (schema 4). The upgrade is one-way, and a backup `*_pre_coverage4_*` is written first.
+2. **Import a detector library.** Choose Coverage > Import detector library CSV / Excel. The format is `examples/library/STARTER_DETECTOR_LIBRARY_EXAMPLE_VALUES.csv`, or `.xlsx` with one sheet named `Library` and no formulas.
+   - Each entry needs: type, fuel or gas, rated fire, FOV, the contour `angle:range;...` (flame), the alarm threshold (%LEL or LEL.m) and path range (gas), and the source document, revision, page and data status.
+   - Entries are immutable by ID; give a corrected entry a new ID.
+3. **Assign entries.** Select a detector, then choose Coverage > Assign library entry to selected detector. Every detector needs an explicit entry; there is no generic default. An open-path detector also needs a receiver, either an EQUIPMENT record with a `position` or explicit XYZ.
+4. **Set up each zone.** Choose Coverage > Zone coverage setup and edit the JSON:
+   - grid spacing, VOLUME or SLICES, and voting (1–3);
+   - your own performance targets, for example `{"1ooN":"0.90","2ooN":"0.80"}` (the program has no built-in pass value);
+   - convergence refinement and the criterion reference;
+   - the target fire (flame zones) or the design cloud (gas zones).
+5. **Check readiness.** Choose Coverage > Coverage readiness. Each zone shows READY, BLOCKED (with the reasons) or NOT CONFIGURED. Review items, such as EXAMPLE values, are listed but do not block.
+6. **Run coverage.** Choose Coverage > Run coverage (all READY zones). The run happens in the background and can be cancelled. Every run is stored with its run ID, input hash and method version. Any later edit makes it STALE.
+7. **Review the results.** Coverage > Coverage results / heatmap shows a table per zone. Select a zone and choose Show heatmap to see a plan slice coloured by votes (red 0, amber 1, green 2, dark green 3+). Use Show / hide detector FOV and Clear coverage overlay as needed.
+8. **Run scenario studies (optional).**
+   - Coverage > Scenario coverage takes user scenarios with frequencies and sources, and gives the frequency-weighted detected fraction.
+   - Coverage > Layout options takes up to 16 candidates and gives a Pareto set of proposals only; the baseline layout is never changed.
+9. **Export the report.** Coverage > Export coverage report writes JSON, XLSX, DOCX, PDF, heatmap PNGs and a hash manifest to a new folder.
+
+**Worked example.** Open `examples/wellhead_coverage/SYNTHETIC_WELLHEAD_COVERAGE.fgcase` (open a copy). On the Windows PC, run `C:\Users\Admin\fg_dev\view\open_wellhead.bat`. To rebuild the example, run `python tools/build_wellhead_coverage_example.py NEW_FOLDER --grid 0.5 --refine 2`; it refuses to overwrite. Method details are in docs/REV_G_COVERAGE_METHOD.md.
+
+![Wellhead FZ-WELLBAY heatmap (Windows, real Qt)](screenshots/REV_G/WINDOWS_REAL/WIN_REAL_FZ-WELLBAY_z4.25_Isometric.png)
+
 # Rev E user guide
 The inherited Rev D workflows below remain available. New commands are described first.
 

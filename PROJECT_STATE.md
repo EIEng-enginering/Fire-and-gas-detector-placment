@@ -20,12 +20,20 @@ Q1–Q10 and F01–F10 are APPROVED (docs/DECISIONS_REV_A.md). The synthetic-onl
   - FOV wireframes from the library contour; a per-zone results table; coverage findings (stale, below target, convergence).
   - Offscreen UI test (tests/integration/test_wellhead_coverage_rev_g.py).
 - **M4 Geographic gas: DONE.** FG-GAS-GEO/1.0: point detectors and open-path detectors (receivers from EQUIPMENT records) against a user design cloud. Applied to the wellhead gas zones.
-- M5 Scenario coverage and optimisation: NOT STARTED.
+- **M5 Scenario coverage and layout options: DONE.**
+  - FG-SCENARIO/1.0: user scenarios with user frequencies, giving the exact Decimal frequency-weighted detected fraction.
+  - FG-OPTIONS/1.0: candidates only, up to 16, exhaustive Pareto enumeration; proposals only, and the baseline layout fingerprint is verified unchanged.
+  - Services in services/scenario_coverage.py, UI in the Coverage menu.
 - **M6 Reports: DONE.**
   - services/coverage_report.py writes JSON/XLSX/DOCX/PDF plus heatmap PNGs (services/heatmap.py) and a MANIFEST of SHA-256 hashes.
   - Every output is labelled 'Engineer-reviewed results - not independently certified' and carries an EXAMPLE warning when example data are used.
   - Reports go to a new folder only; nothing is overwritten.
 - **Wellhead example: DONE** (examples/wellhead_coverage, 0.5 m grid, refinement check). It uses EXAMPLE library values and EXAMPLE targets, so the results are illustrative only.
+- **Test results:**
+  - Box (Linux): 250/250 PASS (115 unit, 126 integration, 9 acceptance). Evidence: TEST_RESULTS/REV_G/BOX_3_M5.
+  - Windows PC: 249/250. The only failure is the known test_symlink_alias_fenced, which fails with WinError 1314 because the PC has no symlink privilege; the test is unaltered. Evidence: TEST_RESULTS/REV_G/WIN_3_M5_final.
+  - Real Windows Qt captures: screenshots/REV_G/WINDOWS_REAL.
+- **Commits:** 5338e87 (M1+M2), 98e4252 (M3+M4+M6 and the wellhead example), then M5 and docs (this commit).
 <!-- /REV_G_MILESTONES -->
 
 Method: docs/REV_G_COVERAGE_METHOD.md. Deviations: DEVIATIONS.md G1–G5.

@@ -132,5 +132,40 @@ python -B tools/capture_wellhead_app.py examples/SYNTHETIC_WELLHEAD_MODULE.fgcas
 - **Escape routes and laydown:** these are annotation markers. The program has no egress or route-analysis model.
 - **Zones:** axis-aligned boxes only.
 - **Study basis:** one basis per case, so a mixed fire and gas study is blocked until separate method bases exist.
-- **Viewer grid:** the app's grid is fixed at about X −5..25 and Y −5..20, so the 30 m module extends past the grid on the east side. **Fit** frames the model correctly.
+- **Viewer grid:** in Rev F the grid was fixed at about X −5..25 and Y −5..20. From Rev G the grid is sized to the model on Fit.
 - **Coverage:** no detector response, field of view, obstruction or coverage is computed or implied anywhere. Engineering calculation is BLOCKED.
+
+
+## Rev G coverage applied to the wellhead example (EXAMPLE VALUES – illustrative only, not for design)
+
+The case is `examples/wellhead_coverage/SYNTHETIC_WELLHEAD_COVERAGE.fgcase`. It was generated from the base case by `tools/build_wellhead_coverage_example.py --grid 0.5 --refine 2`. The generator:
+
+- enables schema 4;
+- imports the EXAMPLE starter library;
+- explicitly assigns all 23 detectors:
+  - 8 flame detectors to `EX-FLAME-IR3-METHANE`;
+  - 12 point gas detectors to `EX-GAS-IR-POINT-METHANE`;
+  - 3 open-path detectors to `EX-GAS-OPGD-METHANE`, with receivers GD-OP-0n-RX;
+- fills the basis references;
+- writes per-zone setups:
+  - flame: 450 kW methane point target, 0.05 m standoff;
+  - gas: 5 m spherical cloud at 100 %LEL;
+  - both: 2ooN voting and EXAMPLE user targets of 1ooN 0.90 and 2ooN 0.80;
+- runs all six zones, a scenario set and a layout-options study;
+- exports the report `WELLHEAD_COVERAGE_REPORT/`.
+
+| Zone | Method | Eligible m³ | 0ooN | 1ooN | 2ooN | Target 1ooN / 2ooN | Convergence (0.5 m vs 0.25 m) |
+|---|---|---|---|---|---|---|---|
+| FZ-MANIFOLD | FG-FLAME-GEO/1.0 | 271.7 | 0.7 % | 99.3 % | 79.2 % | MEETS USER TARGET / BELOW USER TARGET | CONVERGED |
+| FZ-WELLBAY | FG-FLAME-GEO/1.0 | 1338.6 | 6.5 % | 93.5 % | 85.9 % | MEETS USER TARGET / MEETS USER TARGET | CONVERGED |
+| FZ-WIRELINE | FG-FLAME-GEO/1.0 | 123.1 | 0.2 % | 99.8 % | 86.5 % | MEETS USER TARGET / MEETS USER TARGET | CONVERGED |
+| GZ-MANIFOLD | FG-GAS-GEO/1.0 | 271.7 | 70.4 % | 29.6 % | 0.6 % | BELOW USER TARGET / BELOW USER TARGET | CONVERGED |
+| GZ-MODULE | FG-GAS-GEO/1.0 | 5023.6 | 84.8 % | 15.2 % | 2.0 % | BELOW USER TARGET / BELOW USER TARGET | CONVERGED |
+| GZ-WELLBAY | FG-GAS-GEO/1.0 | 1338.6 | 63.8 % | 36.2 % | 4.7 % | BELOW USER TARGET / BELOW USER TARGET | CONVERGED |
+
+- **Scenario study WHM-SCN-A** uses 19 EXAMPLE scenarios with illustrative frequencies. The frequency-weighted detected fraction is 0.242. Small wellbay gas leaks get only one vote against the 2ooN requirement, and the wireline fire point gets one vote.
+- **Layout options WHM-OPT-A (FZ-MANIFOLD, 2ooN, existing layout credited):** the existing layout gives 0.753. Adding CAND-MF-1 gives 0.906 (cost 1), and adding CAND-MF-1 plus CAND-MF-3 gives 0.974 (cost 2). These are proposals only, and the baseline is unchanged.
+- **Finding:** the GD-OP-01 beam is obstructed by stair tower ST-MZ, and the GD-OP-02 beam by ST-UD. Both detectors are treated as inoperative, with a BLOCKING finding. Relocate them before relying on open-path coverage.
+- **Gas coverage is low** because of this layout's spacing compared with a 5 m cloud under 2ooN voting. This is an illustrative result of EXAMPLE inputs.
+
+Screenshots are in `screenshots/REV_G/` (BOX_OFFSCREEN_*, and WINDOWS_REAL/WIN_REAL_* from the real Windows Qt platform). The Rev F statement "no coverage is computed" applies only to the schema-3 base case.

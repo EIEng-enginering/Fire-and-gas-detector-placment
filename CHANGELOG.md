@@ -48,4 +48,11 @@ The first Windows run failed honestly on CRLF text output from the generator. Th
   - Implementation hashes no longer depend on line endings (CRLF and LF give the same hash).
   - New tools: tools/build_wellhead_coverage_example.py and tools/capture_wellhead_coverage_app.py.
   - New test module test_wellhead_coverage_rev_g.py (7 tests).
+- **M5.**
+  - engine/scenario_coverage.py and services/scenario_coverage.py: scenario sets and layout options stored as reproducible runs, with staleness.
+  - optimisation.enumerate_layouts gains the optional base_votes argument; its default behaviour is unchanged.
+  - coverage.runs() now returns only zone runs.
+  - The report includes the studies.
+  - Docs: REV_G_TRACEABILITY.md, USER_GUIDE coverage section, method §4a–4c, wellhead example section.
+  - New tests: test_scenario_coverage.py (6) and WellheadStudies (3).
 <!-- /REV_G_CHANGELOG -->

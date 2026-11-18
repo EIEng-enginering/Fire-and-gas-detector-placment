@@ -1,0 +1,238 @@
+{
+ "contract": "fg-coverage-scenarios/1",
+ "notes": "EXAMPLE scenario set - frequencies illustrative only",
+ "scenarios": [
+  {
+   "id": "SC-FIRE-W01",
+   "zone_id": "FZ-WELLBAY",
+   "location": [
+    10.0,
+    7.0,
+    1.0
+   ],
+   "frequency_per_year": "0.0005",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE wellhead fire beside tree W01"
+  },
+  {
+   "id": "SC-GAS-W01",
+   "zone_id": "GZ-WELLBAY",
+   "location": [
+    9.0,
+    8.2,
+    1.5
+   ],
+   "frequency_per_year": "0.002",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE small leak at tree W01"
+  },
+  {
+   "id": "SC-FIRE-W02",
+   "zone_id": "FZ-WELLBAY",
+   "location": [
+    13.0,
+    7.0,
+    1.0
+   ],
+   "frequency_per_year": "0.0005",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE wellhead fire beside tree W02"
+  },
+  {
+   "id": "SC-GAS-W02",
+   "zone_id": "GZ-WELLBAY",
+   "location": [
+    12.0,
+    8.2,
+    1.5
+   ],
+   "frequency_per_year": "0.002",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE small leak at tree W02"
+  },
+  {
+   "id": "SC-FIRE-W03",
+   "zone_id": "FZ-WELLBAY",
+   "location": [
+    16.0,
+    7.0,
+    1.0
+   ],
+   "frequency_per_year": "0.0005",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE wellhead fire beside tree W03"
+  },
+  {
+   "id": "SC-GAS-W03",
+   "zone_id": "GZ-WELLBAY",
+   "location": [
+    15.0,
+    8.2,
+    1.5
+   ],
+   "frequency_per_year": "0.002",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE small leak at tree W03"
+  },
+  {
+   "id": "SC-FIRE-W04",
+   "zone_id": "FZ-WELLBAY",
+   "location": [
+    19.0,
+    7.0,
+    1.0
+   ],
+   "frequency_per_year": "0.0005",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE wellhead fire beside tree W04"
+  },
+  {
+   "id": "SC-GAS-W04",
+   "zone_id": "GZ-WELLBAY",
+   "location": [
+    18.0,
+    8.2,
+    1.5
+   ],
+   "frequency_per_year": "0.002",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE small leak at tree W04"
+  },
+  {
+   "id": "SC-FIRE-W05",
+   "zone_id": "FZ-WELLBAY",
+   "location": [
+    10.0,
+    12.0,
+    1.0
+   ],
+   "frequency_per_year": "0.0005",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE wellhead fire beside tree W05"
+  },
+  {
+   "id": "SC-GAS-W05",
+   "zone_id": "GZ-WELLBAY",
+   "location": [
+    9.0,
+    13.2,
+    1.5
+   ],
+   "frequency_per_year": "0.002",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE small leak at tree W05"
+  },
+  {
+   "id": "SC-FIRE-W06",
+   "zone_id": "FZ-WELLBAY",
+   "location": [
+    13.0,
+    12.0,
+    1.0
+   ],
+   "frequency_per_year": "0.0005",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE wellhead fire beside tree W06"
+  },
+  {
+   "id": "SC-GAS-W06",
+   "zone_id": "GZ-WELLBAY",
+   "location": [
+    12.0,
+    13.2,
+    1.5
+   ],
+   "frequency_per_year": "0.002",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE small leak at tree W06"
+  },
+  {
+   "id": "SC-FIRE-W07",
+   "zone_id": "FZ-WELLBAY",
+   "location": [
+    16.0,
+    12.0,
+    1.0
+   ],
+   "frequency_per_year": "0.0005",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE wellhead fire beside tree W07"
+  },
+  {
+   "id": "SC-GAS-W07",
+   "zone_id": "GZ-WELLBAY",
+   "location": [
+    15.0,
+    13.2,
+    1.5
+   ],
+   "frequency_per_year": "0.002",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE small leak at tree W07"
+  },
+  {
+   "id": "SC-FIRE-W08",
+   "zone_id": "FZ-WELLBAY",
+   "location": [
+    19.0,
+    12.0,
+    1.0
+   ],
+   "frequency_per_year": "0.0005",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE wellhead fire beside tree W08"
+  },
+  {
+   "id": "SC-GAS-W08",
+   "zone_id": "GZ-WELLBAY",
+   "location": [
+    18.0,
+    13.2,
+    1.5
+   ],
+   "frequency_per_year": "0.002",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE small leak at tree W08"
+  },
+  {
+   "id": "SC-FIRE-MF",
+   "zone_id": "FZ-MANIFOLD",
+   "location": [
+    24.0,
+    10.0,
+    1.0
+   ],
+   "frequency_per_year": "0.001",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE manifold fire"
+  },
+  {
+   "id": "SC-GAS-MF-LARGE",
+   "zone_id": "GZ-MANIFOLD",
+   "location": [
+    25.5,
+    8.0,
+    1.0
+   ],
+   "frequency_per_year": "0.0002",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "cloud": {
+    "shape": "SPHERE",
+    "diameter_m": 10.0
+   },
+   "notes": "EXAMPLE larger manifold release (10 m design cloud)"
+  },
+  {
+   "id": "SC-FIRE-WL",
+   "zone_id": "FZ-WIRELINE",
+   "location": [
+    3.5,
+    9.5,
+    1.0
+   ],
+   "frequency_per_year": "0.0003",
+   "frequency_source": "EXAMPLE VALUE - illustrative frequency, not from a leak/ignition frequency study",
+   "notes": "EXAMPLE wireline area fire"
+  }
+ ]
+}

@@ -1,0 +1,83 @@
+{
+ "contract": "fg-coverage-options/1",
+ "zone_id": "FZ-MANIFOLD",
+ "include_existing": true,
+ "max_detectors": 2,
+ "required_votes": 2,
+ "grid_spacing_m": 1.0,
+ "notes": "EXAMPLE candidates to raise 2ooN in FZ-MANIFOLD; proposals only",
+ "candidates": [
+  {
+   "id": "CAND-MF-1",
+   "detector_type": "FLAME",
+   "position": [
+    22.9,
+    3.7,
+    4.3
+   ],
+   "azimuth": 60.0,
+   "elevation": -30.0,
+   "roll": 0.0,
+   "library_id": "EX-FLAME-IR3-METHANE",
+   "receiver": null,
+   "cost": "1",
+   "feasible": true,
+   "maintainable": true,
+   "notes": "EXAMPLE candidate"
+  },
+  {
+   "id": "CAND-MF-2",
+   "detector_type": "FLAME",
+   "position": [
+    27.9,
+    16.3,
+    4.3
+   ],
+   "azimuth": -120.0,
+   "elevation": -30.0,
+   "roll": 0.0,
+   "library_id": "EX-FLAME-IR3-METHANE",
+   "receiver": null,
+   "cost": "1",
+   "feasible": true,
+   "maintainable": true,
+   "notes": "EXAMPLE candidate"
+  },
+  {
+   "id": "CAND-MF-3",
+   "detector_type": "FLAME",
+   "position": [
+    22.9,
+    16.3,
+    4.3
+   ],
+   "azimuth": -60.0,
+   "elevation": -30.0,
+   "roll": 0.0,
+   "library_id": "EX-FLAME-IR3-METHANE",
+   "receiver": null,
+   "cost": "1",
+   "feasible": true,
+   "maintainable": true,
+   "notes": "EXAMPLE candidate"
+  },
+  {
+   "id": "CAND-MF-4",
+   "detector_type": "FLAME",
+   "position": [
+    27.9,
+    3.7,
+    4.3
+   ],
+   "azimuth": 120.0,
+   "elevation": -30.0,
+   "roll": 0.0,
+   "library_id": "EX-FLAME-IR3-METHANE",
+   "receiver": null,
+   "cost": "1",
+   "feasible": true,
+   "maintainable": true,
+   "notes": "EXAMPLE candidate"
+  }
+ ]
+}

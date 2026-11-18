@@ -6,6 +6,9 @@ G2. Test files were updated only where they asserted the removed behaviour:
   - The old refusal tests in test_detection_scenarios and test_study_preparation still pass unchanged: calling the engine without complete inputs is still refused.
 G3. Shipped detector library entries are EXAMPLE VALUES (generic, with no manufacturer named). They must be replaced by verified manufacturer data before project use.
 G4. Scene and evidence data_class still accept only SYNTHETIC. A PROJECT data class for real facility geometry is not yet implemented (see NEXT_WORK_PROMPT).
+G6. No public datasheet values were cited for the starter library; all its values are generic EXAMPLE values (see G3).
+G7. The shipped wellhead coverage example is regenerated whenever an implementation file hashed into the run envelope changes. The test test_shipped_example_is_current_with_this_code enforces this.
+G8. On Windows, test_symlink_alias_fenced still fails with WinError 1314, because the PC has no symlink privilege. This is the same as in Rev F; the test is unaltered.
 G5. No standards conformity is claimed. Limits of the method are listed in docs/REV_G_COVERAGE_METHOD.md §5.
 
 # Rev F deviations and limits

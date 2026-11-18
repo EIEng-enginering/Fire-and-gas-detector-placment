@@ -224,7 +224,7 @@ def run_all(session,prefix,actor,cancel=None,progress=None,sensitivity=False):
 RUN_COLUMNS=('id','kind','zone_id','method','method_version','input_hash','input_json','result_json','samples_json','actor','utc','status','label')
 def runs(session,zone_id=None):
     require_coverage(session)
-    q='SELECT '+','.join(RUN_COLUMNS)+' FROM coverage_run'+(' WHERE zone_id=?' if zone_id else '')+' ORDER BY utc,id'
+    q='SELECT '+','.join(RUN_COLUMNS)+" FROM coverage_run WHERE method IN ('FLAME_GEOGRAPHIC','GAS_GEOGRAPHIC')"+(' AND zone_id=?' if zone_id else '')+' ORDER BY utc,id'
     return [dict(zip(RUN_COLUMNS,r)) for r in session.con.execute(q,(zone_id,) if zone_id else ())]
 
 def run_currency(session,run):

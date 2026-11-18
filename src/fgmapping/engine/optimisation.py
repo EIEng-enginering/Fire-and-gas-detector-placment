@@ -15,8 +15,10 @@ class SyntheticMount:
     feasible:bool
     maintainable:bool
 
-def enumerate_layouts(mounts,sample_weights,max_detectors,required_votes):
-    mounts=tuple(mounts)
+def enumerate_layouts(mounts,sample_weights,max_detectors,required_votes,base_votes=None):
+    """base_votes (Rev G, optional): {sample_id: votes from the fixed existing layout}; default none."""
+    mounts=tuple(mounts);base=dict(base_votes or {})
+    if any(type(v) is not int or v<0 for v in base.values()) or not set(base)<=set(sample_weights):raise ValueError('Base votes must be nonnegative integers for known sample IDs')
     if len(mounts)>16:raise ValueError('Exhaustive development solver limited to 16 candidates')
     if len({m.id for m in mounts})!=len(mounts) or any(not m.id.strip() for m in mounts):raise ValueError('Unique mount IDs required')
     if type(required_votes) is not int or required_votes<1 or type(max_detectors) is not int or max_detectors<0:raise ValueError('Explicit voting and detector count required')
@@ -28,7 +30,7 @@ def enumerate_layouts(mounts,sample_weights,max_detectors,required_votes):
     valid=sorted((m for m in mounts if m.feasible and m.maintainable),key=lambda m:m.id);answers=[];den=sum(weights.values())
     for n in range(min(max_detectors,len(valid))+1):
         for combo in combinations(valid,n):
-            numerator=sum((w for id,w in weights.items() if sum(id in m.visible_sample_ids for m in combo)>=required_votes),Decimal(0))
+            numerator=sum((w for id,w in weights.items() if base.get(id,0)+sum(id in m.visible_sample_ids for m in combo)>=required_votes),Decimal(0))
             answers.append({'mount_ids':[m.id for m in combo],'fraction':numerator/den,'cost':sum((decimal(m.cost) for m in combo),Decimal(0))})
     pareto=[a for a in answers if not any(b['fraction']>=a['fraction'] and b['cost']<=a['cost'] and (b['fraction']>a['fraction'] or b['cost']<a['cost']) for b in answers)]
     return {'status':'CANDIDATE SYNTHETIC PROPOSALS','qualification':'UNVERIFIED','enumerated':len(answers),

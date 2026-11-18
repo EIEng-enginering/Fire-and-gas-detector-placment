@@ -28,6 +28,7 @@ class CoverageDialogs:
         for title,cb in [('Enable coverage schema (schema 4)',self.coverage_enable),('Import detector library CSV / Excel',self.library_import),('Detector library',self.library_dialog),
                          ('Assign library entry to selected detector',self.assign_dialog),('Zone coverage setup',self.setup_dialog),('Coverage readiness',self.coverage_readiness_dialog),
                          ('Run coverage (all READY zones)',self.run_coverage),('Coverage results / heatmap',self.results_dialog),('Show / hide detector FOV',self.toggle_fov),('Clear coverage overlay',self.clear_overlay),
+                         ('Scenario coverage (user scenarios and frequencies)',self.scenario_dialog),('Layout options from candidates (proposals only)',self.options_dialog),
                          ('Export coverage report',self.export_coverage_report)]:
             m.addAction(title,cb)
         self.coverage_job=None;self.coverage_timer=QTimer(self);self.coverage_timer.timeout.connect(self.poll_coverage);self.fov_on=False
@@ -206,6 +207,24 @@ class CoverageDialogs:
         try:
             self.need_coverage();self.fov_on=not self.fov_on;self.viewer.fov=self.fov_items() if self.fov_on else [];self.viewer.update()
         except Exception as exc:self.coverage_error('Detector FOV',exc)
+    def study_json_dialog(self,title,intro,template,runner,prefix):
+        d=QDialog(self);d.setWindowTitle(title);d.resize(820,680);lay=QVBoxLayout(d);lay.addWidget(self.wrapped(intro))
+        text=QPlainTextEdit(json.dumps(template,indent=2));text.setObjectName('study_json');lay.addWidget(text)
+        form=QFormLayout();rid=QLineEdit(prefix+time.strftime('%Y%m%d-%H%M%S'));rid.setObjectName('study_run_id');form.addRow('Run ID',rid);lay.addLayout(form);self.buttons(d,lay)
+        while d.exec()==QDialog.Accepted:
+            try:
+                res=runner(self.session,json.loads(text.toPlainText()),rid.text().strip(),'AUTOMATION_ENGINE');self.refresh();self.show_text(title+' - '+LABEL,res);return res
+            except Exception as exc:QMessageBox.warning(self,title+' refused',str(exc))
+    def scenario_dialog(self):
+        try:
+            self.need_coverage();from fgmapping.services import scenario_coverage as scs
+            self.study_json_dialog('Scenario coverage (fg-coverage-scenarios/1)','Each scenario is tested with the geographic detection rule of its zone (zone must be READY). Frequencies and their sources are user-supplied decimal strings. The result is a frequency-weighted detected fraction - not risk reduction, availability or SIL credit.',scs.scenario_template(self.session),scs.run_scenarios,'SCN-')
+        except Exception as exc:self.coverage_error('Scenario coverage',exc)
+    def options_dialog(self):
+        try:
+            self.need_coverage();from fgmapping.services import scenario_coverage as scs
+            self.study_json_dialog('Layout options (fg-coverage-options/1)','Candidate positions with explicit library entries, costs and feasibility are enumerated exhaustively (max 16). Results are PROPOSALS ONLY: the detector layout is never changed; adopt a proposal through normal reviewed detector edits.',scs.options_template(self.session),scs.run_options,'OPT-')
+        except Exception as exc:self.coverage_error('Layout options',exc)
     def export_coverage_report(self):
         try:
             self.need_coverage()

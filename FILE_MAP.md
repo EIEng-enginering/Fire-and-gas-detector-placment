@@ -1,3 +1,25 @@
+# Rev G additions
+- **Schema and contracts:** contracts/migrations/0004_coverage.sql (schema 4).
+- **Domain:** src/fgmapping/domain/detector_library.py, coverage_setup.py.
+- **Engine:** src/fgmapping/engine/coverage.py (FG-FLAME-GEO/1.0, FG-GAS-GEO/1.0) and scenario_coverage.py (FG-SCENARIO/1.0, FG-OPTIONS/1.0). optimisation.py gains base_votes.
+- **Services:** src/fgmapping/services/coverage.py, scenario_coverage.py, coverage_report.py and heatmap.py. Coverage-aware changes in basis, findings, reporting, workspace and preparation.
+- **UI:** src/fgmapping/ui/coverage_dialogs.py (Coverage menu); viewer.py heatmap and FOV overlay.
+- **Examples:**
+  - examples/library/STARTER_DETECTOR_LIBRARY_EXAMPLE_VALUES.csv/.xlsx
+  - examples/wellhead_coverage/ (case, summary, scenarios/options JSON, full report with figures and manifest)
+- **Tools:**
+  - tools/build_starter_library.py
+  - tools/build_wellhead_coverage_example.py
+  - tools/capture_wellhead_coverage_app.py
+- **Tests:**
+  - tests/unit/test_coverage_engine.py
+  - tests/unit/test_scenario_coverage.py
+  - tests/integration/test_coverage_rev_g.py
+  - tests/integration/test_wellhead_coverage_rev_g.py
+- **Screenshots:** screenshots/REV_G/ (box offscreen and WINDOWS_REAL).
+- **Test results:** TEST_RESULTS/REV_G/ (box and Windows suite evidence).
+- **Docs:** docs/REV_G_COVERAGE_METHOD.md, docs/REV_G_TRACEABILITY.md, the USER_GUIDE coverage section, and the docs/EXAMPLE_WELLHEAD_MODULE.md coverage section.
+
 # Rev F full pack
 - Rev F additions: services/case.py fsync_file; closing() fixes; tests/integration/test_windows_portability_rev_f.py; tests/acceptance/test_dense_scene_rev_f.py; tools/rev_f_mutations.py, rev_f_dense_benchmark.py, rev_f_literal_report.py, rev_f_office_check.ps1; docs/REV_F_*.md; docs/REV_E_BASELINE (Rev E root docs); TEST_RESULTS/REV_F_* (box baseline, Windows evidence, mutants, benchmarks, failures, final summary); ORIGINAL_ARCHIVES/REV_E_PREDECESSOR_REFERENCE.json.
 

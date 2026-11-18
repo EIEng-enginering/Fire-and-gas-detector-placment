@@ -104,5 +104,66 @@
     "excluded_component": 0.0
    }
   }
+ },
+ "studies": {
+  "scenarios": {
+   "overall": {
+    "frequency_weighted_detected_fraction": "0.2418604651162790697674418604651163",
+    "detected_count_fraction": "0.5263157894736842105263157894736842",
+    "total_frequency_per_year": "0.0215"
+   },
+   "by_zone": {
+    "FZ-MANIFOLD": {
+     "frequency_weighted_detected_fraction": "1",
+     "detected_count_fraction": "1",
+     "total_frequency_per_year": "0.001"
+    },
+    "FZ-WELLBAY": {
+     "frequency_weighted_detected_fraction": "1",
+     "detected_count_fraction": "1",
+     "total_frequency_per_year": "0.0040"
+    },
+    "FZ-WIRELINE": {
+     "frequency_weighted_detected_fraction": "0",
+     "detected_count_fraction": "0",
+     "total_frequency_per_year": "0.0003"
+    },
+    "GZ-MANIFOLD": {
+     "frequency_weighted_detected_fraction": "1",
+     "detected_count_fraction": "1",
+     "total_frequency_per_year": "0.0002"
+    },
+    "GZ-WELLBAY": {
+     "frequency_weighted_detected_fraction": "0",
+     "detected_count_fraction": "0",
+     "total_frequency_per_year": "0.016"
+    }
+   }
+  },
+  "options": {
+   "existing_layout_2ooN": "0.7533632286995515886161175389",
+   "pareto": [
+    {
+     "mount_ids": [
+      "CAND-MF-1",
+      "CAND-MF-3"
+     ],
+     "fraction": "0.9739094985731757334310973742",
+     "cost": "2"
+    },
+    {
+     "mount_ids": [
+      "CAND-MF-1"
+     ],
+     "fraction": "0.9062372604973502117591394947",
+     "cost": "1"
+    },
+    {
+     "mount_ids": [],
+     "fraction": "0.7533632286995515886161175389",
+     "cost": "0"
+    }
+   ]
+  }
  }
 }

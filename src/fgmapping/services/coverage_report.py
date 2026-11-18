@@ -32,11 +32,15 @@ def coverage_snapshot(session,px_per_m=20,max_slices=3):
                       'setup':env['setup'],'zone':env['zone'],'scene_sha256':env['scene_sha256'],'implementation_sha256':env['implementation_sha256'],'software_version':env['software_version'],'excluded_component_ids':env['excluded_component_ids']})
         for f in run_figures(session,run,px_per_m,max_slices):
             import base64;figures.append({**{k:v for k,v in f.items() if k!='png'},'png_base64':base64.b64encode(f['png']).decode(),'png_sha256':hashlib.sha256(f['png']).hexdigest()})
+    from fgmapping.services import scenario_coverage as scs
+    studies=[{'run_id':r['id'],'method':r['method'],'method_version':r['method_version'],'zone_id':r['zone_id'],'state':scs.study_run_currency(session,r),'utc':r['utc'],'actor':r['actor'],'input_hash':r['input_hash'],'result':json.loads(r['result_json'])} for r in scs.study_runs(session)]
+    for st in studies:
+        if st['method']=='LAYOUT_OPTIONS':library.update(json.loads(next(r for r in scs.study_runs(session) if r['id']==st['run_id'])['input_json'])['candidate_library'])
     example=sorted(k for k,e in library.items() if e['source']['data_status'].startswith('EXAMPLE'))
     findings=[f for f in study_findings(session) if f['id'].startswith(('COVERAGE-','LIBRARY-'))]
     snap={'report':'fg-coverage-report/1','label':LABEL,'disclaimer':DISCLAIMER,'case':session.name(),'software_version':__import__('fgmapping').__version__,'generated_utc':utc_now(),
           'scene_sha256':scene.sha256 if scene else None,'example_library_entries':example,'zones':zones,'detectors':[detectors[k] for k in sorted(detectors)],'library':[library[k] for k in sorted(library)],
-          'findings':findings,'figures':figures,'method_document':'docs/REV_G_COVERAGE_METHOD.md'}
+          'findings':findings,'studies':studies,'figures':figures,'method_document':'docs/REV_G_COVERAGE_METHOD.md'}
     snap['content_sha256']=content_hash({k:v for k,v in snap.items() if k not in ('generated_utc',)})
     return snap
 
@@ -100,10 +104,31 @@ def _xlsx(snap,path):
         for d,v in z['result']['per_detector_fraction'].items():s.append([z['zone_id'],d,v])
     s=wb.create_sheet('Findings');s.append(['ID','Object','Severity','Message'])
     for f in snap['findings']:s.append([f['id'],f['object_id'],f['severity'],f['message']])
+    s=wb.create_sheet('Scenario studies');s.append(['Run','Method','State','Zone(s)','Item','Detected / fraction','Votes / cost','Detail'])
+    for st in snap['studies']:
+        r=st['result']
+        if st['method']=='SCENARIO_COVERAGE':
+            s.append([st['run_id'],st['method_version'],st['state'],st['zone_id'],'OVERALL',r['overall']['frequency_weighted_detected_fraction'],'','frequency-weighted detected fraction (user frequencies)'])
+            for x in r['scenarios']:s.append([st['run_id'],'','',x['zone_id'],x['id'],str(x['detected']),x['votes'],x['frequency_per_year']+' /yr; '+x['frequency_source']])
+        else:
+            s.append([st['run_id'],st['method_version'],st['state'],st['zone_id'],'EXISTING',r['existing_layout_fraction'],'',r['status']])
+            for a in r['pareto']:s.append([st['run_id'],'','',st['zone_id'],'+'.join(a['mount_ids']) or '(none)',a['fraction'],a['cost'],'Pareto proposal'])
     s=wb.create_sheet('Hashes');s.append(['Zone','Run','Input hash','Implementation SHA-256','Scene SHA-256','Software'])
     for z in snap['zones']:s.append([z['zone_id'],z['run_id'],z['input_hash'],z['implementation_sha256'],z['scene_sha256'],z['software_version']])
+    for st in snap['studies']:s.append([st['zone_id'],st['run_id'],st['input_hash'],st['method_version'],'',''])
     for f in snap['figures']:s.append(['figure',f['zone_id'],'z=%.2f' % f['slice_z'],f['png_sha256'],'',''])
     wb.save(path)
+
+def study_lines(snap):
+    out=[]
+    for st in snap['studies']:
+        r=st['result']
+        if st['method']=='SCENARIO_COVERAGE':
+            out.append('%s (%s, %s): %d user scenarios; frequency-weighted detected fraction %s (total %s /yr). By zone: %s. Not risk reduction, availability or SIL credit.' % (st['run_id'],st['method_version'],st['state'],r['scenario_count'],r['overall']['frequency_weighted_detected_fraction'],r['overall']['total_frequency_per_year'],'; '.join('%s %s' % (z,v['frequency_weighted_detected_fraction']) for z,v in r['by_zone'].items())))
+        else:
+            best='; '.join('%s -> %s (cost %s)' % ('+'.join(a['mount_ids']) or 'no addition',a['fraction'],a['cost']) for a in r['pareto'][:4])
+            out.append('%s (%s, %s) zone %s, %dooN: existing layout %s; Pareto proposals: %s. PROPOSALS ONLY - baseline unchanged.' % (st['run_id'],st['method_version'],st['state'],st['zone_id'],r['required_votes'],r['existing_layout_fraction'],best))
+    return out
 
 def _docx(snap,figs,path):
     from docx import Document
@@ -133,6 +158,9 @@ def _docx(snap,figs,path):
     doc.add_heading('Detectors and library entries used',1)
     for d in snap['detectors']:doc.add_paragraph('%s %s at (%.2f, %.2f, %.2f) az %.1f el %.1f -> %s%s' % (d['id'],d['detector_type'],*d['position'],d['azimuth'],d['elevation'],d['library_id'],'' if not d['receiver'] else ' receiver (%.2f, %.2f, %.2f)' % tuple(d['receiver'])),style='List Bullet')
     for e in snap['library']:doc.add_paragraph('%s: %s %s, %s; data status: %s; source %s rev %s p.%s' % (e['id'],e['detector_type'],e['technology'],e['fuel_or_gas'],e['source']['data_status'],e['source']['title'],e['source']['revision'],e['source']['page']),style='List Bullet')
+    if snap['studies']:
+        doc.add_heading('Scenario coverage and layout options',1)
+        for line in study_lines(snap):doc.add_paragraph(line,style='List Bullet')
     doc.add_heading('Heatmaps',1)
     for p,f in figs:
         doc.add_picture(str(p),width=Inches(6.3));doc.add_paragraph(f['description'])
@@ -166,6 +194,9 @@ def _pdf(snap,figs,path):
         s=z['setup'];story.append(Paragraph(escape('%s: grid %.2f m %s, voting %dooN, %s. Criterion: %s. Run %s, input hash %s.' % (z['zone_id'],s['grid_spacing_m'],s['mode'],s['voting_required'],setup_text(s),s['criterion_reference'],z['run_id'],z['input_hash'])),small))
     story.append(Paragraph('Library entries used',st['Heading1']))
     for e in snap['library']:story.append(Paragraph(escape('%s: %s %s, %s; data status: %s; source %s rev %s p.%s' % (e['id'],e['detector_type'],e['technology'],e['fuel_or_gas'],e['source']['data_status'],e['source']['title'],e['source']['revision'],e['source']['page'])),small))
+    if snap['studies']:
+        story.append(Paragraph('Scenario coverage and layout options',st['Heading1']))
+        for line in study_lines(snap):story.append(Paragraph(escape(line),small))
     story.append(Paragraph('Heatmaps',st['Heading1']))
     from PIL import Image as PILImage
     for p,f in figs:
