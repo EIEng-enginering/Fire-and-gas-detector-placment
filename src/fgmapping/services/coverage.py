@@ -168,7 +168,7 @@ def gather(session,zone_id):
     if not dets and not any(b.startswith('LIBRARY_ENTRY_NOT_ASSIGNED') for b in blockers):blockers.append('NO_ELIGIBLE_DETECTORS:'+zone_id)
     if len(dets)<setup['voting_required'] and not blockers:blockers.append('VOTING_EXCEEDS_ASSIGNED_DETECTORS:'+zone_id)
     excluded=sorted(x['component_id'] for x in basis['exclusions']) if basis else []
-    files={name:hashlib.sha256((SRC/name).read_bytes()).hexdigest() for name in IMPLEMENTATION}
+    files={name:hashlib.sha256((SRC/name).read_bytes().replace(b'\r\n',b'\n')).hexdigest() for name in IMPLEMENTATION}  # line-ending neutral (Windows checkouts)
     from fgmapping import __version__
     from fgmapping.engine.coverage import METHOD_VERSION
     envelope={'method':setup['method'],'method_version':METHOD_VERSION[setup['method']],'zone':{**zone,'low':list(zone['low']),'high':list(zone['high'])},'setup':setup,'detectors':dets,'library':lib,

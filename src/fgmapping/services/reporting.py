@@ -64,6 +64,13 @@ def normalized_snapshot(session):
             'case':base['case'],'scene_hash':None if scene is None else scene.sha256,'scene':None if scene is None else scene.to_dict(),'datasets':data,'ledger':base['ledger'],
             'limitations':['No engineering detector coverage results','No independent engineering qualification','Windows acceptance pending','Snapshot geometry is synthetic envelope data']}
     result.update(extra)
+    if session.con.execute('PRAGMA user_version').fetchone()[0]>=4:
+        from fgmapping.services import coverage as cov
+        runs=[]
+        for z,r in sorted(cov.latest_runs(session).items()):
+            res=json.loads(r['result_json']);runs.append({'id':r['id'],'zone_id':z,'method_version':r['method_version'],'state':cov.run_currency(session,r),'input_hash':r['input_hash'],'fractions':res['fractions'],'voting_required':res['voting_required'],'label':r['label']})
+        data['coverage_runs']=runs
+        result['limitations'][0]='Coverage results (where present) are engineer-reviewed - not independently certified, and depend on the detector library data entered' if runs else 'No coverage run stored in this case'
     sources=[];decisions=[];assets=[]
     for event in base['ledger']:
         if event['command']!='RETAIN_PREPARATION_SOURCE':continue
@@ -261,7 +268,7 @@ def write_reports(snapshot,destination):
     for style in styles.byName.values():
         style.fontName='FGSansBold' if 'Heading' in style.name or style.name=='Title' else 'FGSans'
     styles.add(ParagraphStyle('Row',fontName='FGSans',fontSize=9,leading=12,spaceAfter=5,splitLongWords=True))
-    story=[Paragraph('Fire and gas synthetic register report',styles['Title']),Paragraph('This report records the synthetic facility model and candidate detector register. No engineering detector coverage has been calculated.',styles['BodyText']),Spacer(1,10),Paragraph('DEVELOPMENT BUILD | UNVERIFIED | CANDIDATE',styles['BodyText']),Spacer(1,10),Paragraph('Snapshot SHA256 '+sha,styles['Row'])]
+    story=[Paragraph('Fire and gas synthetic register report',styles['Title']),Paragraph('This report records the facility model and detector register. '+('Coverage runs are listed in the coverage_runs dataset (engineer-reviewed - not independently certified); see the separate coverage report.' if snapshot['datasets'].get('coverage_runs') else 'No engineering detector coverage has been calculated.'),styles['BodyText']),Spacer(1,10),Paragraph('DEVELOPMENT BUILD | UNVERIFIED | CANDIDATE',styles['BodyText']),Spacer(1,10),Paragraph('Snapshot SHA256 '+sha,styles['Row'])]
     for line in overview_lines(snapshot):story.extend([Paragraph(escape(line),styles['BodyText']),Spacer(1,7)])
     for figure in snapshot.get('figures',[]):
         raw=base64.b64decode(figure['png_base64'],validate=True)

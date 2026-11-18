@@ -41,4 +41,11 @@ The first Windows run failed honestly on CRLF text output from the generator. Th
   - The readiness gate reports READY when inputs are complete.
   - Runs are stored with their input hash and staleness is tracked.
   - New tests: 22 unit (known-answer) and 6 integration.
+- **M3/M4/M6 and the wellhead example.**
+  - Viewer heatmap and FOV overlay, results table, and coverage findings.
+  - Coverage report in JSON/XLSX/DOCX/PDF with heatmap figures and a hash manifest.
+  - The normalised snapshot lists coverage runs.
+  - Implementation hashes no longer depend on line endings (CRLF and LF give the same hash).
+  - New tools: tools/build_wellhead_coverage_example.py and tools/capture_wellhead_coverage_app.py.
+  - New test module test_wellhead_coverage_rev_g.py (7 tests).
 <!-- /REV_G_CHANGELOG -->

@@ -15,10 +15,17 @@ Q1–Q10 and F01–F10 are APPROVED (docs/DECISIONS_REV_A.md). The synthetic-onl
   - The readiness gate reports READY or BLOCKED per zone.
   - Each run is stored with its input hash.
   - Staleness is tracked and convergence is checked.
-- M3 Viewer and results: IN PROGRESS.
-- M4 Geographic gas: the engine is implemented with M2 (FG-GAS-GEO/1.0).
+- **M3 Viewer and results: DONE.**
+  - Heatmap overlay of a stored run in the 3D viewer: plan slice, colour by votes, legend with label.
+  - FOV wireframes from the library contour; a per-zone results table; coverage findings (stale, below target, convergence).
+  - Offscreen UI test (tests/integration/test_wellhead_coverage_rev_g.py).
+- **M4 Geographic gas: DONE.** FG-GAS-GEO/1.0: point detectors and open-path detectors (receivers from EQUIPMENT records) against a user design cloud. Applied to the wellhead gas zones.
 - M5 Scenario coverage and optimisation: NOT STARTED.
-- M6 Reports: NOT STARTED.
+- **M6 Reports: DONE.**
+  - services/coverage_report.py writes JSON/XLSX/DOCX/PDF plus heatmap PNGs (services/heatmap.py) and a MANIFEST of SHA-256 hashes.
+  - Every output is labelled 'Engineer-reviewed results - not independently certified' and carries an EXAMPLE warning when example data are used.
+  - Reports go to a new folder only; nothing is overwritten.
+- **Wellhead example: DONE** (examples/wellhead_coverage, 0.5 m grid, refinement check). It uses EXAMPLE library values and EXAMPLE targets, so the results are illustrative only.
 <!-- /REV_G_MILESTONES -->
 
 Method: docs/REV_G_COVERAGE_METHOD.md. Deviations: DEVIATIONS.md G1–G5.

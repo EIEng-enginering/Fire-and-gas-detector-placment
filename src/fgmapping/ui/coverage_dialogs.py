@@ -5,7 +5,7 @@ import json,threading,time
 from pathlib import Path
 from PySide6.QtCore import Qt,QTimer
 from PySide6.QtGui import QColor
-from PySide6.QtWidgets import (QDialog,QVBoxLayout,QHBoxLayout,QFormLayout,QLabel,QComboBox,QDialogButtonBox,QMessageBox,QPlainTextEdit,QFileDialog,
+from PySide6.QtWidgets import (QDialog,QHeaderView,QVBoxLayout,QHBoxLayout,QFormLayout,QLabel,QComboBox,QDialogButtonBox,QMessageBox,QPlainTextEdit,QFileDialog,
     QTableWidget,QTableWidgetItem,QPushButton,QInputDialog,QProgressDialog,QLineEdit,QCheckBox)
 from fgmapping.services import coverage as cov
 from fgmapping.services import workspace as w
@@ -67,7 +67,7 @@ class CoverageDialogs:
                     it=QTableWidgetItem(v)
                     if e['source']['data_status'].startswith('EXAMPLE'):it.setForeground(QColor('#b03a2e'))
                     t.setItem(i,j,it)
-            t.resizeColumnsToContents();lay.addWidget(t)
+            t.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents);t.horizontalHeader().setStretchLastSection(True);lay.addWidget(t)
             b=QDialogButtonBox(QDialogButtonBox.Close);b.rejected.connect(d.reject);lay.addWidget(b);d.exec()
         except Exception as exc:self.coverage_error('Detector library',exc)
     def assign_dialog(self):
@@ -168,7 +168,7 @@ class CoverageDialogs:
                     it=QTableWidgetItem(v)
                     if state=='STALE':it.setForeground(QColor('#8a6d3b'))
                     t.setItem(i,j,it)
-            t.resizeColumnsToContents();lay.addWidget(t)
+            t.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents);t.horizontalHeader().setStretchLastSection(True);lay.addWidget(t)
             bl=QHBoxLayout();lay.addLayout(bl)
             show=QPushButton('Show heatmap for selected zone');show.clicked.connect(lambda:(self.show_heatmap(rows[max(t.currentRow(),0)][1]),d.accept()));bl.addWidget(show)
             det=QPushButton('Details / findings');det.clicked.connect(lambda:self.show_text('Coverage result '+rows[max(t.currentRow(),0)][0],rows[max(t.currentRow(),0)][2]));bl.addWidget(det)
