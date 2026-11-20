@@ -87,3 +87,10 @@ All earlier unresolved engineering/data/owner-decision gates remain. This is an 
 - OI-051 LOW (new): real-Qt screenshots show truncated register header and component IDs at default window size.
 - OI-052 LOW (new): tools/rev_e_benchmarks.py hard-codes 'Linux; Windows NOT RUN' in its output even when run on Windows; Rev E tool left unchanged to preserve evidence semantics.
 All earlier engineering/data/owner-decision gates remain.
+
+## Rev H (20 Nov 2026)
+- Independent review findings F01–F25: all FIXED within the scope in docs/FIX_DISPOSITION_REV_H.md, but this has not yet been independently re-reviewed.
+- OI-H1 MEDIUM: there is no UI for recording engineer review (API only).
+- OI-H2 MEDIUM: there is no justified extended-target visibility model (F14 limitation).
+- OI-H3 LOW: Rev H coverage is about 18 % slower than Rev G on the same host.
+- OI-H4: the Rev H return is uncommitted; commit or push needs explicit owner authorisation.

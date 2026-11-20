@@ -154,17 +154,19 @@ The case is `examples/wellhead_coverage/SYNTHETIC_WELLHEAD_COVERAGE.fgcase`. It 
 - runs all six zones, a scenario set and a layout-options study;
 - exports the report `WELLHEAD_COVERAGE_REPORT/`.
 
-| Zone | Method | Eligible m³ | 0ooN | 1ooN | 2ooN | Target 1ooN / 2ooN | Convergence (0.5 m vs 0.25 m) |
+Rev H values (FG-*-GEO/1.1; COMPUTED - UNREVIEWED development results - not independently verified):
+
+| Zone | Method | Eligible m³ | 0ooN | 1ooN | 2ooN | Target 1ooN / 2ooN | Grid check (0.5 m vs 0.25 m) |
 |---|---|---|---|---|---|---|---|
-| FZ-MANIFOLD | FG-FLAME-GEO/1.0 | 271.7 | 0.7 % | 99.3 % | 79.2 % | MEETS USER TARGET / BELOW USER TARGET | CONVERGED |
-| FZ-WELLBAY | FG-FLAME-GEO/1.0 | 1338.6 | 6.5 % | 93.5 % | 85.9 % | MEETS USER TARGET / MEETS USER TARGET | CONVERGED |
-| FZ-WIRELINE | FG-FLAME-GEO/1.0 | 123.1 | 0.2 % | 99.8 % | 86.5 % | MEETS USER TARGET / MEETS USER TARGET | CONVERGED |
-| GZ-MANIFOLD | FG-GAS-GEO/1.0 | 271.7 | 70.4 % | 29.6 % | 0.6 % | BELOW USER TARGET / BELOW USER TARGET | CONVERGED |
-| GZ-MODULE | FG-GAS-GEO/1.0 | 5023.6 | 84.8 % | 15.2 % | 2.0 % | BELOW USER TARGET / BELOW USER TARGET | CONVERGED |
-| GZ-WELLBAY | FG-GAS-GEO/1.0 | 1338.6 | 63.8 % | 36.2 % | 4.7 % | BELOW USER TARGET / BELOW USER TARGET | CONVERGED |
+| FZ-MANIFOLD | FG-FLAME-GEO/1.1 | 271.0 | 2.1 % | 97.9 % | 78.1 % | MEETS USER TARGET / BELOW USER TARGET | GRID AGREEMENT (not an error bound) |
+| FZ-WELLBAY | FG-FLAME-GEO/1.1 | 1360.2 | 7.5 % | 92.5 % | 85.1 % | MEETS USER TARGET / MEETS USER TARGET | GRID AGREEMENT (not an error bound) |
+| FZ-WIRELINE | FG-FLAME-GEO/1.1 | 122.7 | 0.2 % | 99.8 % | 86.5 % | MEETS USER TARGET / MEETS USER TARGET | GRID AGREEMENT (not an error bound) |
+| GZ-MANIFOLD | FG-GAS-GEO/1.1 | 271.0 | 70.2 % | 29.8 % | 0.6 % | BELOW USER TARGET / BELOW USER TARGET | GRID AGREEMENT (not an error bound) |
+| GZ-MODULE | FG-GAS-GEO/1.1 | 5009.4 | 84.7 % | 15.3 % | 2.0 % | BELOW USER TARGET / BELOW USER TARGET | GRID AGREEMENT (not an error bound) |
+| GZ-WELLBAY | FG-GAS-GEO/1.1 | 1360.2 | 63.8 % | 36.2 % | 4.8 % | BELOW USER TARGET / BELOW USER TARGET | GRID AGREEMENT (not an error bound) |
 
 - **Scenario study WHM-SCN-A** uses 19 EXAMPLE scenarios with illustrative frequencies. The frequency-weighted detected fraction is 0.242. Small wellbay gas leaks get only one vote against the 2ooN requirement, and the wireline fire point gets one vote.
-- **Layout options WHM-OPT-A (FZ-MANIFOLD, 2ooN, existing layout credited):** the existing layout gives 0.753. Adding CAND-MF-1 gives 0.906 (cost 1), and adding CAND-MF-1 plus CAND-MF-3 gives 0.974 (cost 2). These are proposals only, and the baseline is unchanged.
+- **Layout options WHM-OPT-A (FZ-MANIFOLD, 2ooN, existing layout credited):** the existing layout gives 0.781 at the zone-run grid (0.5 m, equal to the FZ-MANIFOLD 2ooN zone result). Adding CAND-MF-4 gives 0.894 (cost 1), and adding CAND-MF-3 plus CAND-MF-4 gives 0.953 (cost 2). These are proposals only, and the baseline is unchanged. (Rev G quoted 0.753 / 0.906 / 0.974 at a 1.0 m options grid; not comparable, see docs/WELLHEAD_COMPARISON_REV_G_VS_H.md.)
 - **Finding:** the GD-OP-01 beam is obstructed by stair tower ST-MZ, and the GD-OP-02 beam by ST-UD. Both detectors are treated as inoperative, with a BLOCKING finding. Relocate them before relying on open-path coverage.
 - **Gas coverage is low** because of this layout's spacing compared with a 5 m cloud under 2ooN voting. This is an illustrative result of EXAMPLE inputs.
 

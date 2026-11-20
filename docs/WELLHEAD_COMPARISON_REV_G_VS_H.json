@@ -1,0 +1,418 @@
+[
+ {
+  "zone": "FZ-MANIFOLD",
+  "metric": "method",
+  "rev_g": "FG-FLAME-GEO/1.0",
+  "rev_h": "FG-FLAME-GEO/1.1",
+  "reason": "Method version bump for F01-F07 changes",
+  "evidence": "docs/METHOD_AND_TOLERANCES_REV_H.md"
+ },
+ {
+  "zone": "FZ-MANIFOLD",
+  "metric": "eligible m3",
+  "rev_g": "271.7500",
+  "rev_h": "270.9922",
+  "reason": "F01: Rev G took whole cells in or out by centre; Rev H integrates exact free volume of each cell",
+  "evidence": "Independent slab-sweep exact volume (tools/rev_h_independent_eligible_check.py, no fgmapping import) = 270.9922 m3, abs diff 5.7e-14; Monte Carlo 271.7 m3 (n=50000)"
+ },
+ {
+  "zone": "FZ-MANIFOLD",
+  "metric": "inside obstruction m3",
+  "rev_g": "32.4500",
+  "rev_h": "33.2030",
+  "reason": "F01 exact solid volume within zone",
+  "evidence": "zone volume 304.2000 = eligible + obstruction + excluded (closure check)"
+ },
+ {
+  "zone": "FZ-MANIFOLD",
+  "metric": "excluded component m3",
+  "rev_g": "0.0000",
+  "rev_h": "0.0048",
+  "reason": "F01/F03 exact mesh-based exclusion (Rev G: centre test against AABB)",
+  "evidence": "same independent check"
+ },
+ {
+  "zone": "FZ-MANIFOLD",
+  "metric": "0ooN",
+  "rev_g": "0.0069",
+  "rev_h": "0.0213",
+  "reason": "F01 exact free measure + representative free point; F05 LOS from detector (Rev G trimmed 0.05 m standoff from every ray); F06 eps-consistent broadphase",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "FZ-MANIFOLD",
+  "metric": "1ooN",
+  "rev_g": "0.9931",
+  "rev_h": "0.9787",
+  "reason": "F01 exact free measure + representative free point; F05 LOS from detector (Rev G trimmed 0.05 m standoff from every ray); F06 eps-consistent broadphase",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "FZ-MANIFOLD",
+  "metric": "2ooN",
+  "rev_g": "0.7918",
+  "rev_h": "0.7814",
+  "reason": "F01 exact free measure + representative free point; F05 LOS from detector (Rev G trimmed 0.05 m standoff from every ray); F06 eps-consistent broadphase",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "FZ-MANIFOLD",
+  "metric": "grid check",
+  "rev_g": "CONVERGED",
+  "rev_h": "GRID AGREEMENT (not an error bound)",
+  "reason": "F07: two-grid agreement is not an error bound; label changed, unresolved-feature and empty-denominator states added",
+  "evidence": "probe false_convergence -> UNRESOLVED FEATURE; empty_denominator -> NOT EVALUABLE"
+ },
+ {
+  "zone": "FZ-WELLBAY",
+  "metric": "method",
+  "rev_g": "FG-FLAME-GEO/1.0",
+  "rev_h": "FG-FLAME-GEO/1.1",
+  "reason": "Method version bump for F01-F07 changes",
+  "evidence": "docs/METHOD_AND_TOLERANCES_REV_H.md"
+ },
+ {
+  "zone": "FZ-WELLBAY",
+  "metric": "eligible m3",
+  "rev_g": "1338.6250",
+  "rev_h": "1360.1710",
+  "reason": "F01: Rev G took whole cells in or out by centre; Rev H integrates exact free volume of each cell",
+  "evidence": "Independent slab-sweep exact volume (tools/rev_h_independent_eligible_check.py, no fgmapping import) = 1360.1710 m3, abs diff 0.0e+00; Monte Carlo 1358.3 m3 (n=50000)"
+ },
+ {
+  "zone": "FZ-WELLBAY",
+  "metric": "inside obstruction m3",
+  "rev_g": "58.6250",
+  "rev_h": "36.6150",
+  "reason": "F01 exact solid volume within zone",
+  "evidence": "zone volume 1397.2500 = eligible + obstruction + excluded (closure check)"
+ },
+ {
+  "zone": "FZ-WELLBAY",
+  "metric": "excluded component m3",
+  "rev_g": "0.0000",
+  "rev_h": "0.4640",
+  "reason": "F01/F03 exact mesh-based exclusion (Rev G: centre test against AABB)",
+  "evidence": "same independent check"
+ },
+ {
+  "zone": "FZ-WELLBAY",
+  "metric": "0ooN",
+  "rev_g": "0.0651",
+  "rev_h": "0.0751",
+  "reason": "F01 exact free measure + representative free point; F05 LOS from detector (Rev G trimmed 0.05 m standoff from every ray); F06 eps-consistent broadphase",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "FZ-WELLBAY",
+  "metric": "1ooN",
+  "rev_g": "0.9349",
+  "rev_h": "0.9249",
+  "reason": "F01 exact free measure + representative free point; F05 LOS from detector (Rev G trimmed 0.05 m standoff from every ray); F06 eps-consistent broadphase",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "FZ-WELLBAY",
+  "metric": "2ooN",
+  "rev_g": "0.8593",
+  "rev_h": "0.8512",
+  "reason": "F01 exact free measure + representative free point; F05 LOS from detector (Rev G trimmed 0.05 m standoff from every ray); F06 eps-consistent broadphase",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "FZ-WELLBAY",
+  "metric": "grid check",
+  "rev_g": "CONVERGED",
+  "rev_h": "GRID AGREEMENT (not an error bound)",
+  "reason": "F07: two-grid agreement is not an error bound; label changed, unresolved-feature and empty-denominator states added",
+  "evidence": "probe false_convergence -> UNRESOLVED FEATURE; empty_denominator -> NOT EVALUABLE"
+ },
+ {
+  "zone": "FZ-WIRELINE",
+  "metric": "method",
+  "rev_g": "FG-FLAME-GEO/1.0",
+  "rev_h": "FG-FLAME-GEO/1.1",
+  "reason": "Method version bump for F01-F07 changes",
+  "evidence": "docs/METHOD_AND_TOLERANCES_REV_H.md"
+ },
+ {
+  "zone": "FZ-WIRELINE",
+  "metric": "eligible m3",
+  "rev_g": "123.1250",
+  "rev_h": "122.7000",
+  "reason": "F01: Rev G took whole cells in or out by centre; Rev H integrates exact free volume of each cell",
+  "evidence": "Independent slab-sweep exact volume (tools/rev_h_independent_eligible_check.py, no fgmapping import) = 122.7000 m3, abs diff 0.0e+00; Monte Carlo 122.6 m3 (n=50000)"
+ },
+ {
+  "zone": "FZ-WIRELINE",
+  "metric": "inside obstruction m3",
+  "rev_g": "41.8750",
+  "rev_h": "42.3000",
+  "reason": "F01 exact solid volume within zone",
+  "evidence": "zone volume 165.0000 = eligible + obstruction + excluded (closure check)"
+ },
+ {
+  "zone": "FZ-WIRELINE",
+  "metric": "excluded component m3",
+  "rev_g": "0.0000",
+  "rev_h": "0.0000",
+  "reason": "F01/F03 exact mesh-based exclusion (Rev G: centre test against AABB)",
+  "evidence": "same independent check"
+ },
+ {
+  "zone": "FZ-WIRELINE",
+  "metric": "0ooN",
+  "rev_g": "0.0020",
+  "rev_h": "0.0020",
+  "reason": "F01 exact free measure + representative free point; F05 LOS from detector (Rev G trimmed 0.05 m standoff from every ray); F06 eps-consistent broadphase",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "FZ-WIRELINE",
+  "metric": "1ooN",
+  "rev_g": "0.9980",
+  "rev_h": "0.9980",
+  "reason": "F01 exact free measure + representative free point; F05 LOS from detector (Rev G trimmed 0.05 m standoff from every ray); F06 eps-consistent broadphase",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "FZ-WIRELINE",
+  "metric": "2ooN",
+  "rev_g": "0.8650",
+  "rev_h": "0.8645",
+  "reason": "F01 exact free measure + representative free point; F05 LOS from detector (Rev G trimmed 0.05 m standoff from every ray); F06 eps-consistent broadphase",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "FZ-WIRELINE",
+  "metric": "grid check",
+  "rev_g": "CONVERGED",
+  "rev_h": "GRID AGREEMENT (not an error bound)",
+  "reason": "F07: two-grid agreement is not an error bound; label changed, unresolved-feature and empty-denominator states added",
+  "evidence": "probe false_convergence -> UNRESOLVED FEATURE; empty_denominator -> NOT EVALUABLE"
+ },
+ {
+  "zone": "GZ-MANIFOLD",
+  "metric": "method",
+  "rev_g": "FG-GAS-GEO/1.0",
+  "rev_h": "FG-GAS-GEO/1.1",
+  "reason": "Method version bump for F01-F07 changes",
+  "evidence": "docs/METHOD_AND_TOLERANCES_REV_H.md"
+ },
+ {
+  "zone": "GZ-MANIFOLD",
+  "metric": "eligible m3",
+  "rev_g": "271.7500",
+  "rev_h": "270.9922",
+  "reason": "F01: Rev G took whole cells in or out by centre; Rev H integrates exact free volume of each cell",
+  "evidence": "Independent slab-sweep exact volume (tools/rev_h_independent_eligible_check.py, no fgmapping import) = 270.9922 m3, abs diff 5.7e-14; Monte Carlo 271.7 m3 (n=50000)"
+ },
+ {
+  "zone": "GZ-MANIFOLD",
+  "metric": "inside obstruction m3",
+  "rev_g": "32.4500",
+  "rev_h": "33.2030",
+  "reason": "F01 exact solid volume within zone",
+  "evidence": "zone volume 304.2000 = eligible + obstruction + excluded (closure check)"
+ },
+ {
+  "zone": "GZ-MANIFOLD",
+  "metric": "excluded component m3",
+  "rev_g": "0.0000",
+  "rev_h": "0.0048",
+  "reason": "F01/F03 exact mesh-based exclusion (Rev G: centre test against AABB)",
+  "evidence": "same independent check"
+ },
+ {
+  "zone": "GZ-MANIFOLD",
+  "metric": "0ooN",
+  "rev_g": "0.7038",
+  "rev_h": "0.7019",
+  "reason": "F01 exact free measure + representative free point (point-gas votes do not use LOS); open-path beams via F05/F06 rules",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "GZ-MANIFOLD",
+  "metric": "1ooN",
+  "rev_g": "0.2962",
+  "rev_h": "0.2981",
+  "reason": "F01 exact free measure + representative free point (point-gas votes do not use LOS); open-path beams via F05/F06 rules",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "GZ-MANIFOLD",
+  "metric": "2ooN",
+  "rev_g": "0.0055",
+  "rev_h": "0.0055",
+  "reason": "F01 exact free measure + representative free point (point-gas votes do not use LOS); open-path beams via F05/F06 rules",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "GZ-MANIFOLD",
+  "metric": "grid check",
+  "rev_g": "CONVERGED",
+  "rev_h": "GRID AGREEMENT (not an error bound)",
+  "reason": "F07: two-grid agreement is not an error bound; label changed, unresolved-feature and empty-denominator states added",
+  "evidence": "probe false_convergence -> UNRESOLVED FEATURE; empty_denominator -> NOT EVALUABLE"
+ },
+ {
+  "zone": "GZ-MODULE",
+  "metric": "method",
+  "rev_g": "FG-GAS-GEO/1.0",
+  "rev_h": "FG-GAS-GEO/1.1",
+  "reason": "Method version bump for F01-F07 changes",
+  "evidence": "docs/METHOD_AND_TOLERANCES_REV_H.md"
+ },
+ {
+  "zone": "GZ-MODULE",
+  "metric": "eligible m3",
+  "rev_g": "5023.5500",
+  "rev_h": "5009.3560",
+  "reason": "F01: Rev G took whole cells in or out by centre; Rev H integrates exact free volume of each cell",
+  "evidence": "Independent slab-sweep exact volume (tools/rev_h_independent_eligible_check.py, no fgmapping import) = 5009.3560 m3, abs diff 0.0e+00; Monte Carlo 5011.5 m3 (n=50000)"
+ },
+ {
+  "zone": "GZ-MODULE",
+  "metric": "inside obstruction m3",
+  "rev_g": "242.2600",
+  "rev_h": "253.8968",
+  "reason": "F01 exact solid volume within zone",
+  "evidence": "zone volume 5265.8100 = eligible + obstruction + excluded (closure check)"
+ },
+ {
+  "zone": "GZ-MODULE",
+  "metric": "excluded component m3",
+  "rev_g": "0.0000",
+  "rev_h": "2.5572",
+  "reason": "F01/F03 exact mesh-based exclusion (Rev G: centre test against AABB)",
+  "evidence": "same independent check"
+ },
+ {
+  "zone": "GZ-MODULE",
+  "metric": "0ooN",
+  "rev_g": "0.8478",
+  "rev_h": "0.8473",
+  "reason": "F01 exact free measure + representative free point (point-gas votes do not use LOS); open-path beams via F05/F06 rules",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "GZ-MODULE",
+  "metric": "1ooN",
+  "rev_g": "0.1522",
+  "rev_h": "0.1527",
+  "reason": "F01 exact free measure + representative free point (point-gas votes do not use LOS); open-path beams via F05/F06 rules",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "GZ-MODULE",
+  "metric": "2ooN",
+  "rev_g": "0.0202",
+  "rev_h": "0.0203",
+  "reason": "F01 exact free measure + representative free point (point-gas votes do not use LOS); open-path beams via F05/F06 rules",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "GZ-MODULE",
+  "metric": "grid check",
+  "rev_g": "CONVERGED",
+  "rev_h": "GRID AGREEMENT (not an error bound)",
+  "reason": "F07: two-grid agreement is not an error bound; label changed, unresolved-feature and empty-denominator states added",
+  "evidence": "probe false_convergence -> UNRESOLVED FEATURE; empty_denominator -> NOT EVALUABLE"
+ },
+ {
+  "zone": "GZ-WELLBAY",
+  "metric": "method",
+  "rev_g": "FG-GAS-GEO/1.0",
+  "rev_h": "FG-GAS-GEO/1.1",
+  "reason": "Method version bump for F01-F07 changes",
+  "evidence": "docs/METHOD_AND_TOLERANCES_REV_H.md"
+ },
+ {
+  "zone": "GZ-WELLBAY",
+  "metric": "eligible m3",
+  "rev_g": "1338.6250",
+  "rev_h": "1360.1710",
+  "reason": "F01: Rev G took whole cells in or out by centre; Rev H integrates exact free volume of each cell",
+  "evidence": "Independent slab-sweep exact volume (tools/rev_h_independent_eligible_check.py, no fgmapping import) = 1360.1710 m3, abs diff 0.0e+00; Monte Carlo 1358.3 m3 (n=50000)"
+ },
+ {
+  "zone": "GZ-WELLBAY",
+  "metric": "inside obstruction m3",
+  "rev_g": "58.6250",
+  "rev_h": "36.6150",
+  "reason": "F01 exact solid volume within zone",
+  "evidence": "zone volume 1397.2500 = eligible + obstruction + excluded (closure check)"
+ },
+ {
+  "zone": "GZ-WELLBAY",
+  "metric": "excluded component m3",
+  "rev_g": "0.0000",
+  "rev_h": "0.4640",
+  "reason": "F01/F03 exact mesh-based exclusion (Rev G: centre test against AABB)",
+  "evidence": "same independent check"
+ },
+ {
+  "zone": "GZ-WELLBAY",
+  "metric": "0ooN",
+  "rev_g": "0.6377",
+  "rev_h": "0.6382",
+  "reason": "F01 exact free measure + representative free point (point-gas votes do not use LOS); open-path beams via F05/F06 rules",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "GZ-WELLBAY",
+  "metric": "1ooN",
+  "rev_g": "0.3623",
+  "rev_h": "0.3618",
+  "reason": "F01 exact free measure + representative free point (point-gas votes do not use LOS); open-path beams via F05/F06 rules",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "GZ-WELLBAY",
+  "metric": "2ooN",
+  "rev_g": "0.0473",
+  "rev_h": "0.0481",
+  "reason": "F01 exact free measure + representative free point (point-gas votes do not use LOS); open-path beams via F05/F06 rules",
+  "evidence": "Analytic regression tests tests/unit/test_rev_h_numerical.py + review probes 02_REVIEW_PROBES_AFTER; deterministic across two Rev H rebuilds"
+ },
+ {
+  "zone": "GZ-WELLBAY",
+  "metric": "grid check",
+  "rev_g": "CONVERGED",
+  "rev_h": "GRID AGREEMENT (not an error bound)",
+  "reason": "F07: two-grid agreement is not an error bound; label changed, unresolved-feature and empty-denominator states added",
+  "evidence": "probe false_convergence -> UNRESOLVED FEATURE; empty_denominator -> NOT EVALUABLE"
+ },
+ {
+  "zone": "WHM-SCN-A",
+  "metric": "frequency-weighted detected fraction",
+  "rev_g": "0.2418604651162790697674418604651163",
+  "rev_h": "0.2418604651162790697674418604651163",
+  "reason": "unchanged: scenario points are far from geometry edges; Decimal now in local context (F23)",
+  "evidence": "tests F23; integrity probe changed_study_source -> STALE (F08)"
+ },
+ {
+  "zone": "WHM-OPT-A FZ-MANIFOLD",
+  "metric": "existing layout 2ooN",
+  "rev_g": "0.753363 (1.0 m grid)",
+  "rev_h": "0.781370 (0.5 m = zone grid)",
+  "reason": "F25: options now at the zone-run grid; method fixes alone give 0.733821 at 1.0 m",
+  "evidence": "equals zone run FZ-MANIFOLD 2ooN 0.781370"
+ },
+ {
+  "zone": "WHM-OPT-A FZ-MANIFOLD",
+  "metric": "best cost-1 proposal",
+  "rev_g": "CAND-MF-1 0.906237 (1.0 m)",
+  "rev_h": "CAND-MF-4 0.893568 (0.5 m)",
+  "reason": "F25 common resolution (Rev H at 1.0 m gives CAND-MF-1 0.872036); the 0.5 m ranking differs from the 1.0 m ranking",
+  "evidence": "resolution_note in options result; exhaustive Pareto test (F16)"
+ },
+ {
+  "zone": "WHM-OPT-A FZ-MANIFOLD",
+  "metric": "best cost-2 proposal",
+  "rev_g": "CAND-MF-1+CAND-MF-3 0.973909 (1.0 m)",
+  "rev_h": "CAND-MF-3+CAND-MF-4 0.952703 (0.5 m)",
+  "reason": "F25 common resolution (Rev H at 1.0 m gives CAND-MF-1+CAND-MF-3 0.932260); the 0.5 m ranking differs from the 1.0 m ranking",
+  "evidence": "resolution_note in options result; exhaustive Pareto test (F16)"
+ }
+]

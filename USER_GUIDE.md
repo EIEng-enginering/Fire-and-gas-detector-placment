@@ -1,6 +1,6 @@
 # Rev G user guide: running detector coverage
 
-Results are engineer-reviewed and not independently certified. They depend entirely on the detector data and inputs you enter. The starter library and the wellhead example use EXAMPLE VALUES; replace them with verified manufacturer data before any project use.
+Results are COMPUTED - UNREVIEWED development results - not independently verified (Rev H lifecycle: COMPUTED - UNREVIEWED, ENGINEER REVIEWED, INDEPENDENTLY VERIFIED, REVIEW INVALIDATED; see docs/METHOD_AND_TOLERANCES_REV_H.md §10). They depend entirely on the detector data and inputs you enter. The starter library and the wellhead example use EXAMPLE VALUES; replace them with verified manufacturer data before any project use. The two-grid check reports GRID AGREEMENT (not an error bound), never "converged". The standoff only ignores the detector's own declared mount component. Layout options default to the zone-run grid.
 
 1. **Enable the coverage schema.** Open a case, then choose Coverage > Enable coverage schema (schema 4). The upgrade is one-way, and a backup `*_pre_coverage4_*` is written first.
 2. **Import a detector library.** Choose Coverage > Import detector library CSV / Excel. The format is `examples/library/STARTER_DETECTOR_LIBRARY_EXAMPLE_VALUES.csv`, or `.xlsx` with one sheet named `Library` and no formulas.
@@ -20,7 +20,7 @@ Results are engineer-reviewed and not independently certified. They depend entir
    - Coverage > Layout options takes up to 16 candidates and gives a Pareto set of proposals only; the baseline layout is never changed.
 9. **Export the report.** Coverage > Export coverage report writes JSON, XLSX, DOCX, PDF, heatmap PNGs and a hash manifest to a new folder.
 
-**Worked example.** Open `examples/wellhead_coverage/SYNTHETIC_WELLHEAD_COVERAGE.fgcase` (open a copy). On the Windows PC, run `C:\Users\Admin\fg_dev\view\open_wellhead.bat`. To rebuild the example, run `python tools/build_wellhead_coverage_example.py NEW_FOLDER --grid 0.5 --refine 2`; it refuses to overwrite. Method details are in docs/REV_G_COVERAGE_METHOD.md.
+**Worked example.** Open `examples/wellhead_coverage/SYNTHETIC_WELLHEAD_COVERAGE.fgcase` (open a copy). On the Windows PC, run `C:\Users\Admin\fg_dev\view\open_wellhead.bat`. To rebuild the example, run `python tools/build_wellhead_coverage_example.py NEW_FOLDER --grid 0.5 --refine 2`; it refuses to overwrite. Method details are in docs/METHOD_AND_TOLERANCES_REV_H.md (supersedes docs/REV_G_COVERAGE_METHOD.md).
 
 ![Wellhead FZ-WELLBAY heatmap (Windows, real Qt)](screenshots/REV_G/WINDOWS_REAL/WIN_REAL_FZ-WELLBAY_z4.25_Isometric.png)
 

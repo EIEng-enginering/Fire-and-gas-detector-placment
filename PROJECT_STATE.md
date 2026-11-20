@@ -1,4 +1,17 @@
-# Project state — Rev G (coverage) checkpoint
+# Project state — Rev H (review fixes) checkpoint
+20 November 2026 (AWST, UTC+8). v0.7.0a1 + Rev H fixes. DEVELOPMENT / UNVERIFIED. COMPUTED - UNREVIEWED development results - not independently verified.
+
+## Rev H status (owner prompt 20 Nov 2026 10:06 AWST)
+- Scope: fix the independent review findings F01–F25 of Rev G. Dispositions: docs/FIX_DISPOSITION_REV_H.md (copy at FIX_DISPOSITION_REV_H.md). All 25 are FIXED within the stated scope.
+- Authorisation: local reversible work only. **No git commit, push, merge or publication** (this supersedes the earlier Rev G push permission for this task).
+- Method: docs/METHOD_AND_TOLERANCES_REV_H.md (FG-FLAME-GEO/1.1, FG-GAS-GEO/1.1). Limitations: docs/LIMITATIONS_REV_H.md.
+- Wellhead example regenerated: examples/wellhead_coverage. Old vs new values: docs/WELLHEAD_COMPARISON_REV_G_VS_H.md.
+- Tests (Linux, box): see TEST_RESULTS/REV_H/README.md. Baseline untouched 250/250, Rev H 296/296.
+- Windows: Windows 11 Pro 10.0.26200, Python 3.12.10, PySide6 6.12.0: 295/296 (140 unit, 146/147 integration, 9 acceptance); the only failure is the known test_symlink_alias_fenced (WinError 1314, no symlink privilege; test unaltered). Evidence: TEST_RESULTS/REV_H/WINDOWS_REV_H
+- Next action: NEXT_WORK_PROMPT.txt.
+
+---- Previous state (Rev G) ----
+# Project state — Rev G (coverage) checkpoint [historical]
 18 November 2026 (AWST, UTC+8). v0.7.0a1. Engineer-reviewed results - not independently certified.
 
 ## Rev G status (owner approval 18 Nov 2026 09:58 AWST: "I as the owner approved evething and build everthing that make the full program")

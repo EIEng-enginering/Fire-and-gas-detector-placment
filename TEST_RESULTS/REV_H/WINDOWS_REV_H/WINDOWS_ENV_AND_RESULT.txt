@@ -1,0 +1,1 @@
+Windows-11-10.0.26200-SP0 Python 3.12.10 PySide6 6.12.0 (real windows Qt platform; QT_QPA_PLATFORM unset). Folder FG_MAPPING_REV_H_20261120 tested via robocopy to C:\Users\Admin\fg_dev\revH_work. Result 295/296: unit 140/140, integration 146/147, acceptance 9/9. Only failure: test_symlink_alias_fenced, WinError 1314 (no symlink privilege), test unaltered.

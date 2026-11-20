@@ -1,3 +1,13 @@
+# START HERE — Rev H (20 Nov 2026): review fixes F01–F25
+DEVELOPMENT / UNVERIFIED. COMPUTED - UNREVIEWED development results - not independently verified.
+- Fix register: FIX_DISPOSITION_REV_H.md (also in docs/).
+- Method and tolerances: docs/METHOD_AND_TOLERANCES_REV_H.md.
+- Limitations: docs/LIMITATIONS_REV_H.md.
+- Old vs new wellhead example: docs/WELLHEAD_COMPARISON_REV_G_VS_H.md.
+- Evidence: TEST_RESULTS/REV_H/README.md; report renders in screenshots/REV_H/RENDER.
+- State and next action: PROJECT_STATE.md and NEXT_WORK_PROMPT.txt.
+The Rev F text below is historical.
+
 # Fire & Gas Mapping Engineering System — Rev F
 16 November 2026. Version 0.6.0a1. DEVELOPMENT BUILD / UNVERIFIED.
 

@@ -1,8 +1,10 @@
+> **Rev H (20 Nov 2026):** sections below describe Rev G where they differ from docs/METHOD_AND_TOLERANCES_REV_H.md, which governs. The example table in section 6 shows the Rev H values. Findings F01–F25 dispositions: docs/FIX_DISPOSITION_REV_H.md.
+
 # REVIEW README — Fire & Gas Mapping Engineering System, Rev G (v0.7.0a1)
 
 This file is for an external code or AI reviewer. It is the entry point to this review pack. Start here, then read `PROJECT_STATE.md`, `docs/REV_G_COVERAGE_METHOD.md` and `docs/REV_G_TRACEABILITY.md`.
 
-All results are **"Engineer-reviewed results – not independently certified"**. No conformity with any standard (ISA-TR84.00.07, DNV-RP-A102, ISO 13702) is claimed. The detector library and the wellhead example use **EXAMPLE VALUES** and must be replaced with verified manufacturer data before any project use.
+Rev G labelled all results "Engineer-reviewed results – not independently certified"; Rev H replaces this (F12) with **"COMPUTED - UNREVIEWED development results - not independently verified"** unless a hash-bound review record exists. No conformity with any standard (ISA-TR84.00.07, DNV-RP-A102, ISO 13702) is claimed. The detector library and the wellhead example use **EXAMPLE VALUES** and must be replaced with verified manufacturer data before any project use.
 
 ## 1. What the program is
 - A desktop application in Python 3.12 and PySide6 for placing fire and gas detectors and computing their coverage on 3D facility geometry. Cases are SQLite `.fgcase` files with an append-only audit log, undo/redo, backups and recovery.
@@ -82,17 +84,17 @@ Recorded results:
 
 Settings: 0.5 m VOLUME grid with refinement 2; 2ooN voting; flame target 450 kW methane point; gas cloud a 5 m sphere at 100 %LEL.
 
-| Zone | Method | Eligible m³ | 0ooN | 1ooN | 2ooN | 1ooN vs 0.90 | 2ooN vs 0.80 | Convergence |
+| Zone | Method | Eligible m³ | 0ooN | 1ooN | 2ooN | 1ooN vs 0.90 | 2ooN vs 0.80 | Grid check |
 |---|---|---|---|---|---|---|---|---|
-| FZ-MANIFOLD | FG-FLAME-GEO/1.0 | 271.7 | 0.7 % | 99.3 % | 79.2 % | MEETS USER TARGET | BELOW USER TARGET | CONVERGED |
-| FZ-WELLBAY | FG-FLAME-GEO/1.0 | 1338.6 | 6.5 % | 93.5 % | 85.9 % | MEETS USER TARGET | MEETS USER TARGET | CONVERGED |
-| FZ-WIRELINE | FG-FLAME-GEO/1.0 | 123.1 | 0.2 % | 99.8 % | 86.5 % | MEETS USER TARGET | MEETS USER TARGET | CONVERGED |
-| GZ-MANIFOLD | FG-GAS-GEO/1.0 | 271.7 | 70.4 % | 29.6 % | 0.6 % | BELOW USER TARGET | BELOW USER TARGET | CONVERGED |
-| GZ-MODULE | FG-GAS-GEO/1.0 | 5023.6 | 84.8 % | 15.2 % | 2.0 % | BELOW USER TARGET | BELOW USER TARGET | CONVERGED |
-| GZ-WELLBAY | FG-GAS-GEO/1.0 | 1338.6 | 63.8 % | 36.2 % | 4.7 % | BELOW USER TARGET | BELOW USER TARGET | CONVERGED |
+| FZ-MANIFOLD | FG-FLAME-GEO/1.1 | 271.0 | 2.1 % | 97.9 % | 78.1 % | MEETS USER TARGET | BELOW USER TARGET | GRID AGREEMENT (not an error bound) |
+| FZ-WELLBAY | FG-FLAME-GEO/1.1 | 1360.2 | 7.5 % | 92.5 % | 85.1 % | MEETS USER TARGET | MEETS USER TARGET | GRID AGREEMENT (not an error bound) |
+| FZ-WIRELINE | FG-FLAME-GEO/1.1 | 122.7 | 0.2 % | 99.8 % | 86.5 % | MEETS USER TARGET | MEETS USER TARGET | GRID AGREEMENT (not an error bound) |
+| GZ-MANIFOLD | FG-GAS-GEO/1.1 | 271.0 | 70.2 % | 29.8 % | 0.6 % | BELOW USER TARGET | BELOW USER TARGET | GRID AGREEMENT (not an error bound) |
+| GZ-MODULE | FG-GAS-GEO/1.1 | 5009.4 | 84.7 % | 15.3 % | 2.0 % | BELOW USER TARGET | BELOW USER TARGET | GRID AGREEMENT (not an error bound) |
+| GZ-WELLBAY | FG-GAS-GEO/1.1 | 1360.2 | 63.8 % | 36.2 % | 4.8 % | BELOW USER TARGET | BELOW USER TARGET | GRID AGREEMENT (not an error bound) |
 
 - **Scenario set** (19 EXAMPLE scenarios): frequency-weighted detected fraction 0.242.
-- **Layout options, FZ-MANIFOLD 2ooN:** the existing layout gives 0.753. Adding CAND-MF-1 gives 0.906, and adding CAND-MF-1 plus CAND-MF-3 gives 0.974. These are proposals only.
+- **Layout options, FZ-MANIFOLD 2ooN:** the existing layout gives 0.781 at the zone-run grid (0.5 m, equal to the FZ-MANIFOLD 2ooN zone result). Adding CAND-MF-4 gives 0.894 (cost 1), and adding CAND-MF-3 plus CAND-MF-4 gives 0.953 (cost 2). These are proposals only, and the baseline is unchanged. (Rev G quoted 0.753 / 0.906 / 0.974 at a 1.0 m options grid; not comparable, see docs/WELLHEAD_COMPARISON_REV_G_VS_H.md.)
 - **Finding:** the GD-OP-01 and GD-OP-02 beams are obstructed by the stair towers ST-MZ and ST-UD, so those two detectors are inoperative.
 
 ## 7. Known limitations and open items

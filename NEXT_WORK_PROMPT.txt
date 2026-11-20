@@ -1,3 +1,15 @@
+Resume Fire & Gas Mapping Rev H (review fixes on 0.7.0a1) from the Windows folder FG_MAPPING_REV_H_20261120 (uncommitted working tree on top of Rev G commit f72189d) or the return ZIP FG_MAPPING_REV_H_FIXED_SOURCE_AND_EVIDENCE_20261120.zip. Status DEVELOPMENT / UNVERIFIED; all results COMPUTED - UNREVIEWED.
+
+Read: PROJECT_STATE.md, docs/FIX_DISPOSITION_REV_H.md, docs/METHOD_AND_TOLERANCES_REV_H.md, docs/LIMITATIONS_REV_H.md and docs/WELLHEAD_COMPARISON_REV_G_VS_H.md. Rerun tools/run_tests.py on Linux (expect 296/296) and Windows (expect 295/296, symlink privilege only) before editing. Any change to a file in a method's fingerprint closure (services/fingerprint.py) makes the example STALE: regenerate it with tools/build_wellhead_coverage_example.py examples/wellhead_coverage --grid 0.5 --refine 2 (move the old folder aside first).
+
+Next work, in priority order:
+1. The owner decides whether to commit Rev H (not authorised in the Rev H prompt), and arranges an independent re-review of the F01–F25 fixes.
+2. A UI dialog for engineer review records (services/lifecycle.record_review); currently API only.
+3. A justified extended-target visibility/response model (F14 limitation).
+4. Performance: Rev H is about 18 % slower than Rev G on the same host. Options are vectorised cell measures and a multiprocess vote evaluation.
+5. Then the Rev G list below: PROJECT data class, verified manufacturer library data, H/V contour tables, CE-06/07/08, manual Windows checks, and relocating the GD-OP-01/02 beams.
+
+---- Previous (Rev G) prompt ----
 Resume Fire & Gas Mapping Rev G 0.7.0a1 (coverage) from Git main or the Windows folder FG_MAPPING_REV_G_20261118. Results are engineer-reviewed and not independently certified. Owner approval of Q1–Q10/F01–F10 (18 Nov 2026) is recorded in docs/DECISIONS_REV_A.md.
 
 Read PROJECT_STATE (milestones), docs/REV_G_COVERAGE_METHOD.md, docs/REV_G_TRACEABILITY.md and DEVIATIONS G1–G8. Rerun tools/run_tests.py on Linux and Windows before editing. If you change any file listed in services/coverage.IMPLEMENTATION, regenerate examples/wellhead_coverage with tools/build_wellhead_coverage_example.py.

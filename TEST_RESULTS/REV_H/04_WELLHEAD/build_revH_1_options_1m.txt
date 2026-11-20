@@ -1,0 +1,110 @@
+runs 177.8 s
+../examples/wellhead_coverage/SYNTHETIC_WELLHEAD_COVERAGE.fgcase
+{
+ "FZ-MANIFOLD": {
+  "method": "FG-FLAME-GEO/1.1",
+  "1ooN": 0.9787189446781125,
+  "2ooN": 0.7813700910948729,
+  "0ooN": 0.02128105532188755,
+  "targets": {
+   "1ooN": "MEETS USER TARGET",
+   "2ooN": "BELOW USER TARGET",
+   "3ooN": "NO USER TARGET"
+  },
+  "convergence": "GRID AGREEMENT (not an error bound)",
+  "eligible_m3": 270.99219999999997,
+  "excluded_m3": {
+   "inside_obstruction": 33.2029999999997,
+   "excluded_component": 0.0047999999999999805
+  }
+ },
+ "FZ-WELLBAY": {
+  "method": "FG-FLAME-GEO/1.1",
+  "1ooN": 0.924910911936808,
+  "2ooN": 0.851219442261304,
+  "0ooN": 0.07508908806319205,
+  "targets": {
+   "1ooN": "MEETS USER TARGET",
+   "2ooN": "MEETS USER TARGET",
+   "3ooN": "NO USER TARGET"
+  },
+  "convergence": "GRID AGREEMENT (not an error bound)",
+  "eligible_m3": 1360.171,
+  "excluded_m3": {
+   "inside_obstruction": 36.61500000000024,
+   "excluded_component": 0.46399999999999697
+  }
+ },
+ "FZ-WIRELINE": {
+  "method": "FG-FLAME-GEO/1.1",
+  "1ooN": 0.9979625101874491,
+  "2ooN": 0.8645069274653627,
+  "0ooN": 0.002037489812550937,
+  "targets": {
+   "1ooN": "MEETS USER TARGET",
+   "2ooN": "MEETS USER TARGET",
+   "3ooN": "NO USER TARGET"
+  },
+  "convergence": "GRID AGREEMENT (not an error bound)",
+  "eligible_m3": 122.7,
+  "excluded_m3": {
+   "inside_obstruction": 42.299999999999976,
+   "excluded_component": 0.0
+  }
+ },
+ "GZ-MANIFOLD": {
+  "method": "FG-GAS-GEO/1.1",
+  "1ooN": 0.2980545196503811,
+  "2ooN": 0.005535214666695204,
+  "0ooN": 0.7019454803496189,
+  "targets": {
+   "1ooN": "BELOW USER TARGET",
+   "2ooN": "BELOW USER TARGET",
+   "3ooN": "NO USER TARGET"
+  },
+  "convergence": "GRID AGREEMENT (not an error bound)",
+  "eligible_m3": 270.99219999999997,
+  "excluded_m3": {
+   "inside_obstruction": 33.2029999999997,
+   "excluded_component": 0.0047999999999999805
+  }
+ },
+ "GZ-MODULE": {
+  "method": "FG-GAS-GEO/1.1",
+  "1ooN": 0.15269702332994503,
+  "2ooN": 0.020346827017285258,
+  "0ooN": 0.847302976670055,
+  "targets": {
+   "1ooN": "BELOW USER TARGET",
+   "2ooN": "BELOW USER TARGET",
+   "3ooN": "NO USER TARGET"
+  },
+  "convergence": "GRID AGREEMENT (not an error bound)",
+  "eligible_m3": 5009.356,
+  "excluded_m3": {
+   "inside_obstruction": 253.89679999999657,
+   "excluded_component": 2.5571999999999697
+  }
+ },
+ "GZ-WELLBAY": {
+  "method": "FG-GAS-GEO/1.1",
+  "1ooN": 0.3618434740925957,
+  "2ooN": 0.04808439527088874,
+  "0ooN": 0.6381565259074042,
+  "targets": {
+   "1ooN": "BELOW USER TARGET",
+   "2ooN": "BELOW USER TARGET",
+   "3ooN": "NO USER TARGET"
+  },
+  "convergence": "GRID AGREEMENT (not an error bound)",
+  "eligible_m3": 1360.171,
+  "excluded_m3": {
+   "inside_obstruction": 36.61500000000024,
+   "excluded_component": 0.46399999999999697
+  }
+ }
+}
+/workspace/fg/revH/examples/wellhead_coverage/WELLHEAD_COVERAGE_REPORT
+EXIT 0
+--: line 1: bc: command not found
+WALL

@@ -1,107 +1,107 @@
 {
- "note": "EXAMPLE library values and EXAMPLE targets - illustrative only, not for design. Engineer-reviewed results - not independently certified.",
+ "note": "EXAMPLE library values and EXAMPLE targets - illustrative only, not for design. COMPUTED - UNREVIEWED development results - not independently verified.",
  "grid_m": 0.5,
  "zones": {
   "FZ-MANIFOLD": {
-   "method": "FG-FLAME-GEO/1.0",
-   "1ooN": 0.9931002759889604,
-   "2ooN": 0.7918123275068998,
-   "0ooN": 0.00689972401103956,
+   "method": "FG-FLAME-GEO/1.1",
+   "1ooN": 0.9787189446781125,
+   "2ooN": 0.7813700910948729,
+   "0ooN": 0.02128105532188755,
    "targets": {
     "1ooN": "MEETS USER TARGET",
     "2ooN": "BELOW USER TARGET",
     "3ooN": "NO USER TARGET"
    },
-   "convergence": "CONVERGED",
-   "eligible_m3": 271.74999999999994,
+   "convergence": "GRID AGREEMENT (not an error bound)",
+   "eligible_m3": 270.99219999999997,
    "excluded_m3": {
-    "inside_obstruction": 32.44999999999999,
-    "excluded_component": 0.0
+    "inside_obstruction": 33.2029999999997,
+    "excluded_component": 0.0047999999999999805
    }
   },
   "FZ-WELLBAY": {
-   "method": "FG-FLAME-GEO/1.0",
-   "1ooN": 0.9349145578485386,
-   "2ooN": 0.8592772434400971,
-   "0ooN": 0.06508544215146139,
+   "method": "FG-FLAME-GEO/1.1",
+   "1ooN": 0.924910911936808,
+   "2ooN": 0.851219442261304,
+   "0ooN": 0.07508908806319205,
    "targets": {
     "1ooN": "MEETS USER TARGET",
     "2ooN": "MEETS USER TARGET",
     "3ooN": "NO USER TARGET"
    },
-   "convergence": "CONVERGED",
-   "eligible_m3": 1338.625,
+   "convergence": "GRID AGREEMENT (not an error bound)",
+   "eligible_m3": 1360.171,
    "excluded_m3": {
-    "inside_obstruction": 58.625,
-    "excluded_component": 0.0
+    "inside_obstruction": 36.61500000000024,
+    "excluded_component": 0.46399999999999697
    }
   },
   "FZ-WIRELINE": {
-   "method": "FG-FLAME-GEO/1.0",
-   "1ooN": 0.9979695431472081,
-   "2ooN": 0.86497461928934,
-   "0ooN": 0.0020304568527918783,
+   "method": "FG-FLAME-GEO/1.1",
+   "1ooN": 0.9979625101874491,
+   "2ooN": 0.8645069274653627,
+   "0ooN": 0.002037489812550937,
    "targets": {
     "1ooN": "MEETS USER TARGET",
     "2ooN": "MEETS USER TARGET",
     "3ooN": "NO USER TARGET"
    },
-   "convergence": "CONVERGED",
-   "eligible_m3": 123.125,
+   "convergence": "GRID AGREEMENT (not an error bound)",
+   "eligible_m3": 122.7,
    "excluded_m3": {
-    "inside_obstruction": 41.875,
+    "inside_obstruction": 42.299999999999976,
     "excluded_component": 0.0
    }
   },
   "GZ-MANIFOLD": {
-   "method": "FG-GAS-GEO/1.0",
-   "1ooN": 0.29622815087396503,
-   "2ooN": 0.005519779208831648,
-   "0ooN": 0.703771849126035,
+   "method": "FG-GAS-GEO/1.1",
+   "1ooN": 0.2980545196503811,
+   "2ooN": 0.005535214666695204,
+   "0ooN": 0.7019454803496189,
    "targets": {
     "1ooN": "BELOW USER TARGET",
     "2ooN": "BELOW USER TARGET",
     "3ooN": "NO USER TARGET"
    },
-   "convergence": "CONVERGED",
-   "eligible_m3": 271.74999999999994,
+   "convergence": "GRID AGREEMENT (not an error bound)",
+   "eligible_m3": 270.99219999999997,
    "excluded_m3": {
-    "inside_obstruction": 32.44999999999999,
-    "excluded_component": 0.0
+    "inside_obstruction": 33.2029999999997,
+    "excluded_component": 0.0047999999999999805
    }
   },
   "GZ-MODULE": {
-   "method": "FG-GAS-GEO/1.0",
-   "1ooN": 0.15216331080610324,
-   "2ooN": 0.020204835226085138,
-   "0ooN": 0.8478366891938967,
+   "method": "FG-GAS-GEO/1.1",
+   "1ooN": 0.15269702332994503,
+   "2ooN": 0.020346827017285258,
+   "0ooN": 0.847302976670055,
    "targets": {
     "1ooN": "BELOW USER TARGET",
     "2ooN": "BELOW USER TARGET",
     "3ooN": "NO USER TARGET"
    },
-   "convergence": "CONVERGED",
-   "eligible_m3": 5023.55,
+   "convergence": "GRID AGREEMENT (not an error bound)",
+   "eligible_m3": 5009.356,
    "excluded_m3": {
-    "inside_obstruction": 242.2600000000029,
-    "excluded_component": 0.0
+    "inside_obstruction": 253.89679999999657,
+    "excluded_component": 2.5571999999999697
    }
   },
   "GZ-WELLBAY": {
-   "method": "FG-GAS-GEO/1.0",
-   "1ooN": 0.3623120739564852,
-   "2ooN": 0.04734335605565412,
-   "0ooN": 0.6376879260435148,
+   "method": "FG-GAS-GEO/1.1",
+   "1ooN": 0.3618434740925957,
+   "2ooN": 0.04808439527088874,
+   "0ooN": 0.6381565259074042,
    "targets": {
     "1ooN": "BELOW USER TARGET",
     "2ooN": "BELOW USER TARGET",
     "3ooN": "NO USER TARGET"
    },
-   "convergence": "CONVERGED",
-   "eligible_m3": 1338.625,
+   "convergence": "GRID AGREEMENT (not an error bound)",
+   "eligible_m3": 1360.171,
    "excluded_m3": {
-    "inside_obstruction": 58.625,
-    "excluded_component": 0.0
+    "inside_obstruction": 36.61500000000024,
+    "excluded_component": 0.46399999999999697
    }
   }
  },
@@ -141,26 +141,26 @@
    }
   },
   "options": {
-   "existing_layout_2ooN": "0.7533632286995515886161175389",
+   "existing_layout_2ooN": "0.7813700910948727843787347031934306",
    "pareto": [
     {
      "mount_ids": [
-      "CAND-MF-1",
-      "CAND-MF-3"
+      "CAND-MF-3",
+      "CAND-MF-4"
      ],
-     "fraction": "0.9739094985731757334310973742",
+     "fraction": "0.9527034357446449746340022936964882",
      "cost": "2"
     },
     {
      "mount_ids": [
-      "CAND-MF-1"
+      "CAND-MF-4"
      ],
-     "fraction": "0.9062372604973502117591394947",
+     "fraction": "0.8935688923887845588859847200661613",
      "cost": "1"
     },
     {
      "mount_ids": [],
-     "fraction": "0.7533632286995515886161175389",
+     "fraction": "0.7813700910948727843787347031934306",
      "cost": "0"
     }
    ]

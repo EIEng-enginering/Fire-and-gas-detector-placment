@@ -1,0 +1,28 @@
+{
+  "report_path_traversal": {
+    "selected_folder": "chosen",
+    "input_name": "../escaped",
+    "created_sibling_folder": true,
+    "existing_sibling_json_overwritten": true
+  },
+  "direct_engine_gate_mismatch": {
+    "setup_fuel": "methane",
+    "library_fuel": "heptane",
+    "setup_kW": 400,
+    "rated_kW": 100,
+    "scaling": "NONE",
+    "actual_result_1ooN": 1.0,
+    "expected": "refuse incompatible fuel/fire basis"
+  },
+  "changed_study_source_not_stale": {
+    "stored_run_currency": "CURRENT",
+    "stored_input_hash": "849f87d55046350b0183afa412ce7b739d31b33923bb7bfe2daad0d629099bd1",
+    "new_input_hash": "849f87d55046350b0183afa412ce7b739d31b33923bb7bfe2daad0d629099bd1",
+    "stored_fraction": "0.2418604651162790697674418604651163",
+    "changed_code_fraction": "0"
+  },
+  "scenario_nonfinite_validation": {
+    "accepted_by_contract": true,
+    "value_is_nan": true
+  }
+}

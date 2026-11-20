@@ -1,0 +1,68 @@
+[
+ {
+  "run": "WHM-COV-A-FZ-MANIFOLD",
+  "zone": "FZ-MANIFOLD",
+  "zone_volume": 304.2,
+  "independent_free_exact": 270.9922,
+  "stored_eligible": 270.99219999999997,
+  "abs_diff": 5.684341886080802e-14,
+  "stored_bound": 0.0,
+  "monte_carlo_free": 271.69927199999995,
+  "mc_samples": 50000
+ },
+ {
+  "run": "WHM-COV-A-FZ-WELLBAY",
+  "zone": "FZ-WELLBAY",
+  "zone_volume": 1397.25,
+  "independent_free_exact": 1360.171,
+  "stored_eligible": 1360.171,
+  "abs_diff": 0.0,
+  "stored_bound": 0.0,
+  "monte_carlo_free": 1358.29467,
+  "mc_samples": 50000
+ },
+ {
+  "run": "WHM-COV-A-FZ-WIRELINE",
+  "zone": "FZ-WIRELINE",
+  "zone_volume": 165.0,
+  "independent_free_exact": 122.7,
+  "stored_eligible": 122.7,
+  "abs_diff": 0.0,
+  "stored_bound": 0.0,
+  "monte_carlo_free": 122.595,
+  "mc_samples": 50000
+ },
+ {
+  "run": "WHM-COV-A-GZ-MANIFOLD",
+  "zone": "GZ-MANIFOLD",
+  "zone_volume": 304.2,
+  "independent_free_exact": 270.9922,
+  "stored_eligible": 270.99219999999997,
+  "abs_diff": 5.684341886080802e-14,
+  "stored_bound": 0.0,
+  "monte_carlo_free": 271.69927199999995,
+  "mc_samples": 50000
+ },
+ {
+  "run": "WHM-COV-A-GZ-MODULE",
+  "zone": "GZ-MODULE",
+  "zone_volume": 5265.81,
+  "independent_free_exact": 5009.356,
+  "stored_eligible": 5009.356,
+  "abs_diff": 0.0,
+  "stored_bound": 0.0,
+  "monte_carlo_free": 5011.471377000001,
+  "mc_samples": 50000
+ },
+ {
+  "run": "WHM-COV-A-GZ-WELLBAY",
+  "zone": "GZ-WELLBAY",
+  "zone_volume": 1397.25,
+  "independent_free_exact": 1360.171,
+  "stored_eligible": 1360.171,
+  "abs_diff": 0.0,
+  "stored_bound": 0.0,
+  "monte_carlo_free": 1358.29467,
+  "mc_samples": 50000
+ }
+]

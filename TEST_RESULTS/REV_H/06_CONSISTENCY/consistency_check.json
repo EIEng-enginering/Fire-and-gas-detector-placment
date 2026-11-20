@@ -1,0 +1,51 @@
+{
+ "all_pass": true,
+ "checks": {
+  "sqlite_report_summary_values": {
+   "pass": true,
+   "detail": []
+  },
+  "xlsx_summary_rows_exact": {
+   "pass": true
+  },
+  "xlsx_no_formula_cells": {
+   "pass": true,
+   "detail": []
+  },
+  "docx_summary_rows_exact": {
+   "pass": true
+  },
+  "pdf_values_present": {
+   "pass": true
+  },
+  "pdf_lifecycle_label": {
+   "pass": true
+  },
+  "report_manifest_sha256": {
+   "pass": true,
+   "detail": []
+  },
+  "figure_png_hashes": {
+   "pass": true,
+   "detail": 18
+  },
+  "scenario_fraction_independent_52_215": {
+   "pass": true,
+   "detail": "0.2418604651162790697674418604651163"
+  },
+  "options_common_resolution": {
+   "pass": true,
+   "detail": [
+    "0.7813700910948727843787347031934306",
+    0.7813700910948729
+   ]
+  },
+  "readme_and_example_doc_tables": {
+   "pass": true,
+   "detail": []
+  },
+  "user_guide_lifecycle_text": {
+   "pass": true
+  }
+ }
+}

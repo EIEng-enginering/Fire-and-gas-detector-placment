@@ -1,0 +1,18 @@
+{
+ "rev_g_sample_count": {
+  "FZ-MANIFOLD": 2574,
+  "FZ-WELLBAY": 11178,
+  "FZ-WIRELINE": 1320,
+  "GZ-MANIFOLD": 2574,
+  "GZ-MODULE": 43200,
+  "GZ-WELLBAY": 11178
+ },
+ "rev_h_sample_count": {
+  "FZ-MANIFOLD": 2574,
+  "FZ-WELLBAY": 11178,
+  "FZ-WIRELINE": 1320,
+  "GZ-MANIFOLD": 2574,
+  "GZ-MODULE": 43200,
+  "GZ-WELLBAY": 11178
+ }
+}

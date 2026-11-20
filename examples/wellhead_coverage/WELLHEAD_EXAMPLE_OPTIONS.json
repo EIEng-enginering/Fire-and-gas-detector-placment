@@ -4,7 +4,7 @@
  "include_existing": true,
  "max_detectors": 2,
  "required_votes": 2,
- "grid_spacing_m": 1.0,
+ "grid_spacing_m": null,
  "notes": "EXAMPLE candidates to raise 2ooN in FZ-MANIFOLD; proposals only",
  "candidates": [
   {

@@ -1,0 +1,29 @@
+{
+  "report_path_traversal": {
+    "refused": "OutputPathError: OUTPUT_NAME: Output name contains a path separator, \"..\" or an invalid character: '../escaped'",
+    "selected_folder": "chosen",
+    "input_name": "../escaped",
+    "created_sibling_folder": false,
+    "existing_sibling_json_overwritten": false
+  },
+  "direct_engine_gate_mismatch": {
+    "setup_fuel": "methane",
+    "library_fuel": "heptane",
+    "setup_kW": 400,
+    "rated_kW": 100,
+    "scaling": "NONE",
+    "actual_result_1ooN": "REFUSED: EngineeringUnavailable: CANNOT CALCULATE engineering flame coverage: complete coverage inputs: FUEL_MISMATCH:D library heptane vs target methane, FIRE_SIZE_MISMATCH:D (select INVERSE_SQUARE scaling explicitly or use a matching entry)",
+    "expected": "refuse incompatible fuel/fire basis"
+  },
+  "changed_study_source_not_stale": {
+    "stored_run_currency": "STALE",
+    "stored_input_hash": "22ae3de6f213825acf8d349c7cc7fa989d4c05ca314b83ae4a13530cbe6241d0",
+    "new_input_hash": "c48e308d361057c3f1fc18ce3abaa7b3b6a6ce008ba3274b23e0a6ce7cd1e463",
+    "stored_fraction": "0.2418604651162790697674418604651163",
+    "changed_code_fraction": "0"
+  },
+  "scenario_nonfinite_validation": {
+    "accepted_by_contract": false,
+    "refused": "CaseError: CONTRACT: A location must be [x,y,z] finite numbers in metres"
+  }
+}

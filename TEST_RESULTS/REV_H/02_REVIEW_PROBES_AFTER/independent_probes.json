@@ -1,0 +1,224 @@
+{
+  "empty_box": {
+    "expected_volume": 8,
+    "actual_volume": 8.0,
+    "expected_1ooN": 1,
+    "actual_1ooN": 1.0
+  },
+  "half_shadow": {
+    "expected_volume": 8,
+    "actual_volume": 8.0,
+    "expected_1ooN": 0.5,
+    "actual_1ooN": 0.5
+  },
+  "partial_solid_volume": {
+    "expected_eligible": 0.8,
+    "actual_eligible": 0.8,
+    "actual_excluded": {
+      "inside_obstruction": 0.2,
+      "excluded_component": 0.0
+    },
+    "convergence": {
+      "refined_spacing_m": 0.5,
+      "refined_fractions": {
+        "0ooN": 0.0,
+        "1ooN": 1.0,
+        "2ooN": 0.0,
+        "3ooN": 0.0
+      },
+      "abs_delta": {
+        "0ooN": 0.0,
+        "1ooN": 0.0,
+        "2ooN": 0.0,
+        "3ooN": 0.0
+      },
+      "tolerance": "0.01",
+      "eligible_measure": 0.8,
+      "refined_eligible_measure": 0.8,
+      "eligible_measure_rel_delta": 0.0,
+      "note": "Two-grid agreement check only; not an error bound and not proof of convergence. No Richardson extrapolation.",
+      "unresolved_features": [],
+      "worst_abs_delta": 0.0,
+      "status": "GRID AGREEMENT (not an error bound)"
+    }
+  },
+  "false_convergence": {
+    "analytic_1ooN": 0.06157521601035995,
+    "actual_1ooN": 0.0,
+    "convergence": {
+      "refined_spacing_m": 0.5,
+      "refined_fractions": {
+        "0ooN": 1.0,
+        "1ooN": 0.0,
+        "2ooN": 0.0,
+        "3ooN": 0.0
+      },
+      "abs_delta": {
+        "0ooN": 0.0,
+        "1ooN": 0.0,
+        "2ooN": 0.0,
+        "3ooN": 0.0
+      },
+      "tolerance": "0.01",
+      "eligible_measure": 1.0,
+      "refined_eligible_measure": 1.0,
+      "eligible_measure_rel_delta": 0.0,
+      "note": "Two-grid agreement check only; not an error bound and not proof of convergence. No Richardson extrapolation.",
+      "unresolved_features": [
+        "detector D reach 0.280 m < 2 x grid 1.000 m"
+      ],
+      "status": "UNRESOLVED FEATURE - refine grid"
+    }
+  },
+  "excluded_AABB": {
+    "point": [
+      0.8,
+      0.8,
+      0.5
+    ],
+    "analytic_inside": false,
+    "actual_excluded_component": null
+  },
+  "inside_shared_triangle_edge": {
+    "point": [
+      0.5999995739155014,
+      0.29999871481830076,
+      0.8
+    ],
+    "analytic_inside": true,
+    "actual_inside": "S",
+    "closed_mesh_diagnostics": {
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "duplicate_faces": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersection": "NOT EVALUATED",
+      "qualification": "UNVERIFIED"
+    }
+  },
+  "epsilon_broadphase": {
+    "mesh_blocked": true,
+    "scene_blocked": true,
+    "offset_outside_edge": 5e-07,
+    "tolerance": 1e-06
+  },
+  "roll_convention": {
+    "world_point": [
+      10,
+      4.330127018922194,
+      2.4999999999999996
+    ],
+    "analytic_local_horizontal_deg": 26.56505117707799,
+    "analytic_local_vertical_deg": 0,
+    "expected_detected_for_right_hand_Rx": true,
+    "actual_geometry_ok": true,
+    "mount_rotation_Rx30": [
+      [
+        1.0,
+        -0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.8660254037844387,
+        -0.49999999999999994
+      ],
+      [
+        0.0,
+        0.49999999999999994,
+        0.8660254037844387
+      ]
+    ]
+  },
+  "standoff_skips_wall": {
+    "analytic_LOS_1ooN": 0,
+    "actual_1ooN": 0.0,
+    "standoff_m": 0.5,
+    "wall_x": [
+      0,
+      0.1
+    ],
+    "detector_x": -0.2
+  },
+  "sphere_offset_chord": {
+    "analytic_chord_m": 4.0,
+    "actual_chord_m": 4.000000000000003,
+    "analytic_at_40pct_LEL_LELm": 1.6,
+    "actual_LELm": 1.6000000000000012
+  },
+  "empty_denominator_convergence": {
+    "eligible": 0.0,
+    "fractions": {
+      "0ooN": null,
+      "1ooN": null,
+      "2ooN": null,
+      "3ooN": null
+    },
+    "actual_convergence": "NOT EVALUABLE - no eligible measure",
+    "expected_convergence": "UNEVALUABLE / NO ELIGIBLE MEASURE"
+  },
+  "shipped_currency": {
+    "FZ-MANIFOLD": "CURRENT",
+    "FZ-WELLBAY": "CURRENT",
+    "FZ-WIRELINE": "CURRENT",
+    "GZ-MANIFOLD": "CURRENT",
+    "GZ-MODULE": "CURRENT",
+    "GZ-WELLBAY": "CURRENT"
+  },
+  "missing_study_source_hashes": {
+    "listed_coverage_files": [
+      "__init__.py",
+      "domain/__init__.py",
+      "domain/compatibility.py",
+      "domain/coverage_setup.py",
+      "domain/detector_library.py",
+      "domain/import_guards.py",
+      "domain/mounting.py",
+      "domain/pose.py",
+      "domain/scene.py",
+      "engine/__init__.py",
+      "engine/coverage.py",
+      "engine/detection.py",
+      "engine/geometry.py",
+      "engine/mesh_visibility.py",
+      "engine/solid_geometry.py",
+      "engine/spatial.py",
+      "errors.py",
+      "services/__init__.py",
+      "services/case.py",
+      "services/coverage.py",
+      "services/file_lock.py",
+      "services/fingerprint.py",
+      "services/geometry.py",
+      "services/mounts.py",
+      "services/process_inspection.py",
+      "services/study_schema.py",
+      "services/workspace.py"
+    ],
+    "scenario_module_present": true,
+    "aggregate_present": true,
+    "options_present": true,
+    "study_states": {
+      "SCENARIO_COVERAGE": "CURRENT",
+      "LAYOUT_OPTIONS": "CURRENT"
+    }
+  },
+  "sensitivity_not_hashed": {
+    "envelope_keys": [
+      "method",
+      "method_version",
+      "zone",
+      "setup",
+      "detectors",
+      "library",
+      "scene_sha256",
+      "excluded_component_ids",
+      "software_version",
+      "implementation_files",
+      "implementation_sha256",
+      "sensitivity"
+    ],
+    "has_sensitivity": true
+  },
+  "coverage_xlsx_formula_injection": []
+}

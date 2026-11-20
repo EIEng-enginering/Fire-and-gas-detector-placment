@@ -56,3 +56,17 @@ The first Windows run failed honestly on CRLF text output from the generator. Th
   - Docs: REV_G_TRACEABILITY.md, USER_GUIDE coverage section, method §4a–4c, wellhead example section.
   - New tests: test_scenario_coverage.py (6) and WellheadStudies (3).
 <!-- /REV_G_CHANGELOG -->
+
+# Rev H — 0.7.0a1 + review fixes (20 Nov 2026)
+Fixes for independent review findings F01–F25 (docs/FIX_DISPOSITION_REV_H.md):
+- Exact free cell measure (box union) and bounded mesh measure; winding-number membership; mesh-based exclusions.
+- The detector frame matches the mount rotation. The standoff is limited to the detector's own mount. The eps-consistent broadphase is now used.
+- The GRID AGREEMENT vocabulary replaces CONVERGED.
+- Transitive implementation fingerprints, a sensitivity flag in the envelope, and per-run scene snapshots for historical figures.
+- A lifecycle ledger: COMPUTED - UNREVIEWED / ENGINEER REVIEWED / INDEPENDENTLY VERIFIED / REVIEW INVALIDATED.
+- A central compatibility gate; safe export paths with staged publish; literal spreadsheet text; import resource guards; finite validation.
+- The FOV outline now comes from the response predicate. Clipped-cell heatmaps.
+- Landscape report layouts with tblGrid widths; local Decimal contexts.
+- Options now run at the zone-run grid in a worker with cancellation.
+
+New tests: 46 (25 unit, 21 integration). Updated expectations, documented: CONVERGED → GRID AGREEMENT; method version 1.1; label text. The wellhead example was regenerated. No migration change. No git actions.

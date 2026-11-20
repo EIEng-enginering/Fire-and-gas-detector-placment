@@ -1,94 +1,95 @@
 {
-  "label": "Engineer-reviewed results - not independently certified",
-  "content_sha256": "b266b34d3f712fee249c96212c5da68df820d90348e1e590c7d2740a71b67b46",
+  "label": "COMPUTED - UNREVIEWED development results - not independently verified",
+  "review_status": "DEVELOPMENT - COMPUTED - UNREVIEWED - not independently verified",
+  "content_sha256": "fcd44bca0adf29c9a53e68159e2db54ab3f7a61d292830c6124037031b28e81a",
   "files": {
     "FIG_01_FZ-MANIFOLD_z0.25.png": {
-      "size": 20273,
-      "sha256": "83ecd6b6a60840172dc92bd56a3bf5b650831888a64cbdcab5ff925bde6b2906"
+      "size": 29824,
+      "sha256": "2e1382b5aae348e5faa27329786c146dcc8bed28f12a535efb6c73c0a9c9cfc4"
     },
     "FIG_02_FZ-MANIFOLD_z2.25.png": {
-      "size": 20347,
-      "sha256": "e15e8d490e4384cc0391fced79c27970168e68e24703fd6c876617c9f292c0e5"
+      "size": 29666,
+      "sha256": "e75ea625dc0a95f7659cd358771daabaf440ea00fcf7c713e7345695373059ea"
     },
     "FIG_03_FZ-MANIFOLD_z4.25.png": {
-      "size": 20417,
-      "sha256": "8ebd24cea2712fdd8cfb4e3a855f98ebd08dde35f102669712004124c2b59465"
+      "size": 29754,
+      "sha256": "1c55c4007441a41bd5016ede2c5a7c8b5e38b02274bccf81308c9d902654df10"
     },
     "FIG_04_FZ-WELLBAY_z0.25.png": {
-      "size": 21395,
-      "sha256": "6fc00f942d429b04b46ca7a35cad26da36e527a037938d77ade808f8225cb9f4"
+      "size": 30789,
+      "sha256": "be5a5017b1a1a434b09124afd12f7ad27d2ab423ca96251c9afd602d518b314e"
     },
     "FIG_05_FZ-WELLBAY_z4.25.png": {
-      "size": 21652,
-      "sha256": "73de35ee179d786b5ad977666a72d6229b3e3a564be93e4e4942fd3bcc9233f2"
+      "size": 30879,
+      "sha256": "bdfd90c8c33c09f500ed50d4b10a3bb786cfaf70ef8da7d5f6bd030096798067"
     },
     "FIG_06_FZ-WELLBAY_z8.75.png": {
-      "size": 21314,
-      "sha256": "71d1696398e92941377090d3059ce8ea879738f04cfc83559bdafd889ef432b6"
+      "size": 30525,
+      "sha256": "46ece9d4e2c44303277caf445d27c9d1172f24207786be0f455fd3622f997a79"
     },
     "FIG_07_FZ-WIRELINE_z0.25.png": {
-      "size": 20665,
-      "sha256": "9a18660e413409b91dc0a25763adafda9498f97a288f4e4402992dc00a4da565"
+      "size": 30180,
+      "sha256": "0ff444d383ea3f445f0daf2384ab6716acf73f6396071027b014c3f0777dd834"
     },
     "FIG_08_FZ-WIRELINE_z2.25.png": {
-      "size": 20468,
-      "sha256": "60645c14299d3632bc6d57964241c15e3c5d590746a3a3ade0533940eac62f65"
+      "size": 29824,
+      "sha256": "20c250ae472de2aa4680a57aa7264dc8979bb4b41077a5d2bd1e9aa7df04df86"
     },
     "FIG_09_FZ-WIRELINE_z3.75.png": {
-      "size": 20570,
-      "sha256": "3ed540088c6c67ddfa3ca45a8d1eef24d19a972be3f53aad7e7d08965b085d5e"
+      "size": 29926,
+      "sha256": "0a40d126ac3b20d1566deb662d6d64be7f769b5d533a857cd15127e97b90edb7"
     },
     "FIG_10_GZ-MANIFOLD_z0.25.png": {
-      "size": 23637,
-      "sha256": "a7f7e006a7f6dc8a7acbb6b5a150df59f214447a7dedb5956d2453153bc8aa43"
+      "size": 34340,
+      "sha256": "1eb9f888fc55b8d5a4915dfd7337bfe11a03b43a8012c87e13e529879b89d35f"
     },
     "FIG_11_GZ-MANIFOLD_z2.25.png": {
-      "size": 23686,
-      "sha256": "b858067039e4d845a8e03d1b544c5aad899c2150474bedf44c1625a5db88bdb8"
+      "size": 34184,
+      "sha256": "6c50c62d3b215749dbcc8555620f9f2a7ede69ee8dbaa18d90e4a86c5a5088b0"
     },
     "FIG_12_GZ-MANIFOLD_z4.25.png": {
-      "size": 23761,
-      "sha256": "d25cfe5f56b33e851c1afb4ecb639cd72c87f2db9e4368ef75982517236e7975"
+      "size": 34284,
+      "sha256": "bd553ad5165dbc7fc8d4d9bca227627395c283c2a291571840d73d73500b89ef"
     },
     "FIG_13_GZ-MODULE_z0.25.png": {
-      "size": 25091,
-      "sha256": "dbbff9c25aa287f2588f22b0aa33e2238f85fbb12c9dbfabff64586a7a7a8eb8"
+      "size": 35257,
+      "sha256": "d2ed940b488ef290fda22e81049f5ee29c59196cf58e9f76381f4df99b71d999"
     },
     "FIG_14_GZ-MODULE_z4.25.png": {
-      "size": 25021,
-      "sha256": "6aab616c24953608ca74648824f4db5646ce9634e31f8c2d297a1ce854eec64e"
+      "size": 35098,
+      "sha256": "ae00354c732817bac916d9fdebfbe321dcd6a8728d463facb23a4f4c5e157f41"
     },
     "FIG_15_GZ-MODULE_z8.75.png": {
-      "size": 24545,
-      "sha256": "b7a2a28b4ff15f850360187f64cad4b383c05fd0fff0e30bf9f3856787f6a9f7"
+      "size": 34628,
+      "sha256": "c9d4f2deae58d1da73002588f55e4304da1aabb0b5b1ebe35a2b2cddca7c999c"
     },
     "FIG_16_GZ-WELLBAY_z0.25.png": {
-      "size": 24176,
-      "sha256": "1954798a86167f4cb95065d4667963515004112a3371ecc2fcf99357a69e4f38"
+      "size": 34509,
+      "sha256": "48f0a327a0b8bb6c5f86dcd27e04e6ddc0cfab55b1d2ee06817aa692f2fc710e"
     },
     "FIG_17_GZ-WELLBAY_z4.25.png": {
-      "size": 24610,
-      "sha256": "c7f4708ffba97b879c9e985a12d452ceb5f38484b8aca05bc9334126572253da"
+      "size": 34795,
+      "sha256": "5bda08c9999c971c7be133f043aab2a4ec93323450161e5af77af27b6d2d8a86"
     },
     "FIG_18_GZ-WELLBAY_z8.75.png": {
-      "size": 24628,
-      "sha256": "eb2f2b62b8089f33d69217a57b0162a56a7f764606ac855ef113539e06c7139e"
+      "size": 34474,
+      "sha256": "b31ec08841c3be9ccec1e58c40db320630cd135c647a820d9940b469db5951ff"
     },
     "WELLHEAD_COVERAGE_REPORT.docx": {
-      "size": 394886,
-      "sha256": "73b890a13c946f2297f523eaf443570c08c01af4fb5e281a01bf58ce626e468f"
+      "size": 555715,
+      "sha256": "60300efdd0c2d269d0101397ae23f4e45b7060f0c9681b8396a664bb962d5e8c"
     },
     "WELLHEAD_COVERAGE_REPORT.json": {
-      "size": 609289,
-      "sha256": "bb40d0b4faadbe987aa7778bbe0ceb1bccccbcd12809eb6aae17df3dd0ec7fd8"
+      "size": 875691,
+      "sha256": "97a28ae24d1d11c8dcd16ff214a62604f16512512dd02bbc7b540ccab619d694"
     },
     "WELLHEAD_COVERAGE_REPORT.pdf": {
-      "size": 524305,
-      "sha256": "1d94b70071fdf3bdad001abeb3fcc3d348c493a47e0126351359369d7007928d"
+      "size": 708158,
+      "sha256": "d47731b0ea055856d421457535e8835f5b3c705c17c6fe21b0401786fe82a033"
     },
     "WELLHEAD_COVERAGE_REPORT.xlsx": {
-      "size": 18852,
-      "sha256": "8632f9baec131f00ccba75b8e0ea4aee8d23d44964b009473d90fb73d5fed75e"
+      "size": 24489,
+      "sha256": "8140603af5605d060d9ed19670c90d863047d1094784a6aede62af75b66162dd"
     }
   }
 }
