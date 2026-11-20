@@ -13,8 +13,9 @@ def parse_rows(raw,format):
  elif format=='XLSX':
   from openpyxl import load_workbook
   try:
-   with zipfile.ZipFile(io.BytesIO(raw)) as z:
-    if sum(i.file_size for i in z.infolist())>32_000_000 or len(z.infolist())>200:raise CaseError('XLSX_SIZE','Workbook expanded-size/member bound exceeded')
+   from fgmapping.domain.import_guards import xlsx_preflight
+   try:xlsx_preflight(raw,max_rows=2001,max_cols=len(HEADERS))
+   except ValueError as exc:raise CaseError('XLSX_SIZE',str(exc)) from exc
    wb=load_workbook(io.BytesIO(raw),read_only=True,data_only=False,keep_links=False)
    try:
     if wb.sheetnames!=['Registers']:raise CaseError('XLSX','Exactly one sheet named Registers required')

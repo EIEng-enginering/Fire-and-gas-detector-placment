@@ -5,7 +5,7 @@ library assignment for all 23 detectors, per-zone setups with EXAMPLE user targe
 basis references, flame + geographic gas runs, a coverage report and heatmap figures.
 
 ALL detector data are EXAMPLE VALUES - replace with manufacturer data before project use.
-Engineer-reviewed results - not independently certified.
+COMPUTED - UNREVIEWED development results - not independently verified.
 Usage: python tools/build_wellhead_coverage_example.py OUT_FOLDER [--grid 1.0]
 """
 from __future__ import annotations
@@ -46,7 +46,7 @@ def example_scenarios():
 
 def example_options():
     c=lambda id,x,y,z,az,el:{'id':id,'detector_type':'FLAME','position':[x,y,z],'azimuth':az,'elevation':el,'roll':0.0,'library_id':FLAME_LIB,'receiver':None,'cost':'1','feasible':True,'maintainable':True,'notes':'EXAMPLE candidate'}
-    return {'contract':'fg-coverage-options/1','zone_id':'FZ-MANIFOLD','include_existing':True,'max_detectors':2,'required_votes':2,'grid_spacing_m':1.0,'notes':'EXAMPLE candidates to raise 2ooN in FZ-MANIFOLD; proposals only',
+    return {'contract':'fg-coverage-options/1','zone_id':'FZ-MANIFOLD','include_existing':True,'max_detectors':2,'required_votes':2,'grid_spacing_m':None,'notes':'EXAMPLE candidates to raise 2ooN in FZ-MANIFOLD; proposals only',
             'candidates':[c('CAND-MF-1',22.9,3.7,4.3,60.,-30.),c('CAND-MF-2',27.9,16.3,4.3,-120.,-30.),c('CAND-MF-3',22.9,16.3,4.3,-60.,-30.),c('CAND-MF-4',27.9,3.7,4.3,120.,-30.)]}
 
 def build(out,grid=1.0,refine=1,progress=print,studies=True):
@@ -79,7 +79,7 @@ def build(out,grid=1.0,refine=1,progress=print,studies=True):
             r1=sc.run_scenarios(s,example_scenarios(),'WHM-SCN-A',ACTOR);r2=sc.run_options(s,example_options(),'WHM-OPT-A',ACTOR);s.save()
             study={'scenarios':{'overall':r1['overall'],'by_zone':r1['by_zone']},'options':{'existing_layout_2ooN':r2['existing_layout_fraction'],'pareto':r2['pareto'][:5]}}
         summary={z:{'method':v['method_version'],'1ooN':v['fractions']['1ooN'],'2ooN':v['fractions']['2ooN'],'0ooN':v['fractions']['0ooN'],'targets':{k:x['status'] for k,x in v['performance_targets'].items()},'convergence':v['convergence']['status'],'eligible_m3':v['eligible_measure'],'excluded_m3':v['excluded_measure']} for z,v in res.items()}
-        (out/'WELLHEAD_COVERAGE_SUMMARY.json').write_text(json.dumps({'note':'EXAMPLE library values and EXAMPLE targets - illustrative only, not for design. Engineer-reviewed results - not independently certified.','grid_m':grid,'zones':summary,'studies':study},indent=1))
+        (out/'WELLHEAD_COVERAGE_SUMMARY.json').write_text(json.dumps({'note':'EXAMPLE library values and EXAMPLE targets - illustrative only, not for design. COMPUTED - UNREVIEWED development results - not independently verified.','grid_m':grid,'zones':summary,'studies':study},indent=1))
         from fgmapping.services.coverage_report import export_coverage_report
         rep=export_coverage_report(s,out,'WELLHEAD_COVERAGE_REPORT');s.save()
         return case,summary,rep

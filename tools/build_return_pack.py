@@ -8,7 +8,7 @@ from contextlib import closing
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 PREFIXES={'src','docs','contracts','tools','tests','examples','TEST_RESULTS','screenshots','OUTPUT_SAMPLES','ORIGINAL_ARCHIVES'}
-FILES={'README_START_HERE.md','README.md','USER_GUIDE.md','HOW_TO_RUN.md','PROJECT_STATE.md','OPEN_ISSUES.md','CHANGELOG.md','REPORT.md','DEVIATIONS.md','requirements-lock.txt','requirements-reports.txt','pyproject.toml','setup.ps1','run.ps1','RUN_LOCAL.ps1','FILE_MAP.md','NEXT_WORK_PROMPT.txt','SOURCE_FILES.json','PACK_SCAN.json','SHA256SUMS.txt'}
+FILES={'README_START_HERE.md','README.md','USER_GUIDE.md','HOW_TO_RUN.md','PROJECT_STATE.md','OPEN_ISSUES.md','CHANGELOG.md','REPORT.md','DEVIATIONS.md','requirements-lock.txt','requirements-reports.txt','pyproject.toml','setup.ps1','run.ps1','RUN_LOCAL.ps1','FILE_MAP.md','NEXT_WORK_PROMPT.txt','SOURCE_FILES.json','PACK_SCAN.json','SHA256SUMS.txt','FIX_DISPOSITION_REV_H.md'}
 PATTERNS=[r'\bsk-[a-zA-Z0-9_-]{20,}',r'\bghp_[a-zA-Z0-9]{25,}',r'AKIA[0-9A-Z]{16}',r'-----BEGIN (?:RSA |EC )?PRIVATE KEY-----',r'(?i)authorization\s*:\s*bearer\s+[a-zA-Z0-9._-]{15,}']
 TEXT={'.py','.md','.txt','.json','.toml','.ps1','.sql','.csv'}
 BINARY={'.zip','.fgcase','.png','.pdf','.docx','.xlsx'}
@@ -27,7 +27,10 @@ def scan(name,raw,depth=0):
     if suffix=='.csv':
         import csv
         rows=list(csv.DictReader(io.StringIO(raw.decode('utf-8-sig'))))
-        if not rows or any(r.get('data_class')!='SYNTHETIC' for r in rows):raise ValueError('CSV must declare SYNTHETIC rows: '+name)
+        library='data_status' in (rows[0] if rows else {}) and 'data_class' not in rows[0]
+        if library:  # detector library CSV: every row must be declared EXAMPLE VALUES (no real manufacturer data)
+            if any(not (r.get('data_status') or '').startswith('EXAMPLE VALUES') for r in rows):raise ValueError('Library CSV rows must be EXAMPLE VALUES: '+name)
+        elif not rows or any(r.get('data_class')!='SYNTHETIC' for r in rows):raise ValueError('CSV must declare SYNTHETIC rows: '+name)
     if suffix=='.fgcase':
         with tempfile.TemporaryDirectory() as tmp:
             p=Path(tmp)/'audit.sqlite';p.write_bytes(raw)

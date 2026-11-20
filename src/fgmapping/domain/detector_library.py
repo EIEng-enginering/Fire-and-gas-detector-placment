@@ -116,18 +116,30 @@ def entry_to_row(p):
 def parse_library(raw,fmt):
     """CSV or XLSX (single sheet 'Library', literal values only) -> list of entries."""
     if len(raw)>8_000_000:raise ValueError('Library file exceeds 8 MB budget')
+    from fgmapping.domain.import_guards import xlsx_preflight,stream_rows,unique_headers
     if fmt=='CSV':
-        text=raw.decode('utf-8-sig',errors='strict');rows=list(csv.DictReader(io.StringIO(text,newline='')))
-        if rows and set(rows[0])!=set(CSV_HEADERS):raise ValueError('Library CSV headers must be exactly: '+','.join(CSV_HEADERS))
+        text=raw.decode('utf-8-sig',errors='strict');reader=csv.reader(io.StringIO(text,newline=''),strict=True)
+        try:head=unique_headers(next(reader))
+        except StopIteration:raise ValueError('Empty library CSV')
+        if set(head)!=set(CSV_HEADERS) or len(head)!=len(CSV_HEADERS):raise ValueError('Library CSV headers must be exactly: '+','.join(CSV_HEADERS))
+        rows=[]
+        for n,v in enumerate(reader,2):
+            if n>5001:raise ValueError('Library CSV exceeds 5000 data rows')
+            if not any(x.strip() for x in v):continue
+            if len(v)!=len(head):raise ValueError('Column count mismatch at library CSV row %d' % n)
+            rows.append(dict(zip(head,v)))
     elif fmt=='XLSX':
         from openpyxl import load_workbook
-        wb=load_workbook(io.BytesIO(raw),read_only=False,data_only=False)
+        xlsx_preflight(raw,max_rows=5001,max_cols=len(CSV_HEADERS))
+        wb=load_workbook(io.BytesIO(raw),read_only=True,data_only=False,keep_links=False)
         try:
             if wb.sheetnames!=['Library']:raise ValueError("Library workbook must contain exactly one sheet named 'Library'")
-            values=[[c.value for c in row] for row in wb['Library'].iter_rows()]
+            cells=stream_rows(wb['Library'],5001,len(CSV_HEADERS))
+            if any(c.data_type in ('f','e') for row in cells for c in row):raise ValueError('Formulas are not accepted in library sheets')
+            values=[[c.value for c in row] for row in cells]
         finally:wb.close()
         if not values:raise ValueError('Empty library sheet')
-        head=[str(v).strip() if v is not None else '' for v in values[0]]
+        head=unique_headers(['' if v is None else v for v in values[0]])
         if head!=list(CSV_HEADERS):raise ValueError('Library XLSX headers must be exactly: '+','.join(CSV_HEADERS))
         rows=[]
         for v in values[1:]:

@@ -2,7 +2,7 @@
 
 Rev G (owner approval 18 Nov 2026): engineering_flame_coverage / engineering_gas_coverage
 run the geographic coverage engine (engine/coverage.py) and refuse unless the complete
-inputs are supplied. Engineer-reviewed results - not independently certified.
+inputs are supplied. COMPUTED - UNREVIEWED development results - not independently verified.
 The synthetic exercise functions below remain demonstrations only.
 """
 from dataclasses import dataclass
@@ -13,12 +13,12 @@ class EngineeringUnavailable(ValueError):pass
 
 FLAME_REQUIRED=('zone','setup','detectors','library','scene')
 def engineering_flame_coverage(*,performance=None,basis=None,**kwargs):
-    """Rev G flame geographic coverage (FG-FLAME-GEO/1.0), gated on complete inputs.
+    """Rev G flame geographic coverage (FG-FLAME-GEO/1.1), gated on complete inputs.
 
     Refuses (EngineeringUnavailable) unless a zone, a validated FLAME coverage setup
     (target fire, grid, voting), detectors each with an explicitly assigned library
     entry carrying a contour table, and facility geometry are all supplied.
-    Engineer-reviewed results - not independently certified.
+    COMPUTED - UNREVIEWED development results - not independently verified.
     """
     missing=[k for k in FLAME_REQUIRED if kwargs.get(k) is None]
     if not missing:missing=_check_inputs(kwargs,'FLAME_GEOGRAPHIC')
@@ -28,7 +28,7 @@ def engineering_flame_coverage(*,performance=None,basis=None,**kwargs):
     return _run(kwargs)
 
 def engineering_gas_coverage(*,performance=None,field=None,**kwargs):
-    """Rev G geographic gas coverage (FG-GAS-GEO/1.0; design-cloud method, not dispersion)."""
+    """Rev G geographic gas coverage (FG-GAS-GEO/1.1; design-cloud method, not dispersion)."""
     missing=[k for k in FLAME_REQUIRED if kwargs.get(k) is None]
     if not missing:missing=_check_inputs(kwargs,'GAS_GEOGRAPHIC')
     if missing:raise EngineeringUnavailable('CANNOT CALCULATE engineering gas coverage: complete coverage inputs: '+', '.join(missing))
@@ -51,8 +51,10 @@ def _check_inputs(kw,method):
         if e is None:missing.append('explicit library entry for '+str(d.get('id') if isinstance(d,dict) else d));continue
         try:validate_entry(e)
         except (ValueError,TypeError,KeyError):missing.append('valid library entry for '+str(d['id']));continue
-        if e['detector_type']!=d.get('detector_type'):missing.append('matching library type for '+d['id'])
-        if d.get('detector_type')=='OPEN_PATH' and d.get('receiver') is None:missing.append('open-path receiver for '+d['id'])
+        if setup['method']==method:
+            from fgmapping.domain.compatibility import detector_blockers  # F13: same central check as the service gate
+            dd=dict(d,position=list(d['position']) if isinstance(d.get('position'),(list,tuple)) else d.get('position'),receiver=None if d.get('receiver') is None else list(d['receiver']))
+            missing+=detector_blockers(setup,e,dd)
     if dets and len(dets)<setup['voting_required']:missing.append('at least voting_required detectors')
     return missing
 
@@ -62,7 +64,9 @@ def _run(kw):
     setup=validate_setup(kw['setup'])
     obs=Obstructions(kw['scene'],kw.get('excluded_component_ids') or (),setup['tolerance_m'])
     dets=[dict(d,position=tuple(d['position']),receiver=None if d.get('receiver') is None else tuple(d['receiver'])) for d in kw['detectors']]
-    return zone_coverage(kw['zone'],setup,dets,kw['library'],obs,kw.get('cancel'),kw.get('progress'),kw.get('sensitivity',False))
+    sens=kw.get('sensitivity',())
+    if sens is True:sens=(0.9,1.1)
+    return zone_coverage(kw['zone'],setup,dets,kw['library'],obs,kw.get('cancel'),kw.get('progress'),tuple(sens or ()))
 
 def synthetic_weighted_votes(rows,required_votes):
     """Explicit synthetic Boolean responses; cannot infer detector response."""

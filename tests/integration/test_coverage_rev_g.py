@@ -1,5 +1,5 @@
 """Rev G coverage services: schema 4, library import/assignment (F03), per-zone readiness gate,
-stored reproducible runs with staleness. Engineer-reviewed results - not independently certified."""
+stored reproducible runs with staleness. COMPUTED - UNREVIEWED development results - not independently verified."""
 import json,tempfile,unittest
 from pathlib import Path
 from fgmapping.services.case import create_case,CaseSession
@@ -74,12 +74,12 @@ class CoverageServices(unittest.TestCase):
     def test_ready_run_store_reproduce_and_stale(self):
         self.enable();self.assign_all();cov.set_zone_setup(self.s,self.fsetup(vote=2,targets={'1ooN':'0.5','2ooN':'0.9'}),EV,'T')
         g=gas_setup({'shape':'SPHERE','diameter_m':5.},100.,['POINT_GAS','OPEN_PATH'],spacing=.5,slices=(1.,));g['zone_id']='GZ';cov.set_zone_setup(self.s,g,EV,'T')
-        r=readiness(self.s);self.assertEqual(r['engineering_calculation_status'],'READY',r['engineering_blockers']);self.assertEqual(r['qualification'],'ENGINEER-REVIEWED - NOT INDEPENDENTLY CERTIFIED')
+        r=readiness(self.s);self.assertEqual(r['engineering_calculation_status'],'READY',r['engineering_blockers']);self.assertEqual(r['qualification'],'COMPUTED - UNREVIEWED - NOT INDEPENDENTLY VERIFIED')
         out=cov.run_all(self.s,'R1','ENGINEER_A');self.assertEqual(sorted(out),['FZ','GZ'])
-        fz=out['FZ'];self.assertEqual(fz['method_version'],'FG-FLAME-GEO/1.0');self.assertEqual(fz['label'],'Engineer-reviewed results - not independently certified')
+        fz=out['FZ'];self.assertEqual(fz['method_version'],'FG-FLAME-GEO/1.1');self.assertEqual(fz['label'],'COMPUTED - UNREVIEWED development results - not independently verified')
         self.assertGreater(fz['fractions']['1ooN'],fz['fractions']['2ooN']);self.assertGreater(fz['excluded_measure']['inside_obstruction'],0)
         self.assertEqual(fz['performance_targets']['2ooN']['status'],'BELOW USER TARGET')
-        gz=out['GZ'];self.assertEqual(gz['method_version'],'FG-GAS-GEO/1.0');self.assertEqual(gz['detectors_considered'],['G1','O1'])
+        gz=out['GZ'];self.assertEqual(gz['method_version'],'FG-GAS-GEO/1.1');self.assertEqual(gz['detectors_considered'],['G1','O1'])
         run=cov.runs(self.s,'FZ')[0];self.assertEqual(cov.run_currency(self.s,run),'CURRENT')
         env=json.loads(run['input_json']);self.assertEqual(content_hash(env),run['input_hash']);self.assertEqual(env['scene_sha256'],get_scene(self.s).sha256)
         again,_=engineering_flame_coverage(zone={**env['zone'],'low':tuple(env['zone']['low']),'high':tuple(env['zone']['high'])},setup=env['setup'],detectors=env['detectors'],library=env['library'],scene=get_scene(self.s),excluded_component_ids=env['excluded_component_ids'])

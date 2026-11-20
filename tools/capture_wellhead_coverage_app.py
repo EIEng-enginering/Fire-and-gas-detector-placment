@@ -1,6 +1,6 @@
 """Open the SYNTHETIC wellhead COVERAGE example in the real application window and capture
 heatmap / FOV / results-table screenshots. Works on a temporary COPY (the example is never
-written). EXAMPLE library values - not for design. Engineer-reviewed results - not independently certified.
+written). EXAMPLE library values - not for design. COMPUTED - UNREVIEWED development results - not independently verified.
 Usage: python -B tools/capture_wellhead_coverage_app.py CASE.fgcase OUT_PREFIX [--show SECONDS]
 On Windows leave QT_QPA_PLATFORM unset to use the real 'windows' platform.
 """

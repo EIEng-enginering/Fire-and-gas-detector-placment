@@ -63,7 +63,7 @@ def readiness(session):
 def _coverage_readiness(session,missing,blocked,review):
  """Schema 4 (Rev G): engineering calculation is gated per zone on complete inputs.
  Per-zone library assignments/targets replace the schema-3 preparation-dataset and
- single-basis target items. Engineer-reviewed results - not independently certified."""
+ single-basis target items. COMPUTED - UNREVIEWED development results - not independently verified."""
  from fgmapping.services.coverage import coverage_readiness
  replaced=('PERFORMANCE_DATASET:','TARGET_FRACTION','CRITERION_REFERENCE')
  missing=[m for m in missing if not m.startswith(replaced)]
@@ -76,4 +76,4 @@ def _coverage_readiness(session,missing,blocked,review):
  if not configured:eng.append('No zone has a coverage setup')
  status='READY' if configured and all(st['status']=='READY' for st in configured) else 'BLOCKED'
  return {'input_status':'BLOCKED' if blocked else 'MISSING' if missing else 'INPUTS_PRESENT','missing':sorted(missing),'blocking':sorted(blocked),'review':sorted(set(review)),
-  'engineering_calculation_status':status,'engineering_blockers':sorted(eng),'zones':zones,'qualification':'ENGINEER-REVIEWED - NOT INDEPENDENTLY CERTIFIED','review_status':'CANDIDATE'}
+  'engineering_calculation_status':status,'engineering_blockers':sorted(eng),'zones':zones,'qualification':'COMPUTED - UNREVIEWED - NOT INDEPENDENTLY VERIFIED','review_status':'CANDIDATE'}

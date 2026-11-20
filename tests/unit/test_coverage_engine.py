@@ -51,7 +51,7 @@ class FlameKnownAnswers(unittest.TestCase):
         setup=flame_setup(spacing=.25,mode='VOLUME',ref=2)
         r,_=run((0,-10,-10),(10,10,10),setup,[det('D',(0,0,0))],{'E':flame_entry()})
         exact=2*math.pi/3*1000*(1-math.cos(math.pi/4))/4000
-        self.assertAlmostEqual(r['fractions']['1ooN'],exact,delta=.004);self.assertEqual(r['convergence']['status'],'CONVERGED')
+        self.assertAlmostEqual(r['fractions']['1ooN'],exact,delta=.004);self.assertEqual(r['convergence']['status'],'GRID AGREEMENT (not an error bound)')
     def test_obstruction_shadow_exact(self):
         # Wall x 4..4.2, y 0..10 shadows every point beyond it with y>0. Shadowed area = half sector - triangle(0,0)(4,0)(4,4).
         sc=scene(('W',(4,0,-1),(4.2,10,1)))

@@ -185,7 +185,7 @@ class MainWindow(CoverageDialogs,PreparationDialogs,StudyDialogs,QMainWindow):
         if self.session.con.execute('PRAGMA user_version').fetchone()[0]>=4:
             from fgmapping.services import coverage as cov
             runs=cov.latest_runs(self.session);assigned=self.session.con.execute('SELECT count(*) FROM detector_library_assignment').fetchone()[0]
-            self.status.setText(f'{len(rows)} detectors | {assigned} library assignments | {len(runs)} zone coverage runs | Engineer-reviewed results - not independently certified')
+            self.status.setText(f'{len(rows)} detectors | {assigned} library assignments | {len(runs)} zone coverage runs | COMPUTED - UNREVIEWED development results - not independently verified')
             if self.fov_on:self.viewer.fov=self.fov_items()
         else:self.status.setText(f'{len(rows)} CANDIDATE detectors | NO COVERAGE | UNVERIFIED')
 
@@ -199,6 +199,7 @@ class MainWindow(CoverageDialogs,PreparationDialogs,StudyDialogs,QMainWindow):
 
     def close_case(self):
         if not self.session:return
+        self.cancel_coverage()
         self.cancel_preparation()
         self.cancel_import()
         self.cancel_report()
@@ -514,6 +515,7 @@ class MainWindow(CoverageDialogs,PreparationDialogs,StudyDialogs,QMainWindow):
         except Exception as exc:QMessageBox.critical(self,'Report failed',str(exc))
 
     def closeEvent(self,event):
+        self.cancel_coverage()
         self.cancel_preparation()
         self.cancel_import()
         self.cancel_report()

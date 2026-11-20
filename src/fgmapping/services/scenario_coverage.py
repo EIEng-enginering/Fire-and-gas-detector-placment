@@ -1,8 +1,8 @@
 """Rev G M5 services: user scenario sets and candidate layout options, stored as reproducible
 runs (coverage_run rows with method SCENARIO_COVERAGE / LAYOUT_OPTIONS). Never mutates the
-detector layout. Engineer-reviewed results - not independently certified."""
+detector layout. COMPUTED - UNREVIEWED development results - not independently verified."""
 from __future__ import annotations
-import json
+import json,math
 from fgmapping.domain.scene import canonical,content_hash
 from fgmapping.errors import CaseError
 from fgmapping.engine.scenarios import decimal
@@ -14,10 +14,17 @@ SCENARIO_CONTRACT='fg-coverage-scenarios/1';OPTIONS_CONTRACT='fg-coverage-option
 STUDY_METHODS=('SCENARIO_COVERAGE','LAYOUT_OPTIONS')
 
 def _err(msg):raise CaseError('CONTRACT',msg)
-def _pos(v):return not isinstance(v,bool) and isinstance(v,(int,float)) and 0<v<1000
+def _finite(x):return not isinstance(x,bool) and isinstance(x,(int,float)) and math.isfinite(x)
+def _pos(v):return _finite(v) and 0<v<1000
 def _xyz(v,name):
-    if not isinstance(v,list) or len(v)!=3 or any(isinstance(x,bool) or not isinstance(x,(int,float)) for x in v):_err(name+' must be [x,y,z] in metres')
+    # F18: NaN / +-inf rejected at contract entry
+    if not isinstance(v,list) or len(v)!=3 or any(not _finite(x) for x in v):_err(name+' must be [x,y,z] finite numbers in metres')
     return [float(x) for x in v]
+def _dec(v,name):
+    try:d=decimal(v)
+    except Exception:_err(name+' must be a decimal string')
+    if not d.is_finite():_err(name+' must be finite')
+    return d
 
 def validate_scenarios(p):
     if not isinstance(p,dict) or p.get('contract')!=SCENARIO_CONTRACT:_err('Contract '+SCENARIO_CONTRACT+' required')
@@ -30,8 +37,7 @@ def validate_scenarios(p):
         if not str(s.get('id','')).strip() or s['id'] in ids:_err('Unique scenario IDs required')
         ids.add(s['id'])
         if not isinstance(s.get('frequency_per_year'),str):_err(s['id']+': frequency_per_year must be a decimal string (user-supplied)')
-        try:f=decimal(s['frequency_per_year'])
-        except Exception:_err(s['id']+': frequency_per_year must be a decimal string')
+        f=_dec(s['frequency_per_year'],s['id']+': frequency_per_year')
         if f<0:_err(s['id']+': negative frequency')
         if not str(s.get('frequency_source','')).strip() or s['frequency_source'].strip().upper()=='NOT SUPPLIED':_err(s['id']+': frequency_source required')
         cloud=s.get('cloud')
@@ -62,13 +68,10 @@ def validate_options(p):
         ids.add(x['id'])
         if x.get('detector_type') not in ('FLAME','POINT_GAS','OPEN_PATH'):_err(x['id']+': detector_type FLAME/POINT_GAS/OPEN_PATH')
         for k in ('azimuth','elevation','roll'):
-            if isinstance(x.get(k,0.0),bool) or not isinstance(x.get(k,0.0),(int,float)):_err(x['id']+': '+k+' must be numeric')
-        if not -180<=x.get('azimuth',0.)<=180 or not -90<=x.get('elevation',0.)<=90:_err(x['id']+': azimuth -180..180 and elevation -90..90 required')
+            if not _finite(x.get(k,0.0)):_err(x['id']+': '+k+' must be a finite number')
+        if not -180<=x.get('azimuth',0.)<=180 or not -90<=x.get('elevation',0.)<=90 or not -180<=x.get('roll',0.)<=180:_err(x['id']+': azimuth -180..180, elevation -90..90 and roll -180..180 required')
         if not isinstance(x.get('cost'),str):_err(x['id']+': cost must be a decimal string (user-supplied)')
-        try:
-            if decimal(x['cost'])<0:_err(x['id']+': negative cost')
-        except CaseError:raise
-        except Exception:_err(x['id']+': cost must be a decimal string')
+        if _dec(x['cost'],x['id']+': cost')<0:_err(x['id']+': negative cost')
         if type(x.get('feasible')) is not bool or type(x.get('maintainable')) is not bool:_err(x['id']+': feasible and maintainable must be explicit true/false')
         rec=x.get('receiver')
         if x['detector_type']=='OPEN_PATH':rec=_xyz(rec,x['id']+' receiver')
@@ -94,8 +97,8 @@ def _store(session,run_id,kind,zone_id,method,version,envelope,result,actor):
     if not run_id.strip() or session.con.execute('SELECT 1 FROM coverage_run WHERE id=?',(run_id,)).fetchone():raise CaseError('RUN_ID','New explicit run ID required')
     h=content_hash(envelope);result=dict(result,input_hash=h,run_id=run_id)
     with session.con:
-        session.con.execute('INSERT INTO coverage_run(id,kind,zone_id,method,method_version,input_hash,input_json,result_json,samples_json,actor,utc,status) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)',
-            (run_id,kind,zone_id,method,version,h,canonical(envelope),canonical(result),'{}',actor,utc_now(),'CURRENT'))
+        session.con.execute('INSERT INTO coverage_run(id,kind,zone_id,method,method_version,input_hash,input_json,result_json,samples_json,actor,utc,status,label) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)',
+            (run_id,kind,zone_id,method,version,h,canonical(envelope),canonical(result),'{}',actor,utc_now(),'CURRENT',cov.LIFECYCLE_LABEL))
         session._log(actor,'RUN_'+method,{'id':run_id,'zone':zone_id,'input_hash':h,'method':version},{'retain':'Study run retained; baseline detector layout unchanged'})
     session._dirty=True
     return result
@@ -104,7 +107,8 @@ def scenario_envelope(session,payload):
     payload=validate_scenarios(payload);cov.require_coverage(session)
     envs=_envs(session,[s['zone_id'] for s in payload['scenarios']])
     from fgmapping.engine.scenario_coverage import SCENARIO_METHOD
-    return {'method':'SCENARIO_COVERAGE','method_version':SCENARIO_METHOD,'payload':payload,'zones':envs}
+    files,impl=cov.fingerprint('SCENARIO_COVERAGE')  # F08: study dependency closure
+    return {'method':'SCENARIO_COVERAGE','method_version':SCENARIO_METHOD,'payload':payload,'zones':envs,'study_implementation_files':files,'study_implementation_sha256':impl}
 
 def run_scenarios(session,payload,run_id,actor,cancel=None):
     from fgmapping.engine.scenario_coverage import scenario_coverage
@@ -130,13 +134,36 @@ def options_envelope(session,payload):
         elif cov._norm(e['fuel_or_gas'])!=cov._norm(setup['gas']['gas']):_err(c['id']+': library gas differs from zone cloud gas')
         used[e['id']]=e
     from fgmapping.engine.scenario_coverage import OPTIONS_METHOD
-    return {'method':'LAYOUT_OPTIONS','method_version':OPTIONS_METHOD,'payload':payload,'zone':env,'candidate_library':used}
+    for c in payload['candidates']:
+        from fgmapping.domain.compatibility import detector_blockers
+        bad=detector_blockers(setup,lib[c['library_id']],c)  # F13: same central check
+        if bad:_err(c['id']+': '+'; '.join(bad))
+    files,impl=cov.fingerprint('LAYOUT_OPTIONS')
+    return {'method':'LAYOUT_OPTIONS','method_version':OPTIONS_METHOD,'payload':payload,'zone':env,'candidate_library':used,'study_implementation_files':files,'study_implementation_sha256':impl}
 
 def run_options(session,payload,run_id,actor,cancel=None):
     from fgmapping.engine.scenario_coverage import layout_options
     env=options_envelope(session,payload);before=_layout_hash(session)
     result=layout_options(env['zone'],get_scene(session),dict(env['payload'],_library=env['candidate_library']),cancel)
     assert _layout_hash(session)==before
+    return _store(session,run_id,'LAYOUT_OPTIONS',env['payload']['zone_id'],'LAYOUT_OPTIONS',env['method_version'],env,result,actor)
+
+# F16: split prepare (GUI thread, DB) / compute (worker thread, no DB) / store (GUI thread, DB, re-validated)
+def prepare_study(session,kind,payload):
+    env=scenario_envelope(session,payload) if kind=='SCENARIO_COVERAGE' else options_envelope(session,payload)
+    return {'kind':kind,'env':env,'scene':get_scene(session),'layout_hash':_layout_hash(session),'input_hash':content_hash(env)}
+
+def compute_study(job,cancel=None):
+    from fgmapping.engine.scenario_coverage import scenario_coverage,layout_options
+    env=job['env']
+    if job['kind']=='SCENARIO_COVERAGE':return scenario_coverage(env['zones'],job['scene'],env['payload'],cancel)
+    return layout_options(env['zone'],job['scene'],dict(env['payload'],_library=env['candidate_library']),cancel)
+
+def store_study(session,job,run_id,result,actor):
+    env=job['env'];kind=job['kind']
+    now=scenario_envelope(session,env['payload']) if kind=='SCENARIO_COVERAGE' else options_envelope(session,env['payload'])
+    if content_hash(now)!=job['input_hash'] or _layout_hash(session)!=job['layout_hash']:raise CaseError('STALE_INPUTS','Inputs changed during the study calculation; result discarded - run again')
+    if kind=='SCENARIO_COVERAGE':return _store(session,run_id,'SCENARIO_SET',','.join(sorted(env['zones'])),'SCENARIO_COVERAGE',env['method_version'],env,result,actor)
     return _store(session,run_id,'LAYOUT_OPTIONS',env['payload']['zone_id'],'LAYOUT_OPTIONS',env['method_version'],env,result,actor)
 
 RUN_COLUMNS=cov.RUN_COLUMNS

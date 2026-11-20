@@ -1,6 +1,6 @@
 """Rev G M3/M6 + wellhead application: full coverage workflow on the SYNTHETIC wellhead example
 (EXAMPLE library values), coverage report outputs, heatmap known-answer pixels, offscreen UI overlay.
-Engineer-reviewed results - not independently certified."""
+COMPUTED - UNREVIEWED development results - not independently verified."""
 import hashlib,json,os,shutil,subprocess,sys,tempfile,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
@@ -30,7 +30,7 @@ class WellheadCoverage(unittest.TestCase):
     def test_all_detectors_assigned_all_zones_ready_and_run(self):
         s=self.session();self.assertEqual(len(w.detector_rows(s)),23)
         self.assertTrue(all(w.row(s,'detector_library_assignment',d['id']) for d in w.detector_rows(s)))
-        r=readiness(s);self.assertEqual(r['engineering_calculation_status'],'READY');self.assertEqual(r['qualification'],'ENGINEER-REVIEWED - NOT INDEPENDENTLY CERTIFIED')
+        r=readiness(s);self.assertEqual(r['engineering_calculation_status'],'READY');self.assertEqual(r['qualification'],'COMPUTED - UNREVIEWED - NOT INDEPENDENTLY VERIFIED')
         runs=cov.latest_runs(s);self.assertEqual(sorted(runs),['FZ-MANIFOLD','FZ-WELLBAY','FZ-WIRELINE','GZ-MANIFOLD','GZ-MODULE','GZ-WELLBAY'])
         for z,run in runs.items():
             res=json.loads(run['result_json']);self.assertEqual(run['label'],LABEL);self.assertEqual(cov.run_currency(s,run),'CURRENT')
@@ -125,7 +125,7 @@ from fgmapping.services.case import CaseSession
 from fgmapping.services import coverage as cov
 app=QApplication([]);w=MainWindow();w.settings.clear();w.session=CaseSession(Path(sys.argv[1]),Path(sys.argv[2]));w.refresh();w.show();app.processEvents()
 runs=cov.latest_runs(w.session);w.show_heatmap(runs['FZ-WELLBAY'],1.0);app.processEvents()
-c=w.viewer.coverage;assert c and c['slice_z']==1.0 and 'EXAMPLE' in c['legend'] and 'not independently certified' in c['legend'],c
+c=w.viewer.coverage;assert c and c['slice_z']==1.0 and 'EXAMPLE' in c['legend'] and 'UNREVIEWED' in c['legend'] and 'not independently verified' in c['legend'],c
 assert not w.viewer.grab().isNull()
 w.toggle_fov();assert len(w.viewer.fov)==8;w.viewer.grab();w.toggle_fov();assert w.viewer.fov==[]
 w.clear_overlay();assert w.viewer.coverage is None

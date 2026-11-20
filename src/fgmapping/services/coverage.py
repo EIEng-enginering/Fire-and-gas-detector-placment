@@ -1,7 +1,7 @@
 """Rev G coverage services: schema 4, detector library, assignments, zone setups,
 readiness gate and reproducible coverage runs stored in the case.
 
-ENGINEER-REVIEWED RESULTS - NOT INDEPENDENTLY CERTIFIED. Results depend on the
+COMPUTED - UNREVIEWED RESULTS - NOT INDEPENDENTLY VERIFIED. Results depend on the
 detector data entered by the user; EXAMPLE library values must be replaced by
 verified manufacturer data before project use.
 """
@@ -20,7 +20,11 @@ from fgmapping.services.case import utc_now
 
 ROOT=Path(__file__).resolve().parents[3]
 SRC=Path(__file__).resolve().parents[1]
-IMPLEMENTATION=('engine/coverage.py','engine/mesh_visibility.py','engine/spatial.py','engine/geometry.py','domain/detector_library.py','domain/coverage_setup.py','domain/pose.py','services/coverage.py')
+from fgmapping.services.fingerprint import fingerprint
+from fgmapping.domain.compatibility import detector_blockers
+SENSITIVITY_FACTORS=(0.9,1.1)
+LIFECYCLE_LABEL='COMPUTED - UNREVIEWED development results - not independently verified'
+LIFECYCLE=('COMPUTED - UNREVIEWED','ENGINEER REVIEWED','INDEPENDENTLY VERIFIED','REVIEW INVALIDATED - inputs or result changed')
 EXAMPLE_STATUS='EXAMPLE VALUES - replace with manufacturer data'
 
 def version(session):return session.con.execute('PRAGMA user_version').fetchone()[0]
@@ -119,7 +123,7 @@ def zone_setup(session,zone_id):
 # ---------------- readiness ----------------
 def _norm(s):return ' '.join(str(s).lower().split())
 
-def gather(session,zone_id):
+def gather(session,zone_id,sensitivity=False):
     """Collect the complete, hashable input envelope for one zone, or the blockers."""
     blockers=[];review=[]
     zone=next((z for z in zones(session) if z['id']==zone_id),None)
@@ -147,32 +151,33 @@ def gather(session,zone_id):
             det=det or {'azimuth':0.,'elevation':0.,'roll':0.}
         if e['source']['data_status']==EXAMPLE_STATUS:review.append('EXAMPLE_LIBRARY_VALUES:'+e['id'])
         elif e['source']['data_status']!='MANUFACTURER DATA - verified by engineer':review.append('LIBRARY_DATA_TO_BE_VERIFIED:'+e['id'])
-        if flame:
-            f=setup['flame']
-            if _norm(e['fuel_or_gas'])!=_norm(f['fuel']):blockers.append('FUEL_MISMATCH:'+d['id']+' library '+e['fuel_or_gas']+' vs target '+f['fuel'])
-            if f['fire_size_scaling']=='NONE' and abs(e['target_fire']['heat_release_kw']-f['heat_release_kw'])>1e-9:blockers.append('FIRE_SIZE_MISMATCH:'+d['id']+' (select INVERSE_SQUARE scaling explicitly or use a matching entry)')
-            if f['fire_size_scaling']=='INVERSE_SQUARE':review.append('INVERSE_SQUARE_FIRE_SIZE_SCALING:'+zone_id)
-        else:
-            if _norm(e['fuel_or_gas'])!=_norm(setup['gas']['gas']):blockers.append('GAS_MISMATCH:'+d['id']+' library '+e['fuel_or_gas']+' vs cloud '+setup['gas']['gas'])
-        receiver=None
+        if flame and setup['flame']['fire_size_scaling']=='INVERSE_SQUARE':review.append('INVERSE_SQUARE_FIRE_SIZE_SCALING:'+zone_id)
+        receiver=None;rx_mount=None
         if d['detector_type']=='OPEN_PATH':
             try:receiver=resolve_receiver(session,json.loads(a['receiver_json']))
             except CaseError:blockers.append('RECEIVER:'+d['id']);continue
             if receiver is None:blockers.append('RECEIVER:'+d['id']);continue
+            rj=json.loads(a['receiver_json'])
+            if 'record_id' in rj:rx_mount=json.loads(w.row(session,'engineering_record',rj['record_id'])['payload_json']).get('mount_component_id')
         mount=w.row(session,'detector_mount',d['id'])
         if mount:
             from fgmapping.services.mounts import mount_status
             if mount_status(session,mount)!='CURRENT_SOURCE':blockers.append('STALE_OR_MISSING_MOUNT:'+d['id'])
+        entry={'id':d['id'],'detector_type':d['detector_type'],'position':[float(d['x']),float(d['y']),float(d['z'])],'azimuth':float(det['azimuth']),'elevation':float(det['elevation']),'roll':float(det['roll'] or 0.),'library_id':e['id'],'receiver':None if receiver is None else list(receiver),
+               'mount_component_id':mount['component_id'] if mount else None,'receiver_mount_component_id':rx_mount}
+        bad=detector_blockers(setup,e,entry)
+        if bad:blockers+=bad;continue
         lib[e['id']]=e
-        dets.append({'id':d['id'],'detector_type':d['detector_type'],'position':[float(d['x']),float(d['y']),float(d['z'])],'azimuth':float(det['azimuth']),'elevation':float(det['elevation']),'roll':float(det['roll'] or 0.),'library_id':e['id'],'receiver':None if receiver is None else list(receiver)})
+        dets.append(entry)
     if not dets and not any(b.startswith('LIBRARY_ENTRY_NOT_ASSIGNED') for b in blockers):blockers.append('NO_ELIGIBLE_DETECTORS:'+zone_id)
     if len(dets)<setup['voting_required'] and not blockers:blockers.append('VOTING_EXCEEDS_ASSIGNED_DETECTORS:'+zone_id)
     excluded=sorted(x['component_id'] for x in basis['exclusions']) if basis else []
-    files={name:hashlib.sha256((SRC/name).read_bytes().replace(b'\r\n',b'\n')).hexdigest() for name in IMPLEMENTATION}  # line-ending neutral (Windows checkouts)
+    files,impl=fingerprint('ZONE_COVERAGE')  # F08: full transitive dependency closure, LF-normalised, relative paths
     from fgmapping import __version__
     from fgmapping.engine.coverage import METHOD_VERSION
     envelope={'method':setup['method'],'method_version':METHOD_VERSION[setup['method']],'zone':{**zone,'low':list(zone['low']),'high':list(zone['high'])},'setup':setup,'detectors':dets,'library':lib,
-              'scene_sha256':scene.sha256 if scene else None,'excluded_component_ids':excluded,'software_version':__version__,'implementation_files':files,'implementation_sha256':content_hash(files)}
+              'scene_sha256':scene.sha256 if scene else None,'excluded_component_ids':excluded,'software_version':__version__,'implementation_files':files,'implementation_sha256':impl,
+              'sensitivity':{'enabled':bool(sensitivity),'range_factors':list(SENSITIVITY_FACTORS) if sensitivity else []}}
     return (None if blockers else envelope),sorted(set(blockers)),sorted(set(review))
 
 def coverage_readiness(session):
@@ -183,36 +188,43 @@ def coverage_readiness(session):
     return out
 
 # ---------------- runs ----------------
-def prepare_run(session,zone_id,run_id):
+def prepare_run(session,zone_id,run_id,sensitivity=False):
     require_coverage(session)
     if not run_id.strip() or session.con.execute('SELECT 1 FROM coverage_run WHERE id=?',(run_id,)).fetchone():raise CaseError('RUN_ID','New explicit run ID required')
-    env,blockers,review=gather(session,zone_id)
+    env,blockers,review=gather(session,zone_id,sensitivity)
     if env is None:raise CaseError('NOT_READY','Coverage inputs incomplete for '+zone_id+': '+'; '.join(blockers))
     return env,review,get_scene(session)
 
-def compute(env,scene,cancel=None,progress=None,sensitivity=False):
+def compute(env,scene,cancel=None,progress=None,sensitivity=None):
     """Pure computation from a frozen input envelope (safe to run off the UI thread)."""
     from fgmapping.engine.detection import engineering_flame_coverage,engineering_gas_coverage
     if scene is None or scene.sha256!=env['scene_sha256']:raise CaseError('SCENE','Scene changed since the run was prepared')
     fn=engineering_flame_coverage if env['method']=='FLAME_GEOGRAPHIC' else engineering_gas_coverage
+    sens=env.get('sensitivity',{}).get('range_factors') or ()
+    if sensitivity is not None and bool(sensitivity)!=bool(sens):raise CaseError('SENSITIVITY','Sensitivity must be fixed when the run envelope is prepared (F24)')
+    sensitivity=tuple(sens)
     return fn(zone={**env['zone'],'low':tuple(env['zone']['low']),'high':tuple(env['zone']['high'])},setup=env['setup'],detectors=env['detectors'],library=env['library'],scene=scene,excluded_component_ids=env['excluded_component_ids'],cancel=cancel,progress=progress,sensitivity=sensitivity)
 
 def store_run(session,run_id,env,review,result,samples,actor):
     """Persist a computed run; refused if inputs changed while computing."""
-    now,_,_=gather(session,env['zone']['id'])
+    now,_,_=gather(session,env['zone']['id'],env.get('sensitivity',{}).get('enabled',False))
     if now is None or content_hash(now)!=content_hash(env):raise CaseError('STALE_INPUTS','Inputs changed during the calculation; result discarded - run again')
-    result=dict(result,review=review,input_hash=content_hash(env),run_id=run_id)
+    result=dict(result,review=review,input_hash=content_hash(env),run_id=run_id,lifecycle=LIFECYCLE[0],
+                library_used={k:{'sha256':content_hash(v),'data_status':v['source']['data_status']} for k,v in sorted(env['library'].items())})
+    scene=get_scene(session)
+    if scene is None or scene.sha256!=env['scene_sha256']:raise CaseError('SCENE','Scene changed during the calculation; result discarded')
+    samples=dict(samples,scene_snapshot=scene.to_dict())  # F09: immutable per-run scene for figures
     with session.con:
-        session.con.execute('INSERT INTO coverage_run(id,kind,zone_id,method,method_version,input_hash,input_json,result_json,samples_json,actor,utc,status) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)',
-            (run_id,env['zone']['kind'],env['zone']['id'],env['method'],env['method_version'],content_hash(env),canonical(env),canonical(result),canonical(samples),actor,utc_now(),'CURRENT'))
+        session.con.execute('INSERT INTO coverage_run(id,kind,zone_id,method,method_version,input_hash,input_json,result_json,samples_json,actor,utc,status,label) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)',
+            (run_id,env['zone']['kind'],env['zone']['id'],env['method'],env['method_version'],content_hash(env),canonical(env),canonical(result),canonical(samples),actor,utc_now(),'CURRENT',LIFECYCLE_LABEL))
         session._log(actor,'RUN_COVERAGE',{'id':run_id,'zone':env['zone']['id'],'input_hash':content_hash(env),'method':env['method_version']},{'retain':'Coverage run history retained; input changes mark it stale'})
     session._dirty=True
     return result
 
 def run_zone(session,zone_id,run_id,actor,cancel=None,progress=None,sensitivity=False):
     if not actor.strip():raise CaseError('ACTOR','Named engineer/actor required')
-    env,review,scene=prepare_run(session,zone_id,run_id)
-    result,samples=compute(env,scene,cancel,progress,sensitivity)
+    env,review,scene=prepare_run(session,zone_id,run_id,sensitivity)
+    result,samples=compute(env,scene,cancel,progress)
     return store_run(session,run_id,env,review,result,samples,actor)
 
 def run_all(session,prefix,actor,cancel=None,progress=None,sensitivity=False):
@@ -229,10 +241,13 @@ def runs(session,zone_id=None):
 
 def run_currency(session,run):
     """CURRENT only when the recomputed input envelope hash still matches."""
-    env,_,_=gather(session,run['zone_id'])
+    try:old=json.loads(run['input_json']).get('sensitivity',{}).get('enabled',False)
+    except (TypeError,ValueError):old=False
+    env,_,_=gather(session,run['zone_id'],old)
     return 'CURRENT' if env is not None and content_hash(env)==run['input_hash'] else 'STALE'
 
 def latest_runs(session):
     out={}
     for r in runs(session):out[r['zone_id']]=r
     return out
+

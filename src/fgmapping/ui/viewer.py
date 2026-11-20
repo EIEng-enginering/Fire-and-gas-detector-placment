@@ -128,10 +128,13 @@ class MeshViewer(QWidget):
         if not c:return
         h=c['spacing']/2;z=c['slice_z'];n=0
         painter.setPen(Qt.NoPen)
-        for x,y,zz,w,votes in c['rows']:
+        for r in c['rows']:
+            x,y,zz,w,votes=r[:5]
             if abs(zz-z)>1e-6:continue
             k=min(len(votes),3);col=QColor(self.VOTE_COLOURS[k]);col.setAlpha(150);painter.setBrush(col)
-            poly=QPolygonF([self.project((x+dx,y+dy,zz))[0] for dx,dy in ((-h,-h),(h,-h),(h,h),(-h,h))]);painter.drawPolygon(poly);n+=1
+            if len(r)>6 and r[5] is not None:x0,y0,x1,y1=r[5][0],r[5][1],r[6][0],r[6][1]  # F20: stored zone-clipped bounds
+            else:x0,y0,x1,y1=x-h,y-h,x+h,y+h
+            poly=QPolygonF([self.project((px,py,zz))[0] for px,py in ((x0,y0),(x1,y0),(x1,y1),(x0,y1))]);painter.drawPolygon(poly);n+=1
         y0=self.height()-16
         for i,(label,colour) in enumerate(zip(('0 votes','1 vote','2 votes','3+ votes'),self.VOTE_COLOURS)):
             painter.setBrush(QColor(colour));painter.setPen(QColor(t['border']));painter.drawRect(14+i*80,y0-30,12,12);painter.setPen(QColor(t['text']));painter.drawText(30+i*80,y0-19,label)
@@ -139,19 +142,14 @@ class MeshViewer(QWidget):
         painter.drawText(14,y0,c['legend']+' | slice z=%.2f m | %d cells' % (z,n))
         painter.drawText(14,42,'COVERAGE OVERLAY: '+c['title'])
     def paint_fov(self,painter):
-        """Detector field-of-view wireframe from the assigned library contour (display only)."""
+        """Detector acceptance envelope from engine.coverage.fov_outline (same predicate as the
+        engine: rectangular FOV, contour range at the true off-axis angle; display only)."""
         for f in self.fov:
-            pos=f['position'];fwd,right,up=f['frame'];pen=QPen(QColor('#c0392b' if f.get('selected') else '#e67e22'),1.4 if f.get('selected') else .9,Qt.SolidLine);painter.setPen(pen)
-            rays=[]
-            for k in range(24):
-                a=2*math.pi*k/24;h=f['fov_h']/2*math.cos(a);v=f['fov_v']/2*math.sin(a)
-                th,tv=math.tan(math.radians(min(h,89.9) if h>=0 else max(h,-89.9))),math.tan(math.radians(min(v,89.9) if v>=0 else max(v,-89.9)))
-                d=tuple(fwd[i]+th*right[i]+tv*up[i] for i in range(3));n=math.sqrt(sum(x*x for x in d));d=tuple(x/n for x in d)
-                off=math.degrees(math.acos(max(-1,min(1,sum(d[i]*fwd[i] for i in range(3))))));r=f['range'](off)
-                rays.append(tuple(pos[i]+d[i]*r for i in range(3)))
+            pos=f['position'];fwd,left,up=f['frame'];pen=QPen(QColor('#c0392b' if f.get('selected') else '#e67e22'),1.4 if f.get('selected') else .9,Qt.SolidLine);painter.setPen(pen)
+            rays=f['outline']
             a,_=self.project(pos)
             for k,p in enumerate(rays):
                 b,_=self.project(p)
-                if k%6==0:painter.drawLine(a,b)
+                if k%4==0:painter.drawLine(a,b)
                 c,_=self.project(rays[(k+1)%len(rays)]);painter.drawLine(b,c)
-            end=tuple(pos[i]+fwd[i]*f['range'](0) for i in range(3));painter.drawLine(a,self.project(end)[0])
+            end=tuple(pos[i]+fwd[i]*f['boresight_range'] for i in range(3));painter.drawLine(a,self.project(end)[0])

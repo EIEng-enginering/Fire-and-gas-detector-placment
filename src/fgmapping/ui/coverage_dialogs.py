@@ -1,6 +1,6 @@
 """Rev G coverage UI: detector library, explicit assignment, zone setup, runs,
 results table, heatmap overlay and FOV display. All state changes use services.
-Engineer-reviewed results - not independently certified."""
+COMPUTED - UNREVIEWED development results - not independently verified."""
 import json,threading,time
 from pathlib import Path
 from PySide6.QtCore import Qt,QTimer
@@ -8,8 +8,9 @@ from PySide6.QtGui import QColor
 from PySide6.QtWidgets import (QDialog,QHeaderView,QVBoxLayout,QHBoxLayout,QFormLayout,QLabel,QComboBox,QDialogButtonBox,QMessageBox,QPlainTextEdit,QFileDialog,
     QTableWidget,QTableWidgetItem,QPushButton,QInputDialog,QProgressDialog,QLineEdit,QCheckBox)
 from fgmapping.services import coverage as cov
+from fgmapping.services import lifecycle
 from fgmapping.services import workspace as w
-from fgmapping.engine.coverage import detector_frame,LABEL
+from fgmapping.engine.coverage import detector_frame,fov_outline,LABEL
 from fgmapping.domain.detector_library import contour_range
 
 def setup_template(zone):
@@ -122,7 +123,7 @@ class CoverageDialogs:
             prefix,ok=QInputDialog.getText(self,'Run coverage','Run ID prefix (stored with every result):',text='RUN-'+time.strftime('%Y%m%d-%H%M%S'))
             if not ok or not prefix.strip():return
             jobs=[(z,prefix+'-'+z)+cov.prepare_run(self.session,z,prefix+'-'+z) for z in ready]
-            state={'done':[],'error':None,'cancel':False,'progress':''}
+            state={'done':[],'error':None,'cancel':False,'progress':'','session':self.session,'case_key':self.session.key,'kind':'COVERAGE'}
             def work():
                 try:
                     for z,rid,env,review,scene in jobs:
@@ -131,17 +132,43 @@ class CoverageDialogs:
                         state['done'].append((rid,env,review,res,samples))
                 except Exception as exc:state['error']=exc
                 state['finished']=True
-            self.coverage_progress=QProgressDialog('Computing coverage...','Cancel',0,0,self);self.coverage_progress.setWindowModality(Qt.WindowModal)
-            self.coverage_progress.canceled.connect(lambda:state.__setitem__('cancel',True));self.coverage_progress.show()
-            self.coverage_job=state;threading.Thread(target=work,daemon=True).start();self.coverage_timer.start(150)
+            self.start_job(state,work,'Computing coverage...')
         except Exception as exc:self.coverage_error('Run coverage',exc)
+    def start_job(self,state,work,text):
+        # F15/F16: one background job bound to the case session that started it
+        self.coverage_progress=QProgressDialog(text,'Cancel',0,0,self);self.coverage_progress.setWindowModality(Qt.WindowModal)
+        self.coverage_progress.canceled.connect(lambda:state.__setitem__('cancel',True));self.coverage_progress.show()
+        self.coverage_job=state;state['thread']=threading.Thread(target=work,daemon=True);state['thread'].start();self.coverage_timer.start(150)
+    def cancel_coverage(self,wait=2.0):
+        """Cancel any coverage/study job (case close, app exit). Late results are discarded."""
+        state=getattr(self,'coverage_job',None)
+        if not state:return
+        state['cancel']=True;state['orphaned']=True;self.coverage_timer.stop()
+        try:self.coverage_progress.close()
+        except Exception:pass
+        t=state.get('thread')
+        if t is not None:t.join(wait)
+        self.coverage_job=None
+    def job_belongs_here(self,state):
+        return not state.get('orphaned') and self.session is not None and self.session is state['session'] and self.session.key==state['case_key']
     def poll_coverage(self):
         state=self.coverage_job
-        if not state:return
-        self.coverage_progress.setLabelText('Computing coverage: '+state['progress'])
+        if not state:self.coverage_timer.stop();return
+        if not self.job_belongs_here(state):
+            state['cancel']=True;self.coverage_timer.stop();self.coverage_job=None
+            try:self.coverage_progress.close()
+            except Exception:pass
+            return
+        self.coverage_progress.setLabelText(('Computing coverage: ' if state['kind']=='COVERAGE' else 'Computing study: ')+state['progress'])
         if not state.get('finished'):return
         self.coverage_timer.stop();self.coverage_progress.close();self.coverage_job=None
         if state['error']:QMessageBox.warning(self,'Coverage','Calculation stopped: '+str(state['error']));return
+        if state['kind']!='COVERAGE':
+            try:
+                from fgmapping.services import scenario_coverage as scs
+                res=scs.store_study(self.session,state['job'],state['run_id'],state['result'],'AUTOMATION_ENGINE');self.refresh();self.show_text(state['title']+' - '+LABEL,res)
+            except Exception as exc:QMessageBox.warning(self,state['title'],'Not stored: '+str(exc))
+            return
         stored=[]
         try:
             for rid,env,review,res,samples in state['done']:cov.store_run(self.session,rid,env,review,res,samples,'AUTOMATION_ENGINE');stored.append(rid)
@@ -187,10 +214,12 @@ class CoverageDialogs:
             else:slice_z=zs[0]
         slice_z=min(zs,key=lambda z:abs(z-slice_z))
         example=any(x.startswith('EXAMPLE_LIBRARY_VALUES') for x in res.get('review',[]))
-        state=cov.run_currency(self.session,run)
+        rs=lifecycle.run_state(self.session,run);state=rs['currency']
+        env=json.loads(run['input_json'])
+        libs=', '.join('%s%s' % (k,' (EXAMPLE)' if v['source']['data_status'].startswith('EXAMPLE') else '') for k,v in sorted(env['library'].items()))
         self.viewer.coverage={'rows':samples['rows'],'spacing':res['grid_spacing_m'],'slice_z':slice_z,
-            'title':'%s %s run %s (%s) | 1ooN %s | 2ooN %s' % (res['zone_id'],res['method_version'],run['id'],state,fmt(res['fractions']['1ooN']),fmt(res['fractions']['2ooN'])),
-            'legend':LABEL+(' | EXAMPLE LIBRARY VALUES' if example else '')}
+            'title':'%s %s run %s (%s, %s) | 1ooN %s | 2ooN %s | grid %.2f m %s, eligible %.4g %s (sampled-cell fraction)' % (res['zone_id'],res['method_version'],run['id'],state,rs['lifecycle'],fmt(res['fractions']['1ooN']),fmt(res['fractions']['2ooN']),res['grid_spacing_m'],res['mode'],res['eligible_measure'],res['measure_unit']),
+            'legend':rs['label']+(' | EXAMPLE LIBRARY VALUES' if example else '')+' | library: '+libs}
         self.viewer.update()
     def clear_overlay(self):self.viewer.coverage=None;self.viewer.update()
     def fov_items(self):
@@ -200,8 +229,9 @@ class CoverageDialogs:
             a=w.row(self.session,'detector_library_assignment',d['id']);det=w.row(self.session,'detector_details',d['id'])
             if not a or d['detector_type']!='FLAME' or not det:continue
             e=lib[a['library_id']]
-            out.append({'id':d['id'],'position':(d['x'],d['y'],d['z']),'frame':detector_frame(det['azimuth'],det['elevation'],det['roll'] or 0.),'fov_h':e['fov']['horizontal_deg'],'fov_v':e['fov']['vertical_deg'],
-                        'range':lambda off,e=e:contour_range(e,min(off,e['contour'][-1][0])),'selected':d['id']==sel})
+            fr=detector_frame(det['azimuth'],det['elevation'],det['roll'] or 0.);pos=(d['x'],d['y'],d['z'])
+            out.append({'id':d['id'],'position':pos,'frame':fr,'fov_h':e['fov']['horizontal_deg'],'fov_v':e['fov']['vertical_deg'],
+                        'outline':fov_outline(pos,fr,e),'boresight_range':contour_range(e,0.),'selected':d['id']==sel})  # F19: engine predicate, no clamping
         return out
     def toggle_fov(self):
         try:
@@ -213,17 +243,27 @@ class CoverageDialogs:
         form=QFormLayout();rid=QLineEdit(prefix+time.strftime('%Y%m%d-%H%M%S'));rid.setObjectName('study_run_id');form.addRow('Run ID',rid);lay.addLayout(form);self.buttons(d,lay)
         while d.exec()==QDialog.Accepted:
             try:
-                res=runner(self.session,json.loads(text.toPlainText()),rid.text().strip(),'AUTOMATION_ENGINE');self.refresh();self.show_text(title+' - '+LABEL,res);return res
+                if self.coverage_job:raise ValueError('Another calculation is running')
+                from fgmapping.services import scenario_coverage as scs
+                run_id=rid.text().strip()
+                if not run_id or self.session.con.execute('SELECT 1 FROM coverage_run WHERE id=?',(run_id,)).fetchone():raise ValueError('New explicit run ID required')
+                job=scs.prepare_study(self.session,runner,json.loads(text.toPlainText()))
+                state={'done':[],'error':None,'cancel':False,'progress':'','session':self.session,'case_key':self.session.key,'kind':runner,'job':job,'run_id':run_id,'title':title}
+                def work():
+                    try:state['result']=scs.compute_study(job,cancel=lambda:state['cancel'])
+                    except Exception as exc:state['error']=exc
+                    state['finished']=True
+                self.start_job(state,work,title+' - computing...');return state
             except Exception as exc:QMessageBox.warning(self,title+' refused',str(exc))
     def scenario_dialog(self):
         try:
             self.need_coverage();from fgmapping.services import scenario_coverage as scs
-            self.study_json_dialog('Scenario coverage (fg-coverage-scenarios/1)','Each scenario is tested with the geographic detection rule of its zone (zone must be READY). Frequencies and their sources are user-supplied decimal strings. The result is a frequency-weighted detected fraction - not risk reduction, availability or SIL credit.',scs.scenario_template(self.session),scs.run_scenarios,'SCN-')
+            self.study_json_dialog('Scenario coverage (fg-coverage-scenarios/1)','Each scenario is tested with the geographic detection rule of its zone (zone must be READY). Frequencies and their sources are user-supplied decimal strings. The result is a frequency-weighted detected fraction - not risk reduction, availability or SIL credit.',scs.scenario_template(self.session),'SCENARIO_COVERAGE','SCN-')
         except Exception as exc:self.coverage_error('Scenario coverage',exc)
     def options_dialog(self):
         try:
             self.need_coverage();from fgmapping.services import scenario_coverage as scs
-            self.study_json_dialog('Layout options (fg-coverage-options/1)','Candidate positions with explicit library entries, costs and feasibility are enumerated exhaustively (max 16). Results are PROPOSALS ONLY: the detector layout is never changed; adopt a proposal through normal reviewed detector edits.',scs.options_template(self.session),scs.run_options,'OPT-')
+            self.study_json_dialog('Layout options (fg-coverage-options/1)','Candidate positions with explicit library entries, costs and feasibility are enumerated exhaustively (max 16). Results are PROPOSALS ONLY: the detector layout is never changed; adopt a proposal through normal reviewed detector edits.',scs.options_template(self.session),'LAYOUT_OPTIONS','OPT-')
         except Exception as exc:self.coverage_error('Layout options',exc)
     def export_coverage_report(self):
         try:

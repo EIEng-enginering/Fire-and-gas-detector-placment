@@ -38,6 +38,9 @@ def study_findings(session):
    if cov.run_currency(session,r)=='STALE':add('COVERAGE-STALE-'+z,z,'REVIEW','Latest coverage run '+r['id']+' is stale; inputs changed since it was computed')
    for k,t in res['performance_targets'].items():
     if t['status']=='BELOW USER TARGET':add('COVERAGE-TARGET-'+z+'-'+k,z,'REVIEW','%s %s achieved %.1f %% is below the user target %s' % (z,k,100*t['achieved'],t['target']))
-   if res['convergence']['status'].startswith('NOT CONVERGED'):add('COVERAGE-CONVERGENCE-'+z,z,'REVIEW','Grid convergence not achieved for '+z+'; refine the grid')
+   st=res['convergence']['status']
+   if st.startswith(('GRID DISAGREEMENT','UNRESOLVED FEATURE','NOT EVALUABLE','NOT CONVERGED')):add('COVERAGE-GRID-'+z,z,'REVIEW','Grid check for '+z+': '+st+('; '+'; '.join(res['convergence'].get('unresolved_features',[])) if res['convergence'].get('unresolved_features') else ''))
+   if res.get('measure_error_bound'):add('COVERAGE-MEASURE-BOUND-'+z,z,'REVIEW','%s: approximate partial-cell measure for non-box meshes; rigorous bound %.4g %s' % (z,res['measure_error_bound'],res['measure_unit']))
+   if res.get('unsampled_free_measure'):add('COVERAGE-UNSAMPLED-'+z,z,'REVIEW','%s: %.4g %s of free measure could not be sampled at this grid and is excluded from eligible measure' % (z,res['unsampled_free_measure'],res['measure_unit']))
    for i,f in enumerate(res['findings']):add('COVERAGE-RUN-'+z+'-'+str(i),f.get('detector',z),f['severity'],f['text'])
  return findings
